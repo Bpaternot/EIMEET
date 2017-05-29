@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  admin: false
+  position: MyString
+  ps4: false
+  xbox: false
+  controller_ps4: 1
+  controller_xbox: 1
+  fifa_game: 1
+  user: one
+  tournament: one
+
+two:
+  admin: false
+  position: MyString
+  ps4: false
+  xbox: false
+  controller_ps4: 1
+  controller_xbox: 1
+  fifa_game: 1
+  user: two
+  tournament: two
