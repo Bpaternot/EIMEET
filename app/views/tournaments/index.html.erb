@@ -1,0 +1,8 @@
+<h1>Tournaments</h1>
+<% @tournaments.each do |tournament| %>
+  <p>
+    <%= tournament.user.username %>
+    <%= tournament.date %>
+    <%= tournament.tournament_type %>
+  </p>
+<% end %>

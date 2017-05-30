@@ -1,0 +1,12 @@
+<h1>Bars</h1>
+<% @bars.each do |bar| %>
+  <p>
+    <%= bar.name %>
+    <%= bar.phone_number %>
+    <%= bar.address %>
+    <%= bar.description %>
+    <%= bar.tv_number %>
+    <%= bar.tournament_size %>
+    <%= bar.offers %>
+  </p>
+<% end %>
