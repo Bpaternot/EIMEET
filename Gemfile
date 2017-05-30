@@ -21,6 +21,7 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'figaro'
 gem 'cloudinary'
+gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'binding_of_caller'
