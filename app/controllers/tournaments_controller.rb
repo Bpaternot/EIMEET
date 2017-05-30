@@ -3,11 +3,26 @@ class TournamentsController < ApplicationController
   before_action :set_tournament, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @tournaments = Tournament.all
+    @tournaments = Tournament.all.joins(:bar).where("bars.latitude IS NOT NULL and bars.longitude IS NOT NULL")
+
+    @hash = Gmaps4rails.build_markers(@tournaments) do |tournament, marker|
+      marker.lat tournament.bar.latitude
+      marker.lng tournament.bar.longitude
+      # marker.infowindow render_to_string(partial: "/tournaments/map_box", locals: { tournament: tournament })
+    end
+
+
+
   end
 
   def show
     @player = Player.new()
+    @tournament = (Tournament.joins(:bar).where("bars.latitude IS NOT NULL and bars.longitude IS NOT NULL")).find(params[:id])
+    @hash = Gmaps4rails.build_markers(@tournament) do |tournament, marker|
+      marker.lat tournament.bar.latitude
+      marker.lng tournament.bar.longitude
+      # marker.infowindow render_to_string(partial: "/tournaments/map_box", locals: { tournament: tournament })
+    end
   end
 
   def new
