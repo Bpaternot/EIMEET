@@ -14,9 +14,15 @@ class PlayersController < ApplicationController
   def create
     @player = Player.new()
     @tournament = Tournament.find(params[:tournament_id])
-    @player.tournament = @tournament
-    @player.user = current_user
-    @player.save!
+        if @tournament.number_players > @tournament.players.count && Player.where(tournament: @tournament, user: current_user) == nil
+          @player.tournament = @tournament
+          @player.user = current_user
+          @player.admin = false
+          @player.save!
+          redirect_to tournament_path(@tournament), notice: "You are now registered for the tournament!"
+        else
+          redirect_to tournament_path(@tournament), alert: "This tournament is full or you are already registered in the tournament"
+        end
   end
 
 
