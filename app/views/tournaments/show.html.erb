@@ -5,10 +5,22 @@
     Bar's name: <%= @tournament.bar.name %><br>
     Tournament's type: <%= @tournament.tournament_type %><br>
     Total number of players: <%= @tournament.number_players %><br>
+    Total number of remaining spots : <br>
     Number of consoles needed: <%= @tournament.number_consoles %><br>
     Total number of games that will be played: <%= @tournament.number_games %><br>
-    <%= link_to "See details", tournament_path(@tournament) %>
+    Players list:
+    <% @tournament.players.each do |player| %>
+      <p>
+        <%= player.user.username %><br>
+      </p>
+    <% end %>
+    <br>
+
+  Want to join?
+  <%= simple_form_for [@tournament, @player] do |f| %>
+    <%= f.submit "Join" %>
+  <% end %>
+
+
   </p>
-
-
 
