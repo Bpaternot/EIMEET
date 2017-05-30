@@ -14,7 +14,7 @@ class PlayersController < ApplicationController
   def create
     @player = Player.new()
     @tournament = Tournament.find(params[:tournament_id])
-        if @tournament.number_players > @tournament.players.count && Player.where(tournament: @tournament, user: current_user) == nil
+        if @tournament.number_players > @tournament.players.count && Player.where(tournament: @tournament, user: current_user).exists? == false
           @player.tournament = @tournament
           @player.user = current_user
           @player.admin = false
