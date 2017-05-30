@@ -1,3 +1,6 @@
+require 'open-uri'
+require 'json'
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -489,6 +492,16 @@ Bar.create(address: "3 rue Petrelle 75018 Paris", name: "Au deux ancêtres", tv_
 Bar.create(address: "8 rue Portails 75008 Paris", name: "Le Sans-Calin", tv_number: 2, tournament_size: 8, phone_number: "01.23.54.93.82", description: "Bar jovial tenu par des joyeux lurons")
 Bar.create(address: "17 rue Roquépine 75008 Paris", name: "La Piscine", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.11", description: "Idéal aussi si vous avez un petit creux")
 
+url = "http://res.cloudinary.com/dutc7zz18/image/list/bar.json"
+    my_json = JSON.parse(open(url).read)
+    resources = my_json["resources"]
+    ids = resources.map {|res| res["public_id"]}
+
+ids.each_with_index do |id, index|
+  bar = Bar.find(index + 1)
+  bar.photo = id
+  bar.save!
+end
 
 # Availabilities
 

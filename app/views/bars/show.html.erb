@@ -7,6 +7,7 @@
     <%= @bar.tv_number %>
     <%= @bar.tournament_size %>
     <%= @bar.offers %>
+    <%= cl_image_tag(@bar.photo, width: 400, height: 300, crop: :fill) %>
   </p>
 
 <%= link_to "Book this bar and create your tournament!", new_bar_tournament_path(@bar) %>
