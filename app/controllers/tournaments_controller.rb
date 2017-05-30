@@ -16,7 +16,7 @@ class TournamentsController < ApplicationController
   def create
     @tournament = Tournament.new(tournament_params)
     @tournament.user = current_user
-    # @tournament.bar =
+    @tournament.bar = Bar.find(params[:bar_id])
     @tournament.save!
     # if @tournament.save
     #   redirect_to root_path
@@ -49,6 +49,6 @@ class TournamentsController < ApplicationController
   end
 
   def tournament_params
-    params.require(:tournament).permit(:date, :status, :tournament_type)
+    params.require(:tournament).permit(:bar, :date, :status, :tournament_type)
   end
 end
