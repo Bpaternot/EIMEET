@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.3.3'
+source "https://rails-assets.org" do
+  gem 'rails-assets-bootstrap-datepicker'
+end
 
 gem 'rails', '5.0.3'
 gem 'puma'
