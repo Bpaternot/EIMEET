@@ -1,1 +1,14 @@
-You successfully created the tournament!
+<h1> <%= @tournament.user.username %>'s tournament</h1>
+  <p>
+    Organized by: <%= @tournament.user.username %><br>
+    Date: <%= @tournament.date %><br>
+    Bar's name: <%= @tournament.bar.name %><br>
+    Tournament's type: <%= @tournament.tournament_type %><br>
+    Total number of players: <%= @tournament.number_players %><br>
+    Number of consoles needed: <%= @tournament.number_consoles %><br>
+    Total number of games that will be played: <%= @tournament.number_games %><br>
+    <%= link_to "See details", tournament_path(@tournament) %>
+  </p>
+
+
+

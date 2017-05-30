@@ -18,6 +18,19 @@ class TournamentsController < ApplicationController
     @tournament = Tournament.new(tournament_params)
     @tournament.user = current_user
     @tournament.bar = Bar.find(params[:bar_id])
+    if @tournament.tournament_type = "small"
+      @tournament.number_players = 8
+      @tournament.number_consoles = 2
+      @tournament.number_games = 15
+    elsif @tournament.tournament_type = "medium"
+      @tournament.number_players = 16
+      @tournament.number_consoles = 4
+      @tournament.number_games = 31
+    elsif @tournament.tournament_type = "large"
+      @tournament.number_players = 32
+      @tournament.number_consoles = 8
+      @tournament.number_games = 63
+    end
     if @tournament.save
       redirect_to tournament_path(@tournament)
     else
@@ -49,6 +62,6 @@ class TournamentsController < ApplicationController
   end
 
   def tournament_params
-    params.require(:tournament).permit(:bar, :date, :status, :tournament_type)
+    params.require(:tournament).permit(:bar, :date, :status, :tournament_type, :number_players, :number_consoles, :number_games)
   end
 end
