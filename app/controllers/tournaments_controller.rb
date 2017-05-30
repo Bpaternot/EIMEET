@@ -11,18 +11,18 @@ class TournamentsController < ApplicationController
 
   def new
     @tournament = Tournament.new()
+    @bar = Bar.find(params[:bar_id])
   end
 
   def create
     @tournament = Tournament.new(tournament_params)
     @tournament.user = current_user
     @tournament.bar = Bar.find(params[:bar_id])
-    @tournament.save!
-    # if @tournament.save
-    #   redirect_to root_path
-    # else
-    #   render :new
-    # end
+    if @tournament.save
+      redirect_to tournament_path(@tournament)
+    else
+      render :new
+    end
   end
 
   def edit

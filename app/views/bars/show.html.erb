@@ -9,6 +9,4 @@
     <%= @bar.offers %>
   </p>
 
-<%= simple_form_for [@bar, @tournament]  do |f| %>
-  <%= f.submit "Book this bar and create your tournament!" %>
-<% end %>
+<%= link_to "Book this bar and create your tournament!", new_bar_tournament_path(@bar) %>

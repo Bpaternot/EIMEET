@@ -1,4 +1,4 @@
-<%= simple_form_for @tournament do |f| %>
+<%= simple_form_for [@bar, @tournament] do |f| %>
   <%= f.input :tournament_type, as: :radio_buttons, collection: Tournament::TOURNAMENT_TYPE, label: false, item_wrapper_tag: false %>
   <div class="datepicker">
     <%= f.input :date, as: :hidden %>

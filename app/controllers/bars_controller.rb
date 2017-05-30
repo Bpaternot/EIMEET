@@ -6,6 +6,7 @@ class BarsController < ApplicationController
   end
 
   def show
+    @tournament = Tournament.new()
   end
 
   def new
