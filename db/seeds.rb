@@ -449,6 +449,7 @@ user.first_name = "killian"
 user.username = "killianmbape"
 user.save!
 
+Bar.create(name: "Le Wagon", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.82", description: "Bar chaleureux et amical tenu par deux anciens fêtards")
 
 # Bar creation:
 
