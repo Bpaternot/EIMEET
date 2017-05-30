@@ -4,5 +4,7 @@
     <%= tournament.user.username %>
     <%= tournament.date %>
     <%= tournament.tournament_type %>
+    <%= tournament.bar.name %>
+    <%= link_to "See details", tournament_path(tournament) %>
   </p>
 <% end %>
