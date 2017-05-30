@@ -2,7 +2,13 @@ class BarsController < ApplicationController
   before_action :set_bar, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @bars = Bar.all
+    @bars = Bar.where.not(latitude: nil, longitude: nil)
+
+    @hash = Gmaps4rails.build_markers(@bars) do |bar, marker|
+      marker.lat bar.latitude
+      marker.lng bar.longitude
+      # marker.infowindow render_to_string(partial: "/bars/map_box", locals: { bar: bar })
+    end
   end
 
   def show
