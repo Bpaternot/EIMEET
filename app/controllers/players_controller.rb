@@ -24,6 +24,10 @@ class PlayersController < ApplicationController
     redirect_to tournament_path(@tournament), notice: "You are now registered for the tournament!"
   end
 
+  def destroy
+    @player.destroy
+    redirect_to tournament_path(@tournament), notice: "You are now unregistered!"
+  end
 
   private
 
