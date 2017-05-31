@@ -70,25 +70,9 @@
   <% end %>
 
 
-  <% if policy(@player).destroy? %>
-    <%= link_to "Unregister from the tournament", tournament_player_path(@tournament, @current_player),
-        method: :delete,
-        data: { confirm: "Are you sure?" } %>
-  <% end %>
-
-
-  <% if policy(@tournament).destroy? %>
-    <%= link_to "Delete the tournament", tournament_path(@tournament),
-        method: :delete,
-        data: { confirm: "Are you sure?" } %>
-  <% end %>
-
-
-
-
 <!-- Update Players info in the tournament -->
 <% if Player.where(tournament: @tournament, user: current_user).exists? %>
-  <h1>Want to add stuff?</h1>
+  <h3>Want to add stuff?</h3>
   <% @player = Player.where(user: current_user, tournament: @tournament).first %>
    <%= simple_form_for [@tournament, @player] do |f| %>
     <!-- PS4 -->
@@ -104,6 +88,32 @@
     <% end %>
 <% end %>
 <!-- -->
+
+<!-- Chat Tournament -->
+</br>
+<% if Player.where(tournament: @tournament, user: current_user).exists? %>
+  <div id="reviews">
+      <h3>Let's chat with other players</h3>
+      <% @tournament.reviews.each do |review| %>
+        <%= render 'reviews/show', review: review %>
+      <% end %>
+  </div>
+  <%= render 'reviews/form', tournament: @tournament, review: @review %>
+<% end %>
+<!-- End chat -->
+
+<% if policy(@player).destroy? %>
+  <%= link_to "Unregister from the tournament", tournament_player_path(@tournament, @current_player),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+<% end %>
+
+
+<% if policy(@tournament).destroy? %>
+  <%= link_to "Delete the tournament", tournament_path(@tournament),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+<% end %>
 
 <div id="map" style="width: 100%; height: 600px;"></div>
 
