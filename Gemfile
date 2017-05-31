@@ -22,6 +22,7 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'cloudinary'
 gem 'omniauth-facebook'
+gem "koala"
 
 gem "geocoder"
 
