@@ -70,6 +70,14 @@
   <% end %>
 
 
+  <% if policy(@tournament).destroy? %>
+    <%= link_to "Delete the tournament", tournament_path(@tournament),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %>
+  <% end %>
+
+
+
 
 <!-- Update Players info in the tournament -->
 <% if Player.where(tournament: @tournament, user: current_user).exists? %>
