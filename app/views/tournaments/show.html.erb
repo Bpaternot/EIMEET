@@ -62,17 +62,16 @@
      <h1>Want to join?</h1>
     <%= simple_form_for [@tournament, @player] do |f| %>
     <!-- PS4 -->
-    <p>Can you bring a console?</p>
-    <p>PS4: <%= f.input :ps4, as: :radio_buttons, label: false, item_wrapper_tag: false  %> </p>
-    <!-- buttons controllers PS4 -->
-    <p>Can you bring a/a few PS4 controller(s)?</p>
-    <%= f.input :controller_ps4, as: :radio_buttons, collection: 0..8, label: false, item_wrapper_tag: false %>
-    <!-- fifa game -->
-    <p>Can you bring a PS4 FIFA game?</p>
-    <%= f.input :fifa_game_ps4, as: :radio_buttons, collection: 0..4, label: false, item_wrapper_tag: false %>
-      <%= f.submit "Join" %>
+      <p>Can you bring a console?</p>
+      <p>PS4: <%= f.input :ps4, as: :radio_buttons, label: false, item_wrapper_tag: false  %> </p>
+      <!-- buttons controllers PS4 -->
+      <p>Can you bring a/a few PS4 controller(s)?</p>
+      <%= f.input :controller_ps4, as: :radio_buttons, collection: 0..8, label: false, item_wrapper_tag: false %>
+      <!-- fifa game -->
+      <p>Can you bring a PS4 FIFA game?</p>
+      <%= f.input :fifa_game_ps4, as: :radio_buttons, collection: 0..4, label: false, item_wrapper_tag: false %>
+        <%= f.submit "Join" %>
     <% end %>
-    <p>Sorry, this tournamment is closed for registration or you are already registered in this tournament</p>
   <% end %>
 
 
