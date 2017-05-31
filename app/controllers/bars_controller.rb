@@ -2,7 +2,7 @@ class BarsController < ApplicationController
   before_action :set_bar, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @bars = Bar.where.not(latitude: nil, longitude: nil)
+    @bars = policy_scope(Bar)
 
     @hash = Gmaps4rails.build_markers(@bars) do |bar, marker|
       marker.lat bar.latitude
@@ -49,6 +49,7 @@ class BarsController < ApplicationController
 
   def set_bar
     @bar = Bar.find(params[:id])
+    authorize(@bar)
   end
 
   def bar_params
