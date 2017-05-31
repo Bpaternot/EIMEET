@@ -9,6 +9,10 @@ class TournamentsController < ApplicationController
       marker.lng tournament.bar.longitude
       # marker.infowindow render_to_string(partial: "/tournaments/map_box", locals: { tournament: tournament })
     end
+
+    @graph = Koala::Facebook::API.new(current_user.token)
+    profile = @graph.get_object("me")
+    @friends = @graph.get_connections("me", "friends")
   end
 
   def show
@@ -25,7 +29,14 @@ class TournamentsController < ApplicationController
     @remaining_controllers = remaining_controllers(@tournament)
     @remaining_fifa_game = remaining_fifa_game(@tournament)
     @current_player = Player.where(tournament: @tournament, user: current_user).first
+
+
+    @graph = Koala::Facebook::API.new(current_user.token)
+    profile = @graph.get_object("me")
+    @friends = @graph.get_connections("me", "friends")
+
     @review = Review.new()
+
   end
 
   def new
