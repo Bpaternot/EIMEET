@@ -1,4 +1,8 @@
 class ReviewsController < ApplicationController
+
+  def index
+  end
+
   def create
     @tournament = Tournament.find(params[:tournament_id])
     @review = Review.new(review_params)

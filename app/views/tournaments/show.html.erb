@@ -95,9 +95,11 @@
 <% if Player.where(tournament: @tournament, user: current_user).exists? %>
   <div id="reviews">
       <h3>Let's chat with other players</h3>
-      <% @tournament.reviews.each do |review| %>
-        <%= render 'reviews/show', review: review %>
-      <% end %>
+      <div class="message-box">
+        <% @tournament.reviews.each do |review| %>
+          <%= render 'reviews/show', review: review %>
+        <% end %>
+      </div>
   </div>
   <%= render 'reviews/form', tournament: @tournament, review: @review %>
 <% end %>
