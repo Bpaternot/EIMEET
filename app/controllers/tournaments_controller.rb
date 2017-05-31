@@ -10,9 +10,6 @@ class TournamentsController < ApplicationController
       marker.lng tournament.bar.longitude
       # marker.infowindow render_to_string(partial: "/tournaments/map_box", locals: { tournament: tournament })
     end
-
-
-
   end
 
   def show
