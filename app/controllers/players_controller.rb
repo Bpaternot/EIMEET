@@ -1,10 +1,6 @@
 class PlayersController < ApplicationController
   before_action :set_player, only: [:show, :edit, :update ]
 
-  def index
-    @players = Player.all
-  end
-
   def show
   end
 
@@ -29,9 +25,11 @@ class PlayersController < ApplicationController
   end
 
   def update
+    authorize(@player)
     @player.update(player_params)
     @tournament = Tournament.find(params[:tournament_id])
-    redirect_to tournament_path(@tournament)
+    redirect_to tournament_path(@tournament), notice: "You updated!"
+  end
 
   def destroy
     @current_player = Player.find(params[:id])
@@ -39,10 +37,6 @@ class PlayersController < ApplicationController
     authorize(@current_player)
     @current_player.destroy
     redirect_to tournament_path(@tournament), notice: "You are now unregistered!"
-  end
-
-  def update
-    authorize(@player)
   end
 
   private
