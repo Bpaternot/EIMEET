@@ -31,6 +31,7 @@ class PlayersController < ApplicationController
     @player.update(player_params)
     @tournament = Tournament.find(params[:tournament_id])
     redirect_to tournament_path(@tournament)
+  end
 
   def destroy
     @current_player = Player.find(params[:id])

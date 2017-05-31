@@ -24,6 +24,7 @@ class TournamentsController < ApplicationController
     @remaining_controllers = remaining_controllers(@tournament)
     @remaining_fifa_game = remaining_fifa_game(@tournament)
     @current_player = Player.where(tournament: @tournament, user: current_user).first
+    @review = Review.new()
   end
 
   def new

@@ -2,6 +2,7 @@ class Tournament < ApplicationRecord
   belongs_to :bar
   belongs_to :user
   has_many :players
+  has_many :reviews
 
   TOURNAMENT_TYPE = ["small", "medium", "large"]
   STATUS = ["pending", "cancelled", "ready", "past"]
