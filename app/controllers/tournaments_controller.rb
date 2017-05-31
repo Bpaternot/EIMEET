@@ -22,6 +22,7 @@ class TournamentsController < ApplicationController
     @remaining_console_ps4 = remaining_consoles(@tournament)
     @remaining_controllers = remaining_controllers(@tournament)
     @remaining_fifa_game = remaining_fifa_game(@tournament)
+    @current_player = Player.where(tournament: @tournament, user: current_user).first
   end
 
   def new
