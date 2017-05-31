@@ -31,6 +31,13 @@
     <% @tournament.players.each do |player| %>
       <p>
         Username: <%= player.user.username %>
+        <% @friends.each do |friend| %>
+          <% if friend["id"] == player.user.uid %>
+              <% avatar_url = player.user.facebook_picture_url || "http://placehold.it/30x30" %>
+              <%= image_tag avatar_url, class: "avatar dropdown-toggle" %>
+              <img src="" alt="">
+          <% end %>
+        <% end %>
         <% if player.ps4 == true %>
           <p>Brings a PS4 console</p>
         <% else %>
@@ -42,15 +49,14 @@
           <p>Does not bring any controller</p>
         <% end %>
         Brings <%= player.fifa_game_ps4 %> FIFA game(s)<br>
-        <% @friends.each do |friend| %>
-          <%= friend[:name] %>
-        <% end %>
-
-
 
       </p>
+      <p>_____________________________</p>
     <% end %>
     <br>
+
+
+
 
   <% if @remaining != 0 && Player.where(tournament: @tournament, user: current_user).exists? == false %>
      <h1>Want to join?</h1>

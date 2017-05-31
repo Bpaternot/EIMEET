@@ -34,10 +34,7 @@ class User < ApplicationRecord
 
     @graph = Koala::Facebook::API.new(user.token)
     profile = @graph.get_object("me")
-    friends = @graph.get_connections("me", "friends")
-
-    raise
-
+    @friends = @graph.get_connections("me", "friends")
     return user
   end
 

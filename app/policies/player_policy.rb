@@ -14,6 +14,7 @@ class PlayerPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user || record.tournament.user == user
+    record.user == user
+    # || record.tournament.user == user
   end
 end
