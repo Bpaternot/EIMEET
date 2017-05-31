@@ -42,6 +42,11 @@
           <p>Does not bring any controller</p>
         <% end %>
         Brings <%= player.fifa_game_ps4 %> FIFA game(s)<br>
+        <% @friends.each do |friend| %>
+          <%= friend[:name] %>
+        <% end %>
+
+
 
       </p>
     <% end %>
