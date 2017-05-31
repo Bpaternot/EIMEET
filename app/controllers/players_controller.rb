@@ -24,6 +24,14 @@ class PlayersController < ApplicationController
     redirect_to tournament_path(@tournament), notice: "You are now registered for the tournament!"
   end
 
+  def edit
+  end
+
+  def update
+    @player.update(player_params)
+    @tournament = Tournament.find(params[:tournament_id])
+    redirect_to tournament_path(@tournament)
+
   def destroy
     @current_player = Player.find(params[:id])
     @tournament = Tournament.find(params[:tournament_id])
@@ -38,7 +46,7 @@ class PlayersController < ApplicationController
   end
 
   def player_params
-    params.require(:player).permit(:tournament)
+    params.require(:player).permit(:tournament, :ps4, :controller_ps4, :fifa_game_ps4,)
   end
 end
 

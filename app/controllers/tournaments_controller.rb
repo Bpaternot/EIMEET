@@ -17,6 +17,7 @@ class TournamentsController < ApplicationController
       marker.lat tournament.bar.latitude
       marker.lng tournament.bar.longitude
       # marker.infowindow render_to_string(partial: "/tournaments/map_box", locals: { tournament: tournament })
+
     end
     @remaining = @tournament.number_players - @tournament.players.count
     @remaining_console_ps4 = remaining_consoles(@tournament)
