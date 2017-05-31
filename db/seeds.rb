@@ -10,9 +10,9 @@ require 'json'
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Availability.destroy_all
-Bar.destroy_all
-Tournament.destroy_all
 Player.destroy_all
+Tournament.destroy_all
+Bar.destroy_all
 User.destroy_all
 
 # Users
