@@ -4,6 +4,7 @@ class Tournament < ApplicationRecord
   has_many :players
   has_many :reviews
 
+
   TOURNAMENT_TYPE = ["small", "medium", "large"]
   STATUS = ["pending", "cancelled", "ready", "past"]
   NUMBER_PLAYERS = [8, 16, 32]

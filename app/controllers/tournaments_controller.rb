@@ -2,7 +2,8 @@ class TournamentsController < ApplicationController
   before_action :set_tournament, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @tournaments = Tournament.all.joins(:bar).where("bars.latitude IS NOT NULL and bars.longitude IS NOT NULL")
+    @tournaments = policy_scope(Tournament)
+    # @tournaments = Tournament.all.joins(:bar).where("bars.latitude IS NOT NULL and bars.longitude IS NOT NULL")
     @hash = Gmaps4rails.build_markers(@tournaments) do |tournament, marker|
       marker.lat tournament.bar.latitude
       marker.lng tournament.bar.longitude
@@ -30,6 +31,7 @@ class TournamentsController < ApplicationController
   def new
     @tournament = Tournament.new()
     @bar = Bar.find(params[:bar_id])
+    authorize(@tournament)
   end
 
   def create
@@ -37,6 +39,7 @@ class TournamentsController < ApplicationController
     @tournament.user = current_user
     @tournament.bar = Bar.find(params[:bar_id])
     add_params(@tournament)
+    authorize(@tournament)
     if @tournament.save
       init_player(@player, @tournament)
       redirect_to tournament_path(@tournament)
@@ -56,13 +59,14 @@ class TournamentsController < ApplicationController
 
   def destroy
     @tournament.destroy
-    redirect_to tournament_path(@tournament)
+    redirect_to tournaments_path
   end
 
   private
 
   def set_tournament
     @tournament = Tournament.find(params[:id])
+    authorize(@tournament)
   end
 
   def tournament_params

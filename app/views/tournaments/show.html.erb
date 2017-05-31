@@ -42,6 +42,11 @@
           <p>Does not bring any controller</p>
         <% end %>
         Brings <%= player.fifa_game_ps4 %> FIFA game(s)<br>
+        <% @friends.each do |friend| %>
+          <%= friend[:name] %>
+        <% end %>
+
+
 
       </p>
     <% end %>
@@ -61,16 +66,10 @@
     <%= f.input :fifa_game_ps4, as: :radio_buttons, collection: 0..4, label: false, item_wrapper_tag: false %>
       <%= f.submit "Join" %>
     <% end %>
-  <% elsif @current_player %>
-      <%= link_to "Unregister from the tournament", tournament_player_path(@tournament, @current_player),
-        method: :delete,
-        data: { confirm: "Are you sure?" } %>
-  <% else %>
     <p>Sorry, this tournamment is closed for registration or you are already registered in this tournament</p>
   <% end %>
 
 
-</br>
 <!-- Update Players info in the tournament -->
 <% if Player.where(tournament: @tournament, user: current_user).exists? %>
   <h3>Want to add stuff?</h3>
@@ -103,6 +102,18 @@
 <% end %>
 <!-- End chat -->
 
+<% if policy(@player).destroy? %>
+  <%= link_to "Unregister from the tournament", tournament_player_path(@tournament, @current_player),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+<% end %>
+
+
+<% if policy(@tournament).destroy? %>
+  <%= link_to "Delete the tournament", tournament_path(@tournament),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+<% end %>
 
 <div id="map" style="width: 100%; height: 600px;"></div>
 

@@ -11,6 +11,7 @@ gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'redis'
+gem "pundit"
 
 gem 'sass-rails'
 gem 'jquery-rails'
@@ -21,6 +22,7 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'cloudinary'
 gem 'omniauth-facebook'
+gem "koala"
 
 gem "geocoder"
 
