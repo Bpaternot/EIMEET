@@ -4,6 +4,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.tournament = @tournament
     @review.player = Player.where(user: current_user, tournament: @tournament).first
+    authorize(@review)
     if @review.save
       respond_to do |format|
         format.html { redirect_to tournament_path(@tournament) }
