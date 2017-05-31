@@ -4,6 +4,7 @@ class Tournament < ApplicationRecord
   has_many :players, dependent: :destroy
   has_many :reviews, dependent: :destroy
 
+
   TOURNAMENT_TYPE = ["small", "medium", "large"]
   STATUS = ["pending", "cancelled", "ready", "past"]
   NUMBER_PLAYERS = [8, 16, 32]
