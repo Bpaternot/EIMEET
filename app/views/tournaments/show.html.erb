@@ -61,12 +61,13 @@
     <%= f.input :fifa_game_ps4, as: :radio_buttons, collection: 0..4, label: false, item_wrapper_tag: false %>
       <%= f.submit "Join" %>
     <% end %>
+  <% elsif Player.where(tournament: @tournament, user: current_user).exists? == true %>
+      <%= link_to "Unregister from the tournament", tournament_player_path(@tournament),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %>
   <% else %>
     <p>Sorry, this tournamment is closed for registration or you are already registered in this tournament</p>
   <% end %>
-
-
-
 
 
 
