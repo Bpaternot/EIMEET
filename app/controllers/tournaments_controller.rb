@@ -30,6 +30,7 @@ class TournamentsController < ApplicationController
   def new
     @tournament = Tournament.new()
     @bar = Bar.find(params[:bar_id])
+    authorize(@tournament)
   end
 
   def create
