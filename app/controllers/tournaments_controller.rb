@@ -2,6 +2,7 @@ class TournamentsController < ApplicationController
   before_action :set_tournament, only: [ :show, :edit, :update, :destroy ]
 
   def index
+
     @tournaments = policy_scope(Tournament)
     # @tournaments = Tournament.all.joins(:bar).where("bars.latitude IS NOT NULL and bars.longitude IS NOT NULL")
     @hash = Gmaps4rails.build_markers(@tournaments) do |tournament, marker|
@@ -150,5 +151,17 @@ class TournamentsController < ApplicationController
     player.controller_ps4 = 0
     player.fifa_game_ps4 = 0
     player.save!
+  end
+
+  def list_bars(address, radius)
+    bars = Bar.near(address, radius).joins(:tournaments)
+  end
+
+  def list_tournaments(bars)
+    tournaments = []
+    bars.each do |bar|
+      tournaments << bar.tournaments
+    end
+    tournaments.flatten!
   end
 end

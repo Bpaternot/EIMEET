@@ -33,8 +33,9 @@
         handler.fitMapToBounds();
         if (markers.length == 0) {
           handler.getMap().setZoom(2);
-        } else if (markers.length == 1) {
-          handler.getMap().setZoom(14);
+        } else if (markers.length >= 1) {
+          handler.map.centerOn(<%= Geocoder.coordinates(@address) %>);
+          handler.getMap().setZoom(<%= @zoom %>);
         }
       });
     });
