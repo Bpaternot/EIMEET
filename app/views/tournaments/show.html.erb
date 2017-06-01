@@ -31,11 +31,13 @@
     <% @tournament.players.each do |player| %>
       <p>
         Username: <%= player.user.username %>
-        <% @friends.each do |friend| %>
-          <% if friend["id"] == player.user.uid %>
-              <% avatar_url = player.user.facebook_picture_url || "http://placehold.it/30x30" %>
-              <%= image_tag avatar_url, class: "avatar dropdown-toggle" %>
-              <img src="" alt="">
+        <% if @friends != nil %>
+          <% @friends.each do |friend| %>
+            <% if friend["id"] == player.user.uid %>
+                <% avatar_url = player.user.facebook_picture_url || "http://placehold.it/30x30" %>
+                <%= image_tag avatar_url, class: "avatar dropdown-toggle" %>
+                <img src="" alt="">
+            <% end %>
           <% end %>
         <% end %>
         <% if player.ps4 == true %>
@@ -49,7 +51,13 @@
           <p>Does not bring any controller</p>
         <% end %>
         Brings <%= player.fifa_game_ps4 %> FIFA game(s)<br>
-
+        <% if current_user == @tournament.user  %>
+          <% if player.user != current_user  %>
+          <%= link_to "Delete this player", tournament_player_path(@tournament, player),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+        <% end %>
+        <% end %>
       </p>
       <p>_____________________________</p>
     <% end %>
