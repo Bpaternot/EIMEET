@@ -1,4 +1,4 @@
-<div class="navbar-wagon">
+<div class="navbar-wagon navbar-wagon-fixed">
   <!-- Logo -->
 <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "eimeet_logo.png" %>
@@ -52,20 +52,40 @@
 
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars"></i>
-      <div class="container full-screen">
-        <div class="row">
-          <div class="col-xs-12 text-center">
-            <%= link_to t(".sign_in", default: "Join"), tournaments_path, class: "navbar-wagon-item navbar-wagon-link" %>
-            <%= link_to t(".sign_in", default: "Create"), bars_path, class: "navbar-wagon-item navbar-wagon-link" %>
-          </div>
-        </div>
-      </div>
-      </ul>
-
-
-    </div>
+    <i class="fa fa-bars"></i>
+    <i class="fa fa-times hidden"></i>
   </div>
 </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-center full-screen-menu hidden">
+      <div class="links-item">
+        <%= link_to t(".sign_in", default: "Join"), tournaments_path, class: "navbar-wagon-item navbar-wagon-link-mobile" %>
+      </div>
+      <div class="links-item">
+        <%= link_to t(".sign_in", default: "Create"), bars_path, class: "navbar-wagon-item navbar-wagon-link-mobile" %>
+      </div>
+      <% if user_signed_in? %>
+      <div class="links-item">
+        <%= link_to t(".sign_in", default: "Tournaments"), bars_path, class: "navbar-wagon-item navbar-wagon-link-mobile" %>
+      </div>
+      <div class="links-item">
+        <hr style="border: none; height: 3px; width: 200px;, text-align: center; color: #404E5C; background: #404E5C;"/>
+      </div>
+      <div class="links-item">
+        <%= link_to destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link-mobile", method: :delete do %>
+        <%= t(".sign_out", default: "Log out") %>
+        <% end %>
+      </div>
+      <% else %>
+      <div class="links-item">
+        <hr style="border: none; height: 3px; width: 200px;, text-align: center; color: #404E5C; background: #404E5C;"/>
+      </div>
+      <div class="links-item">
+        <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link-mobile" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
