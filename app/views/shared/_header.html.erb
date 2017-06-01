@@ -2,11 +2,12 @@
   <div class="banner-content banner-content-toggle">
     <h1>Playing offline<br> FIFA tournament</h1>
     <p>In bars, with friends and players...</p>
-
+<div class="form-homepage">
   <%= form_tag tournaments_path, method: :get, class: "form-group form-inline" do %>
   <%= text_field_tag 'tournament_address', '', class: "form-control input-address", placeholder: "Type your address" %>
   <%= submit_tag 'Submit', class: 'btn btn-primary' %>
   <% end %>
+</div>
 
   </div>
 </div>

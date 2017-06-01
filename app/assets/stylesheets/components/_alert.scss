@@ -4,11 +4,13 @@
 
 .alert {
   margin-top: 50px;
+  margin-bottom: 0px;
   text-align: center;
   color: white;
 }
 .alert-info {
   background: $green;
+  border-color: $green;
 }
 .alert-warning {
   background: $red;

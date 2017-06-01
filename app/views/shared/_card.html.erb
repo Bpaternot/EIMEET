@@ -1,0 +1,17 @@
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">>
+  <div class="card-bar">
+  <h2><%= tournament.bar.name %></h2>
+  <p><%= tournament.bar.address %></p>
+  </div>
+  <div class="card-info">
+    <div class="card-info-date">
+      <p><i class="fa fa-clock-o" aria-hidden="true"></i><%= tournament.date %></p>
+    </div>
+    <div class="card-info-players">
+      <p><i class="fa fa-users" aria-hidden="true"></i><%= tournament.players.count %>/<%= tournament.number_players %></p>
+    </div>
+    <div class="card-info-facebook">
+
+    </div>
+  </div>
+</div>

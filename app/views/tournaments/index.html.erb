@@ -1,30 +1,48 @@
-<h1>Tournaments</h1>
-<% @tournaments.each do |tournament| %>
-  <p>
-    <%= tournament.user.username %>
-    <%= tournament.date %>
-    <%= tournament.tournament_type %>
-    <%= tournament.bar.name %>
-    <% tournament.players.each do |player| %>
-      <p>
-      <% if @friends != nil %>
-        <% @friends.each do |friend| %>
-          <% if friend["id"] == player.user.uid %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="title-index">
+        <h1>Tournaments</h1>
+      </div>
+
+      <% @tournaments.each do |tournament| %>
+      <div class="card">
+        <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<%= cl_image_path tournament.bar.photo %>');">
+          <div class="card-bar">
+            <h2><%= tournament.bar.name %></h2>
+            <p><%= tournament.bar.address %></p>
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="card-info-date">
+            <p><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp;<%= tournament.date %></p>
+          </div>
+          <div class="card-info-players">
+            <p><i class="fa fa-users" aria-hidden="true"></i> &nbsp;<%= tournament.players.count %>/<%= tournament.number_players %></p>
+          </div>
+          <div class="card-info-facebook">
+            <% tournament.players.each do |player| %>
+            <% if @friends != nil %>
+            <% @friends.first(4).each_with_index do |friend, index| %>
+            <div class="friends-<%= index + 1 %>">
+              <% if friend["id"] == player.user.uid %>
               <% avatar_url = player.user.facebook_picture_url || "http://placehold.it/30x30" %>
               <%= image_tag avatar_url, class: "avatar dropdown-toggle" %>
-              <img src="" alt="">
-          <% end %>
-        <% end %>
-        <% end %>
-    <% end %>
-    <%= link_to "See details", tournament_path(tournament) %>
-  </p>
-<% end %>
+              <% end %>
+            </div>
+            <% end %>
+            <% end %>
+            <% end %>
+          </div>
+        </div>
+        <%= link_to "", tournament_path(tournament.id), class: "card-link" %>
+      </div>
+      <% end %>
+      <div id="map" style="width: 100%; height: 200px;"></div>
+    </div>
+  </div>
+</div>
 
-
-
-<div id="map" style="width: 100%; height: 600px;"></div>
-</br>
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
     $(document).ready(function() {

@@ -11,16 +11,8 @@
   justify-content: center;
 }
 
-.banner-active {
-  color: white;
-  text-align: center;
-  height: 100vh;
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
-  background-size: cover !important;
-}
-
-.banner-content-active {
-  margin-top: 25% 0;
+.banner-content {
+  width: 90%;
 }
 
 .banner h1 {
@@ -37,8 +29,18 @@
   margin-bottom: 20px;
 }
 
-.form-control {
+.form-homepage {
   min-width: 300px;
+  @media ($screen-xs) {
+    min-width: auto;
+    width: 90%;
+  }
+}
+
+
+
+.form-control {
+  width: 90%
   input {
     color: $space;
   }
