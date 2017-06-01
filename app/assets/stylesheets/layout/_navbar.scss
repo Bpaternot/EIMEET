@@ -63,7 +63,7 @@
 }
 
 .navbar-wagon-link-mobile {
-  color: $fire;
+  color: $snow;
   font-size: px;
   font-weight: 700;
   text-transform: uppercase;
@@ -71,7 +71,7 @@
   padding-top: 14px;
   padding-bottom: 14px;
   &:hover {
-  color: $fire;
+  color: $snow;
   text-decoration: none;
   }
 }
@@ -157,7 +157,7 @@
 }
 
 .full-screen-menu {
-  background-color: $snow;
+  background-color: $fire;
   position: fixed;
   z-index: 2;
   height: 100vh;
