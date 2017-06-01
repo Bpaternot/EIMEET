@@ -2,37 +2,18 @@ class TournamentsController < ApplicationController
   before_action :set_tournament, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @address = params[:tournament_address]
-    # @bars = Bar.near(@address, 5).select { |bar| bar.tournaments }
-    @radius = 5
-    @bars = list_bars(@address, @radius)
 
-    if @bars
-      @tournaments = list_tournaments(@bars)
-    else
-      @tournaments = []
-    end
-
-    unless @tournaments.length >= 1
-      @radius += 1
-      @bars = list_bars(@address, @radius)
-      @tournaments = list_tournaments(@bars)
-    end
-
-    if @radius < 6
-      @zoom = 13
-    elsif @radius < 9
-      @zoom = 11
-    else
-      @zoom = 9
-    end
-
+    @tournaments = policy_scope(Tournament)
+    # @tournaments = Tournament.all.joins(:bar).where("bars.latitude IS NOT NULL and bars.longitude IS NOT NULL")
     @hash = Gmaps4rails.build_markers(@tournaments) do |tournament, marker|
       marker.lat tournament.bar.latitude
       marker.lng tournament.bar.longitude
       # marker.infowindow render_to_string(partial: "/tournaments/map_box", locals: { tournament: tournament })
     end
 
+    @graph = Koala::Facebook::API.new(current_user.token)
+    profile = @graph.get_object("me")
+    @friends = @graph.get_connections("me", "friends")
   end
 
   def show
@@ -49,11 +30,20 @@ class TournamentsController < ApplicationController
     @remaining_controllers = remaining_controllers(@tournament)
     @remaining_fifa_game = remaining_fifa_game(@tournament)
     @current_player = Player.where(tournament: @tournament, user: current_user).first
+
+
+    @graph = Koala::Facebook::API.new(current_user.token)
+    profile = @graph.get_object("me")
+    @friends = @graph.get_connections("me", "friends")
+
+    @review = Review.new()
+
   end
 
   def new
     @tournament = Tournament.new()
     @bar = Bar.find(params[:bar_id])
+    authorize(@tournament)
   end
 
   def create
@@ -61,6 +51,7 @@ class TournamentsController < ApplicationController
     @tournament.user = current_user
     @tournament.bar = Bar.find(params[:bar_id])
     add_params(@tournament)
+    authorize(@tournament)
     if @tournament.save
       init_player(@player, @tournament)
       redirect_to tournament_path(@tournament)
@@ -80,13 +71,14 @@ class TournamentsController < ApplicationController
 
   def destroy
     @tournament.destroy
-    redirect_to tournament_path(@tournament)
+    redirect_to tournaments_path
   end
 
   private
 
   def set_tournament
     @tournament = Tournament.find(params[:id])
+    authorize(@tournament)
   end
 
   def tournament_params

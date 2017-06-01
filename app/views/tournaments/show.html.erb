@@ -31,6 +31,13 @@
     <% @tournament.players.each do |player| %>
       <p>
         Username: <%= player.user.username %>
+        <% @friends.each do |friend| %>
+          <% if friend["id"] == player.user.uid %>
+              <% avatar_url = player.user.facebook_picture_url || "http://placehold.it/30x30" %>
+              <%= image_tag avatar_url, class: "avatar dropdown-toggle" %>
+              <img src="" alt="">
+          <% end %>
+        <% end %>
         <% if player.ps4 == true %>
           <p>Brings a PS4 console</p>
         <% else %>
@@ -44,36 +51,33 @@
         Brings <%= player.fifa_game_ps4 %> FIFA game(s)<br>
 
       </p>
+      <p>_____________________________</p>
     <% end %>
     <br>
+
+
+
 
   <% if @remaining != 0 && Player.where(tournament: @tournament, user: current_user).exists? == false %>
      <h1>Want to join?</h1>
     <%= simple_form_for [@tournament, @player] do |f| %>
     <!-- PS4 -->
-    <p>Can you bring a console?</p>
-    <p>PS4: <%= f.input :ps4, as: :radio_buttons, label: false, item_wrapper_tag: false  %> </p>
-    <!-- buttons controllers PS4 -->
-    <p>Can you bring a/a few PS4 controller(s)?</p>
-    <%= f.input :controller_ps4, as: :radio_buttons, collection: 0..8, label: false, item_wrapper_tag: false %>
-    <!-- fifa game -->
-    <p>Can you bring a PS4 FIFA game?</p>
-    <%= f.input :fifa_game_ps4, as: :radio_buttons, collection: 0..4, label: false, item_wrapper_tag: false %>
-      <%= f.submit "Join" %>
+      <p>Can you bring a console?</p>
+      <p>PS4: <%= f.input :ps4, as: :radio_buttons, label: false, item_wrapper_tag: false  %> </p>
+      <!-- buttons controllers PS4 -->
+      <p>Can you bring a/a few PS4 controller(s)?</p>
+      <%= f.input :controller_ps4, as: :radio_buttons, collection: 0..8, label: false, item_wrapper_tag: false %>
+      <!-- fifa game -->
+      <p>Can you bring a PS4 FIFA game?</p>
+      <%= f.input :fifa_game_ps4, as: :radio_buttons, collection: 0..4, label: false, item_wrapper_tag: false %>
+        <%= f.submit "Join" %>
     <% end %>
-  <% elsif @current_player %>
-      <%= link_to "Unregister from the tournament", tournament_player_path(@tournament, @current_player),
-        method: :delete,
-        data: { confirm: "Are you sure?" } %>
-  <% else %>
-    <p>Sorry, this tournamment is closed for registration or you are already registered in this tournament</p>
   <% end %>
-
 
 
 <!-- Update Players info in the tournament -->
 <% if Player.where(tournament: @tournament, user: current_user).exists? %>
-  <h1>Want to add stuff?</h1>
+  <h3>Want to add stuff?</h3>
   <% @player = Player.where(user: current_user, tournament: @tournament).first %>
    <%= simple_form_for [@tournament, @player] do |f| %>
     <!-- PS4 -->
@@ -89,6 +93,34 @@
     <% end %>
 <% end %>
 <!-- -->
+
+<!-- Chat Tournament -->
+</br>
+<% if Player.where(tournament: @tournament, user: current_user).exists? %>
+  <div id="reviews">
+      <h3>Let's chat with other players</h3>
+      <div class="message-box">
+        <% @tournament.reviews.each do |review| %>
+          <%= render 'reviews/show', review: review %>
+        <% end %>
+      </div>
+  </div>
+  <%= render 'reviews/form', tournament: @tournament, review: @review %>
+<% end %>
+<!-- End chat -->
+
+<% if policy(@player).destroy? %>
+  <%= link_to "Unregister from the tournament", tournament_player_path(@tournament, @current_player),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+<% end %>
+
+
+<% if policy(@tournament).destroy? %>
+  <%= link_to "Delete the tournament", tournament_path(@tournament),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+<% end %>
 
 <div id="map" style="width: 100%; height: 600px;"></div>
 
