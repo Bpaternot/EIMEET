@@ -164,12 +164,12 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 30% 0;
 }
 
 .links-item {
-  height: 150px;
+  flex: 1;
   a {
     font-size: 30px;
   }

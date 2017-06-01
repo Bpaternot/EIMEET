@@ -1,0 +1,90 @@
+.card {
+  margin: 15px auto;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  .card-image {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    .card-bar {
+      position: absolute;
+      top: 5px;
+      left: 15px;
+      h2 {
+        color: $snow;
+      }
+      p {
+        color: $snow;
+      }
+    }
+  }
+  .card-info {
+    background-color: $snow;
+    padding: 15px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-date {
+      margin-bottom: 0px;
+      height: 23px;
+      i {
+        color: $fire;
+      }
+    }
+    &-players {
+      margin-bottom: 0px;
+      height: 23px;
+      i {
+        color: $fire;
+      }
+    }
+    &-facebook {
+      margin-bottom: 0px;
+      flex: 0 0 75px;
+      position: relative;
+      .friends-1 {
+        position: absolute;
+        left: 0px;
+        z-index: 2;
+      }
+      .friends-2 {
+        position: absolute;
+        left: 15px;
+        z-index: 3;
+      }
+      .friends-3 {
+        position: absolute;
+        left: 30px;
+        z-index: 4;
+      }
+      .friends-4 {
+        position: absolute;
+        left: 45px;
+        z-index: 5;
+      }
+    }
+  }
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  background: black;
+  opacity: 0;
+  border-radius: 5px;
+}
+
+
+.title-index {
+  margin-top: 80px;
+  margin-bottom: 30px;
+  text-align: center;
+}
