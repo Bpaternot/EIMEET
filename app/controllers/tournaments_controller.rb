@@ -180,7 +180,11 @@ class TournamentsController < ApplicationController
   end
 
   def list_bars(address, radius)
-    bars = Bar.near(address, radius).joins(:tournaments)
+    if address
+      Bar.near(address, radius).joins(:tournaments)
+    else
+      Bar.all.joins(:tournaments)
+    end
   end
 
   def list_tournaments(bars)
