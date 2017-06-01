@@ -41,6 +41,7 @@ class TournamentsController < ApplicationController
       profile = @graph.get_object("me")
       @friends = @graph.get_connections("me", "friends")
     end
+
   end
 
   def show
@@ -98,6 +99,10 @@ class TournamentsController < ApplicationController
   def destroy
     @tournament.destroy
     redirect_to tournaments_path
+  end
+
+  def search
+    raise
   end
 
   private

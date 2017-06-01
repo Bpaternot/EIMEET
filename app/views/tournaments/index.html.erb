@@ -6,7 +6,7 @@
       </div>
 
       <% @tournaments.each do |tournament| %>
-      <div class="card">
+      <div class="card-tournament">
         <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<%= cl_image_path tournament.bar.photo %>');">
           <div class="card-bar">
             <h2><%= tournament.bar.name %></h2>
@@ -35,7 +35,7 @@
             <% end %>
           </div>
         </div>
-        <%= link_to "", tournament_path(tournament.id), class: "card-link" %>
+        <%= link_to "", tournament_path(tournament.id), class: "card-link-tournament" %>
       </div>
       <% end %>
       <div id="map" style="width: 100%; height: 200px;"></div>
