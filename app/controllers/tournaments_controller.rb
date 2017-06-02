@@ -2,10 +2,10 @@ class TournamentsController < ApplicationController
   before_action :set_tournament, only: [ :show, :edit, :update, :destroy ]
 
   def index
-
     policy_scope(Tournament)
 
     @address = params[:tournament_address]
+
     # @bars = Bar.near(@address, 5).select { |bar| bar.tournaments }
     @radius = 5
     @bars = list_bars(@address, @radius)
@@ -101,10 +101,6 @@ class TournamentsController < ApplicationController
     redirect_to tournaments_path
   end
 
-  def search
-    raise
-  end
-
   private
 
   def set_tournament
@@ -186,14 +182,27 @@ class TournamentsController < ApplicationController
 
   def list_bars(address, radius)
     if address
-      Bar.near(address, radius).joins(:tournaments)
+      bars = Bar.near(address, radius)
     else
-      Bar.all.joins(:tournaments)
+      bars = Bar.all
     end
+
+    if params[:players]
+      bars = bars.where(tournament_size: params[:players])
+    end
+
+    bars
   end
 
   def list_tournaments(bars)
-    bars.map(&:tournaments).flatten
+    bars.map do |bar|
+      if params[:date].blank?
+        bar.tournaments
+      else
+        bar.tournaments.where(date: params[:date])
+      end
+    end.flatten
+
     # tournaments = []
     # bars.each do |bar|
     #   tournaments << bar.tournaments

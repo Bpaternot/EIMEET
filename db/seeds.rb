@@ -453,45 +453,45 @@ Bar.create(name: "Le Wagon", tv_number: 4, tournament_size: 16, phone_number: "0
 
 # Bar creation:
 
-Bar.create(address: "16 Villa Gaudelet 75011 Paris", name: "Le Wagon", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.82", description: "Bar chaleureux et amical tenu par deux anciens fêtards")
-Bar.create(address: "12 rue Claude Pouillet 75017 Paris", name: "Chez Pater", tv_number: 8, tournament_size: 16, phone_number: "01.23.34.93.12", description: "Endroit calme et sympa dans un lieu atypique")
-Bar.create(address: "10 rue Quincampoix 75004 Paris", name: "Le Demory", tv_number: 2, tournament_size: 8, phone_number: "01.23.54.93.82", description: "Bar jovial tenu par des joyeux lurons")
-Bar.create(address: "1 rue de la Pompe 75016 Paris", name: "La Cantoche", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.11", description: "Idéal aussi si vous avez un petit creux")
+bar1 = Bar.create(address: "16 Villa Gaudelet 75011 Paris", name: "Le Wagon", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.82", description: "Bar chaleureux et amical tenu par deux anciens fêtards")
+bar2 = Bar.create(address: "12 rue Claude Pouillet 75017 Paris", name: "Chez Pater", tv_number: 8, tournament_size: 16, phone_number: "01.23.34.93.12", description: "Endroit calme et sympa dans un lieu atypique")
+bar3 = Bar.create(address: "10 rue Quincampoix 75004 Paris", name: "Le Demory", tv_number: 2, tournament_size: 8, phone_number: "01.23.54.93.82", description: "Bar jovial tenu par des joyeux lurons")
+bar4 = Bar.create(address: "1 rue de la Pompe 75016 Paris", name: "La Cantoche", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.11", description: "Idéal aussi si vous avez un petit creux")
 
-Bar.create(address: "14 rue de la tour 75016", name: "Le player", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.82", description: "Bar chaleureux et amical tenu par deux anciens fêtards")
-Bar.create(address: "17 rue de Rivoli 75001 Paris", name: "Au bernacle", tv_number: 8, tournament_size: 16, phone_number: "01.23.34.93.12", description: "Endroit calme et sympa dans un lieu atypique")
-Bar.create(address: "53 avenue Henri Martin 75016 Paris", name: "L'idiot", tv_number: 2, tournament_size: 8, phone_number: "01.23.54.93.82", description: "Bar jovial tenu par des joyeux lurons")
-Bar.create(address: "45 rue Levy 75017 Paris", name: "La grande carotte", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.11", description: "Idéal aussi si vous avez un petit creux")
+bar5 = Bar.create(address: "14 rue de la tour 75016", name: "Le player", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.82", description: "Bar chaleureux et amical tenu par deux anciens fêtards")
+bar6 = Bar.create(address: "17 rue de Rivoli 75001 Paris", name: "Au bernacle", tv_number: 8, tournament_size: 16, phone_number: "01.23.34.93.12", description: "Endroit calme et sympa dans un lieu atypique")
+bar7 = Bar.create(address: "53 avenue Henri Martin 75016 Paris", name: "L'idiot", tv_number: 2, tournament_size: 8, phone_number: "01.23.54.93.82", description: "Bar jovial tenu par des joyeux lurons")
+bar8 = Bar.create(address: "45 rue Levy 75017 Paris", name: "La grande carotte", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.11", description: "Idéal aussi si vous avez un petit creux")
 
-Bar.create(address: "67 rue Myrha 75018 Paris", name: "Chez Olive", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.82", description: "Bar chaleureux et amical tenu par deux anciens fêtards")
-Bar.create(address: "34 boulveard Rochechouart 75018 Paris", name: "A l'archer", tv_number: 8, tournament_size: 16, phone_number: "01.23.34.93.12", description: "Endroit calme et sympa dans un lieu atypique")
-Bar.create(address: "45 rue des Martyr 75018 Paris", name: "Le grand vaillant", tv_number: 2, tournament_size: 8, phone_number: "01.23.54.93.82", description: "Bar jovial tenu par des joyeux lurons")
-Bar.create(address: "56 rue Oberkampf 75011 Paris", name: "La truffe bleue", tv_number: 2, tournament_size: 8, phone_number: "01.23.54.93.11", description: "Idéal aussi si vous avez un petit creux")
+bar9 = Bar.create(address: "67 rue Myrha 75018 Paris", name: "Chez Olive", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.82", description: "Bar chaleureux et amical tenu par deux anciens fêtards")
+bar10 = Bar.create(address: "34 boulveard Rochechouart 75018 Paris", name: "A l'archer", tv_number: 8, tournament_size: 16, phone_number: "01.23.34.93.12", description: "Endroit calme et sympa dans un lieu atypique")
+bar11 = Bar.create(address: "45 rue des Martyr 75018 Paris", name: "Le grand vaillant", tv_number: 2, tournament_size: 8, phone_number: "01.23.54.93.82", description: "Bar jovial tenu par des joyeux lurons")
+bar12 = Bar.create(address: "56 rue Oberkampf 75011 Paris", name: "La truffe bleue", tv_number: 2, tournament_size: 8, phone_number: "01.23.54.93.11", description: "Idéal aussi si vous avez un petit creux")
 
-Bar.create(address: "34 rue Erlanger 75016 Paris", name: "Le Wagon", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.82", description: "Bar chaleureux et amical tenu par deux anciens fêtards")
-Bar.create(address: "67 avenue de la République 75010 Paris", name: "Chez Genou", tv_number: 8, tournament_size: 16, phone_number: "01.23.34.93.12", description: "Endroit calme et sympa dans un lieu atypique")
-Bar.create(address: "67 rue d'Assas 75006 Paris", name: "Le francais", tv_number: 2, tournament_size: 8, phone_number: "01.23.54.93.82", description: "Bar jovial tenu par des joyeux lurons")
-Bar.create(address: "1 rue de la Pompe", name: "La vielle charette", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.11", description: "Idéal aussi si vous avez un petit creux")
+bar13 = Bar.create(address: "34 rue Erlanger 75016 Paris", name: "Le Wagon", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.82", description: "Bar chaleureux et amical tenu par deux anciens fêtards")
+bar14 = Bar.create(address: "67 avenue de la République 75010 Paris", name: "Chez Genou", tv_number: 8, tournament_size: 16, phone_number: "01.23.34.93.12", description: "Endroit calme et sympa dans un lieu atypique")
+bar15 = Bar.create(address: "67 rue d'Assas 75006 Paris", name: "Le francais", tv_number: 2, tournament_size: 8, phone_number: "01.23.54.93.82", description: "Bar jovial tenu par des joyeux lurons")
+bar16 = Bar.create(address: "1 rue de la Pompe", name: "La vielle charette", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.11", description: "Idéal aussi si vous avez un petit creux")
 
-Bar.create(address: "45 rue de Grenelle 75015 Paris", name: "Le sans-alcool", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.82", description: "Bar chaleureux et amical tenu par deux anciens fêtards")
-Bar.create(address: "75 avenue Théophile Gauthier 75016 Paris", name: "Chez les alcooliques", tv_number: 8, tournament_size: 16, phone_number: "01.23.34.93.12", description: "Endroit calme et sympa dans un lieu atypique")
-Bar.create(address: "34 rue de Passy 75016 Paris", name: "A l'endive rose", tv_number: 2, tournament_size: 8, phone_number: "01.23.54.93.82", description: "Bar jovial tenu par des joyeux lurons")
-Bar.create(address: "89 avenue des Champs-Elysees 75008 Paris", name: "Au distrib", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.11", description: "Idéal aussi si vous avez un petit creux")
+bar17 = Bar.create(address: "45 rue de Grenelle 75015 Paris", name: "Le sans-alcool", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.82", description: "Bar chaleureux et amical tenu par deux anciens fêtards")
+bar18 = Bar.create(address: "75 avenue Théophile Gauthier 75016 Paris", name: "Chez les alcooliques", tv_number: 8, tournament_size: 16, phone_number: "01.23.34.93.12", description: "Endroit calme et sympa dans un lieu atypique")
+bar19 = Bar.create(address: "34 rue de Passy 75016 Paris", name: "A l'endive rose", tv_number: 2, tournament_size: 8, phone_number: "01.23.54.93.82", description: "Bar jovial tenu par des joyeux lurons")
+bar20 = Bar.create(address: "89 avenue des Champs-Elysees 75008 Paris", name: "Au distrib", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.11", description: "Idéal aussi si vous avez un petit creux")
 
-Bar.create(address: "20 avenue des Marroniers 75016 Paris", name: "La grande fraicheur", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.82", description: "Bar chaleureux et amical tenu par deux anciens fêtards")
-Bar.create(address: "12 rue Claude Pouillet", name: "Au navet", tv_number: 8, tournament_size: 16, phone_number: "01.23.34.93.12", description: "Endroit calme et sympa dans un lieu atypique")
-Bar.create(address: "34 rue Réaumur 75002 Paris", name: "Au gigolo", tv_number: 2, tournament_size: 8, phone_number: "01.23.54.93.82", description: "Bar jovial tenu par des joyeux lurons")
-Bar.create(address: "89 Avenue de l'Opéra 75002 Paris", name: "A la bonne franquette", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.11", description: "Idéal aussi si vous avez un petit creux")
+bar21 = Bar.create(address: "20 avenue des Marroniers 75016 Paris", name: "La grande fraicheur", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.82", description: "Bar chaleureux et amical tenu par deux anciens fêtards")
+bar22 = Bar.create(address: "12 rue Claude Pouillet", name: "Au navet", tv_number: 8, tournament_size: 16, phone_number: "01.23.34.93.12", description: "Endroit calme et sympa dans un lieu atypique")
+bar23 = Bar.create(address: "34 rue Réaumur 75002 Paris", name: "Au gigolo", tv_number: 2, tournament_size: 8, phone_number: "01.23.54.93.82", description: "Bar jovial tenu par des joyeux lurons")
+bar24 = Bar.create(address: "89 Avenue de l'Opéra 75002 Paris", name: "A la bonne franquette", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.11", description: "Idéal aussi si vous avez un petit creux")
 
-Bar.create(address: "102 rue de Vaugirard 75006 Paris", name: "A l'urne", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.82", description: "Bar chaleureux et amical tenu par deux anciens fêtards")
-Bar.create(address: "45 rue Falguière 75015 Paris", name: "Au clair de la lune", tv_number: 8, tournament_size: 16, phone_number: "01.23.34.93.12", description: "Endroit calme et sympa dans un lieu atypique")
-Bar.create(address: "12 avenue de Choisy 75013 Paris", name: "Le Boris", tv_number: 2, tournament_size: 8, phone_number: "01.23.54.93.82", description: "Bar jovial tenu par des joyeux lurons")
-Bar.create(address: "7 rue Lacépède 75005 Paris", name: "La villageoise", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.11", description: "Idéal aussi si vous avez un petit creux")
+bar25 = Bar.create(address: "102 rue de Vaugirard 75006 Paris", name: "A l'urne", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.82", description: "Bar chaleureux et amical tenu par deux anciens fêtards")
+bar26 = Bar.create(address: "45 rue Falguière 75015 Paris", name: "Au clair de la lune", tv_number: 8, tournament_size: 16, phone_number: "01.23.34.93.12", description: "Endroit calme et sympa dans un lieu atypique")
+bar27 = Bar.create(address: "12 avenue de Choisy 75013 Paris", name: "Le Boris", tv_number: 2, tournament_size: 8, phone_number: "01.23.54.93.82", description: "Bar jovial tenu par des joyeux lurons")
+bar28 = Bar.create(address: "7 rue Lacépède 75005 Paris", name: "La villageoise", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.11", description: "Idéal aussi si vous avez un petit creux")
 
-Bar.create(address: "9 rue Guynemer 75006 Paris", name: "Chez Jeannot", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.82", description: "Bar chaleureux et amical tenu par deux anciens fêtards")
-Bar.create(address: "3 rue Petrelle 75018 Paris", name: "Au deux ancêtres", tv_number: 8, tournament_size: 16, phone_number: "01.23.34.93.12", description: "Endroit calme et sympa dans un lieu atypique")
-Bar.create(address: "8 rue Portails 75008 Paris", name: "Le Sans-Calin", tv_number: 2, tournament_size: 8, phone_number: "01.23.54.93.82", description: "Bar jovial tenu par des joyeux lurons")
-Bar.create(address: "17 rue Roquépine 75008 Paris", name: "La Piscine", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.11", description: "Idéal aussi si vous avez un petit creux")
+bar29 = Bar.create(address: "9 rue Guynemer 75006 Paris", name: "Chez Jeannot", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.82", description: "Bar chaleureux et amical tenu par deux anciens fêtards")
+bar30 = Bar.create(address: "3 rue Petrelle 75018 Paris", name: "Au deux ancêtres", tv_number: 8, tournament_size: 16, phone_number: "01.23.34.93.12", description: "Endroit calme et sympa dans un lieu atypique")
+bar31 = Bar.create(address: "8 rue Portails 75008 Paris", name: "Le Sans-Calin", tv_number: 2, tournament_size: 8, phone_number: "01.23.54.93.82", description: "Bar jovial tenu par des joyeux lurons")
+bar32 = Bar.create(address: "17 rue Roquépine 75008 Paris", name: "La Piscine", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.11", description: "Idéal aussi si vous avez un petit creux")
 
 url = "http://res.cloudinary.com/dutc7zz18/image/list/bar.json"
     my_json = JSON.parse(open(url).read)
@@ -535,10 +535,10 @@ Availability.create(start_day: DateTime.new(2017,6,3), end_day: DateTime.new(201
 
 # Tournaments
 
-Tournament.create(date: DateTime.new(2017,6,3), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar_id: 13, user_id: 5)
-Tournament.create(date: DateTime.new(2017,6,10), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar_id: 7, user_id: 22)
-Tournament.create(date: DateTime.new(2017,6,8), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar_id: 18, user_id: 14)
-Tournament.create(date: DateTime.new(2017,6,5), number_players: 8, status: "ready", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar_id: 12, user_id: 4)
+Tournament.create(date: DateTime.new(2017,6,3), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar: bar1, user_id: 5)
+Tournament.create(date: DateTime.new(2017,6,10), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar: bar6, user_id: 22)
+Tournament.create(date: DateTime.new(2017,6,8), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar: bar22, user_id: 14)
+Tournament.create(date: DateTime.new(2017,6,5), number_players: 8, status: "ready", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar3, user_id: 4)
 
 
 

@@ -5,6 +5,35 @@
         <h1>Tournaments</h1>
       </div>
 
+      <div class="container-de-secours">
+        <div class="fixed-form">
+          <%= form_tag "", method: :get, class: "form-group" do %>
+          <div class="number-players">
+          <div class="number-players-container-button">
+            <%= label_tag :players_8, "8", class: "number-players-button form-inline" %>
+            <%= radio_button_tag(:players, "players_8", false, { value: "8", class: "hidden"}) %>
+            <%= label_tag :players_16, "16", class: "number-players-button form-inline" %>
+            <%= radio_button_tag(:players, "players_16", false, { value: "16", class: "hidden"}) %>
+            <%= label_tag :players_32, "32", class: "number-players-button form-inline" %>
+            <%= radio_button_tag(:players, "players_32", false, { value: "32", class: "hidden"}) %>
+          </div>
+          <div class="address-of-bars">
+           <%= text_field_tag :tournament_address, params[:tournament_address], class: "form-control" %>
+         </div>
+         <div class="date-of-tournament">
+          <%= text_field_tag :date, params[:date], class: "form-control" %>
+        </div>
+        <div class="submit-form">
+          <%= submit_tag "Submit", class: 'btn btn-primary' %>
+        </div>
+      </div>
+        <% end %>
+    </div>
+
+
+
+
+
       <% @tournaments.each do |tournament| %>
       <div class="card-tournament">
         <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<%= cl_image_path tournament.bar.photo %>');">
@@ -42,6 +71,12 @@
     </div>
   </div>
 </div>
+
+
+
+
+
+
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
     $(document).ready(function() {
