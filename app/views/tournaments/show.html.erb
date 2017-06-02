@@ -54,6 +54,8 @@
         <%= @remaining_console_ps4 %> <%= image_tag "console2.png", class: "icon"%>&nbsp;&nbsp;
         <%= @remaining_controllers %> <%= image_tag "manette.png", class: "icon"%>&nbsp;&nbsp;
         <%= @remaining_fifa_game %> <%= image_tag "fifa.png", class: "icon"%> </p>
+
+
       </p>
         <!-- BUTTON UPDATE IF THE PLAYER IS IN THE TOURNAMENT -->
         <% if Player.where(tournament: @tournament, user: current_user).exists? %>

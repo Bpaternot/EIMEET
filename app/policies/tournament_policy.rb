@@ -1,7 +1,7 @@
 class TournamentPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all.joins(:bar).where("bars.latitude IS NOT NULL and bars.longitude IS NOT NULL")
+      scope.all
     end
   end
 
@@ -24,4 +24,5 @@ class TournamentPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
 end

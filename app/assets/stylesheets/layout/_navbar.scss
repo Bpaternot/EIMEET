@@ -11,16 +11,22 @@
 
 /* Optional class to fix the navbar on top */
 .navbar-wagon-fixed {
+  z-index: 3;
   position: fixed;
   left: 0px;
   top: 0px;
-  z-index: 1;
   width: 100%;
 }
 
 /* Navbar logo */
 .navbar-wagon-brand img {
   width: 80px;
+}
+
+@media (max-width: 750px) {
+.navbar-wagon-brand img {
+  width: 90px;
+}
 }
 
 /* Navbar right section (with form, links, button) */
@@ -54,6 +60,20 @@
     background-color: white;
   }
 }
+}
+
+.navbar-wagon-link-mobile {
+  color: $snow;
+  font-size: px;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  &:hover {
+  color: $snow;
+  text-decoration: none;
+  }
 }
 
 /* Navbar right button */
@@ -128,17 +148,45 @@
 
 .fa-bars {
   color: $fire;
+  font-size: 20px;
 }
 
-.navbar-wagon-dropdown-menu:before {
-  content: ' ';
-  height: 10px;
-  width: 10px;
-  position: absolute;
-  right: 10px;
-  top: -6px;
-  background-color: white;
-  transform: rotate(45deg);
-  border-left: 1px solid #E6E6E6;
-  border-top: 1px solid #E6E6E6;
+.fa-times {
+  color: $fire;
+  font-size: 20px;
 }
+
+.full-screen-menu {
+  background-color: $fire;
+  position: fixed;
+  z-index: 2;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 30% 0;
+}
+
+.links-item {
+  flex: 1;
+  a {
+    font-size: 30px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

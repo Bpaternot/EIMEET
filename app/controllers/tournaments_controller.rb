@@ -3,17 +3,45 @@ class TournamentsController < ApplicationController
 
   def index
 
-    @tournaments = policy_scope(Tournament)
+    policy_scope(Tournament)
+
+    @address = params[:tournament_address]
+    # @bars = Bar.near(@address, 5).select { |bar| bar.tournaments }
+    @radius = 5
+    @bars = list_bars(@address, @radius)
+
+    if @bars
+      @tournaments = list_tournaments(@bars)
+    else
+      @tournaments = []
+    end
+
+    unless @tournaments.length >= 1
+      @radius += 1
+      @bars = list_bars(@address, @radius)
+      @tournaments = list_tournaments(@bars)
+    end
+
+    if @radius < 6
+      @zoom = 13
+    elsif @radius < 9
+      @zoom = 11
+    else
+      @zoom = 9
+    end
+
     # @tournaments = Tournament.all.joins(:bar).where("bars.latitude IS NOT NULL and bars.longitude IS NOT NULL")
     @hash = Gmaps4rails.build_markers(@tournaments) do |tournament, marker|
       marker.lat tournament.bar.latitude
       marker.lng tournament.bar.longitude
       # marker.infowindow render_to_string(partial: "/tournaments/map_box", locals: { tournament: tournament })
     end
+    if current_user.token != nil
+      @graph = Koala::Facebook::API.new(current_user.token)
+      profile = @graph.get_object("me")
+      @friends = @graph.get_connections("me", "friends")
+    end
 
-    @graph = Koala::Facebook::API.new(current_user.token)
-    profile = @graph.get_object("me")
-    @friends = @graph.get_connections("me", "friends")
   end
 
   def show
@@ -30,12 +58,11 @@ class TournamentsController < ApplicationController
     @remaining_controllers = remaining_controllers(@tournament)
     @remaining_fifa_game = remaining_fifa_game(@tournament)
     @current_player = Player.where(tournament: @tournament, user: current_user).first
-
-
-    @graph = Koala::Facebook::API.new(current_user.token)
-    profile = @graph.get_object("me")
-    @friends = @graph.get_connections("me", "friends")
-
+    if current_user.token != nil
+      @graph = Koala::Facebook::API.new(current_user.token)
+      profile = @graph.get_object("me")
+      @friends = @graph.get_connections("me", "friends")
+    end
     @review = Review.new()
 
   end
@@ -72,6 +99,10 @@ class TournamentsController < ApplicationController
   def destroy
     @tournament.destroy
     redirect_to tournaments_path
+  end
+
+  def search
+    raise
   end
 
   private
@@ -154,14 +185,19 @@ class TournamentsController < ApplicationController
   end
 
   def list_bars(address, radius)
-    bars = Bar.near(address, radius).joins(:tournaments)
+    if address
+      Bar.near(address, radius).joins(:tournaments)
+    else
+      Bar.all.joins(:tournaments)
+    end
   end
 
   def list_tournaments(bars)
-    tournaments = []
-    bars.each do |bar|
-      tournaments << bar.tournaments
-    end
-    tournaments.flatten!
+    bars.map(&:tournaments).flatten
+    # tournaments = []
+    # bars.each do |bar|
+    #   tournaments << bar.tournaments
+    # end
+    # tournaments.flatten!
   end
 end
