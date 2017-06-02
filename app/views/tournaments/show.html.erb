@@ -116,8 +116,8 @@
 <% @tournament.players.each do |player| %>
   <div class="row">
     <div class="col-xs-12">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
-        <div class="card-category">
+      <div class="card-show-tournament" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+        <div class="card-show-tournament-category">
           <h4>
           <% if player.user.facebook_picture_url %>
             <% avatar_url = player.user.facebook_picture_url %>
@@ -127,7 +127,7 @@
           </h4>
         </div>
 
-        <div class="card-left">
+        <div class="card-show-tournament-left">
           <% if player.ps4 == true %>
             <span>1 x <%= image_tag "console2.png", class: "icon"%></i>&nbsp;</span>
           <% end %>
@@ -140,9 +140,9 @@
         </div>
 
         <!-- Delete Player -->
-        <div class="card-right">
+        <div class="card-show-tournament-right">
           <% if policy(player).destroy? %>
-            <%= link_to image_tag("trash.png"), tournament_path,
+            <%= link_to image_tag("trash.png"), tournament_player_path(@tournament, player),
               method: :delete,
               data: { confirm: "Are you sure?" } %>
           <% end %>
@@ -152,7 +152,7 @@
           <% @friends.each do |friend| %>
             <% if friend["id"] == player.user.uid %>
                 <% avatar_url = player.user.facebook_picture_url || "http://placehold.it/30x30" %>
-                <%= image_tag avatar_url, class: "avatar dropdown-toggle card-user avatar" %>
+                <%= image_tag avatar_url, class: "avatar dropdown-toggle card-show-tournament-user avatar" %>
                 <img src="" alt="">
             <% end %>
           <% end %>
