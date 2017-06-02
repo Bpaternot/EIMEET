@@ -28,6 +28,7 @@ gem "geocoder"
 
 gem "coffee-rails"
 gem "gmaps4rails"
+gem 'forest_liana'
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
