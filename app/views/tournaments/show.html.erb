@@ -19,7 +19,7 @@
     <% elsif @remaining != 0 && Player.where(tournament: @tournament, user: current_user).exists? == false %>
       The registration for this tournament is open </br></br>
        <!-- BUTTON JOIN IF THE PLAYER IS NOT IN THE TOURNAMENT -->
-       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#join">Join</button> </br> <%= @remaining %> spot(s) remaining
+       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#join">Join</button> </br> <%= @remaining %> spot(s) remaining to play !
     <% end %></br></br></br>
 
     <!-- GOOGLE MAP -->
