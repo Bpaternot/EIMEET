@@ -23,7 +23,7 @@
     <% end %></br></br></br>
 
     <!-- GOOGLE MAP -->
-    <div class="map-position" id="map" style="width: 200px; height: 100px;"></div>
+    <div class="map-position" id="map" style="width: 100%; height: 120px;"></div>
     <% content_for(:after_js) do %>
       <%= javascript_tag do %>
         $(document).ready(function() {
@@ -148,11 +148,13 @@
           <% end %>
         </div>
 
-        <% @friends.each do |friend| %>
-          <% if friend["id"] == player.user.uid %>
-              <% avatar_url = player.user.facebook_picture_url || "http://placehold.it/30x30" %>
-              <%= image_tag avatar_url, class: "avatar dropdown-toggle card-user avatar" %>
-              <img src="" alt="">
+        <% if player.user.uid == "facebook" %>
+          <% @friends.each do |friend| %>
+            <% if friend["id"] == player.user.uid %>
+                <% avatar_url = player.user.facebook_picture_url || "http://placehold.it/30x30" %>
+                <%= image_tag avatar_url, class: "avatar dropdown-toggle card-user avatar" %>
+                <img src="" alt="">
+            <% end %>
           <% end %>
         <% end %>
       </div>
