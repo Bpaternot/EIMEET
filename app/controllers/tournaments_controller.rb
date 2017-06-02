@@ -138,7 +138,7 @@ class TournamentsController < ApplicationController
   def remaining_consoles(tournament)
    consoles_ps4 = 0
     tournament.players.each do |player|
-      if player.fifa_game_ps4 == true
+      if player.ps4 == true
         consoles_ps4 += 1
       end
     end
