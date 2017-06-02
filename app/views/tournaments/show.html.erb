@@ -19,7 +19,7 @@
     <% elsif @remaining != 0 && Player.where(tournament: @tournament, user: current_user).exists? == false %>
       The registration for this tournament is open </br></br>
        <!-- BUTTON JOIN IF THE PLAYER IS NOT IN THE TOURNAMENT -->
-       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#join">Join</button> </br> <%= @remaining %> spot(s) remaining to play !
+       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#join-modal">Join</button> </br> <%= @remaining %> spot(s) remaining to play !
     <% end %></br></br></br>
 
     <!-- GOOGLE MAP -->
@@ -66,7 +66,7 @@
 
 
 <!-- MODAL UPDATE THE PLAYER IN THE TOURNAMENT -->
-<div class="modal fade update" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+<div class="modal fade update  bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <h3>Want to add stuff?</h3>
@@ -89,10 +89,10 @@
 </div>
 
 <!-- MODAL JOIN THE TOURNAMENT -->
-<div class="modal fade" id="join" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-  <div class="bs-example-modal-sm" role="document">
+<div class="modal fade  bs-example-modal-lg" id="join-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
-      <h1>Want to join?</h1>
+      <h3>Want to join?</h3>
       <%= simple_form_for [@tournament, @player] do |f| %>
       <!-- PS4 -->
         <p>Can you bring a console?</p>
@@ -103,11 +103,12 @@
         <!-- fifa game -->
         <p>Can you bring a PS4 FIFA game?</p>
         <%= f.input :fifa_game_ps4, as: :radio_buttons, collection: 0..4, label: false, item_wrapper_tag: false %>
-          <%= f.submit "Join" %>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm"><%= f.submit "Join" %></button>
       <% end %>
     </div>
   </div>
 </div>
+
 
 
 
