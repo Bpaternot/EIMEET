@@ -19,11 +19,11 @@
     <% elsif @remaining != 0 && Player.where(tournament: @tournament, user: current_user).exists? == false %>
       The registration for this tournament is open </br></br>
        <!-- BUTTON JOIN IF THE PLAYER IS NOT IN THE TOURNAMENT -->
-       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#join">Join</button> </br> <%= @remaining %> spot(s) remaining to play !
+       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#join-modal">Join</button> </br> <%= @remaining %> spot(s) remaining to play !
     <% end %></br></br></br>
 
     <!-- GOOGLE MAP -->
-    <div class="map-position" id="map" style="width: 200px; height: 100px;"></div>
+    <div class="map-position" id="map" style="width: 100%; height: 120px;"></div>
     <% content_for(:after_js) do %>
       <%= javascript_tag do %>
         $(document).ready(function() {
@@ -66,48 +66,23 @@
 
 
 <!-- MODAL UPDATE THE PLAYER IN THE TOURNAMENT -->
-<div class="modal fade update" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+<div class="modal fade update  bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
-      <h3>Want to add stuff?</h3>
-        <% if @current_player %>
-         <%= simple_form_for [@tournament, @current_player] do |f| %>
-          <!-- PS4 -->
-          <p>Can you bring a console?</p>
-          <p>PS4: <%= f.input :ps4, as: :radio_buttons, label: false, item_wrapper_tag: false  %> </p>
-          <!-- buttons controllers PS4 -->
-          <p>Can you bring a/a few PS4 controller(s)?</p>
-          <%= f.input :controller_ps4, as: :radio_buttons, collection: 0..8, label: false, item_wrapper_tag: false %>
-          <!-- fifa game -->
-          <p>Can you bring a PS4 FIFA game?</p>
-          <%= f.input :fifa_game_ps4, as: :radio_buttons, collection: 0..4, label: false, item_wrapper_tag: false %>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm"><%= f.submit "Update" %></button>
-        <% end %>
-      <% end %>
+     <%= render 'form_update' %>
     </div>
   </div>
 </div>
 
 <!-- MODAL JOIN THE TOURNAMENT -->
-<div class="modal fade" id="join" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-  <div class="bs-example-modal-sm" role="document">
+<div class="modal fade  bs-example-modal-lg" id="join-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
-      <h1>Want to join?</h1>
-      <%= simple_form_for [@tournament, @player] do |f| %>
-      <!-- PS4 -->
-        <p>Can you bring a console?</p>
-        <p>PS4: <%= f.input :ps4, as: :radio_buttons, label: false, item_wrapper_tag: false  %> </p>
-        <!-- buttons controllers PS4 -->
-        <p>Can you bring a/a few PS4 controller(s)?</p>
-        <%= f.input :controller_ps4, as: :radio_buttons, collection: 0..8, label: false, item_wrapper_tag: false %>
-        <!-- fifa game -->
-        <p>Can you bring a PS4 FIFA game?</p>
-        <%= f.input :fifa_game_ps4, as: :radio_buttons, collection: 0..4, label: false, item_wrapper_tag: false %>
-          <%= f.submit "Join" %>
-      <% end %>
+     <%= render 'form_join' %>
     </div>
   </div>
 </div>
+
 
 
 
@@ -116,8 +91,8 @@
 <% @tournament.players.each do |player| %>
   <div class="row">
     <div class="col-xs-12">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
-        <div class="card-category">
+      <div class="card-show-tournament" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+        <div class="card-show-tournament-category">
           <h4>
           <% if player.user.facebook_picture_url %>
             <% avatar_url = player.user.facebook_picture_url %>
@@ -127,7 +102,7 @@
           </h4>
         </div>
 
-        <div class="card-left">
+        <div class="card-show-tournament-left">
           <% if player.ps4 == true %>
             <span>1 x <%= image_tag "console2.png", class: "icon"%></i>&nbsp;</span>
           <% end %>
@@ -140,19 +115,21 @@
         </div>
 
         <!-- Delete Player -->
-        <div class="card-right">
+        <div class="card-show-tournament-right">
           <% if policy(player).destroy? %>
-            <%= link_to image_tag("trash.png"), tournament_path,
+            <%= link_to image_tag("trash.png"), tournament_player_path(@tournament, player),
               method: :delete,
               data: { confirm: "Are you sure?" } %>
           <% end %>
         </div>
 
-        <% @friends.each do |friend| %>
-          <% if friend["id"] == player.user.uid %>
-              <% avatar_url = player.user.facebook_picture_url || "http://placehold.it/30x30" %>
-              <%= image_tag avatar_url, class: "avatar dropdown-toggle card-user avatar" %>
-              <img src="" alt="">
+        <% if player.user.uid == "facebook" %>
+          <% @friends.each do |friend| %>
+            <% if friend["id"] == player.user.uid %>
+                <% avatar_url = player.user.facebook_picture_url || "http://placehold.it/30x30" %>
+                <%= image_tag avatar_url, class: "avatar dropdown-toggle card-show-tournament-user avatar" %>
+                <img src="" alt="">
+            <% end %>
           <% end %>
         <% end %>
       </div>

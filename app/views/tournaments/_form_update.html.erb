@@ -1,0 +1,13 @@
+<h3>Want to add stuff?</h3>
+  <% if @current_player %>
+   <%= simple_form_for [@tournament, @current_player] do |f| %>
+    <!-- PS4 -->
+   <label for="ps4">Take your PS4 ?</label>
+  <%= f.input :ps4, as: :radio_buttons, label: false, item_wrapper_tag: false, wrapper_html: {class: 'brand-choice'}  %>
+  <label for="controller_ps4">Controllers</label>
+  <%= f.input :controller_ps4, as: :radio_buttons, collection: 1..8, label: false, item_wrapper_tag: false, wrapper_html: {class: 'controller-choice'}  %>
+  <label for="fifa_game_ps4">Fifa</label>
+ <%= f.input :fifa_game_ps4, as: :radio_buttons, collection: 1..8, label: false, item_wrapper_tag: false, wrapper_html: {class: 'fifa-choice'}  %>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm"><%= f.submit "Update" %></button>
+  <% end %>
+<% end %>
