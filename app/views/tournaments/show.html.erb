@@ -69,21 +69,7 @@
 <div class="modal fade update  bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
-      <h3>Want to add stuff?</h3>
-        <% if @current_player %>
-         <%= simple_form_for [@tournament, @current_player] do |f| %>
-          <!-- PS4 -->
-          <p>Can you bring a console?</p>
-          <p>PS4: <%= f.input :ps4, as: :radio_buttons, label: false, item_wrapper_tag: false  %> </p>
-          <!-- buttons controllers PS4 -->
-          <p>Can you bring a/a few PS4 controller(s)?</p>
-          <%= f.input :controller_ps4, as: :radio_buttons, collection: 0..8, label: false, item_wrapper_tag: false %>
-          <!-- fifa game -->
-          <p>Can you bring a PS4 FIFA game?</p>
-          <%= f.input :fifa_game_ps4, as: :radio_buttons, collection: 0..4, label: false, item_wrapper_tag: false %>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm"><%= f.submit "Update" %></button>
-        <% end %>
-      <% end %>
+     <%= render 'form_update' %>
     </div>
   </div>
 </div>
@@ -92,19 +78,7 @@
 <div class="modal fade  bs-example-modal-lg" id="join-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
-      <h3>Want to join?</h3>
-      <%= simple_form_for [@tournament, @player] do |f| %>
-      <!-- PS4 -->
-        <p>Can you bring a console?</p>
-        <p>PS4: <%= f.input :ps4, as: :radio_buttons, label: false, item_wrapper_tag: false  %> </p>
-        <!-- buttons controllers PS4 -->
-        <p>Can you bring a/a few PS4 controller(s)?</p>
-        <%= f.input :controller_ps4, as: :radio_buttons, collection: 0..8, label: false, item_wrapper_tag: false %>
-        <!-- fifa game -->
-        <p>Can you bring a PS4 FIFA game?</p>
-        <%= f.input :fifa_game_ps4, as: :radio_buttons, collection: 0..4, label: false, item_wrapper_tag: false %>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm"><%= f.submit "Join" %></button>
-      <% end %>
+     <%= render 'form_join' %>
     </div>
   </div>
 </div>
