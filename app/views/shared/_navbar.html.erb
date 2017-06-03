@@ -1,7 +1,7 @@
 <div class="navbar-wagon navbar-wagon-fixed">
   <!-- Logo -->
-<%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "eimeet_logo.png" %>
+  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+  <%= image_tag "eimeet_logo.png" %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -13,45 +13,28 @@
     <%= link_to t(".sign_in", default: "Create"), bars_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <% if user_signed_in? %>
-    <%= link_to t(".sign_in", default: "My Tournaments"), dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "My Tournaments"), dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
-      <!-- Profile picture and dropdown -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <% avatar_url = current_user.facebook_picture_url || current_user.username %>
-          <% if current_user.facebook_picture_url %>
-            <%= image_tag avatar_url, class: "avatar dropdown-toggle navbar-wagon-item navbar-wagon-link", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <% else %>
-            <div class="dropdown-toggle navbar-wagon-item navbar-wagon-link" id="navbar-wagon-menu" data-toggle="dropdown"><%= current_user.username %></div>
-          <% end %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+    <!-- Profile picture and dropdown -->
+      <%= link_to dashboard_path, class: "navbar-wagon-item navbar-wagon-link-account toggle-menu-content hidden" do %>
+        <%= t(".profile", default: "Dashboard") %>
+      <% end %>
+      <%= link_to destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link-account toggle-menu-content hidden", method: :delete do %>
+        <%= t(".sign_out", default: "Log out") %>
+      <% end %>
 
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <% avatar_url = current_user.facebook_picture_url || current_user.username %>
+      <% if current_user.facebook_picture_url %>
+        <%= image_tag avatar_url, class: "avatar navbar-wagon-item navbar-wagon-link toggle-menu" %>
+      <% else %>
+      <div class="navbar-wagon-item navbar-wagon-link-account toggle-menu"><%= current_user.username %></div>
+      <% end %>
 
-    <% else %>
 
-      <!-- Login text link -->
+      <% else %>
+    <!-- Login text link -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
     <% end %>
-
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
@@ -75,7 +58,7 @@
         <%= link_to t(".sign_in", default: "Tournaments"), bars_path, class: "navbar-wagon-item navbar-wagon-link-mobile" %>
       </div>
       <div class="links-item">
-        <hr style="border: none; height: 3px; width: 200px;, text-align: center; color: #FAFAFA; background: #FAFAFA;"/>
+        <hr style="border: none; height: 2px; width: 200px;, text-align: center; color: #FAFAFA; background: #FAFAFA;"/>
       </div>
       <div class="links-item">
         <%= link_to destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link-mobile", method: :delete do %>
@@ -84,7 +67,7 @@
       </div>
       <% else %>
       <div class="links-item">
-        <hr style="border: none; height: 3px; width: 200px;, text-align: center; color: #FAFAFA; background: #FAFAFA;"/>
+        <hr style="border: none; height: 2px; width: 200px;, text-align: center; color: #FAFAFA; background: #FAFAFA;"/>
       </div>
       <div class="links-item">
         <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link-mobile" %>
