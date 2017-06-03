@@ -3,6 +3,7 @@ class Tournament < ApplicationRecord
   belongs_to :user
   has_many :players, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :games, dependent: :destroy
 
 
   TOURNAMENT_TYPE = ["small", "medium", "large"]

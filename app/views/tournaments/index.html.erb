@@ -7,7 +7,6 @@
 
       <% @tournaments.each do |tournament| %>
       <div class="card">
-        <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<%= cl_image_path tournament.bar.photo %>');">
           <div class="card-bar">
             <h2><%= tournament.bar.name %></h2>
             <p><%= tournament.bar.address %></p>

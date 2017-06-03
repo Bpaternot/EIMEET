@@ -17,6 +17,10 @@ class TournamentPolicy < ApplicationPolicy
     true
   end
 
+  def playground?
+    true
+  end
+
   def update?
     record.user == user
   end

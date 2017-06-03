@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :tournaments, only: [:new, :create]
   end
   resources :tournaments, except: [:new, :create] do
+    get "playground", to: "tournaments#playground"
     resources :players
     resources :reviews, only: :create
   end
