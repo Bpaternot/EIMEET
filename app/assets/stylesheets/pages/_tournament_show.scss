@@ -1,4 +1,11 @@
 .message-box{
-  height: 145px;
+  height: 55px;
   overflow-y: scroll;
 }
+
+.map-position{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+

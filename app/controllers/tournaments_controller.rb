@@ -4,6 +4,7 @@ class TournamentsController < ApplicationController
   def index
     policy_scope(Tournament)
     @address = params[:tournament_address]
+
     # @bars = Bar.near(@address, 5).select { |bar| bar.tournaments }
     @radius = 5
     @bars = list_bars(@address, @radius)
@@ -39,6 +40,7 @@ class TournamentsController < ApplicationController
       profile = @graph.get_object("me")
       @friends = @graph.get_connections("me", "friends")
     end
+
   end
 
   def show
@@ -163,7 +165,7 @@ end
   def remaining_consoles(tournament)
    consoles_ps4 = 0
     tournament.players.each do |player|
-      if player.fifa_game_ps4 == true
+      if player.ps4 == true
         consoles_ps4 += 1
       end
     end
@@ -211,14 +213,27 @@ end
 
   def list_bars(address, radius)
     if address
-      Bar.near(address, radius).joins(:tournaments)
+      bars = Bar.near(address, radius)
     else
-      Bar.all.joins(:tournaments)
+      bars = Bar.all
     end
+
+    if params[:players]
+      bars = bars.where(tournament_size: params[:players])
+    end
+
+    bars
   end
 
   def list_tournaments(bars)
-    bars.map(&:tournaments).flatten
+    bars.map do |bar|
+      if params[:date].blank?
+        bar.tournaments
+      else
+        bar.tournaments.where(date: params[:date])
+      end
+    end.flatten
+
     # tournaments = []
     # bars.each do |bar|
     #   tournaments << bar.tournaments

@@ -17,8 +17,14 @@ class PlayersController < ApplicationController
     @player.user = current_user
     @player.admin = false
     authorize(@player)
-    @player.save!
-    redirect_to tournament_path(@tournament), notice: "You are now registered for the tournament!"
+
+
+
+    if @player.save
+      redirect_to tournament_path(@tournament), notice: "You are now registered for the tournament!"
+    else
+      redirect_to tournament_path(@tournament, modal: true)
+    end
   end
 
   def edit

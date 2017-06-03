@@ -1,0 +1,70 @@
+.controller-choice {
+  input {
+    display: none !important;
+  }
+  label {
+    background-color: #FF6663;
+    color: white;
+    width: 40px;
+    border-radius: 2px;
+    padding: 4px;
+    margin-right: 2px;
+    transition: all ease 0.1s;
+    &:hover{
+      cursor: pointer;
+      background-color: $yankees;
+    }
+  }
+  input:checked + label {
+    background-color: $yankees;
+    font-weight: bold;
+  }
+}
+
+.brand-choice {
+  input {
+    display: none !important;
+  }
+  label {
+    background-color: #FF6663;
+    color: white;
+    width: 40px;
+    border-radius: 2px;
+    padding: 4px;
+    margin-right: 2px;
+    transition: all ease 0.1s;
+    &:hover{
+      cursor: pointer;
+      background-color: $yankees;
+    }
+  }
+  input:checked + label {
+    background-color: $yankees;
+    font-weight: bold;
+  }
+}
+
+
+.fifa-choice {
+  input {
+    display: none !important;
+  }
+  label {
+    background-color: #FF6663;
+    color: white;
+    width: 40px;
+    border-radius: 2px;
+    padding: 4px;
+    margin-right: 2px;
+    transition: all ease 0.1s;
+    &:hover{
+      cursor: pointer;
+      background-color: $yankees;
+    }
+  }
+  input:checked + label {
+    background-color: $yankees;
+    font-weight: bold;
+  }
+}
+

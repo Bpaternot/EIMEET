@@ -1,0 +1,16 @@
+<h3>Want to join?</h3>
+<%= simple_form_for [@tournament, @player] do |f| %>
+  <label for="ps4">Take your PS4 ?</label>
+  <%= f.input :ps4, as: :radio_buttons, label: false, item_wrapper_tag: false, wrapper_html: {class: 'brand-choice'}  %>
+  <label for="controller_ps4">Controllers</label>
+  <%= f.input :controller_ps4, as: :radio_buttons, collection: 0..8, label: false, item_wrapper_tag: false, wrapper_html: {class: 'controller-choice'}  %>
+  <label for="fifa_game_ps4">Fifa</label>
+  <%= f.input :fifa_game_ps4, as: :radio_buttons, collection: 0..2, label: false, item_wrapper_tag: false, wrapper_html: {class: 'fifa-choice'}  %>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm"><%= f.submit "Join" %></button>
+<% end %>
+
+
+
+
+
+
