@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170531100323) do
+ActiveRecord::Schema.define(version: 20170602084014) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,14 @@ ActiveRecord::Schema.define(version: 20170531100323) do
     t.float    "longitude"
   end
 
+  create_table "games", force: :cascade do |t|
+    t.string   "step"
+    t.integer  "tournament_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["tournament_id"], name: "index_games_on_tournament_id", using: :btree
+  end
+
   create_table "players", force: :cascade do |t|
     t.boolean  "admin"
     t.string   "position"
@@ -64,6 +72,16 @@ ActiveRecord::Schema.define(version: 20170531100323) do
     t.datetime "updated_at",    null: false
     t.index ["player_id"], name: "index_reviews_on_player_id", using: :btree
     t.index ["tournament_id"], name: "index_reviews_on_tournament_id", using: :btree
+  end
+
+  create_table "scores", force: :cascade do |t|
+    t.integer  "goals"
+    t.integer  "game_id"
+    t.integer  "player_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_scores_on_game_id", using: :btree
+    t.index ["player_id"], name: "index_scores_on_player_id", using: :btree
   end
 
   create_table "tournaments", force: :cascade do |t|
@@ -110,10 +128,13 @@ ActiveRecord::Schema.define(version: 20170531100323) do
   end
 
   add_foreign_key "availabilities", "bars"
+  add_foreign_key "games", "tournaments"
   add_foreign_key "players", "tournaments"
   add_foreign_key "players", "users"
   add_foreign_key "reviews", "players"
   add_foreign_key "reviews", "tournaments"
+  add_foreign_key "scores", "games"
+  add_foreign_key "scores", "players"
   add_foreign_key "tournaments", "bars"
   add_foreign_key "tournaments", "users"
 end
