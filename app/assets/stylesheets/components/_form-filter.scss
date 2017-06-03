@@ -3,39 +3,94 @@
 }
 
 .fixed-form {
-  min-width: 80%;
+  width: 200px;
   margin: 0px auto;
 }
 
-.container-de-secours {
-  height: 100px;
+.players {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.number-players {
-
-}
-
-.address-of-bars {
-
-}
-
-.date-of-tournament {
-
-}
-
-.submit-form {
-
-}
-
-.number-players-container-button {
-  width: 30px;
-}
 .number-players-button {
   background-color: $fire;
   color: $snow;
   padding: 5px 5px;
   border-radius: 2px;
   min-width: 18px;
-  width: 30px;
+  width: 45px;
   text-align: center;
+  margin-bottom: 15px;
+}
+
+.number-players-button-active {
+  background-color: $yankees;
+  color: $snow;
+  padding: 5px 5px;
+  border-radius: 2px;
+  min-width: 18px;
+  width: 45px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.address {
+  margin-bottom: 15px;
+}
+
+.date {
+  margin-bottom: 15px;
+}
+.form-control-filter {
+  height: 32px;
+  width: 100% !important;
+  border: 1px solid $fire !important;
+  color: $aluminium;
+}
+
+.form-control-filter-date {
+    height: 32px;
+    width: 100% !important;
+    border: 1px solid $fire !important;
+    color: $aluminium;
+  @media (min-width: $screen-sm) {
+    height: 32px;
+    width: 159px !important;
+    border: 1px solid $fire !important;
+    color: $aluminium;
+  }
+}
+
+.btn-primary-filter {
+  margin-top: 0px;
+  height: 32px;
+  vertical-align: top;
+  width: 100% !important;
+}
+
+.input-group-addon {
+    padding: 6px 12px;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1;
+    color: $fire !important;
+    text-align: center;
+    background-color: $snow !important;
+    border-right: 1px solid $fire !important;
+    border-top: 1px solid $fire !important;
+    border-bottom: 1px solid $fire !important;
+    border-left: none !important;
+    border-radius: 2px;
+}
+
+// .top-margin {
+//   margin-top: 60px;
+// }
+
+.sticky {
+    z-index: 10000;
+    position: fixed;
+    top: 60px;
+
 }
