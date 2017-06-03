@@ -13,15 +13,14 @@
     <%= link_to t(".sign_in", default: "Create"), bars_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <% if user_signed_in? %>
-      <%= link_to t(".sign_in", default: "My Tournaments"), dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <!-- Profile picture and dropdown -->
-      <%= link_to dashboard_path, class: "navbar-wagon-item navbar-wagon-link-account toggle-menu-content hidden" do %>
-        <%= t(".profile", default: "Dashboard") %>
-      <% end %>
-      <%= link_to destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link-account toggle-menu-content hidden", method: :delete do %>
+      <%= link_to destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link-log-out toggle-menu-content hidden", method: :delete do %>
         <%= t(".sign_out", default: "Log out") %>
       <% end %>
+
+      <%= link_to t(".sign_in", default: "My Tournaments"), dashboard_path, class: "navbar-wagon-item navbar-wagon-link-account toggle-menu-content hidden" %>
+
 
       <% avatar_url = current_user.facebook_picture_url || current_user.username %>
       <% if current_user.facebook_picture_url %>
