@@ -47,12 +47,14 @@
   height: 32px;
   width: 100% !important;
   border: 1px solid $fire !important;
-  color: $aluminium;
+  color: $fire;
+  font-size: 14px !important;
   @media (min-width: $screen-sm) {
     height: 32px;
     width: 200px !important;
     border: 1px solid $fire !important;
-    color: $aluminium;
+    color: $fire;
+    font-size: 14px !important;
   }
 }
 
@@ -60,12 +62,14 @@
     height: 32px;
     width: 100% !important;
     border: 1px solid $fire !important;
-    color: $aluminium;
+    color: $fire;
+    font-size: 14px !important;
   @media (min-width: $screen-sm) {
     height: 32px;
     width: 159px !important;
     border: 1px solid $fire !important;
-    color: $aluminium;
+    color: $fire;
+    font-size: 14px !important;
   }
 }
 
@@ -91,6 +95,12 @@
     border-radius: 2px;
 }
 
+.datepicker table tr td.active.active, .datepicker table tr td.active.highlighted.active {
+    color: #fff;
+    background-color: $fire !important;
+    border-color: $fire !important;
+}
+
 // .top-margin {
 //   margin-top: 60px;
 // }
@@ -99,5 +109,4 @@
     z-index: 10000;
     position: fixed;
     top: 60px;
-
 }

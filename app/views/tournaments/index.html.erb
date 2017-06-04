@@ -51,7 +51,7 @@
               <% avatar_url = tournament.user.facebook_picture_url || "http://placehold.it/30x30" %>
               <%= image_tag avatar_url, class: "avatar card-image-avatar" %>
               <div class="card-bar">
-                <h2>Organized by <span class="fire"><%= tournament.user.username %></span></h2>
+                <h2>Organized by <span class="username-card"><%= tournament.user.username %></span></h2>
                 <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;<%= tournament.bar.name %></p>
               </div>
             </div>
