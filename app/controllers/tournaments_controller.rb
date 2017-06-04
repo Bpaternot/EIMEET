@@ -245,7 +245,7 @@ end
   def generate_pools(tournament)
     list_all_players = tournament.players.shuffle.each_slice(4).to_a
     # player_pool_A return an array of the players in the pool A
-    raise
+
     players_poolA = list_all_players[0]
     players_poolB = list_all_players[1]
     # generate the pool games
@@ -280,8 +280,7 @@ end
   end
 
   def generate_pool_game(tournament, player1, player2)
-    game = Game.new(tournament: tournament, step: "group")
-    game.save
+    game = Game.create!(tournament: tournament, step: "group")
     [player1, player2].each do |player|
       score = game.scores.build(player: player)
       score.save
