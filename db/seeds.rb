@@ -587,7 +587,7 @@ Player.create(user_id: 17, admin: false, tournament_id: 3, ps4: false, xbox: tru
 Player.create(user_id: 18, admin: false, tournament_id: 3, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0)
 Player.create(user_id: 19, admin: false, tournament_id: 3, ps4: false, xbox: true, controller_ps4: 0, controller_xbox: 2, fifa_game_ps4: 0, fifa_game_xbox: 1)
 Player.create(user_id: 20, admin: false, tournament_id: 3, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 1)
-# #  tournament id=4 : 8 players / status ready
+# #  tournament id=4 : 8 players / status ready / full
 Player.create(user_id: 21, admin: false, tournament_id: 4, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 1)
 Player.create(user_id: 22, admin: false, tournament_id: 4, ps4: false, xbox: true, controller_ps4: 0, controller_xbox: 2, fifa_game_ps4: 1, fifa_game_xbox: 0)
 Player.create(user_id: 23, admin: false, tournament_id: 4, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0)
