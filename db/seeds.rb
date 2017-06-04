@@ -540,6 +540,20 @@ Tournament.create(date: DateTime.new(2017,6,10), number_players: 16, status: "pe
 Tournament.create(date: DateTime.new(2017,6,8), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar: bar22, user_id: 14)
 Tournament.create(date: DateTime.new(2017,6,5), number_players: 8, status: "ready", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar3, user_id: 4)
 
+# Tournaments replicated
+Tournament.create(date: DateTime.new(2017,6,5), number_players: 8, status: "ready", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar3, user_id: 4)
+Tournament.create(date: DateTime.new(2017,6,5), number_players: 8, status: "ready", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar3, user_id: 4)
+Tournament.create(date: DateTime.new(2017,6,5), number_players: 8, status: "ready", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar3, user_id: 4)
+Tournament.create(date: DateTime.new(2017,6,5), number_players: 8, status: "ready", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar3, user_id: 4)
+Tournament.create(date: DateTime.new(2017,6,5), number_players: 8, status: "ready", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar3, user_id: 4)
+Tournament.create(date: DateTime.new(2017,6,5), number_players: 8, status: "ready", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar3, user_id: 4)
+Tournament.create(date: DateTime.new(2017,6,5), number_players: 8, status: "ready", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar3, user_id: 4)
+Tournament.create(date: DateTime.new(2017,6,5), number_players: 8, status: "ready", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar3, user_id: 4)
+Tournament.create(date: DateTime.new(2017,6,5), number_players: 8, status: "ready", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar3, user_id: 4)
+Tournament.create(date: DateTime.new(2017,6,5), number_players: 8, status: "ready", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar3, user_id: 4)
+
+
+
 
 
 # Players

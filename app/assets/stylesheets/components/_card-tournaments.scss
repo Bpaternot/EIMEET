@@ -1,4 +1,5 @@
 .card-tournament {
+  height: 200px;
   margin-top: 0px;
   margin-bottom: 15px;
   margin-right: auto;
@@ -13,15 +14,25 @@
     position: relative;
     background-position: center;
     background-size: cover;
+    &-avatar {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
     .card-bar {
       position: absolute;
-      top: 5px;
+      top: 15px;
       left: 15px;
       h2 {
+        margin-top: 0px;
+        margin-bottom: 5px;
         color: $snow;
       }
       p {
         color: $snow;
+      }
+      .fa-map-marker {
+        color: $fire;
       }
     }
   }
@@ -51,22 +62,26 @@
       position: relative;
       .friends-1 {
         position: absolute;
-        left: 0px;
+        left: 45px;
+        bottom: -15px;
         z-index: 2;
       }
       .friends-2 {
         position: absolute;
-        left: 15px;
+        left: 30px;
+        bottom: -15px;
         z-index: 3;
       }
       .friends-3 {
         position: absolute;
-        left: 30px;
+        left: 15px;
+        bottom: -15px;
         z-index: 4;
       }
       .friends-4 {
         position: absolute;
-        left: 45px;
+        left: 0px;
+        bottom: -15px;
         z-index: 5;
       }
     }
