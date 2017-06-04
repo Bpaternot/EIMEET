@@ -101,6 +101,7 @@ class TournamentsController < ApplicationController
   def playground
     @tournament = Tournament.find(params[:tournament_id])
     authorize(@tournament)
+    generate_pools(@tournament)
 
     # trouver le tournois en question
     # @tournament = Tournament.find(params[:id])
@@ -244,21 +245,26 @@ end
   def generate_pools(tournament)
     list_all_players = tournament.players.shuffle.each_slice(4).to_a
     # player_pool_A return an array of the players in the pool A
+
     players_poolA = list_all_players[0]
     players_poolB = list_all_players[1]
-    players_poolC = list_all_players[2]
-    players_poolD = list_all_players[3]
     # generate the pool games
-    generate_pool_games(players_pool_A, tournament)
-    generate_pool_games(players_pool_B, tournament)
+    generate_pool_games(players_poolA, tournament)
+    generate_pool_games(players_poolB, tournament)
     if @tournament.tournament_type == "medium" || @tournament.tournament_type == "large"
-      generate_pool_games(players_pool_C, tournament)
-      generate_pool_games(players_pool_D, tournament)
+      players_poolC = list_all_players[2]
+      players_poolD = list_all_players[3]
+      generate_pool_games(players_poolC, tournament)
+      generate_pool_games(players_poolD, tournament)
       if @tournament.tournament_type == "large"
-        generate_pool_games(players_pool_E, tournament)
-        generate_pool_games(players_pool_F, tournament)
-        generate_pool_games(players_pool_G, tournament)
-        generate_pool_games(players_pool_H, tournament)
+        players_poolE = list_all_players[4]
+        players_poolF = list_all_players[5]
+        players_poolG = list_all_players[6]
+        players_poolH = list_all_players[7]
+        generate_pool_games(players_poolE, tournament)
+        generate_pool_games(players_poolF, tournament)
+        generate_pool_games(players_poolG, tournament)
+        generate_pool_games(players_poolH, tournament)
       end
     end
     ranking_by_pool(players_poolA)
@@ -274,8 +280,7 @@ end
   end
 
   def generate_pool_game(tournament, player1, player2)
-    game = Game.new(tournament: tournament, step: "group")
-    game.save
+    game = Game.create!(tournament: tournament, step: "group")
     [player1, player2].each do |player|
       score = game.scores.build(player: player)
       score.save
