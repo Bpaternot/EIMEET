@@ -76,8 +76,6 @@ url('<%= cl_image_path @tournament.bar.photo %>; background-size: cover')">
         <% end %>
       </div>
     </div>
-
-
     <div class="col-xs-12 col-xs-12-tournament col-sm-12 col-md-3">
       <!-- Tournament full / User is not a player -->
       <% if @remaining == 0 && Player.where(tournament: @tournament, user: current_user).exists? == false %>
@@ -114,7 +112,6 @@ url('<%= cl_image_path @tournament.bar.photo %>; background-size: cover')">
     </div>
   </div>
 </div>
-
   <!-- TCHAT TOURNAMENT -->
   </br>
   <% if Player.where(tournament: @tournament, user: current_user).exists? %>

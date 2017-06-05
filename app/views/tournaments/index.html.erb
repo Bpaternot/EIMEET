@@ -8,7 +8,7 @@
       <div class="row no-marged-right no-marged-left">
         <% @tournaments.each do |tournament| %>
         <div class="col-xs-12 col-sm-6 col-md-6">
-          <div class="card-tournament">
+          <div class="card-tournament" id="tournament-<%= tournament.bar.id %>-details">
             <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<%= cl_image_path tournament.bar.photo %>');">
               <% avatar_url = tournament.user.facebook_picture_url || "http://placehold.it/30x30" %>
               <%= image_tag avatar_url, class: "avatar card-image-avatar" %>
@@ -40,7 +40,7 @@
                 <% end %>
               </div>
             </div>
-            <%= link_to "", tournament_path(tournament.id), class: "card-link-tournament" %>
+            <%= link_to "", tournament_path(tournament.id),id: "#{tournament.bar.id}", class: "card-link-tournament" %>
           </div>
         </div>
           <% end %>
@@ -266,6 +266,8 @@
             }
         ]
     }]
+
+
       var handler = Gmaps.build('Google');
       handler.buildMap({
         provider: {
@@ -273,14 +275,26 @@
         },
         internal: { id: 'map' } }, function() {
         markers = handler.addMarkers(<%= raw @hash.to_json %>);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
+
+        _.each(<%= raw @hash.to_json %>, function(json, index){
+          var marker = markers[index];
+          $("#" + json.id).on('mouseenter', function() {
+            marker.getServiceObject().setAnimation(google.maps.Animation.BOUNCE);
+          });
+          $("#" + json.id).on('mouseleave', function() {
+            marker.getServiceObject().setAnimation(null);
+          });
+        });
+
         if (markers.length == 0) {
           handler.getMap().setZoom(2);
         } else if (markers.length >= 1) {
-          handler.map.centerOn(<%= Geocoder.coordinates(@address) %>);
+          //handler.map.centerOn();
           handler.getMap().setZoom(<%= @zoom %>);
         }
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+
       });
     });
   </script>
