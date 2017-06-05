@@ -73,6 +73,7 @@ class TournamentsController < ApplicationController
   def create
     @tournament = Tournament.new(tournament_params)
     @tournament.user = current_user
+    @tournament.step = "group"
     @tournament.bar = Bar.find(params[:bar_id])
     add_params(@tournament)
     authorize(@tournament)
@@ -101,36 +102,49 @@ class TournamentsController < ApplicationController
   def playground
     @tournament = Tournament.find(params[:tournament_id])
     authorize(@tournament)
-    generate_pools(@tournament)
-
-    # trouver le tournois en question
-    # @tournament = Tournament.find(params[:id])
-    # placer les joueurs par pool
-
-    # générer matches de pool
-
-
-    # récuperer les scores des joueurs pour chaque match
-    # updater le ranking des joueurs à la fin de chaque match = methode update de player puis updater ranking
-    # passer à la step suivante du tournois: generer des games dont la step est diff de la précédente
+    if @tournament.step == "group" && @tournament.games == []
+      if @tournament.tournament_type == "small"
+        array = [1, 2, 3, 4, 5, 6, 7, 8].shuffle
+        spot = 0
+        @tournament.players.each do |player|
+          player.pool_index = array[spot]
+          player.save!
+          spot += 1
+        end
+      elsif @tournament.tournament_type == "medium"
+      elsif @tournament.tournament_type == "large"
+      end
+    end
+    @list_all_players = []
+    [1, 2, 3, 4, 5, 6, 7, 8].each do |index|
+      @list_all_players << @tournament.players.find_by(pool_index: index)
+    end
+    @list_all_players = @list_all_players.each_slice(4).to_a
+    @games = @tournament.games
+    @group_games = @games.where(step: "group").order(:name).each_slice(6).to_a
+    step_update
+    ranking_pool
   end
 
   def step_update
-    # TODO
-    # update step and check if step is already done
-    # generate games
-    if step == "group"
-      generate_pools(@tournament)
-    elsif step == "round16"
+    if @tournament.step == "group" && @tournament.games == []
+      @list_all_players = []
+      [1, 2, 3, 4, 5, 6, 7, 8].each do |index|
+        @list_all_players << @tournament.players.find_by(pool_index: index)
+      end
+      @list_all_players = @list_all_players.each_slice(4).to_a
+      generate_pools(@tournament, @list_all_players)
+
+    elsif @tournament.step == "round16"
       # method pour générer huitièmes
-    elsif step == "quarter"
-      # method pour générer quarter
-    elsif step == "semi"
+    elsif @tournament.step == "quarter"
+      # method pour générer
+    elsif @tournament.step == "semi"
       # method pour générer semi
-    elsif step == "semi"
+    elsif @tournament.step == "final"
       #method pour générer final
+    end
   end
-end
 
 
   private
@@ -242,62 +256,80 @@ end
     # tournaments.flatten!
   end
 
-  def generate_pools(tournament)
-    list_all_players = tournament.players.shuffle.each_slice(4).to_a
-    # player_pool_A return an array of the players in the pool A
-
-    players_poolA = list_all_players[0]
-    players_poolB = list_all_players[1]
-    # generate the pool games
-    generate_pool_games(players_poolA, tournament)
-    generate_pool_games(players_poolB, tournament)
+  def generate_pools(tournament, list_all_players)
+    generate_pool_games(list_all_players[0], tournament, "A")
+    generate_pool_games(list_all_players[1], tournament, "B")
     if @tournament.tournament_type == "medium" || @tournament.tournament_type == "large"
-      players_poolC = list_all_players[2]
-      players_poolD = list_all_players[3]
-      generate_pool_games(players_poolC, tournament)
-      generate_pool_games(players_poolD, tournament)
+      generate_pool_games(list_all_players[2], tournament, "C")
+      generate_pool_games(list_all_players[3], tournament, "D")
       if @tournament.tournament_type == "large"
-        players_poolE = list_all_players[4]
-        players_poolF = list_all_players[5]
-        players_poolG = list_all_players[6]
-        players_poolH = list_all_players[7]
-        generate_pool_games(players_poolE, tournament)
-        generate_pool_games(players_poolF, tournament)
-        generate_pool_games(players_poolG, tournament)
-        generate_pool_games(players_poolH, tournament)
+        generate_pool_games(list_all_players[4], tournament, "E")
+        generate_pool_games(list_all_players[5], tournament, "F")
+        generate_pool_games(list_all_players[6], tournament, "G")
+        generate_pool_games(list_all_players[7], tournament, "H")
       end
     end
-    ranking_by_pool(players_poolA)
+
+    # ranking_by_pool(players_poolA)
   end
 
-  def generate_pool_games(players_pool, tournament)
-    generate_pool_game(tournament, players_pool[0], players_pool[1])
-    generate_pool_game(tournament, players_pool[2], players_pool[3])
-    generate_pool_game(tournament, players_pool[0], players_pool[2])
-    generate_pool_game(tournament, players_pool[1], players_pool[3])
-    generate_pool_game(tournament, players_pool[0], players_pool[3])
-    generate_pool_game(tournament, players_pool[1], players_pool[2])
+  def generate_pool_games(players_pool, tournament, name)
+    generate_pool_game(tournament, players_pool[0], players_pool[1], name)
+    generate_pool_game(tournament, players_pool[2], players_pool[3], name)
+    generate_pool_game(tournament, players_pool[0], players_pool[2], name)
+    generate_pool_game(tournament, players_pool[1], players_pool[3], name)
+    generate_pool_game(tournament, players_pool[0], players_pool[3], name)
+    generate_pool_game(tournament, players_pool[1], players_pool[2], name)
   end
 
-  def generate_pool_game(tournament, player1, player2)
-    game = Game.create!(tournament: tournament, step: "group")
+  def generate_pool_game(tournament, player1, player2, name)
+    game = Game.create!(tournament: tournament, step: "group", name: name)
     [player1, player2].each do |player|
-      score = game.scores.build(player: player)
+      score = Score.new
+      score.game = game
+      score.player = player
       score.save
     end
   end
 
 
-  def ranking_by_pool
-    ranking_player = {}
-    players_poolA.each do |player|
-      player.games.each do |game|
-        game.scores.each do |score|
-          if score.player == player
-            ranking_player[player][points] += 3
+  def ranking_pool
+    pools = @tournament.games.where(step: "group").order(:name).each_slice(6).to_a
+    pools.each do |pool|
+      players = pool.map do |game|
+        game.scores.map do |score|
+          score.player
+        end.flatten
+      end.flatten.uniq
+      players.each do |player|
+        player.points = 0
+        player.bp = 0
+        player.bc = 0
+        player.diff = 0
 
-          end
+        participated_games = pool.select do |game|
+          game.players.include? player
         end
+        participated_games.each do |game|
+          score_me = game.scores.where(player: player).first
+          score_other = game.scores.where.not(player: player).first
+          my_goals = score_me.goals || 0
+          other_goals = score_other.goals || 0
+
+          has_won = my_goals > other_goals
+          has_equality = my_goals == other_goals
+          if has_won
+            player.points += 3
+          elsif has_equality
+            player.points += 1
+          else
+            player.points += 0
+          end
+          player.bp += my_goals
+          player.bc += other_goals
+          player.diff += my_goals - other_goals
+        end
+        player.save!
       end
     end
   end

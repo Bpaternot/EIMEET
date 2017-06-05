@@ -17,9 +17,6 @@ class PlayersController < ApplicationController
     @player.user = current_user
     @player.admin = false
     authorize(@player)
-
-
-
     if @player.save
       redirect_to tournament_path(@tournament), notice: "You are now registered for the tournament!"
     else
@@ -52,7 +49,7 @@ class PlayersController < ApplicationController
   end
 
   def player_params
-    params.require(:player).permit(:tournament, :ps4, :controller_ps4, :fifa_game_ps4,)
+    params.require(:player).permit(:tournament, :ps4, :controller_ps4, :fifa_game_ps4, :points, :bp, :bc, :diff)
   end
 end
 

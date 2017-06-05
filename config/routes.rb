@@ -12,7 +12,8 @@ Rails.application.routes.draw do
     resources :reviews, only: :create
   end
   resources :users
-    get "dashboard", to: "users#dashboard"
+  get "dashboard", to: "users#dashboard"
+  resources :scores, only: :update
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
 
