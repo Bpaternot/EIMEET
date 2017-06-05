@@ -4,10 +4,11 @@
     <p>In bars, with friends and players...</p>
     <div class="form-homepage">
       <%= form_tag tournaments_path, method: :get, class: "form-group form-group-header form-inline" do %>
-        <%= text_field_tag 'tournament_address', '', class: "form-control form-control-header", placeholder: "Type your address" %>
-        <%= button_tag(type: "submit", class: "btn btn-primary btn-primary-header", disabled: true) do %>
-          <i class="fa fa-location-arrow" aria-hidden="true"></i>
-        <% end %>
+        <%= text_field_tag 'tournament_address', '', class: "form-control form-control-header", placeholder: "Type your address"%>
+      <%= button_tag(class: "btn btn-primary btn-primary-header", id: "get_current_position") do %>
+        <i class="fa fa-location-arrow" aria-hidden="true"></i>
+        <%#= navigator.geolocation.getCurrentPosition(successCallback,errorCallback,{timeout:10000}); %>
+      <% end %>
         <%= submit_tag 'GO', class: 'btn btn-primary btn-primary-header' %>
       <% end %>
     </div>
