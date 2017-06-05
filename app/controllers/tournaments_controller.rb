@@ -33,6 +33,7 @@ class TournamentsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@tournaments) do |tournament, marker|
       marker.lat tournament.bar.latitude
       marker.lng tournament.bar.longitude
+      marker.json({id: tournament.bar.id})
       # marker.infowindow render_to_string(partial: "/tournaments/map_box", locals: { tournament: tournament })
     end
     if current_user.token != nil
