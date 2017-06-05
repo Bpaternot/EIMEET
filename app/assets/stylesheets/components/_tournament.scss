@@ -1,0 +1,37 @@
+.container-tournament-show {
+  @media (min-width: $screen-md) {
+    margin: 0px 70px !important;
+    width: 90% !important;
+  }
+}
+
+// .col-md-10-tournament {
+//     width: 75% !important;
+// }
+
+// .col-md-2-tournament {
+//     width: 25% !important;
+// }
+
+// .col-xs-12-tournament {
+//   width: 100% !important;
+// }
+
+.margin-top-title-tournament {
+  margin-top: 40px;
+}
+
+.margin-bottom-title-username {
+  margin-bottom: 40px;
+}
+
+.username-tournament {
+  color: $fire;
+  text-transform: uppercase;
+}
+
+.username-player {
+  color: $fire;
+  font-weight: 600;
+}
+

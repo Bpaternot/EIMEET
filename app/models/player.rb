@@ -4,7 +4,10 @@ class Player < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :scores, dependent: :destroy
 
-  POSITIONS = ["A1", "A2", "B1", "B2", "C1", "C2", "D1", "D2", "E1", "E2", "F1", "F2", "G1", "G2", "H1", "H2", "HU1", "HU2", "HU3", "HU4", "HU5", "HU6", "HU7", "HU8", "Q1", "Q2", "Q3", "Q4", "S1", "S2", "W"]
+
+POSITIONS = ["A1", "A2", "B1", "B2", "C1", "C2", "D1", "D2", "E1", "E2", "F1", "F2", "G1", "G2", "H1", "H2", "HU1", "HU2", "HU3", "HU4", "HU5", "HU6", "HU7", "HU8", "Q1", "Q2", "Q3", "Q4", "S1", "S2", "W"]
+LIGUE1 = ["Angers", "Bastia", "Bordeaux", "Cean", "Dijon", "Guingamp", "Lille", "Lorient", "Lyon", "Marseille", "Metz", "Monaco", "Montpellier", "Nancy", "Nantes", "Nice", "Paris-SG", "Rennes", "Saint-Etienne", "Toulouse"]
+PREMIERELEAGUE = ["Arsenal", "Bournemouth", "Burnley", "Chelsea", "Crystalpalace", "Everton", "Hull", "Leicester", "Liverpool", "ManchesterCity", "ManchesterUnited", "Middlesbrough", "Southampton", "Stoke", "Sunderland", "Swansea", "Tottenham", "Watford", "WestBromwichAlbion", "WestHam"]
 
 # POSITIONS_ROUND16: ["A1", "A2", "B1", "B2", "C1", "C2", "D1", "D2", "E1", "E2", "F1", "F2", "G1", "G2", "H1", "H2"]
 # POSITIONS_QUARTER: ["HU1", "HU2", "HU3", "HU4", "HU5", "HU6", "HU7", "HU8"]
@@ -38,6 +41,7 @@ class Player < ApplicationRecord
 
 
   validates :position, inclusion: {in: POSITIONS, allow_nil: true}
+  validates :club, presence: true
 
   #validates :ps4
   # validates :controller_ps4, presence: true

@@ -22,19 +22,26 @@ class TournamentsController < ApplicationController
     end
 
     if @radius < 6
-      @zoom = 13
-    elsif @radius < 9
-      @zoom = 11
+      @zoom = 14
+    elsif @radius < 4
+      @zoom = 12
     else
-      @zoom = 9
+      @zoom = 10
     end
 
     # @tournaments = Tournament.all.joins(:bar).where("bars.latitude IS NOT NULL and bars.longitude IS NOT NULL")
     @hash = Gmaps4rails.build_markers(@tournaments) do |tournament, marker|
       marker.lat tournament.bar.latitude
       marker.lng tournament.bar.longitude
+      marker.json({id: tournament.bar.id})
+      marker.picture({
+        url: ActionController::Base.helpers.image_path('footballball.png'),
+        width:  50,
+        height: 50
+      })
       # marker.infowindow render_to_string(partial: "/tournaments/map_box", locals: { tournament: tournament })
     end
+
     if current_user.token != nil
       @graph = Koala::Facebook::API.new(current_user.token)
       profile = @graph.get_object("me")
