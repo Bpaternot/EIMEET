@@ -13,7 +13,6 @@ $(document).ready(function(){
   function foundLocation(position) {
     var lat = position.coords.latitude;
     var lon = position.coords.longitude;
-    $("#tournament_address").val("Position found...")
 
     geocodeLatLng(geocoder, { lat: lat, lng: lon });
 
