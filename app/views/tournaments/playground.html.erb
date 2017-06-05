@@ -1,4 +1,35 @@
 <!-- ___________________________________POOL____________________________________________________________-->
-<h1>Matchs à jouer</h1>
+<h1>RANKING</h1>
+
+<% @list_all_players.each do |pool| %>
+
+  <h2>Pool <%= pool.first.scores.first.game.name %></h2>
+
+  <% pool_sort = pool.sort_by { |player| -player.bc } %>
+  <% pool_sort = pool.sort_by { |player| -player.bp } %>
+  <% pool_sort = pool.sort_by { |player| -player.diff } %>
+  <% pool_sort = pool.sort_by { |player| -player.points } %>
+  <% pool_sort.each_with_index do |player, index| %>
+    <%= index + 1 %> /// <%= player.user.username %> : Pts: <%= player.points %> | Diff: <%= player.diff %> | BP <%= player.bp %> | BC <%= player.bc %><br/>
+  <% end %>
+<% end %>
 
 
+
+<h1>POOL MATCHS</h1>
+<% @group_games.each do |group| %>
+  <h2>Pool <%= group.first.name %></h2>
+  <% group.each do |game| %>
+    <%= form_for game.scores.first do |f| %>
+      <%= game.scores.first.player.user.username %>
+      <%= f.text_field :goals %>
+      <%= f.submit %>
+    <% end %>
+    VS
+    <%= form_for game.scores.last do |f| %>
+      <%= f.text_field :goals %>
+      <%= game.scores.last.player.user.username %>
+      <%= f.submit %>
+    <% end %>
+  <% end %>
+<% end %>

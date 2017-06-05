@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170605104016) do
+=======
+#version cyrielle
+# ActiveRecord::Schema.define(version: 20170605124403) do
+
+ActiveRecord::Schema.define(version: 20170605105447) do
+
+>>>>>>> bff3aa8aa7417463c73a8cea42a8113fe898ac03
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,10 +65,18 @@ ActiveRecord::Schema.define(version: 20170605104016) do
     t.integer  "controller_xbox"
     t.integer  "user_id"
     t.integer  "tournament_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "fifa_game_ps4"
     t.integer  "fifa_game_xbox"
+
+    t.integer  "pool_index"
+    t.integer  "points",          default: 0
+    t.integer  "bp",              default: 0
+    t.integer  "bc",              default: 0
+    t.integer  "diff",            default: 0
+    t.string   "club"
+
     t.index ["tournament_id"], name: "index_players_on_tournament_id", using: :btree
     t.index ["user_id"], name: "index_players_on_user_id", using: :btree
   end
@@ -76,11 +92,12 @@ ActiveRecord::Schema.define(version: 20170605104016) do
   end
 
   create_table "scores", force: :cascade do |t|
-    t.integer  "goals"
+    t.integer  "goals",         default: 0
     t.integer  "game_id"
     t.integer  "player_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "against_goals"
     t.index ["game_id"], name: "index_scores_on_game_id", using: :btree
     t.index ["player_id"], name: "index_scores_on_player_id", using: :btree
   end
@@ -97,6 +114,7 @@ ActiveRecord::Schema.define(version: 20170605104016) do
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.integer  "number_controllers"
+    t.string   "step"
     t.index ["bar_id"], name: "index_tournaments_on_bar_id", using: :btree
     t.index ["user_id"], name: "index_tournaments_on_user_id", using: :btree
   end

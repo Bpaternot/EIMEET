@@ -1,16 +1,74 @@
 <h3>Want to join?</h3>
+<label >Which Club you will Play ?</label>
+<select name="league" id="league">
+  <option value="LIGUE1">ligue 1</option>
+  <option value="PREMIERELEAGUE">Premiere League</option>
+</select>
+
+<select name="LIGUE1" id="0" id="club1">
+<% ["Angers", "Bastia", "Bordeaux", "Cean", "Dijon", "Guingamp", "Lille", "Lorient", "Lyon", "Marseille", "Metz", "Monaco", "Montpellier", "Nancy", "Nantes", "Nice", "Paris-SG", "Rennes", "Saint-Etienne", "Toulouse"].each do |club| %>
+<option value="<%= club %>"><%= club %></option>
+<% end %>
+</select>
+
+
+<select name="PREMIERELEAGUE" id="1" class="hidden">
+<% ["Arsenal", "Bournemouth", "Burnley", "Chelsea", "Crystalpalace", "Everton", "Hull", "Leicester", "Liverpool", "ManchesterCity", "ManchesterUnited", "Middlesbrough", "Southampton", "Stoke", "Sunderland", "Swansea", "Tottenham", "Watford", "WestBromwichAlbion", "WestHam"].each do |club| %>
+<option value="<%= club %>"><%= club %></option>
+<% end %>
+</select>
+
+
 <%= simple_form_for [@tournament, @player] do |f| %>
+
+
+  <%= f.input :club, label: false, input_html: {class: 'hidden', id: 'club_choice'} %>
+
+
   <label for="ps4">Take your PS4 ?</label>
   <%= f.input :ps4, as: :radio_buttons, label: false, item_wrapper_tag: false, wrapper_html: {class: 'brand-choice'}  %>
   <label for="controller_ps4">Controllers</label>
   <%= f.input :controller_ps4, as: :radio_buttons, collection: 0..8, label: false, item_wrapper_tag: false, wrapper_html: {class: 'controller-choice'}  %>
   <label for="fifa_game_ps4">Fifa</label>
   <%= f.input :fifa_game_ps4, as: :radio_buttons, collection: 0..2, label: false, item_wrapper_tag: false, wrapper_html: {class: 'fifa-choice'}  %>
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm"><%= f.submit "Join" %></button>
+  <button type="button" data-toggle="modal" data-target=".bs-example-modal-sm"><%= f.submit "Join" %></button>
 <% end %>
 
 
 
 
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      console.log("coucou")
+      $('#league').change(function(){
+      var team = $('#league').val();
+      console.log(team)
+
+      if (team == 'LIGUE1') {
+        $('#1').addClass( "hidden" )
+        $('#0').removeClass( "hidden" )
+      } else if (team == 'PREMIERELEAGUE') {
+      $('#0').addClass( "hidden" )
+      $('#1').removeClass( "hidden" )
+
+      }
+      });
+
+
+      $('#0').change(function(){
+      var team = $('#0').val();
+      $('#club_choice').val(team);
+      console.log(team)
+    });
+    $('#1').change(function(){
+      var team = $('#1').val();
+      $('#club_choice').val(team);
+      console.log(team)
+    });
+
+    });
+  <% end %>
+<% end %>
 
 
