@@ -42,13 +42,18 @@
   background: #3b5998;
 }
 
-.username-card {
+  .username-card {
   color: $fire;
   text-transform: uppercase;
 }
 
 .fixed {
   position: fixed !important;
+}
+
+.authorize-scroll {
+  overflow: auto;
+  max-height: 100vh;
 }
 
 // body {

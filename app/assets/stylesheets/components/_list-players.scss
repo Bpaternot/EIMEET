@@ -1,16 +1,47 @@
 .list-players {
-  width: 500px;
-  height: 80px;
+  width: 100%;
+  height: 50px;
+  margin: 10px auto;
+  padding: 5px 5px;
   display: flex;
   align-items: center;
-  justif-content: space-between;
+  justify-content: space-between;
+  background-color: $snow;
+  border: 1px solid $yankees;
+  border-radius: 2px;
+  &-avatar {
+    flex: 0 0 10%;
+    img {
+      margin-left: 7px;
+    }
+  }
+  &-username {
+    flex: 0 0 25%;
+  }
+  &-material {
+    flex: 0 0 40%;
+  }
+  &-actions {
+    padding-left: 8px;
+    flex: 0 0 15%;
+  }
+  &-team {
+    height: 100%;
+    width: 100%;
+    border-left: 1px solid $yankees;
+    flex: 0 0 10%;
+  }
 }
 
 
-.list-players-action-update-disabled {
+.fa-pencil-disabled {
   color: $space;
 }
 
-.list-players-action-update-active {
+.fa-pencil-active {
+  color: $fire;
+}
+
+.color-fire {
   color: $fire;
 }

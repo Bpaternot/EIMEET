@@ -1,48 +1,10 @@
 <div class="title-index">
   <h1>Tournaments</h1>
 </div>
-<div id="filter-to-fix">
-  <nav class="top-margin">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
-            <div class="row">
-            <%= form_tag "", method: :get, class: "form-inline" do %>
-              <div class="col-xs-6 col-sm-6 col-md-6">
-                <div class="address">
-                  <%= text_field_tag :tournament_address, params[:tournament_address], class: "form-control-filter-address form-control" %>
-                </div>
-                <div class="input-group date">
-                  <%= text_field_tag :date, params[:date], class: "form-control form-control-filter-date" %>
-                  <div class="input-group-addon">
-                    <span class="glyphicon glyphicon-th"></span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-6 col-sm-6 col-md-6">
-                <div class="players">
-                  <%= label_tag :players_8, "8", class: "btn-primary number-players-button form-inline toggle-button-filter" %>
-                  <%= radio_button_tag(:players, "players_8", false, { value: "8", class: "hidden"}) %>
-                  <%= label_tag :players_16, "16", class: "btn-primary number-players-button form-inline toggle-button-filter" %>
-                  <%= radio_button_tag(:players, "players_16", false, { value: "16", class: "hidden"}) %>
-                  <%= label_tag :players_32, "32", class: "btn-primary number-players-button form-inline toggle-button-filter" %>
-                  <%= radio_button_tag(:players, "players_32", false, { value: "32", class: "hidden"}) %>
-                </div>
-                <%= button_tag(type: "submit", class: "btn btn-primary btn btn-primary-filter") do %>
-                  <i class="fa fa-check" aria-hidden="true"></i>
-                <% end %>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
-</div>
 
-<div class="container container-tournaments">
+<div class="container container-tournaments fixed">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-8 no-padding-left no-padding-right">
+    <div class="col-xs-12 col-sm-6 col-md-8 no-padding-left no-padding-right authorize-scroll">
       <div class="row no-marged-right no-marged-left">
         <% @tournaments.each do |tournament| %>
         <div class="col-xs-12 col-sm-6 col-md-6">
@@ -119,7 +81,7 @@
       </div>
       <div class="row">
         <div class="col-xs-12 no-marged-right no-marged-left">
-          <div id="map" class="map-index-tournament" style="width: 100%; height: calc(100vh - 170px);"></div>
+          <div id="map" style="width: 100%; height: calc(100vh - 230px);"></div>
         </div>
       </div>
       </div>
