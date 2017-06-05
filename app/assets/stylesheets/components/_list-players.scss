@@ -1,0 +1,16 @@
+.list-players {
+  width: 500px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justif-content: space-between;
+}
+
+
+.list-players-action-update-disabled {
+  color: $space;
+}
+
+.list-players-action-update-active {
+  color: $fire;
+}

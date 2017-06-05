@@ -18,9 +18,69 @@ url('<%= cl_image_path @tournament.bar.photo %>; background-size: cover')">
     </div>
   </div>
 </div>
-<%= render "shared/progress-bar-show", tournament: @tournament %>
+<%= render partial: "shared/progress-bar-show", locals: { tournament: @tournament, remaining: @remaining } %>
+<div class="container">
+  <h1 class="margin-top-title-tournament">Tournament of <%= @tournament.date %></h1>
+  <h2>Organized by <span class="username-tournament"><%= @tournament.user.username %></span></h2>
+  <div class="row">
+    <div class="col-xs-col-sm-7 col-md-7">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6"></div>
+        <div class="col-xs-12 col-sm-6 col-md-6"></div>
+      </div>
+    </div>
+    <div class="col-xs-col-sm-7 col-md-5">
+    </div>
+  </div>
+</div>
 
 
+<% @tournament.players.each do |player| %>
+<div class="list-players">
+  <div class="list-players-avatar">
+   <% if player.user.facebook_picture_url %>
+   <% avatar_url = player.user.facebook_picture_url %>
+   <%= image_tag avatar_url, class: "avatar-small" %>
+   <% end %>
+ </div>
+ <div class="list-players-username">
+ <span class="username-player"><%= player.user.username %></span>
+</div>
+<div class="list-players-material">
+  <% if player.ps4 == true %>
+  1 x <%= image_tag "console2.png", class: "icon"%>
+  <% end %>
+  <% if player.controller_ps4 > 0 %>
+  <%= player.controller_ps4 %> x <%= image_tag "manette.png", class: "icon" %>
+  <% end %>
+  <% if player.fifa_game_ps4 > 0 %>
+  <%= player.fifa_game_ps4 %> x <%= image_tag "fifa.png", class: "icon" %>
+  <% end %>
+</div>
+<div class="list-players-actions">
+ <% if policy(player).destroy? %>
+ <%= link_to tournament_player_path(@tournament, player),
+ method: :delete,
+ data: { confirm: "Are you sure?" } do %>
+  <i class="fa fa-trash-o" aria-hidden="true"></i>
+ <% end %>
+ <% end %>
+ <% if  @remaining_console_ps4 == 0 && @remaining_controllers == 0 &&  @remaining_fifa_game == 0 %>
+ <p class="list-players-action-update-disabled"><i class="fa fa-pencil" aria-hidden="true"></i></p>
+ <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".update">No Stuff to add</button>
+ <% else %>
+ <!-- BUTTON UPDATE IF THE PLAYER IS IN THE TOURNAMENT -->
+ <% if Player.where(tournament: @tournament, user: current_user).exists? %>
+ <p class="list-players-action-update-active"><i class="fa fa-pencil" aria-hidden="true"></i></p>
+ <% end %>
+ <% end %>
+
+</div>
+<div class="list-players-team">
+
+</div>
+</div>
+<% end %>
 
 
 

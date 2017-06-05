@@ -3,43 +3,47 @@
   <% if tournament.players.count <= 2 %>
     <div class="progress">
       <div class="progress-bar-green-show" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
-        25%
+        Registration open - <%= remaining %> spaces remaining
       </div>
     </div>
   <% elsif tournament.players.count <= 3 %>
     <div class="progress">
       <div class="progress-bar-green-show" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" style="width: 38%;">
-        38%
+        Registration open - <%= remaining %> spaces remaining
       </div>
     </div>
   <% elsif tournament.players.count <= 4 %>
     <div class="progress">
       <div class="progress-bar-green-show" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
-        50%
+        Registration open - <%= remaining %> spaces remaining
       </div>
     </div>
   <% elsif tournament.players.count <= 5 %>
     <div class="progress">
       <div class="progress-bar-orange-show" role="progressbar" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100" style="width: 63%;">
-        63%
+        Book fast - <%= remaining %> spaces remaining
       </div>
     </div>
   <% elsif tournament.players.count <= 6 %>
     <div class="progress">
       <div class="progress-bar-orange-show" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
-        Almost full !
+        Almost full ! - <%= remaining %> spaces remaining
       </div>
     </div>
   <% elsif tournament.players.count < 8 %>
     <div class="progress">
       <div class="progress-bar-orange-show" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 88%;">
-        Hurry up !
+        <% if remaining == 1 %>
+          Hurry up ! - <%= remaining %> space remaining
+        <% else %>
+          Hurry up ! - <%= remaining %> spaces remaining
+        <% end %>
       </div>
     </div>
   <% elsif tournament.players.count == 8 %>
     <div class="progress">
       <div class="progress-bar-red-show" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-        Tournament full
+        Tournament full !
       </div>
     </div>
   <% end %>
@@ -47,49 +51,53 @@
   <% if tournament.players.count <= 2 %>
     <div class="progress">
       <div class="progress-bar-green-show" role="progressbar" aria-valuenow="13" aria-valuemin="0" aria-valuemax="100" style="width: 13%;">
-        13%
+        Registration open - <%= remaining %> spaces remaining
       </div>
     </div>
   <% elsif tournament.players.count <= 4 %>
     <div class="progress">
       <div class="progress-bar-green-show" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
-        25%
+        Registration open - <%= remaining %> spaces remaining
       </div>
     </div>
   <% elsif tournament.players.count <= 6 %>
     <div class="progress">
       <div class="progress-bar-green-show" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" style="width: 38%;">
-        38%
+        Registration open - <%= remaining %> spaces remaining
       </div>
     </div>
   <% elsif tournament.players.count <= 8 %>
     <div class="progress">
       <div class="progress-bar-green-show" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
-        50%
+        Registration open - <%= remaining %> spaces remaining
       </div>
     </div>
   <% elsif tournament.players.count <= 10 %>
     <div class="progress">
       <div class="progress-bar-orange-show" role="progressbar" aria-valuenow="63%" aria-valuemin="0" aria-valuemax="100" style="width: 63%%;">
-        63%
+        Book fast ! - <%= remaining %> spaces remaining
       </div>
     </div>
   <% elsif tournament.players.count <= 12 %>
     <div class="progress">
       <div class="progress-bar-orange-show" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
-        Almost full !
+        Almost full ! - <%= remaining %> spaces remaining
       </div>
     </div>
   <% elsif tournament.players.count < 16 %>
     <div class="progress">
       <div class="progress-bar-orange-show" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 88%;">
-        Hurry up !
+        <% if remaining == 1 %>
+          Hurry up ! - <%= remaining %> space remaining
+        <% else %>
+          Hurry up ! - <%= remaining %> spaces remaining
+        <% end %>
       </div>
     </div>
   <% elsif tournament.players.count == 16 %>
     <div class="progress">
       <div class="progress-bar-red-show" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-        Tournament full
+        Tournament full !
       </div>
     </div>
   <% end %>
@@ -98,43 +106,47 @@
   <% if tournament.players.count <= 4 %>
     <div class="progress">
       <div class="progress-bar-green-show" role="progressbar" aria-valuenow="13" aria-valuemin="0" aria-valuemax="100" style="width: 13%;">
-        13%
+        Registration open - <%= remaining %> spaces remaining
       </div>
     </div>
   <% elsif tournament.players.count <= 8 %>
     <div class="progress">
       <div class="progress-bar-green-show" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
-        25%
+        Registration open - <%= remaining %> spaces remaining
       </div>
     </div>
   <% elsif tournament.players.count <= 12 %>
     <div class="progress">
       <div class="progress-bar-green-show" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" style="width: 38%;">
-        38%
+        Registration open - <%= remaining %> spaces remaining
       </div>
     </div>
   <% elsif tournament.players.count <= 16 %>
     <div class="progress">
       <div class="progress-bar-green-show" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
-        50%
+        Registration open - <%= remaining %> spaces remaining
       </div>
     </div>
   <% elsif tournament.players.count <= 20 %>
     <div class="progress">
       <div class="progress-bar-orange-show" role="progressbar" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100" style="width: 63%;">
-        63%
+        Book fast ! - <%= remaining %> spaces remaining
       </div>
     </div>
   <% elsif tournament.players.count <= 24 %>
     <div class="progress">
       <div class="progress-bar-orange-show" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
-        Almost full !
+        Almost full ! - <%= remaining %> spaces remaining
       </div>
     </div>
   <% elsif tournament.players.count < 32 %>
     <div class="progress">
       <div class="progress-bar-orange-show" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 88%;">
-        Hurry up !
+        <% if remaining == 1 %>
+          Hurry up ! - <%= remaining %> space remaining
+        <% else %>
+          Hurry up ! - <%= remaining %> spaces remaining
+        <% end %>
       </div>
     </div>
   <% elsif tournament.players.count <= 32 %>
