@@ -34,8 +34,14 @@ class TournamentsController < ApplicationController
       marker.lat tournament.bar.latitude
       marker.lng tournament.bar.longitude
       marker.json({id: tournament.bar.id})
+      marker.picture({
+        url: ActionController::Base.helpers.image_path('footballball.png'),
+        width:  50,
+        height: 50
+      })
       # marker.infowindow render_to_string(partial: "/tournaments/map_box", locals: { tournament: tournament })
     end
+
     if current_user.token != nil
       @graph = Koala::Facebook::API.new(current_user.token)
       profile = @graph.get_object("me")

@@ -304,6 +304,8 @@
             }
         ]
     }]
+
+
       var handler = Gmaps.build('Google');
       handler.buildMap({
         provider: {
@@ -311,6 +313,7 @@
         },
         internal: { id: 'map' } }, function() {
         markers = handler.addMarkers(<%= raw @hash.to_json %>);
+
         _.each(<%= raw @hash.to_json %>, function(json, index){
           var marker = markers[index];
           $("#" + json.id).on('mouseenter', function() {
@@ -321,14 +324,15 @@
           });
         });
 
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
         if (markers.length == 0) {
           handler.getMap().setZoom(2);
         } else if (markers.length >= 1) {
-          handler.map.centerOn(<%= Geocoder.coordinates(@address) %>);
+          //handler.map.centerOn();
           handler.getMap().setZoom(<%= @zoom %>);
         }
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+
       });
     });
   </script>
