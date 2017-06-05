@@ -71,6 +71,11 @@ url('<%= cl_image_path @tournament.bar.photo %>'); background-size: cover;">
            <% end %>
          </div>
          <div class="list-players-team">
+           <div class="list-players-team-images">
+            <% if player.club? %>
+              <%= image_tag player.club %>
+            <% end %>
+           </div>
          </div>
        </div>
         </div>
