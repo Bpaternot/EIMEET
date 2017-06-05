@@ -42,7 +42,7 @@
   background: #3b5998;
 }
 
-.username-card {
+  .username-card {
   color: $fire;
   text-transform: uppercase;
 }
@@ -51,6 +51,11 @@
   position: fixed !important;
 }
 
-body {
-  padding-top: 50px;
+.authorize-scroll {
+  overflow: auto;
+  max-height: 100vh;
 }
+
+// body {
+//   padding-top: 50px;
+// }

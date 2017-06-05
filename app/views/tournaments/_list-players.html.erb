@@ -1,0 +1,41 @@
+<div class="list-players">
+  <div class="list-players-avatar">
+    <% if player.user.facebook_picture_url %>
+      <% avatar_url = player.user.facebook_picture_url %>
+      <%= image_tag avatar_url, class: "avatar" %>
+    <% end %>
+  </div>
+  <div class="list-players-username">
+    <span class="username-player"><%= player.user.username %></span>
+  </div>
+  <div class="list-players-material">
+    <% if player.ps4 == true %>
+      <span class="color-fire">1 x</span> <%= image_tag "ps4.png", class: "icon"%>
+    <% end %>
+    <% if player.controller_ps4 > 0 %>
+      <span class="color-fire"><%= player.controller_ps4 %> x</span> <%= image_tag "manette.png", class: "icon" %>
+    <% end %>
+    <% if player.fifa_game_ps4 > 0 %>
+      <span class="color-fire"><%= player.fifa_game_ps4 %> x</span> <%= image_tag "fifa.png", class: "icon" %>
+    <% end %>
+  </div>
+  <div class="list-players-actions">
+    <% if policy(player).destroy? %>
+      <%= link_to tournament_player_path(@tournament, player),
+        method: :delete,
+        data: { confirm: "Are you sure?" } do %>
+      <i class="fa fa-trash-o" aria-hidden="true"></i>
+    <% end %>
+  <% end %>
+  &nbsp;
+  <% if policy(player).update? %>
+    <% if  @remaining_console_ps4 != 0 || @remaining_controllers != 0 || @remaining_fifa_game != 0 %>
+      <i class="fa fa-pencil fa-pencil-active" aria-hidden="true"></i>
+    <% else %>
+      <i class="fa fa-pencil fa-pencil-disabled" aria-hidden="true"></i>
+    <% end %>
+  <% end %>
+  </div>
+  <div class="list-players-team">
+  </div>
+</div>
