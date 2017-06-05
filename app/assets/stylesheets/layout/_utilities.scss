@@ -42,10 +42,15 @@
   background: #3b5998;
 }
 
-.bravo-cyrielle {
-  width: 100%;
-  height: 100vh;
-  background-color: $fire;
-  color: $snow;
-  z-index: 3000;
+.username-card {
+  color: $fire;
+  text-transform: uppercase;
+}
+
+.fixed {
+  position: fixed !important;
+}
+
+body {
+  padding-top: 50px;
 }

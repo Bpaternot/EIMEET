@@ -22,11 +22,11 @@ class TournamentsController < ApplicationController
     end
 
     if @radius < 6
-      @zoom = 13
-    elsif @radius < 9
-      @zoom = 11
+      @zoom = 14
+    elsif @radius < 4
+      @zoom = 12
     else
-      @zoom = 9
+      @zoom = 10
     end
 
     # @tournaments = Tournament.all.joins(:bar).where("bars.latitude IS NOT NULL and bars.longitude IS NOT NULL")
