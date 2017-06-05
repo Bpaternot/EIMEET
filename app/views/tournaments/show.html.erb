@@ -118,6 +118,12 @@
         </div>
 
         <!-- Delete Player -->
+        <div class="card-show-tournament-center">
+          <% if player.club? %>
+            <%= image_tag player.club %>
+          <% end %>
+        </div>
+
         <div class="card-show-tournament-right">
           <% if policy(player).destroy? %>
             <%= link_to image_tag("trash.png"), tournament_player_path(@tournament, player),
@@ -140,8 +146,6 @@
   </div>
   </br>
 <% end %>
-
-
 
   <!-- TCHAT TOURNAMENT -->
   </br>
