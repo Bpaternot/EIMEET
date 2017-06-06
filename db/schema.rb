@@ -10,15 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20170605104016) do
-=======
-#version cyrielle
-# ActiveRecord::Schema.define(version: 20170605124403) do
-
-ActiveRecord::Schema.define(version: 20170605105447) do
-
->>>>>>> bff3aa8aa7417463c73a8cea42a8113fe898ac03
+ActiveRecord::Schema.define(version: 20170605124403) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,14 +61,12 @@ ActiveRecord::Schema.define(version: 20170605105447) do
     t.datetime "updated_at",                  null: false
     t.integer  "fifa_game_ps4"
     t.integer  "fifa_game_xbox"
-
     t.integer  "pool_index"
+    t.string   "club"
     t.integer  "points",          default: 0
     t.integer  "bp",              default: 0
     t.integer  "bc",              default: 0
     t.integer  "diff",            default: 0
-    t.string   "club"
-
     t.index ["tournament_id"], name: "index_players_on_tournament_id", using: :btree
     t.index ["user_id"], name: "index_players_on_user_id", using: :btree
   end
