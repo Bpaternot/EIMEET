@@ -3,15 +3,54 @@
 * ------------------------------------- */
 
 .alert {
-  margin-top: 50px;
-  margin-bottom: 0px;
+  margin: 0;
   text-align: center;
   color: white;
+  position: absolute;
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 20000;
+  border: none !important;
+  // margin-top: 50px;
+  // margin-bottom: 0px;
+
 }
 .alert-info {
   background: $green;
-  border-color: $green;
 }
 .alert-warning {
   background: $red;
+}
+
+// Animation to fade away notices
+
+.hideMe {
+    -moz-animation: cssAnimation 0s ease-in 2s forwards;
+    /* Firefox */
+    -webkit-animation: cssAnimation 0s ease-in 2s forwards;
+    /* Safari and Chrome */
+    -o-animation: cssAnimation 0s ease-in 2s forwards;
+    /* Opera */
+    animation: cssAnimation 0s ease-in 2s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        overflow:hidden;
+        z-index: 1;
+    }
+}
+@-webkit-keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        visibility:hidden;
+        z-index: 1;
+    }
 }
