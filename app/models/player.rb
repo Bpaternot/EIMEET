@@ -3,6 +3,7 @@ class Player < ApplicationRecord
   belongs_to :tournament
   has_many :reviews, dependent: :destroy
   has_many :scores, dependent: :destroy
+  validates :club, presence: true
 
 
 POSITIONS = ["A1", "A2", "B1", "B2", "C1", "C2", "D1", "D2", "E1", "E2", "F1", "F2", "G1", "G2", "H1", "H2", "HU1", "HU2", "HU3", "HU4", "HU5", "HU6", "HU7", "HU8", "Q1", "Q2", "Q3", "Q4", "S1", "S2", "W"]
