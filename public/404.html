@@ -18,6 +18,12 @@
     margin: 4em auto 0;
   }
 
+#image{
+  background-image: url("/assets/foot.gif");
+  background-size: cover;
+}
+
+
   .rails-default-error-page div.dialog > div {
     border: 1px solid #CCC;
     border-right-color: #999;
@@ -37,8 +43,9 @@
     line-height: 1.5em;
   }
 
-  .rails-default-error-page div.dialog > p {
+  .rails-default-error-page div.dialog > a > p {
     margin: 0 0 1em;
+    bottom: 40px;
     padding: 1em;
     background-color: #F7F7F7;
     border: 1px solid #CCC;
@@ -51,17 +58,13 @@
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
+
   </style>
 </head>
 
-<body class="rails-default-error-page">
+<body class="rails-default-error-page" id="image">
   <!-- This file lives in public/404.html -->
   <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
+    <a href="/"><p>Sorry... Goal not found ! Back HOME.</p></a>
 </body>
 </html>

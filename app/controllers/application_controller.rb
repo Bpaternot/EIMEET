@@ -16,6 +16,12 @@ class ApplicationController < ActionController::Base
   #   redirect_to(root_path)
   # end
 
+def content_not_found
+  render file: "#{Rails.root}/public/404", layout: true, status: :not_found
+end
+
+
+
   private
 
   def configure_permitted_parameters
