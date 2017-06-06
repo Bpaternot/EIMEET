@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: $snow;
-  border: 1px solid $yankees;
+  border: 1px solid $snow;
   border-radius: 2px;
   border
   &-avatar {
@@ -29,7 +29,7 @@
   &-team {
     height: 100%;
     width: 100%;
-    border-left: 1px solid $yankees;
+    border-left: 1px solid $space;
     flex: 0 0 10%;
     &-images {
       height: 100%;
@@ -39,6 +39,7 @@
       justify-content: space-around;
       img {
         width: 30px;
+        margin-left: 5px;
       }
     }
   }

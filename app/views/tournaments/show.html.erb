@@ -37,6 +37,9 @@ url('<%= cl_image_path @tournament.bar.photo %>'); background-size: cover;">
              <% if player.user.facebook_picture_url %>
              <% avatar_url = player.user.facebook_picture_url %>
              <%= image_tag avatar_url, class: "avatar" %>
+             <% else %>
+             <% avatar_url = "http://res.cloudinary.com/dutc7zz18/image/upload/v1496741104/avatar-fake_yuue1t.png" %>
+             <%= image_tag avatar_url, class: "avatar" %>
              <% end %>
            </div>
            <div class="list-players-username">
@@ -73,7 +76,7 @@ url('<%= cl_image_path @tournament.bar.photo %>'); background-size: cover;">
          <div class="list-players-team">
            <div class="list-players-team-images">
             <% if player.club? %>
-              <%= image_tag player.club %>
+              <%= image_tag player.club, class: "team-photo" %>
             <% end %>
            </div>
          </div>
@@ -94,14 +97,23 @@ url('<%= cl_image_path @tournament.bar.photo %>'); background-size: cover;">
       <% elsif @remaining == 0 && Player.where(tournament: @tournament, user: current_user).exists? %>
         <div class="module-right-full-tournament-start">
           <div class="module-right-full-tournament-start-message">
-            <%= link_to "START TOURNAMENT", tournament_playground_path(@tournament), class: "" %>
+            <%= link_to "START TOURNAMENT", tournament_playground_path(@tournament), class: "btn btn-primary button-start-tournament" %>
           </div>
         </div>
       <!-- Tournament not full / User is a player / Still need material -->
       <% elsif @remaining != 0 && Player.where(tournament: @tournament, user: current_user).exists? %>
         <div class="module-right-not-full-tournament-miss-material">
+          <h3>Material already registered</h3>
           <div class="module-right-not-full-tournament-miss-material-list-material">
-            <%= @remaining_console_ps4 %> <%= image_tag "console2.png", class: "icon" %>&nbsp;&nbsp;<%= @remaining_controllers %> <%= image_tag "manette.png", class: "icon"%>&nbsp;&nbsp;<%= @remaining_fifa_game %> <%= image_tag "fifa.png", class: "icon" %>
+          <div class="module-right-not-full-tournament-miss-material-list-material-console">
+            <%= @remaining_console_ps4 %>&nbsp;&nbsp;<%= image_tag "ps4.png", class: "icon" %>
+          </div>
+          <div class="module-right-not-full-tournament-miss-material-list-material-shifters">
+            <%= @remaining_controllers %>&nbsp;&nbsp;<%= image_tag "manette.png", class: "icon"%>
+          </div>
+          <div class="module-right-not-full-tournament-miss-material-list-material-fifa">
+            <%= @remaining_fifa_game %>&nbsp;&nbsp;<%= image_tag "fifa.png", class: "icon" %>
+          </div>
           </div>
           <div class="module-right-not-full-tournament-miss-material-form-update">
             <%= render 'form_update' %>

@@ -1,33 +1,58 @@
 .module-right-full-tournament {
   margin: 10px auto;
-  border: 1px solid $yankees;
+  border: 1px solid $snow;
   width: 100%;
-  height: 400px;
+  min-height: 200px;
   background-color: $snow;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   &-message {
-
+    text-transform: uppercase;
+    font-weight: 600;
   }
 }
 
 .module-right-full-tournament-start {
   margin: 10px auto;
-  border: 1px solid $yankees;
+  border: 1px solid $snow;
   width: 100%;
-  height: 400px;
+  min-height: 200px;
   background-color: $snow;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   &-message {
+
+  }
+  .button-start-tournament {
 
   }
 }
 
 .module-right-not-full-tournament-miss-material {
   margin: 10px auto;
-  border: 1px solid $yankees;
+  padding: 15px 15px;
+  border: 1px solid $snow;
   width: 100%;
-  height: 400px;
+  min-height: 200px;
   background-color: $snow;
   &-list-material {
-
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    &-console {
+      color: $fire;
+      font-weight: 600;
+    }
+    &-shifters {
+      color: $fire;
+      font-weight: 600;
+    }
+    &-fifa {
+      color: $fire;
+      font-weight: 600;
+    }
   }
   &-form-update {
 
@@ -36,11 +61,27 @@
 
 .module-right-not-full-tournament-join {
   margin: 10px auto;
-  border: 1px solid $yankees;
+  border: 1px solid $snow;
   width: 100%;
-  height: 400px;
+  min-height: 200px;
   background-color: $snow;
   &-form {
 
   }
 }
+
+.title-module {
+  margin-top: 10px;
+}
+
+.btn-primary-update {
+  margin-top: 10px;
+  width: 100%;
+  font-weight: 600;
+}
+
+
+
+
+
+
