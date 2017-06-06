@@ -14,22 +14,31 @@
   <% end %>
 <% end %>
 
-
-
 <h1>POOL MATCHS</h1>
-<% @group_games.each do |group| %>
-  <h2>Pool <%= group.first.name %></h2>
-  <% group.each do |game| %>
-    <%= form_for game.scores.first do |f| %>
-      <%= game.scores.first.player.user.username %>
-      <%= f.text_field :goals %>
-      <%= f.submit %>
-    <% end %>
-    VS
-    <%= form_for game.scores.last do |f| %>
-      <%= f.text_field :goals %>
-      <%= game.scores.last.player.user.username %>
-      <%= f.submit %>
-    <% end %>
-  <% end %>
-<% end %>
+
+<div class="container">
+  <% @group_games.each do |group| %>
+    <h2>Pool <%= group.first.name %></h2>
+      <div class="row">
+          <% group.each do |game| %>
+        <div class="col-xs-6 col-sm-6 col-md-5">
+            <%= form_for game.scores.first do |f| %>
+              <%= game.scores.first.player.user.username %>
+              <%= f.text_field :goals %>
+              <%= f.submit %>
+            <% end %>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-2">
+          VS
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-5">
+          <%= form_for game.scores.last do |f| %>
+            <%= f.submit %>
+            <%= f.text_field :goals %>
+            <%= game.scores.last.player.user.username %>
+          <% end %>
+        </div>
+        <% end %>
+      </div>
+        <% end %>
+</div>

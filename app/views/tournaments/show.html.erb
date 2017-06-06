@@ -98,7 +98,7 @@ url('<%= cl_image_path @tournament.bar.photo %>'); background-size: cover;">
           </div>
         </div>
       <!-- Tournament not full / User is a player / Still need material -->
-      <% elsif @remaining != 0 && Player.where(tournament: @tournament, user: current_user).exists? || @remaining_console_ps4 != 0 || @remaining_controllers != 0 || @remaining_fifa_game != 0 %>
+      <% elsif @remaining != 0 && Player.where(tournament: @tournament, user: current_user).exists? %>
         <div class="module-right-not-full-tournament-miss-material">
           <div class="module-right-not-full-tournament-miss-material-list-material">
             <%= @remaining_console_ps4 %> <%= image_tag "console2.png", class: "icon" %>&nbsp;&nbsp;<%= @remaining_controllers %> <%= image_tag "manette.png", class: "icon"%>&nbsp;&nbsp;<%= @remaining_fifa_game %> <%= image_tag "fifa.png", class: "icon" %>
@@ -118,6 +118,10 @@ url('<%= cl_image_path @tournament.bar.photo %>'); background-size: cover;">
     </div>
   </div>
 </div>
+
+
+
+
   <!-- TCHAT TOURNAMENT -->
   </br>
   <% if Player.where(tournament: @tournament, user: current_user).exists? %>
