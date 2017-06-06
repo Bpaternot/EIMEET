@@ -73,7 +73,7 @@ url('<%= cl_image_path @tournament.bar.photo %>'); background-size: cover;">
            <% if policy(player).destroy? %>
            <%= link_to tournament_player_path(@tournament, player),
            method: :delete,
-           data: { confirm: "Are you sure?" } do %>
+           data: { confirm: "Do you really want unregister?" } do %>
            <i class="fa fa-times" aria-hidden="true"></i>
            <% end %>
            <% end %>
@@ -166,14 +166,13 @@ url('<%= cl_image_path @tournament.bar.photo %>'); background-size: cover;">
 <% end %>
 
 
-  <!-- DESTROY THE TOURNAMENT -->
-  <% if policy(@tournament).destroy? %>
-    <%= link_to "Delete the tournament", tournament_path(@tournament),
+ <!--  <!-- DESTROY THE TOURNAMENT -->
+<!--   <#% if policy(@tournament).destroy? %>
+    <%#= link_to "Delete the tournament", tournament_path(@tournament),
         method: :delete,
         data: { confirm: "Are you sure?" } %>
 
-  <% end %>
-
+  <#% end %> -->
 
 
 

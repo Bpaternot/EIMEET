@@ -28,29 +28,27 @@
 // Animation to fade away notices
 
 .hideMe {
-    -moz-animation: cssAnimation 0s ease-in 2s forwards;
-    /* Firefox */
-    -webkit-animation: cssAnimation 0s ease-in 2s forwards;
-    /* Safari and Chrome */
-    -o-animation: cssAnimation 0s ease-in 2s forwards;
-    /* Opera */
-    animation: cssAnimation 0s ease-in 2s forwards;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-}
-@keyframes cssAnimation {
-    to {
-        width:0;
-        height:0;
-        overflow:hidden;
-        z-index: 1;
-    }
+  -webkit-animation: cssAnimation 1s ease 2s forwards;
+       -moz-animation: cssAnimation 1s ease 2s forwards;
+         -o-animation: cssAnimation 1s ease 2s forwards;
+            animation: cssAnimation 1s ease 2s forwards;
+  }
+  @keyframes cssAnimation {
+   0% {
+    opacity: 0;
+
+  }
+  100% {
+    opacity: 0;
+
+  }
 }
 @-webkit-keyframes cssAnimation {
-    to {
-        width:0;
-        height:0;
-        visibility:hidden;
-        z-index: 1;
-    }
+ 0% {
+  opacity: 0;
+}
+100% {
+    opacity: 0;
+
+  }
 }
