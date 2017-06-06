@@ -1,10 +1,16 @@
 class TournamentsController < ApplicationController
   before_action :set_tournament, only: [ :show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [ :index ]
 
   def index
     policy_scope(Tournament)
-    @address = params[:tournament_address]
-
+    if params[:tournament_address]
+      if params[:tournament_address].empty?
+        @address = 'Paris'
+      else
+         @address = params[:tournament_address]
+      end
+    end
     # @bars = Bar.near(@address, 5).select { |bar| bar.tournaments }
     @radius = 5
     @bars = list_bars(@address, @radius)
@@ -42,10 +48,12 @@ class TournamentsController < ApplicationController
       # marker.infowindow render_to_string(partial: "/tournaments/map_box", locals: { tournament: tournament })
     end
 
-    if current_user.token != nil
-      @graph = Koala::Facebook::API.new(current_user.token)
-      profile = @graph.get_object("me")
-      @friends = @graph.get_connections("me", "friends")
+    if current_user
+      if current_user.token != nil
+        @graph = Koala::Facebook::API.new(current_user.token)
+        profile = @graph.get_object("me")
+        @friends = @graph.get_connections("me", "friends")
+      end
     end
 
   end
