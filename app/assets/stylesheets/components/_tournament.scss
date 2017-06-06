@@ -39,3 +39,12 @@
   position: relative;
 }
 
+.wrapper-for-sharing {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: $snow;
+  padding: 15px 15px;
+  margin-bottom: 40px;
+  border-radius: 2px;
+}
