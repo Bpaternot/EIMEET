@@ -6,7 +6,7 @@
 </select>
 
 <select name="LIGUE1" id="0" class="design-form">
-<% ["Angers", "Bastia", "Bordeaux", "Cean", "Dijon", "Guingamp", "Lille", "Lorient", "Lyon", "Marseille", "Metz", "Monaco", "Montpellier", "Nancy", "Nantes", "Nice", "Paris-SG", "Rennes", "Saint-Etienne", "Toulouse"].each do |club| %>
+<% ["Choose your team", "Angers", "Bastia", "Bordeaux", "Caen", "Dijon", "Guingamp", "Lille", "Lorient", "Lyon", "Marseille", "Metz", "Monaco", "Montpellier", "Nancy", "Nantes", "Nice", "Paris-SG", "Rennes", "Saint-Etienne", "Toulouse"].each do |club| %>
 
 <option value="<%= club %>"><%= club %></option>
 <% end %>
@@ -14,7 +14,7 @@
 
 
 <select name="PREMIERELEAGUE" id="1" class="hidden design-form">
-<% ["Arsenal", "Bournemouth", "Burnley", "Chelsea", "Crystalpalace", "Everton", "Hull", "Leicester", "Liverpool", "ManchesterCity", "ManchesterUnited", "Middlesbrough", "Southampton", "Stoke", "Sunderland", "Swansea", "Tottenham", "Watford", "WestBromwichAlbion", "WestHam"].each do |club| %>
+<% ["Choose your team", "Arsenal", "Bournemouth", "Burnley", "Chelsea", "Crystalpalace", "Everton", "Hull", "Leicester", "Liverpool", "ManchesterCity", "ManchesterUnited", "Middlesbrough", "Southampton", "Stoke", "Sunderland", "Swansea", "Tottenham", "Watford", "WestBromwichAlbion", "WestHam"].each do |club| %>
 <option value="<%= club %>"><%= club %></option>
 <% end %>
 </select>
@@ -29,7 +29,7 @@
   <label for="ps4">Bring your PS4?</label>
   <%= f.input :ps4, as: :radio_buttons, label: false, item_wrapper_tag: false, wrapper_html: {class: 'brand-choice'}  %>
   <label for="controller_ps4">Bring controllers?</label>
-  <%= f.input :controller_ps4, as: :radio_buttons, collection: 0..8, label: false, item_wrapper_tag: false, wrapper_html: {class: 'controller-choice'}  %>
+  <%= f.input :controller_ps4, as: :radio_buttons, collection: 0..4, label: false, item_wrapper_tag: false, wrapper_html: {class: 'controller-choice'}  %>
   <label for="fifa_game_ps4">Bring Fifa?</label>
   <%= f.input :fifa_game_ps4, as: :radio_buttons, collection: 0..2, label: false, item_wrapper_tag: false, wrapper_html: {class: 'fifa-choice'}  %>
   <%= f.submit "JOIN", class: "btn btn-primary btn-primary-update" %>

@@ -50,6 +50,7 @@
   font-size: px;
   font-weight: 700;
   text-transform: uppercase;
+  text-decoration: none;
   box-sizing: border-box;
   &:hover {
   color: $yankees;
@@ -128,7 +129,15 @@
   }
 }
 
-
+#create-btn {
+  color: $yankees;
+  &:hover {
+    color: $yankees;
+  }
+  &:focus {
+    text-decoration: none;
+  }
+}
 
 
 
