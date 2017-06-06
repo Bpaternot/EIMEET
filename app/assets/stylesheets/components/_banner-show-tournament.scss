@@ -2,17 +2,25 @@
   height: 300px;
   margin-top: 50px;
   position: relative;
+  @media (min-width: $screen-md) {
+  height: 300px;
+  margin-top: 50px;
+  position: relative;
+  }
 }
 
 .banner-show-tournament-bar-block {
-  border-top-right-radius: 2px;
-  border-top-left-radius: 2px;
-  position: absolute;
-  background-color: $snow;
-  bottom: 0px;
-  right: 100px;
-  width: 500px;
-  height: 200px;
+
+  @media (min-width: $screen-md) {
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+    position: absolute;
+    background-color: $snow;
+    bottom: 0px;
+    right: 100px;
+    width: 500px;
+    height: 200px;
+  }
 }
 
 .banner-show-tournament-bar-offers {
@@ -92,6 +100,7 @@
 
 .banner-show-tournament-bar-block-map {
   height: 45%;
+
 }
 
 .btn-primary-offers {

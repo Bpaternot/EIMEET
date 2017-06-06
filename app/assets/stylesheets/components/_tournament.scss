@@ -37,14 +37,29 @@
 
 .container-for-title {
   position: relative;
+  h1 {
+    margin-left: 0px;
+  }
 }
 
+h1 {
+  color: $fire;
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
 .wrapper-for-sharing {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-around;
   background-color: $snow;
   padding: 15px 15px;
+  padding-bottom: 25px !important;
   margin-bottom: 40px;
   border-radius: 2px;
+  h2 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
 }

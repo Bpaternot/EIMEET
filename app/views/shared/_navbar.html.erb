@@ -10,6 +10,7 @@
     <!-- Different navigation if login or not -->
 
     <%= link_to t(".sign_in", default: "Join"), tournaments_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
     <%= link_to t(".sign_in", default: "Create"), "#", class: "navbar-wagon-item navbar-wagon-link disabled", id:'create-btn' %>
 
     <% if user_signed_in? %>
