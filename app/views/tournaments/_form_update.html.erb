@@ -25,7 +25,7 @@
    <label class="title-module" for="ps4">Bring your PS4?</label>
   <%= f.input :ps4, as: :radio_buttons, label: false, item_wrapper_tag: false, wrapper_html: {class: 'brand-choice'}  %>
   <label class="title-module" for="controller_ps4">Bring controllers?</label>
-  <%= f.input :controller_ps4, as: :radio_buttons, collection: 0..8, label: false, item_wrapper_tag: false, wrapper_html: {class: 'controller-choice'}  %>
+  <%= f.input :controller_ps4, as: :radio_buttons, collection: 0..4, label: false, item_wrapper_tag: false, wrapper_html: {class: 'controller-choice'}  %>
   <label class="title-module" for="fifa_game_ps4">Bring Fifa?</label>
  <%= f.input :fifa_game_ps4, as: :radio_buttons, collection: 0..2, label: false, item_wrapper_tag: false, wrapper_html: {class: 'fifa-choice'}  %>
  <%= f.submit "UPDATE", class: "btn btn-primary btn-primary-update" %>

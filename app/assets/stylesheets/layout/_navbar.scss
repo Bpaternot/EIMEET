@@ -129,8 +129,14 @@
   }
 }
 
-#create-btn:focus {
-  text-decoration: none;
+#create-btn {
+  color: $yankees;
+  &:hover {
+    color: $yankees;
+  }
+  &:focus {
+    text-decoration: none;
+  }
 }
 
 
