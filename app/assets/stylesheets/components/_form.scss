@@ -3,12 +3,13 @@
     display: none !important;
   }
   label {
-    background-color: #FF6663;
+    background-color: $fire;
     color: white;
     width: 40px;
     border-radius: 2px;
     padding: 4px;
     margin-right: 2px;
+    text-align: center;
     transition: all ease 0.1s;
     &:hover{
       cursor: pointer;
@@ -26,7 +27,8 @@
     display: none !important;
   }
   label {
-    background-color: #FF6663;
+    background-color: $fire;
+    text-align: center;
     color: white;
     width: 40px;
     border-radius: 2px;
@@ -50,7 +52,8 @@
     display: none !important;
   }
   label {
-    background-color: #FF6663;
+    background-color: $fire;
+    text-align: center;
     color: white;
     width: 40px;
     border-radius: 2px;
@@ -66,5 +69,26 @@
     background-color: $yankees;
     font-weight: bold;
   }
+}
+
+#league {
+  width: 100% !important;
+  margin-bottom: 15px;
+}
+
+.design-form {
+  width: 100%;
+}
+
+#clubs-premier-league {
+  width: 100% !important;
+}
+
+select, input[type="color" i][list] {
+    background-color: rgb(248, 248, 248);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(166, 166, 166);
+    border-image: initial;
 }
 
