@@ -71,3 +71,24 @@
   }
 }
 
+#league {
+  width: 100% !important;
+  margin-bottom: 15px;
+}
+
+.design-form {
+  width: 100%;
+}
+
+#clubs-premier-league {
+  width: 100% !important;
+}
+
+select, input[type="color" i][list] {
+    background-color: rgb(248, 248, 248);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(166, 166, 166);
+    border-image: initial;
+}
+

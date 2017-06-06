@@ -4,14 +4,14 @@
   <option value="PREMIERELEAGUE">Premiere League</option>
 </select>
 
-<select name="LIGUE1" id="0_update" id="club1">
+<select name="LIGUE1" id="0_update" id="club1" class="clubs">
 <% ["Angers", "Bastia", "Bordeaux", "Cean", "Dijon", "Guingamp", "Lille", "Lorient", "Lyon", "Marseille", "Metz", "Monaco", "Montpellier", "Nancy", "Nantes", "Nice", "Paris-SG", "Rennes", "Saint-Etienne", "Toulouse"].each do |club| %>
 <option value="<%= club %>"><%= club %></option>
 <% end %>
 </select>
 
 
-<select name="PREMIERELEAGUE" id="1_update" class="hidden">
+<select name="PREMIERELEAGUE" id="1_update" class="hidden clubs">
 <% ["Arsenal", "Bournemouth", "Burnley", "Chelsea", "Crystalpalace", "Everton", "Hull", "Leicester", "Liverpool", "ManchesterCity", "ManchesterUnited", "Middlesbrough", "Southampton", "Stoke", "Sunderland", "Swansea", "Tottenham", "Watford", "WestBromwichAlbion", "WestHam"].each do |club| %>
 <option value="<%= club %>"><%= club %></option>
 <% end %>

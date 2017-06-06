@@ -5,12 +5,43 @@
 }
 
 .banner-show-tournament-bar-block {
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
   position: absolute;
   background-color: $snow;
   bottom: 0px;
   right: 100px;
   width: 500px;
   height: 200px;
+}
+
+.banner-show-tournament-bar-offers {
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
+  padding: 40px 15px;
+  position: absolute;
+  background-color: $snow;
+  bottom: 0px;
+  right: 100px;
+  width: 500px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  p {
+    font-weight: 600;
+    color: $yankees;
+  }
+  .cross-for-offers {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: $yankees;
+    &:hover{
+      color: $fire;
+    }
+  }
 }
 
 .banner-show-tournament-bar-block-infos {
@@ -49,6 +80,9 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    i {
+      margin-right: 1px;
+    }
     &:hover {
       background-color: $fire;
       color: $snow;
@@ -60,9 +94,11 @@
   height: 45%;
 }
 
-
-
-
+.btn-primary-offers {
+  width: 50% !important;
+  background-color: $fire !important;
+  font-weight: 600;
+}
 
 
 

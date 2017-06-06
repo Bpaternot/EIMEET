@@ -1,6 +1,7 @@
 <div class="banner-show-tournament" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
 
 url('<%= cl_image_path @tournament.bar.photo %>'); background-size: cover;">
+  <!-- Offers no open -->
   <div class="banner-show-tournament-bar-block">
     <div class="banner-show-tournament-bar-block-infos">
       <div class="banner-show-tournament-bar-block-infos-name">
@@ -18,6 +19,13 @@ url('<%= cl_image_path @tournament.bar.photo %>'); background-size: cover;">
       <div id="map" style="width: 100%; height: 100%"></div>
     </div>
   </div>
+
+  <!-- Offers open -->
+  <div class="banner-show-tournament-bar-offers hidden">
+  <p class="">16 beers for 40€ (save 12%)</p>
+  <%= link_to "BUY", "", id: "news", class: "btn btn-primary btn-primary-offers disabled" %>
+  <i class="fa fa-times cross-for-offers" aria-hidden="true"></i>
+  </div>
 </div>
 
 
@@ -27,7 +35,7 @@ url('<%= cl_image_path @tournament.bar.photo %>'); background-size: cover;">
 <div class="container container-tournament-show">
   <h1 class="margin-top-title-tournament">Tournament of <%= @tournament.date %></h1>
   <h2 class="margin-bottom-title-username">Organized by <span class="username-tournament"><%= @tournament.user.username %></span></h2>
-  <div class="row">
+  <div class="row row-for-fix-module">
     <div class="col-xs-12 col-xs-12-tournament col-sm-12 col-md-9">
       <div class="row">
       <% @tournament.players.each do |player| %>
@@ -61,15 +69,7 @@ url('<%= cl_image_path @tournament.bar.photo %>'); background-size: cover;">
            <%= link_to tournament_player_path(@tournament, player),
            method: :delete,
            data: { confirm: "Are you sure?" } do %>
-           <i class="fa fa-trash-o" aria-hidden="true"></i>
-           <% end %>
-           <% end %>
-           &nbsp;
-           <% if policy(player).update? %>
-           <% if  @remaining_console_ps4 != 0 || @remaining_controllers != 0 || @remaining_fifa_game != 0 %>
-           <i class="fa fa-pencil fa-pencil-active" aria-hidden="true"></i>
-           <% else %>
-           <i class="fa fa-pencil fa-pencil-disabled" aria-hidden="true"></i>
+           <i class="fa fa-times" aria-hidden="true"></i>
            <% end %>
            <% end %>
          </div>
@@ -131,22 +131,29 @@ url('<%= cl_image_path @tournament.bar.photo %>'); background-size: cover;">
   </div>
 </div>
 
-
-
-
-  <!-- TCHAT TOURNAMENT -->
-  </br>
-  <% if Player.where(tournament: @tournament, user: current_user).exists? %>
-    <div id="reviews">
-        <h3>Let's chat with other players</h3>
-        <div class="message-box">
-          <% @tournament.reviews.each do |review| %>
+<% if Player.where(tournament: @tournament, user: current_user).exists? %>
+<div class="container container-tournament-show">
+    <h2 class="margin-for-h2">Let's chat with other players</h2>
+    <div class="wrapper-for-reviews">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <div id="reviews">
+          <div class="message-box">
+            <% @tournament.reviews.each do |review| %>
             <%= render 'reviews/show', review: review %>
-          <% end %>
+            <% end %>
+          </div>
         </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-box-chat">
+          <%= render 'reviews/form', tournament: @tournament, review: @review %>
+        </div>
+      </div>
     </div>
-    <%= render 'reviews/form', tournament: @tournament, review: @review %>
-  <% end %>
+  </div>
+</div>
+<% end %>
 
 
   <!-- DESTROY THE TOURNAMENT -->

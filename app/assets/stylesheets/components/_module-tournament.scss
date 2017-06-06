@@ -1,19 +1,22 @@
 .module-right-full-tournament {
+  border-radius: 2px;
   margin: 10px auto;
-  border: 1px solid $snow;
+  border: 1px solid $red;
   width: 100%;
   min-height: 200px;
-  background-color: $snow;
+  background-color: $red;
   display: flex;
   align-items: center;
   justify-content: space-around;
   &-message {
+    color: $snow;
     text-transform: uppercase;
     font-weight: 600;
   }
 }
 
 .module-right-full-tournament-start {
+  border-radius: 2px;
   margin: 10px auto;
   border: 1px solid $snow;
   width: 100%;
@@ -31,6 +34,7 @@
 }
 
 .module-right-not-full-tournament-miss-material {
+  border-radius: 2px;
   margin: 10px auto;
   padding: 15px 15px;
   border: 1px solid $snow;
@@ -60,7 +64,9 @@
 }
 
 .module-right-not-full-tournament-join {
+  border-radius: 2px;
   margin: 10px auto;
+  padding: 15px 15px;
   border: 1px solid $snow;
   width: 100%;
   min-height: 200px;
@@ -72,6 +78,7 @@
 
 .title-module {
   margin-top: 10px;
+  color: $yankees;
 }
 
 .btn-primary-update {
@@ -80,7 +87,9 @@
   font-weight: 600;
 }
 
-
+.button-start-tournament {
+  font-weight: 600 !important;
+}
 
 
 
