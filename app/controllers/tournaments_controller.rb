@@ -3,8 +3,11 @@ class TournamentsController < ApplicationController
 
   def index
     policy_scope(Tournament)
-    @address = params[:tournament_address]
-
+    if params[:tournament_address].empty?
+      @address = 'Paris'
+    else
+       @address = params[:tournament_address]
+    end
     # @bars = Bar.near(@address, 5).select { |bar| bar.tournaments }
     @radius = 5
     @bars = list_bars(@address, @radius)
