@@ -1,10 +1,10 @@
 <label class="title-module">Which club you will play with?</label>
-<select name="league" id="league_update">
+<select name="league" id="league_update" class="form-control">
   <option value="LIGUE1">ligue 1</option>
   <option value="PREMIERELEAGUE">Premiere League</option>
 </select>
 
-<select name="LIGUE1" id="0_update" id="club1" class="clubs">
+<select name="LIGUE1" id="0_update" id="club1" class="clubs form-control">
 <% ["Choose your team", "Angers", "Bastia", "Bordeaux", "Caen", "Dijon", "Guingamp", "Lille", "Lorient", "Lyon", "Marseille", "Metz", "Monaco", "Montpellier", "Nancy", "Nantes", "Nice", "Paris-SG", "Rennes", "Saint-Etienne", "Toulouse"].each do |club| %>
 <option value="<%= club %>"><%= club %></option>
 <% end %>

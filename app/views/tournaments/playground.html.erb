@@ -1,370 +1,47 @@
-<div class="fake-height"></div>
+<div class="container container-playground">
+  <div class="row row-playground">
+    <div class="col-xs-12 col-sm-12 col-md-2 col-md-2-playground">
+      <%= render "side_bar" %>
+    </div>
+    <!-- GROUPS -->
+    <% if @tournament.step == "group" %>
+      <%= render "pool_ongoing" %>
 
-<!-- ___________________________________POOL____________________________________________________________-->
+    <!-- ROUND 16 -->
+    <% elsif @tournament.step == "round16" %>
+      <%= render 'pool_results'  %>
+      <%= render 'round16_ongoing' %>
 
-<% if @tournament.step == "group" %>
-  <h1>Groups</h1>
-  <% @group_games_pool.each do |group| %>
-    <h2>Pool <%= group.first.name %></h2>
-  <% end %>
+    <!-- QUARTERS -->
+    <% elsif @tournament.step == "quarter" %>
+      <%= render 'pool_results'  %>
+      <% if @tournament.tournament_type == "large" %>
+        <%= render 'tournaments/round16_results'  %>
+      <% end %>
+      <%= render 'quarter_ongoing' %>
 
+    <!-- SEMI -->
+    <% elsif @tournament.step == "semi" %>
+      <%= render 'pool_results'  %>
+      <% if @tournament.tournament_type == "large" %>
+        <%= render 'tournaments/round16_results'  %>
+      <% end %>
+      <% if @tournament.tournament_type == "large" || @tournament.tournament_type == "medium" %>
+        <%= render 'tournaments/quarter_results'  %>
+      <% end %>
+      <%= render 'semi_ongoing' %>
 
-  <h1>Rounds</h1>
-
-    <!-- bouton qui permet de passer au round16 (si tournois large), au quarter (si tournois medium), et au semi (si tournois small) -->
-  <% if @tournament.tournament_type == "large" %>
-    <h2>Round 16</h2>
-    <h2>Quarter final</h2>
-    <h2>Semi final</h2>
-    <h2>Final</h2>
-  <% elsif @tournament.tournament_type == "medium"  %>
-    <h2>Quarter final</h2>
-    <h2>Semi final</h2>
-    <h2>Final</h2>
-  <% elsif @tournament.tournament_type == "small" %>
-    <h2>Semi final</h2>
-    <h2>Final</h2>
-  <% end %>
-
-  <h1>POOL MATCHS</h1>
-  <div class="container">
-    <% @group_games_pool.each do |group| %>
-
-      <h2>Pool <%= group.first.name %></h2>
-        <div class="row">
-            <% group.each do |game| %>
-          <div class="col-xs-6 col-sm-6 col-md-5">
-
-            <%= form_for game.scores.first, remote: true do |f| %>
-            <div class="card-team-left">
-                <div class="card-team-left-image">
-                  <% if game.scores.first.player.user.facebook_picture_url %>
-                    <% avatar_url = game.scores.first.player.user.facebook_picture_url %>
-                    <%= image_tag avatar_url, class: "avatar-small" %>
-                  <% elsif game.scores.first.player.club? %>
-                      <%= image_tag "#{game.scores.first.player.club}.png", class: "team-photo" %>
-                  <% elsif %>
-                    <% avatar_url = "http://res.cloudinary.com/dutc7zz18/image/upload/v1496741104/avatar-fake_yuue1t.png" %>
-                    <%= image_tag avatar_url, class: "avatar" %>
-                  <% end %>
-                </div>
-                <div class="card-team-left-name">
-                  <%= game.scores.first.player.user.first_name.capitalize %>
-                </div>
-                <div class="card-team-left-score">
-                  <%= f.text_field :goals, class: "card-team-left-score-input" %>
-                </div>
-              <div class="card-team-left-update-score">
-                <%= f.button "", {class: "card-team-left-score-validate"} do %>
-                  <i class="fa fa-check" aria-hidden="true"></i>
-                <% end %>
-              </div>
-            </div>
-            <% end %>
-
-            </div>
-
-              <div class="col-xs-6 col-sm-6 col-md-2">
-            VS
-          </div>
-
-          <div class="col-xs-6 col-sm-6 col-md-5">
-
-            <%= form_for game.scores.last, remote: true  do |f| %>
-              <div class="card-team-right">
-                <div class="card-team-right-update-score">
-                  <%= f.button "", {class: "card-team-right-score-validate"} do %>
-                    <i class="fa fa-check" aria-hidden="true"></i>
-                  <% end %>
-                </div>
-                <div class="card-team-right-score">
-                  <%= f.text_field :goals, class: "card-team-right-score-input" %>
-                </div>
-                <div class="card-team-right-name">
-                  <%= game.scores.last.player.user.first_name.capitalize %>&nbsp;&nbsp;
-                </div>
-                <div class="card-team-right-image">
-                  <% if game.scores.last.player.user.facebook_picture_url %>
-                    <% avatar_url = game.scores.last.player.user.facebook_picture_url %>
-                    <%= image_tag avatar_url, class: "avatar-small" %>
-                  <% elsif game.scores.last.player.club? %>
-                      <%= image_tag "#{game.scores.last.player.club}.png", class: "team-photo" %>
-                  <% elsif %>
-                    <% avatar_url = "http://res.cloudinary.com/dutc7zz18/image/upload/v1496741104/avatar-fake_yuue1t.png" %>
-                    <%= image_tag avatar_url, class: "avatar" %>
-                  <% end %>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
+    <!-- FINAL -->
+    <% elsif @tournament.step == "final" %>
+      <%= render 'pool_results'  %>
+      <% if @tournament.tournament_type == "large" %>
+        <%= render 'tournaments/round16_results'  %>
+      <% end %>
+      <% if @tournament.tournament_type == "large" || @tournament.tournament_type == "medium" %>
+        <%= render 'tournaments/quarter_results'  %>
+      <% end %>
+      <%= render 'semi_results' %>
+      <%= render 'final_ongoing' %>
     <% end %>
   </div>
-
-
-  <h1>RANKING</h1>
-
-<% @players.each do |pool_sort| %>
-<h2>Pool <%= pool_sort.first.scores.first.game.name %></h2>
-  <div class="ranking">
-    <div class="ranking-header">
-      <div class="ranking-header-team"></div>
-      <div class="ranking-header-rank">RANK</div>
-      <div class="ranking-header-pts">PTS</div>
-      <div class="ranking-header-diff">GD</div>
-      <div class="ranking-header-bp">GF</div>
-      <div class="ranking-header-bc">GA</div>
-    </div>
-<% pool_sort.each_with_index do |player, index| %>
-    <div class="ranking-each-team">
-      <div class="ranking-each-team-infos">
-        <div class="ranking-each-team-infos-avatar">
-          <% if player.user.facebook_picture_url %>
-            <% avatar_url = player.user.facebook_picture_url %>
-            <%= image_tag avatar_url, class: "avatar-small" %>
-          <% elsif player.club? %>
-            <%= image_tag "#{player.club}.png", class: "team-photo" %>
-          <% elsif %>
-            <% avatar_url = "http://res.cloudinary.com/dutc7zz18/image/upload/v1496741104/avatar-fake_yuue1t.png" %>
-          <%= image_tag avatar_url, class: "avatar" %>
-          <% end %>
-        </div>
-        <div class="ranking-each-team-infos-name">
-          <p><%= player.user.first_name %></p>
-        </div>
-      </div>
-      <div class="ranking-each-team-rank">
-        <p><%= index + 1 %></p>
-      </div>
-      <div class="ranking-each-team-pts">
-        <p><%= player.points %></p>
-      </div>
-      <div class="ranking-each-team-diff">
-        <p><%= player.diff %></p>
-      </div>
-      <div class="ranking-each-team-bp">
-        <p><%= player.bp %></p>
-      </div>
-      <div class="ranking-each-team-bc">
-        <%= player.bc %>
-      </div>
-    </div>
-   <% end %>
-  </div>
-   <% end %>
-
-
-
-
-
-<!-- bouton qui permet de passer au round16 (si tournois large), au quarter (si tournois medium), et au semi (si tournois small) -->
-
-  <div class="ranking-all" >
-    <%= render "ranking_all" %>
-  </div>
-
-
-
-    <% if @tournament.tournament_type == "large" %>
-      <%= form_for @tournament do |f| %>
-        <%= f.hidden_field :step, value: "round16" %>
-        <%= f.submit "Next step" %>
-      <% end %>
-    <% elsif @tournament.tournament_type == "medium"  %>
-      <%= form_for @tournament do |f| %>
-        <%= f.hidden_field :step, value: "quarter" %>
-        <%= f.submit "Next step" %>
-      <% end %>
-    <% elsif @tournament.tournament_type == "small" %>
-      <%= form_for @tournament do |f| %>
-        <%= f.hidden_field :step, value: "semi" %>
-        <%= f.submit "Next step" %>
-      <% end %>
-    <% end %>
-<% end %>
-
-<!-- ___________________________________ROUND16____________________________________________________________-->
-
-<% if @tournament.step == "round16" %>
-  <%= render 'tournaments/pool_results'  %>
-
-  <%= form_for @tournament do |f| %>
-    <%= f.hidden_field :step, value: "quarter" %>
-    <%= f.submit "Next step" %>
-  <% end %>
-
-
-  <h1>ROUND16 MATCHS</h1>
-  <div class="container">
-      <% @group_games_round16.each_with_index do |game, index| %>
-        <h2>Match <%= index + 1 %></h2>
-          <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-5">
-                <%= form_for game.scores.first do |f| %>
-                  <%= game.scores.first.player.user.username %>
-                  <%= f.text_field :goals %>
-                  <%= f.submit %>
-                <% end %>
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-2">
-              VS
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-5">
-              <%= form_for game.scores.last do |f| %>
-                <%= f.submit %>
-                <%= f.text_field :goals %>
-                <%= game.scores.last.player.user.username %>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
-    </div>
-
-<% end %>
-
-
-
-<!-- ___________________________________QUARTER____________________________________________________________-->
-
-<% if @tournament.step == "quarter" %>
-  <%= render 'tournaments/pool_results'  %>
-
-    <% if @tournament.tournament_type == "large" %>
-      <%= render 'tournaments/round16_results'  %>
-    <% end %>
-
-    <%= form_for @tournament do |f| %>
-      <%= f.hidden_field :step, value: "semi" %>
-      <%= f.submit "Next step" %>
-    <% end %>
-
-    <h1>QUARTER MATCHS</h1>
-      <div class="container">
-          <% @group_games_quarter.each_with_index do |game, index| %>
-            <h2>Match <%= index + 1 %></h2>
-              <div class="row">
-                <div class="col-xs-6 col-sm-6 col-md-5">
-                    <%= form_for game.scores.first do |f| %>
-                      <%= game.scores.first.player.user.username %>
-                      <%= f.text_field :goals %>
-                      <%= f.submit %>
-                    <% end %>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-2">
-                  VS
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-5">
-                  <%= form_for game.scores.last do |f| %>
-                    <%= f.submit %>
-                    <%= f.text_field :goals %>
-                    <%= game.scores.last.player.user.username %>
-                  <% end %>
-                </div>
-              </div>
-            <% end %>
-        </div>
-
-<% end %>
-
-
-
-
-<!-- ___________________________________SEMI____________________________________________________________-->
-
-<% if @tournament.step == "semi" %>
-
-
-
-  <%= render 'tournaments/pool_results'  %>
-
-    <% if @tournament.tournament_type == "large" %>
-      <%= render 'tournaments/round16_results'  %>
-    <% end %>
-
-    <% if @tournament.tournament_type == "large" || @tournament.tournament_type == "medium" %>
-      <%= render 'tournaments/quarter_results'  %>
-    <% end %>
-
-    <%= form_for @tournament do |f| %>
-      <%= f.hidden_field :step, value: "final" %>
-      <%= f.submit "Next step" %>
-    <% end %>
-
-
-
-    <h1>SEMI MATCHS</h1>
-      <div class="container">
-          <% @group_games_semi.each_with_index do |game, index| %>
-            <h2>Match <%= index + 1 %></h2>
-              <div class="row">
-                <div class="col-xs-6 col-sm-6 col-md-5">
-                    <%= form_for game.scores.first do |f| %>
-                      <%= game.scores.first.player.user.username %>
-                      <%= f.text_field :goals %>
-                      <%= f.submit %>
-                    <% end %>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-2">
-                  VS
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-5">
-                  <%= form_for game.scores.last do |f| %>
-                    <%= f.submit %>
-                    <%= f.text_field :goals %>
-                    <%= game.scores.last.player.user.username %>
-                  <% end %>
-                </div>
-              </div>
-            <% end %>
-        </div>
-
-<% end %>
-
-<!-- ___________________________________FINAL____________________________________________________________-->
-
-<% if @tournament.step == "final" %>
-  <%= render 'tournaments/pool_results'  %>
-
-  <% if @tournament.tournament_type == "large" %>
-    <%= render 'tournaments/round16_results'  %>
-  <% end %>
-
-  <% if @tournament.tournament_type == "large" || @tournament.tournament_type == "medium" %>
-    <%= render 'tournaments/quarter_results'  %>
-  <% end %>
-
-  <%= render 'tournaments/semi_results'  %>
-
-
-  <h1>FINAL MATCH</h1>
-    <div class="container">
-        <% @group_games_final.each_with_index do |game, index| %>
-          <h2>Match <%= index + 1 %></h2>
-            <div class="row">
-              <div class="col-xs-6 col-sm-6 col-md-5">
-                  <%= form_for game.scores.first do |f| %>
-                    <%= game.scores.first.player.user.username %>
-                    <%= f.text_field :goals %>
-                    <%= f.submit %>
-                  <% end %>
-              </div>
-              <div class="col-xs-6 col-sm-6 col-md-2">
-                VS
-              </div>
-              <div class="col-xs-6 col-sm-6 col-md-5">
-                <%= form_for game.scores.last do |f| %>
-                  <%= f.submit %>
-                  <%= f.text_field :goals %>
-                  <%= game.scores.last.player.user.username %>
-                <% end %>
-              </div>
-            </div>
-          <% end %>
-      </div>
-
-<% if @winner %>
-  <%= @winner.user.username %>
-<% end %>
-
-<% end %>
+</div>

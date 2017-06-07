@@ -1,15 +1,14 @@
 <div class="col-xs-12 col-sm-12 col-md-10 col-md-10-playground">
-  <div class="banner-for-toggle-group" data-pool="<%= group.first.name %>">
     <div class="banner-for-groups">
       <h2>ROUND 16</h2>
     </div>
   </div>
   <div class="row row-playground">
     <div class="col-xs-12 col-sm-12 col-md-6 col-md-12-playground">
-      <% @group_games_round16.each do |group| %>
+      <h2>Match <%= index + 1 %></h2>
       <div class="wrapper-to">
         <div class="row">
-          <% group.each do |game| %>
+          <% @group_games_pool.each do |game| %>
           <div class="col-xs-6 col-sm-6 col-md-5">
             <%= form_for game.scores.first, remote: true do |f| %>
             <div class="card-team-left">
@@ -27,34 +26,28 @@
               <div class="card-team-left-name">
                 <%= game.scores.first.player.user.first_name.capitalize %>
               </div>
-              <div class="card-team-left-score-def">
-                <%=  game.scores.first.goals %>
-              </div>
-              <!-- <div class="card-team-left-update-score">
-                <#%= f.button class: "card-team-left-score-validate" do %>
-                <i class="fa fa-check fa-check-playground button-non-active-for-scores" aria-hidden="true"></i>
-                <#% end %>
+              <div class="card-team-left-update-score">
+                <%= f.button class: "card-team-left-score-validate" do %>
+                  <i class="fa fa-check fa-check-playground button-non-active-for-scores" aria-hidden="true"></i>
+                <% end %>
               </div>
               <div class="card-team-left-score">
-                <#%= f.text_field :goals, class: "card-team-left-score-input" %>
-              </div> -->
+                <%= f.text_field :goals, class: "card-team-left-score-input" %>
+              </div>
             </div>
             <% end %>
           </div>
           <div class="col-xs-6 col-sm-6 col-md-5 col-md-offset-1">
             <%= form_for game.scores.last, remote: true do |f| %>
             <div class="card-team-right">
-              <div class="card-team-right-score-def">
-                <%=  game.scores.last.goals %>
-              </div>
-              <!-- <div class="card-team-right-score">
-                <#%= f.text_field :goals, class: "card-team-right-score-input" %>
+              <div class="card-team-right-score">
+                <%= f.text_field :goals, class: "card-team-right-score-input" %>
               </div>
               <div class="card-team-right-update-score">
-                <#%= f.button class: "card-team-right-score-validate" do %>
-                <i class="fa fa-check fa-check-playground button-non-active-for-scores" aria-hidden="true"></i>
-                <#% end %>
-              </div> -->
+                <%= f.button class: "card-team-right-score-validate" do %>
+                  <i class="fa fa-check fa-check-playground button-non-active-for-scores" aria-hidden="true"></i>
+                <% end %>
+              </div>
               <div class="card-team-right-name">
                 <%= game.scores.last.player.user.first_name.capitalize %>&nbsp;&nbsp;
               </div>
@@ -75,7 +68,12 @@
           <% end %>
         </div>
       </div>
-      <% end %>
+      <div class="button-for-next-step">
+        <%= form_for @tournament do |f| %>
+          <%= f.hidden_field :step, value: "quarter" %>
+          <%= f.submit "Next step", class: "btn btn-primary button-to-next-step" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
