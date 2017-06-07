@@ -134,11 +134,12 @@ class TournamentsController < ApplicationController
         @winners_semi = classify_after_pool(@group_games_semi)
         generate_final(@tournament, @winners_semi)
         redirect_to tournament_playground_path(@tournament)
+      else
+        redirect_to tournament_playground_path(@tournament)
       end
     else
       render :new
     end
-
   end
 
   def destroy
