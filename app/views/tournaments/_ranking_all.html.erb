@@ -1,0 +1,6 @@
+<% @players.each do |pool_sort| %>
+<h2>Pool <%= pool_sort.first.scores.first.game.name %></h2>
+  <% pool_sort.each_with_index do |player, index| %>
+    <%= index + 1 %> /// <%= player.user.username %> : Pts: <%= player.points %> | Diff: <%= player.diff %> | BP <%= player.bp %> | BC <%= player.bc %><br/>
+  <% end %>
+<% end %>
