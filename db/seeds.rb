@@ -24,6 +24,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "Cylou"
 user.username = "cylou"
+user.total_goals = 19
 user.save!
 
 user = User.new
@@ -33,6 +34,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "Valoch"
 user.username = "valoch"
+user.total_goals = 14
 user.save!
 
 user = User.new
@@ -42,6 +44,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "Benito"
 user.username = "benito"
+user.total_goals = 8
 user.save!
 
 user = User.new
@@ -51,6 +54,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "Arno"
 user.username = "nono"
+user.total_goals = 11
 user.save!
 
 user = User.new
@@ -60,6 +64,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "Jean"
 user.username = "jeanno"
+user.total_goals = 13
 user.save!
 
 user = User.new
@@ -69,6 +74,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "Julien"
 user.username = "jujulien"
+user.total_goals = 5
 user.save!
 
 user = User.new
@@ -78,6 +84,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "marc"
 user.username = "marco"
+user.total_goals = 14
 user.save!
 
 user = User.new
@@ -87,6 +94,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "franck"
 user.username = "franckycbon"
+user.total_goals = 11
 user.save!
 
 user = User.new
@@ -96,6 +104,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "jacob"
 user.username = "jacobin"
+user.total_goals = 9
 user.save!
 
 user = User.new
@@ -105,6 +114,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "mohamed"
 user.username = "momo"
+user.total_goals = 13
 user.save!
 
 user = User.new
@@ -114,6 +124,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "alexandre"
 user.username = "alex1"
+user.total_goals = 8
 user.save!
 
 user = User.new
@@ -123,6 +134,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "claire"
 user.username = "clairon"
+user.total_goals = 14
 user.save!
 
 user = User.new
@@ -132,6 +144,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "clara"
 user.username = "clarachou"
+user.total_goals = 15
 user.save!
 
 user = User.new
@@ -141,6 +154,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "eleonore"
 user.username = "eleo"
+user.total_goals = 11
 user.save!
 
 user = User.new
@@ -150,6 +164,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "alexis"
 user.username = "alex2"
+user.total_goals = 15
 user.save!
 
 user = User.new
@@ -159,6 +174,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "mathieu"
 user.username = "matmat"
+user.total_goals = 16
 user.save!
 
 user = User.new
@@ -168,6 +184,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "germain"
 user.username = "germanou"
+user.total_goals = 6
 user.save!
 
 user = User.new
@@ -177,6 +194,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "juliette"
 user.username = "jujuliette"
+user.total_goals = 11
 user.save!
 
 user = User.new
@@ -186,6 +204,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "tatiana"
 user.username = "tomitom"
+user.total_goals = 13
 user.save!
 
 user = User.new
@@ -195,6 +214,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "clement"
 user.username = "clementin"
+user.total_goals = 10
 user.save!
 
 user = User.new
@@ -204,6 +224,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "greg"
 user.username = "fudo"
+user.total_goals = 2
 user.save!
 
 user = User.new
@@ -213,6 +234,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "thomas"
 user.username = "tomtomgo"
+user.total_goals = 5
 user.save!
 
 user = User.new
@@ -222,6 +244,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "sylvain"
 user.username = "sysyl"
+user.total_goals = 8
 user.save!
 
 user = User.new
@@ -231,6 +254,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "axel"
 user.username = "axelred"
+user.total_goals = 13
 user.save!
 
 user = User.new
@@ -240,6 +264,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "nolan"
 user.username = "nonodu92"
+user.total_goals = 11
 user.save!
 
 user = User.new
@@ -249,6 +274,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "victor"
 user.username = "victorhugo"
+user.total_goals = 7
 user.save!
 
 user = User.new
@@ -258,6 +284,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "come"
 user.username = "lacdecome"
+user.total_goals = 13
 user.save!
 
 user = User.new
@@ -267,6 +294,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "alexia"
 user.username = "alexiadujardin"
+user.total_goals = 11
 user.save!
 
 user = User.new
@@ -276,6 +304,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "simon"
 user.username = "simonette"
+user.total_goals = 17
 user.save!
 
 user = User.new
@@ -285,6 +314,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "jesus"
 user.username = "jesus"
+user.total_goals = 14
 user.save!
 
 user = User.new
@@ -294,6 +324,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "mathis"
 user.username = "lionelmathis"
+user.total_goals = 11
 user.save!
 
 user = User.new
@@ -303,6 +334,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "samuel"
 user.username = "samsoung"
+user.total_goals = 12
 user.save!
 
 user = User.new
@@ -312,6 +344,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "marius"
 user.username = "mariusfildentaire"
+user.total_goals = 14
 user.save!
 
 user = User.new
@@ -321,6 +354,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "noah"
 user.username = "yannicknoah"
+user.total_goals = 6
 user.save!
 
 user = User.new
@@ -330,6 +364,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "maxens"
 user.username = "maxenscornet"
+user.total_goals = 9
 user.save!
 
 user = User.new
@@ -339,6 +374,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "romain"
 user.username = "romano"
+user.total_goals = 3
 user.save!
 
 user = User.new
@@ -348,6 +384,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "boris"
 user.username = "borisbreakdance"
+user.total_goals = 1
 user.save!
 
 user = User.new
@@ -357,6 +394,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "hugo"
 user.username = "hugopasvictor"
+user.total_goals = 9
 user.save!
 
 user = User.new
@@ -366,6 +404,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "leo"
 user.username = "leomessi"
+user.total_goals = 0
 user.save!
 
 user = User.new
@@ -375,6 +414,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "nathan"
 user.username = "nathanfake"
+user.total_goals = 7
 user.save!
 
 user = User.new
@@ -384,6 +424,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "gabin"
 user.username = "jeangabin"
+user.total_goals = 13
 user.save!
 
 user = User.new
@@ -393,6 +434,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "paul"
 user.username = "pauldu17"
+user.total_goals = 9
 user.save!
 
 user = User.new
@@ -402,6 +444,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "quentin"
 user.username = "quentinlephalique"
+user.total_goals = 9
 user.save!
 
 user = User.new
@@ -411,6 +454,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "matheo"
 user.username = "matheodimeco"
+user.total_goals = 11
 user.save!
 
 user = User.new
@@ -420,6 +464,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "evan"
 user.username = "evanmcgregor"
+user.total_goals = 14
 user.save!
 
 user = User.new
@@ -429,6 +474,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "florian"
 user.username = "florianphilippot"
+user.total_goals = 15
 user.save!
 
 user = User.new
@@ -438,6 +484,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "corentin"
 user.username = "corentindugenou"
+user.total_goals = 6
 user.save!
 
 user = User.new
@@ -447,6 +494,7 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "killian"
 user.username = "killianmbape"
+user.total_goals = 12
 user.save!
 
 # Bar creation:
@@ -542,7 +590,7 @@ Availability.create(start_day: DateTime.new(2017,6,3), end_day: DateTime.new(201
 tournament1 = Tournament.create!(step: "group", date: DateTime.new(2017,6,15), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar: bar1, user_id: 5)
 tournament2 = Tournament.create!(step: "group", date: DateTime.new(2017,6,10), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar: bar6, user_id: 22)
 tournament3 = Tournament.create!(step: "group", date: DateTime.new(2017,6,9), number_players: 32, status: "pending", number_consoles: 8, number_controllers: 16, number_games: 8, tournament_type: "large", bar: bar9, user_id: 14)
-tournament4 = Tournament.create!(step: "group", date: DateTime.new(2017,6,13), number_players: 8, status: "ready", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar3, user_id: 4)
+tournament4 = Tournament.create!(step: "group", date: DateTime.new(2017,6,7), number_players: 8, status: "ready", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar3, user_id: 4)
 
 # # Tournaments replicated
 tournament5 = Tournament.create!(step: "group", date: DateTime.new(2017,6,12), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar: bar20, user_id: 12)
@@ -608,8 +656,8 @@ Player.create(user_id: 19, admin: false, tournament: tournament3, ps4: false, xb
 Player.create(user_id: 20, admin: false, tournament: tournament3, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 1, club: "Arsenal")
 # #  tournament itournamentd=4 : 8 players / status ready / full
 Player.create(user_id: 4, admin: true, tournament: tournament4, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "ManchesterUnited")
-Player.create(user_id: 21, admin: false, tournament: tournament4, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 1, club: "Monaco")
-Player.create(user_id: 22, admin: false, tournament: tournament4, ps4: false, xbox: true, controller_ps4: 0, controller_xbox: 2, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "Swansea")
+Player.create(user_id: 21, admin: false, tournament: tournament4, ps4: true, xbox: false, controller_ps4: 1, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 1, club: "Monaco")
+Player.create(user_id: 22, admin: false, tournament: tournament4, ps4: false, xbox: true, controller_ps4: 1, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "Swansea")
 Player.create(user_id: 23, admin: false, tournament: tournament4, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Toulouse")
 Player.create(user_id: 5, admin: false, tournament: tournament4, ps4: true, xbox: false, controller_ps4: 1, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Chelsea")
 Player.create(user_id: 6, admin: false, tournament: tournament4, ps4: false, xbox: false, controller_ps4: 1, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Nice")
@@ -658,24 +706,24 @@ Player.create(user_id: 16, admin: false, tournament: tournament7, ps4: false, xb
 
 ##  Tournament id= 8
 Player.create(user_id: 7, admin: true, tournament: tournament8, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "ManchesterUnited")
-Player.create(user_id: 21, admin: false, tournament: tournament8, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 1, club: "Monaco")
-Player.create(user_id: 22, admin: false, tournament: tournament8, ps4: false, xbox: true, controller_ps4: 0, controller_xbox: 2, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "Swansea")
+Player.create(user_id: 21, admin: false, tournament: tournament8, ps4: false, xbox: false, controller_ps4: 2, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Monaco")
+Player.create(user_id: 22, admin: false, tournament: tournament8, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "Swansea")
 Player.create(user_id: 23, admin: false, tournament: tournament8, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Toulouse")
 Player.create(user_id: 5, admin: false, tournament: tournament8, ps4: true, xbox: false, controller_ps4: 1, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Chelsea")
 Player.create(user_id: 6, admin: false, tournament: tournament8, ps4: false, xbox: false, controller_ps4: 1, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Nice")
-Player.create(user_id: 10, admin: false, tournament: tournament8, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Nancy")
+Player.create(user_id: 10, admin: false, tournament: tournament8, ps4: true, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Nancy")
 Player.create(user_id: 16, admin: false, tournament: tournament8, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Paris-SG")
 ##  Tournament id= 9
 Player.create(user_id: 28, admin: true, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "ManchesterUnited")
 Player.create(user_id: 31, admin: false, tournament: tournament9, ps4: true, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Monaco")
-Player.create(user_id: 30, admin: false, tournament: tournament9, ps4: false, xbox: true, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "Swansea")
+Player.create(user_id: 30, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "Swansea")
 Player.create(user_id: 29, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Toulouse")
 Player.create(user_id: 27, admin: false, tournament: tournament9, ps4: true, xbox: false, controller_ps4: 2, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Chelsea")
 Player.create(user_id: 26, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 2, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Nice")
 Player.create(user_id: 25, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Nancy")
 Player.create(user_id: 24, admin: false, tournament: tournament9, ps4: true, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Paris-SG")
 Player.create(user_id: 23, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Monaco")
-Player.create(user_id: 22, admin: false, tournament: tournament9, ps4: false, xbox: true, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "Swansea")
+Player.create(user_id: 22, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "Swansea")
 Player.create(user_id: 21, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Toulouse")
 Player.create(user_id: 20, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "ManchesterUnited")
 Player.create(user_id: 19, admin: false, tournament: tournament9, ps4: true, xbox: false, controller_ps4: 2, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Chelsea")
@@ -683,14 +731,14 @@ Player.create(user_id: 18, admin: false, tournament: tournament9, ps4: false, xb
 Player.create(user_id: 17, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Nancy")
 Player.create(user_id: 16, admin: false, tournament: tournament9, ps4: true, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Paris-SG")
 Player.create(user_id: 15, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Monaco")
-Player.create(user_id: 14, admin: false, tournament: tournament9, ps4: false, xbox: true, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "Swansea")
+Player.create(user_id: 14, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "Swansea")
 Player.create(user_id: 13, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Toulouse")
 Player.create(user_id: 12, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "ManchesterUnited")
 Player.create(user_id: 11, admin: false, tournament: tournament9, ps4: true, xbox: false, controller_ps4: 2, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Chelsea")
 Player.create(user_id: 10, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 2, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Nice")
 Player.create(user_id: 9, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Nancy")
 Player.create(user_id: 8, admin: false, tournament: tournament9, ps4: true, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Paris-SG")
-Player.create(user_id: 32, admin: false, tournament: tournament9, ps4: false, xbox: true, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "Swansea")
+Player.create(user_id: 32, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "Swansea")
 Player.create(user_id: 2, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Toulouse")
 Player.create(user_id: 3, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "ManchesterUnited")
 Player.create(user_id: 4, admin: false, tournament: tournament9, ps4: true, xbox: false, controller_ps4: 2, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Chelsea")
