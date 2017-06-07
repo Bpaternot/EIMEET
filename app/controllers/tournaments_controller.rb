@@ -139,6 +139,8 @@ class TournamentsController < ApplicationController
     @group_games = @games.where(step: "group").order(:name).each_slice(6).to_a
     step_update
     ranking_pool
+    classify_pool(@list_all_players, @tournament)
+
   end
 
   def step_update
@@ -149,7 +151,7 @@ class TournamentsController < ApplicationController
       end
       @list_all_players = @list_all_players.each_slice(4).to_a
       generate_pools(@tournament, @list_all_players)
-
+      @tournament.step == "round16"
     elsif @tournament.step == "round16"
       # method pour générer huitièmes
     elsif @tournament.step == "quarter"
@@ -348,6 +350,22 @@ class TournamentsController < ApplicationController
       end
     end
   end
+
+  def classify_pool(list_all_players, tournament)
+    list_all_players.each do |pool|
+      pool_sort = pool.sort_by { |player| -player.bc }
+      pool_sort = pool.sort_by { |player| -player.bp }
+      pool_sort = pool.sort_by { |player| -player.diff }
+      pool_sort = pool.sort_by { |player| -player.points }
+      playerA1 = pool_sort[0]
+      playerA2 = pool_sort[1]
+      playerA1.position = "A1"
+      playerA2.position = "A2"
+      playerA1.save!
+      player2.save!
+    end
+  end
+
 
 end
 

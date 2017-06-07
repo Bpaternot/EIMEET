@@ -1,14 +1,7 @@
 <!-- ___________________________________POOL____________________________________________________________-->
 <h1>RANKING</h1>
 
-<% @list_all_players.each do |pool| %>
-
-  <h2>Pool <%= pool.first.scores.first.game.name %></h2>
-
-  <% pool_sort = pool.sort_by { |player| -player.bc } %>
-  <% pool_sort = pool.sort_by { |player| -player.bp } %>
-  <% pool_sort = pool.sort_by { |player| -player.diff } %>
-  <% pool_sort = pool.sort_by { |player| -player.points } %>
+<% @list_all_players.each do |pool_sort| %>
   <% pool_sort.each_with_index do |player, index| %>
     <%= index + 1 %> /// <%= player.user.username %> : Pts: <%= player.points %> | Diff: <%= player.diff %> | BP <%= player.bp %> | BC <%= player.bc %><br/>
   <% end %>
