@@ -1,0 +1,13 @@
+<div class="fake-height"></div>
+<div class="container">
+  <div class="row">
+    <div>
+    <% @users.each_with_index  do |user, index| %>
+      <%= index + 1 %> |
+      <%= user.username %>
+      <%= user.total_goals %>
+      <%= user.players.count %> <br>
+    <% end %>
+    </div>
+  </div>
+</div>
