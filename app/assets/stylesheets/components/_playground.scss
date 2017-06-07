@@ -1,3 +1,5 @@
+// Cards of match
+
 .card-team-left {
   width: 200px;
   margin-bottom: 20px;
@@ -100,3 +102,126 @@
     }
   }
 }
+
+// Rankings
+
+.ranking {
+  width: 400px;
+  .ranking-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 30px;
+    .ranking-header-rank {
+      flex: 0 0 12%;
+      text-align: center;
+    }
+    .ranking-header-team {
+      flex: 0 0 40%;
+      text-align: center;
+    }
+    .ranking-header-pts {
+      flex: 0 0 12%;
+      text-align: center;
+    }
+    .ranking-header-diff {
+      flex: 0 0 12%;
+      text-align: center;
+    }
+    .ranking-header-bp {
+      flex: 0 0 12%;
+      text-align: center;
+    }
+    .ranking-header-bc {
+      flex: 0 0 12%;
+      text-align: center;
+    }
+  }
+  .ranking-each-team {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 30px;
+    .ranking-each-team-rank {
+      flex: 0 0 12%;
+      text-align: center;
+    }
+    .ranking-each-team-infos {
+      flex: 0 0 40%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .ranking-each-team-infos-avatar {
+        flex: 0 0 30%;
+        img {
+        width: 30px;
+        }
+      }
+      .ranking-each-team-infos-name {
+        flex: 0 0 70%;
+      }
+    }
+    .ranking-each-team-pts {
+      flex: 0 0 12%;
+      text-align: center;
+    }
+    .ranking-each-team-diff {
+      flex: 0 0 12%;
+      text-align: center;
+    }
+    .ranking-each-team-bp {
+      flex: 0 0 12%;
+      text-align: center;
+    }
+    .ranking-each-team-bc {
+      flex: 0 0 12%;
+      text-align: center;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

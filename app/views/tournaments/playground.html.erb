@@ -7,6 +7,7 @@
   <% @group_games_pool.each do |group| %>
     <h2>Pool <%= group.first.name %></h2>
   <% end %>
+  <% end %>
 
   <h1>Rounds</h1>
 
@@ -104,6 +105,8 @@
 
   <h1>RANKING</h1>
 
+<% @players.each do |pool_sort| %>
+<h2>Pool <%= pool_sort.first.scores.first.game.name %></h2>
   <div class="ranking">
     <div class="ranking-header">
       <div class="ranking-header-team"></div>
@@ -113,22 +116,54 @@
       <div class="ranking-header-bp">GF</div>
       <div class="ranking-header-bc">GA</div>
     </div>
+<% pool_sort.each_with_index do |player, index| %>
     <div class="ranking-each-team">
-      <div class="ranking-each-team">
-        <div class="ranking-each-team-avatar"></div>
-        <div class="raning-each-team-name"></div>
+      <div class="ranking-each-team-infos">
+        <div class="ranking-each-team-infos-avatar">
+          <% if player.user.facebook_picture_url %>
+            <% avatar_url = player.user.facebook_picture_url %>
+            <%= image_tag avatar_url, class: "avatar-small" %>
+          <% elsif player.club? %>
+            <%= image_tag "#{player.club}.png", class: "team-photo" %>
+          <% elsif %>
+            <% avatar_url = "http://res.cloudinary.com/dutc7zz18/image/upload/v1496741104/avatar-fake_yuue1t.png" %>
+          <%= image_tag avatar_url, class: "avatar" %>
+          <% end %>
+        </div>
+        <div class="ranking-each-team-infos-name">
+          <p><%= player.user.first_name %></p>
+        </div>
       </div>
-      <div class="ranking-each-rank"></div>
-      <div class="ranking-each-pts"></div>
-      <div class="ranking-each-diff"></div>
-      <div class="ranking-each-bp"></div>
-      <div class="ranking-each-bc"></div>
+      <div class="ranking-each-team-rank">
+        <p><%= index + 1 %></p>
+      </div>
+      <div class="ranking-each-team-pts">
+        <p><%= player.points %></p>
+      </div>
+      <div class="ranking-each-team-diff">
+        <p><%= player.diff %></p>
+      </div>
+      <div class="ranking-each-team-bp">
+        <p><%= player.bp %></p>
+      </div>
+      <div class="ranking-each-team-bc">
+        <%= player.bc %>
+      </div>
     </div>
+   <% end %>
   </div>
+   <% end %>
+
+
+
+
+
+<!-- bouton qui permet de passer au round16 (si tournois large), au quarter (si tournois medium), et au semi (si tournois small) -->
 
   <div class="ranking-all" >
     <%= render "ranking_all" %>
   </div>
+
 
 
     <% if @tournament.tournament_type == "large" %>
