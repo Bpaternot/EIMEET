@@ -30,6 +30,8 @@ gem "coffee-rails"
 gem "gmaps4rails"
 gem 'forest_liana'
 
+# gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
+
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end

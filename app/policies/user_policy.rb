@@ -9,4 +9,8 @@ class
   def dashboard?
     user == record
   end
+
+  def ranking?
+    true
+  end
 end

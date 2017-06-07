@@ -43,7 +43,18 @@ class User < ApplicationRecord
   #   facebook = Koala::Facebook::API.new(access_token)
   #   facebook.get_object("me?fields=name,picture")
   # end
-
+  def rankings
+    self.total_goals = 0
+    if self.players.any?
+      self.players.each do |player|
+        if player.scores.any?
+         player.scores.each do |score|
+          self.total_goals ||= 0
+          self.total_goals += score.goals
+         end
+        end
+      end
+    end
+    self.save!
+  end
 end
-
-

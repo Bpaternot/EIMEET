@@ -1,3 +1,8 @@
+
+<% content_for :meta_title, "#{@tournament.user.first_name.capitalize}' tournament with #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "Join the tournament organized by #{@tournament.user.first_name}, on #{@tournament.date.strftime("%A %d %B")} at #{@tournament.bar.name}! Hurry up, only #{@remaining} spots left ! " %>
+
+
 <div class="banner-show-tournament" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
 
 url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-size: cover;">
@@ -9,7 +14,7 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
       </div>
       <div class="banner-show-tournament-bar-block-infos-loc">
         <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;<%= @tournament.bar.address %></p>
-        <p><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<%= @tournament.date %></p>
+        <p><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<%= @tournament.date.strftime("%A %d %B") %></p>
       </div>
       <div class="banner-show-tournament-bar-block-infos-offers">
         <i class="fa fa-eur" aria-hidden="true"></i>
@@ -34,7 +39,7 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
 
 <div class="container container-tournament-show">
   <div class="container-for-title">
-    <h1 class="margin-top-title-tournament">Tournament of <%= @tournament.date %></h1>
+    <h1 class="margin-top-title-tournament">Tournament of <%= @tournament.date.strftime("%A %d %B") %></h1>
     <h2 class="margin-bottom-title-username">Organized by <span class="username-tournament"><%= @tournament.user.first_name %>&nbsp;<%= @tournament.user.last_name %></span></h2>
   </div>
  <!-- http://www.eimeet.fr/tournaments/#{@tournament.id} -->
@@ -92,26 +97,9 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
     </div>
     <div class="col-xs-12 col-xs-12-tournament col-sm-12 col-md-3">
       <!-- Tournament full / User is not a player -->
-      <% if @remaining == 0 && Player.where(tournament: @tournament, user: current_user).exists? == false %>
-        <div class="module-right-full-tournament">
-          <div class="module-right-full-tournament-message">
-            <p>The tournament is full</p>
-          </div>
-        </div>
-      <!-- Tournament full / User is a player -->
-      <% elsif @remaining == 0 && Player.where(tournament: @tournament, user: current_user).exists? %>
-        <div class="module-right-full-tournament-start">
-          <div class="module-right-full-tournament-start-message">
-            <%= form_for @tournament do |f| %>
-              <%= f.hidden_field :step, value: "group" %>
-              <%= f.submit "START TOURNAMENT", class: "btn btn-primary button-start-tournament" %>
-            <% end %>
-          </div>
-        </div>
-      <!-- Tournament not full / User is a player / Still need material -->
-      <% elsif @remaining != 0 && Player.where(tournament: @tournament, user: current_user).exists? %>
+      <% if Player.where(tournament: @tournament, user: current_user).exists? && (@remaining_console_ps4 != 0 || @remaining_controllers != 0 || @remaining_fifa_game != 0) %>
         <div class="module-right-not-full-tournament-miss-material">
-          <h3>Material already registered</h3>
+          <h3>Material still needed</h3>
           <div class="module-right-not-full-tournament-miss-material-list-material">
           <div class="module-right-not-full-tournament-miss-material-list-material-console">
             <%= @remaining_console_ps4 %>&nbsp;&nbsp;<%= image_tag "ps4.png", class: "icon" %>
@@ -127,6 +115,30 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
             <%= render 'form_update' %>
           </div>
         </div>
+      <% end %>
+
+      <% if @remaining == 0 && Player.where(tournament: @tournament, user: current_user).exists? == false %>
+        <div class="module-right-full-tournament">
+          <div class="module-right-full-tournament-message">
+            <p>The tournament is full</p>
+          </div>
+        </div>
+      <!-- Tournament full / User is admin -->
+      <% elsif @remaining == 0 && Player.where(tournament: @tournament, user: current_user).exists? && @remaining_total == 0 %>
+        <div class="module-right-full-tournament-start">
+          <div class="module-right-full-tournament-start-message">
+            <% if @tournament.date == Date.today %>
+            <%= form_for @tournament do |f| %>
+              <%= f.hidden_field :step, value: "group" %>
+              <%= f.submit "SHOW THE TOURNAMENT", class: "btn btn-primary button-start-tournament" %>
+            <% end %>
+            <% else %>
+              <p>Your tournament is ready !</br> <%= @tournament.date.strftime("%A %d %B") %></p>
+            <% end %>
+          </div>
+        </div>
+      <!-- Tournament not full / User is a player / Still need material -->
+
       <!-- Tournament not full / User is not a player -->
       <% elsif @remaining != 0 && Player.where(tournament: @tournament, user: current_user).exists? == false %>
       <h1 style="color: #A92222;">Want to join?</h1>
@@ -136,15 +148,17 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
           </div>
         </div>
       <% end %>
+
+      <% if @remaining != 0 %>
       <div class="wrapper-for-sharing">
         <div>
           <h2>Challenge your friends</h2>
         </div>
         <div class="facebook-sharing-button">
-          <div class="fb-share-button" data-href="<%= tournament_path(@tournament) %>" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"></a></div>
+          <div class="fb-share-button" data-href="<%= tournament_url(@tournament) %>" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"></a></div>
         </div>
       </div>
-    </div>
+      <% end %>
   </div>
 </div>
 
@@ -386,7 +400,12 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
     var handler = Gmaps.build('Google');
     handler.buildMap({
       provider: {
-          styles: styles
+          styles: styles,
+          scrollwheel: false,
+          navigationControl: false,
+          mapTypeControl: false,
+          scaleControl: false,
+          draggable: false,
         },
       internal: { id: 'map' } }, function() {
       markers = handler.addMarkers(<%= raw @hash.to_json %>);
