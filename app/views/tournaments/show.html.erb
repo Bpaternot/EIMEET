@@ -94,7 +94,10 @@ url('<%= cl_image_path @tournament.bar.photo %>'); background-size: cover;">
       <% elsif @remaining == 0 && Player.where(tournament: @tournament, user: current_user).exists? %>
         <div class="module-right-full-tournament-start">
           <div class="module-right-full-tournament-start-message">
-            <%= link_to "START TOURNAMENT", tournament_playground_path(@tournament), class: "" %>
+            <%= form_for @tournament do |f| %>
+              <%= f.hidden_field :step, value: "group" %>
+              <%= f.submit "START TOURNAMENT" %>
+            <% end %>
           </div>
         </div>
       <!-- Tournament not full / User is a player / Still need material -->
@@ -118,8 +121,6 @@ url('<%= cl_image_path @tournament.bar.photo %>'); background-size: cover;">
     </div>
   </div>
 </div>
-
-
 
 
   <!-- TCHAT TOURNAMENT -->

@@ -1,44 +1,237 @@
 <!-- ___________________________________POOL____________________________________________________________-->
-<h1>RANKING</h1>
+<% if @tournament.step == "group" %>
+  <h1>RANKING</h1>
+  <% @players.each do |pool_sort| %>
+  <h2>Pool <%= pool_sort.first.scores.first.game.name %></h2>
+    <% pool_sort.each_with_index do |player, index| %>
+      <%= index + 1 %> /// <%= player.user.username %> : Pts: <%= player.points %> | Diff: <%= player.diff %> | BP <%= player.bp %> | BC <%= player.bc %><br/>
+    <% end %>
+  <% end %>
 
-<% @list_all_players.each do |pool| %>
-
-  <h2>Pool <%= pool.first.scores.first.game.name %></h2>
-
-  <% pool_sort = pool.sort_by { |player| -player.bc } %>
-  <% pool_sort = pool.sort_by { |player| -player.bp } %>
-  <% pool_sort = pool.sort_by { |player| -player.diff } %>
-  <% pool_sort = pool.sort_by { |player| -player.points } %>
-  <% pool_sort.each_with_index do |player, index| %>
-    <%= index + 1 %> /// <%= player.user.username %> : Pts: <%= player.points %> | Diff: <%= player.diff %> | BP <%= player.bp %> | BC <%= player.bc %><br/>
+<!-- bouton qui permet de passer au round16 (si tournois large), au quarter (si tournois medium), et au semi (si tournois small) -->
+<% if @tournament.tournament_type == "large" %>
+  <%= form_for @tournament do |f| %>
+    <%= f.hidden_field :step, value: "round16" %>
+    <%= f.submit "Next step" %>
+  <% end %>
+<% elsif @tournament.tournament_type == "medium"  %>
+  <%= form_for @tournament do |f| %>
+    <%= f.hidden_field :step, value: "quarter" %>
+    <%= f.submit "Next step" %>
+  <% end %>
+<% elsif @tournament.tournament_type == "small" %>
+  <%= form_for @tournament do |f| %>
+    <%= f.hidden_field :step, value: "semi" %>
+    <%= f.submit "Next step" %>
   <% end %>
 <% end %>
 
-<h1>POOL MATCHS</h1>
 
-<div class="container">
-  <% @group_games.each do |group| %>
-    <h2>Pool <%= group.first.name %></h2>
-      <div class="row">
-          <% group.each do |game| %>
-        <div class="col-xs-6 col-sm-6 col-md-5">
-            <%= form_for game.scores.first do |f| %>
-              <%= game.scores.first.player.user.username %>
-              <%= f.text_field :goals %>
+  <h1>POOL MATCHS</h1>
+  <div class="container">
+    <% @group_games_pool.each do |group| %>
+      <h2>Pool <%= group.first.name %></h2>
+        <div class="row">
+            <% group.each do |game| %>
+          <div class="col-xs-6 col-sm-6 col-md-5">
+              <%= form_for game.scores.first do |f| %>
+                <%= game.scores.first.player.user.username %>
+                <%= f.text_field :goals %>
+                <%= f.submit %>
+              <% end %>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-2">
+            VS
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-5">
+            <%= form_for game.scores.last do |f| %>
               <%= f.submit %>
+              <%= f.text_field :goals %>
+              <%= game.scores.last.player.user.username %>
             <% end %>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-2">
-          VS
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-5">
-          <%= form_for game.scores.last do |f| %>
-            <%= f.submit %>
-            <%= f.text_field :goals %>
-            <%= game.scores.last.player.user.username %>
+          </div>
           <% end %>
         </div>
+          <% end %>
+  </div>
+<% end %>
+
+<!-- ___________________________________ROUND16____________________________________________________________-->
+
+<% if @tournament.step == "round16" %>
+  <%= render 'tournaments/pool_results'  %>
+
+  <%= form_for @tournament do |f| %>
+    <%= f.hidden_field :step, value: "quarter" %>
+    <%= f.submit "Next step" %>
+  <% end %>
+
+
+  <h1>ROUND16 MATCHS</h1>
+  <div class="container">
+      <% @group_games_round16.each_with_index do |game, index| %>
+        <h2>Match <%= index + 1 %></h2>
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-5">
+                <%= form_for game.scores.first do |f| %>
+                  <%= game.scores.first.player.user.username %>
+                  <%= f.text_field :goals %>
+                  <%= f.submit %>
+                <% end %>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-2">
+              VS
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-5">
+              <%= form_for game.scores.last do |f| %>
+                <%= f.submit %>
+                <%= f.text_field :goals %>
+                <%= game.scores.last.player.user.username %>
+              <% end %>
+            </div>
+          </div>
         <% end %>
+    </div>
+
+<% end %>
+
+
+
+<!-- ___________________________________QUARTER____________________________________________________________-->
+
+<% if @tournament.step == "quarter" %>
+  <%= render 'tournaments/pool_results'  %>
+
+    <% if @tournament.tournament_type == "large" %>
+      <%= render 'tournaments/round16_results'  %>
+    <% end %>
+
+    <h1>QUARTER MATCHS</h1>
+      <div class="container">
+          <% @group_games_quarter.each_with_index do |game, index| %>
+            <h2>Match <%= index + 1 %></h2>
+              <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-5">
+                    <%= form_for game.scores.first do |f| %>
+                      <%= game.scores.first.player.user.username %>
+                      <%= f.text_field :goals %>
+                      <%= f.submit %>
+                    <% end %>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-2">
+                  VS
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-5">
+                  <%= form_for game.scores.last do |f| %>
+                    <%= f.submit %>
+                    <%= f.text_field :goals %>
+                    <%= game.scores.last.player.user.username %>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+        </div>
+
+<% end %>
+
+
+
+
+<!-- ___________________________________SEMI____________________________________________________________-->
+
+<% if @tournament.step == "semi" %>
+
+
+
+  <%= render 'tournaments/pool_results'  %>
+
+    <% if @tournament.tournament_type == "large" %>
+      <%= render 'tournaments/round16_results'  %>
+    <% end %>
+
+    <% if @tournament.tournament_type == "large" || @tournament.tournament_type == "medium" %>
+      <%= render 'tournaments/quarter_results'  %>
+    <% end %>
+
+    <%= form_for @tournament do |f| %>
+      <%= f.hidden_field :step, value: "final" %>
+      <%= f.submit "Next step" %>
+    <% end %>
+
+
+
+    <h1>SEMI MATCHS</h1>
+      <div class="container">
+          <% @group_games_semi.each_with_index do |game, index| %>
+            <h2>Match <%= index + 1 %></h2>
+              <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-5">
+                    <%= form_for game.scores.first do |f| %>
+                      <%= game.scores.first.player.user.username %>
+                      <%= f.text_field :goals %>
+                      <%= f.submit %>
+                    <% end %>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-2">
+                  VS
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-5">
+                  <%= form_for game.scores.last do |f| %>
+                    <%= f.submit %>
+                    <%= f.text_field :goals %>
+                    <%= game.scores.last.player.user.username %>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+        </div>
+
+<% end %>
+
+<!-- ___________________________________FINAL____________________________________________________________-->
+
+<% if @tournament.step == "final" %>
+  <%= render 'tournaments/pool_results'  %>
+
+  <% if @tournament.tournament_type == "large" %>
+    <%= render 'tournaments/round16_results'  %>
+  <% end %>
+
+  <% if @tournament.tournament_type == "large" || @tournament.tournament_type == "medium" %>
+    <%= render 'tournaments/quarter_results'  %>
+  <% end %>
+
+  <%= render 'tournaments/semi_results'  %>
+
+
+  <h1>FINAL MATCH</h1>
+    <div class="container">
+        <% @group_games_final.each_with_index do |game, index| %>
+          <h2>Match <%= index + 1 %></h2>
+            <div class="row">
+              <div class="col-xs-6 col-sm-6 col-md-5">
+                  <%= form_for game.scores.first do |f| %>
+                    <%= game.scores.first.player.user.username %>
+                    <%= f.text_field :goals %>
+                    <%= f.submit %>
+                  <% end %>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-2">
+                VS
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-5">
+                <%= form_for game.scores.last do |f| %>
+                  <%= f.submit %>
+                  <%= f.text_field :goals %>
+                  <%= game.scores.last.player.user.username %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
       </div>
-        <% end %>
-</div>
+
+<% if @winner %>
+  <%= @winner.user.username %>
+<% end %>
+
+<% end %>
