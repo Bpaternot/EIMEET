@@ -44,6 +44,7 @@ class User < ApplicationRecord
   #   facebook.get_object("me?fields=name,picture")
   # end
   def rankings
+    raise
     self.total_goals = 0
     if self.players.any?
       self.players.each do |player|
@@ -58,3 +59,12 @@ class User < ApplicationRecord
     self.save!
   end
 end
+
+# def rankings
+#   if self.players.any?
+#     self.players.each do |player|
+#       Game.all.where(player: player)
+
+#     end
+#   end
+# end
