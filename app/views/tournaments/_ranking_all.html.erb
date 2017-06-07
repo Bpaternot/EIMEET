@@ -1,5 +1,5 @@
 <% @players.each do |pool_sort| %>
-<h2>Pool <%= pool_sort.first.scores.first.game.name %></h2>
+<div class="wrapper-to-toggle-ranking" data-pool="<%= pool_sort.first.scores.first.game.name %>">
   <div class="ranking">
     <div class="ranking-header">
       <div class="ranking-header-team"></div>
@@ -9,17 +9,17 @@
       <div class="ranking-header-bp">GF</div>
       <div class="ranking-header-bc">GA</div>
     </div>
-<% pool_sort.each_with_index do |player, index| %>
+    <% pool_sort.each_with_index do |player, index| %>
     <div class="ranking-each-team">
       <div class="ranking-each-team-infos">
         <div class="ranking-each-team-infos-avatar">
           <% if player.user.facebook_picture_url %>
-            <% avatar_url = player.user.facebook_picture_url %>
-            <%= image_tag avatar_url, class: "avatar-small" %>
+          <% avatar_url = player.user.facebook_picture_url %>
+          <%= image_tag avatar_url, class: "avatar-small" %>
           <% elsif player.club? %>
-            <%= image_tag "#{player.club}.png", class: "team-photo" %>
+          <%= image_tag "#{player.club}.png", class: "team-photo" %>
           <% elsif %>
-            <% avatar_url = "http://res.cloudinary.com/dutc7zz18/image/upload/v1496741104/avatar-fake_yuue1t.png" %>
+          <% avatar_url = "http://res.cloudinary.com/dutc7zz18/image/upload/v1496741104/avatar-fake_yuue1t.png" %>
           <%= image_tag avatar_url, class: "avatar" %>
           <% end %>
         </div>
@@ -43,6 +43,7 @@
         <%= player.bc %>
       </div>
     </div>
-   <% end %>
+    <% end %>
   </div>
-   <% end %>
+</div>
+<% end %>
