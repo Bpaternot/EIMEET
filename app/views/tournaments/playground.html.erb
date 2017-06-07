@@ -26,6 +26,8 @@
     <h2>Final</h2>
   <% end %>
 
+<% if @tournament.step == "group" %>
+
   <h1>POOL MATCHS</h1>
   <div class="container">
     <% @group_games_pool.each do |group| %>
@@ -51,14 +53,14 @@
                 <div class="card-team-left-name">
                   <%= game.scores.first.player.user.first_name.capitalize %>
                 </div>
-                <div class="card-team-left-score">
-                  <%= f.text_field :goals, class: "card-team-left-score-input" %>
-                </div>
               <div class="card-team-left-update-score">
                 <%= f.button "", {class: "card-team-left-score-validate"} do %>
                   <i class="fa fa-check" aria-hidden="true"></i>
                 <% end %>
               </div>
+                <div class="card-team-left-score">
+                  <%= f.text_field :goals, class: "card-team-left-score-input" %>
+                </div>
             </div>
             <% end %>
 
@@ -72,13 +74,13 @@
 
             <%= form_for game.scores.last, remote: true  do |f| %>
               <div class="card-team-right">
+                <div class="card-team-right-score">
+                  <%= f.text_field :goals, class: "card-team-right-score-input" %>
+                </div>
                 <div class="card-team-right-update-score">
                   <%= f.button "", {class: "card-team-right-score-validate"} do %>
                     <i class="fa fa-check" aria-hidden="true"></i>
                   <% end %>
-                </div>
-                <div class="card-team-right-score">
-                  <%= f.text_field :goals, class: "card-team-right-score-input" %>
                 </div>
                 <div class="card-team-right-name">
                   <%= game.scores.last.player.user.first_name.capitalize %>&nbsp;&nbsp;
@@ -131,22 +133,22 @@
           <% end %>
         </div>
         <div class="ranking-each-team-infos-name">
-          <p><%= player.user.first_name %></p>
+          <%= player.user.first_name %>
         </div>
       </div>
-      <div class="ranking-each-team-rank">
-        <p><%= index + 1 %></p>
+      <div class="ranking-each-team-number">
+        <%= index + 1 %>
       </div>
-      <div class="ranking-each-team-pts">
-        <p><%= player.points %></p>
+      <div class="ranking-each-team-number">
+        <%= player.points %>
       </div>
-      <div class="ranking-each-team-diff">
-        <p><%= player.diff %></p>
+      <div class="ranking-each-team-number">
+        <%= player.diff %>
       </div>
-      <div class="ranking-each-team-bp">
-        <p><%= player.bp %></p>
+      <div class="ranking-each-team-number">
+        <%= player.bp %>
       </div>
-      <div class="ranking-each-team-bc">
+      <div class="ranking-each-team-number">
         <%= player.bc %>
       </div>
     </div>

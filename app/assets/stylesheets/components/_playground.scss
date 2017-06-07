@@ -1,9 +1,9 @@
 // Cards of match
 
 .card-team-left {
-  width: 200px;
+  width: 250px;
   margin-bottom: 20px;
-  padding: 3px 3px;
+  padding: 15px 15px;
   border-radius: 2px;
   background-color: $snow;
   display: flex;
@@ -19,15 +19,18 @@
       flex: 0 0 40%;
       color: $yankees;
       font-weight: 600;
+      text-transform: uppercase;
     }
     .card-team-left-score {
       flex: 0 0 20%;
       width: 100%;
       height: 100%;
         input {
+          background-color: $snow;
           border-radius: 2px;
           font-weight: 600;
           padding: 4px 0px;
+          color: $fire;
           width: 100% !important;
           height: 100% !important;
           text-align: center;
@@ -38,12 +41,13 @@
   .card-team-left-update-score {
     flex: 0 0 20%;
     button {
+      font-size: 14px;
       border-radius: 2px;
       width: 90% !important;
       height: 100% !important;
-      background-color: $fire !important;
+      background-color: $snow !important;
       border: none !important;
-      color: $snow !important;
+      color: $green !important;
       &:hover {
         background-color: $yankees !important;
       }
@@ -52,9 +56,9 @@
 }
 
 .card-team-right {
-  width: 200px;
+  width: 250px;
   margin-bottom: 20px;
-  padding: 3px 3px;
+  padding: 15px 15px;
   border-radius: 2px;
   background-color: $snow;
   display: flex;
@@ -71,12 +75,15 @@
       text-align: right;
       color: $yankees;
       font-weight: 600;
+      text-transform: uppercase;
     }
     .card-team-right-score {
       flex: 0 0 20%;
       width: 100%;
       height: 100%;
         input {
+          color: $fire;
+          background-color: $snow;
           border-radius: 2px;
           font-weight: 600;
           padding: 4px 0px;
@@ -90,12 +97,13 @@
   .card-team-right-update-score {
     flex: 0 0 20%;
     button {
+      font-size: 14px;
       border-radius: 2px;
       width: 90% !important;
       height: 100% !important;
-      background-color: $fire !important;
+      background-color: $snow !important;
       border: none !important;
-      color: $snow !important;
+      color: $green !important;
       &:hover {
         background-color: $yankees !important;
       }
@@ -107,11 +115,15 @@
 
 .ranking {
   width: 400px;
+  padding: 15px 15px;
+  background-color: $snow;
+  border-radius: 2px;
   .ranking-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 30px;
+    height: 40px;
+    font-weight: 600;
     .ranking-header-rank {
       flex: 0 0 12%;
       text-align: center;
@@ -141,11 +153,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 30px;
-    .ranking-each-team-rank {
-      flex: 0 0 12%;
-      text-align: center;
-    }
+    height: 60px;
+    font-weight: 600;
+    // border-top: 1px solid white;
+    // border-top: 1px solid rgba(21, 50, 67, 0.5);
     .ranking-each-team-infos {
       flex: 0 0 40%;
       display: flex;
@@ -153,29 +164,21 @@
       justify-content: space-between;
       .ranking-each-team-infos-avatar {
         flex: 0 0 30%;
-        img {
-        width: 30px;
+        .team-photo {
+          width: 30px;
         }
       }
       .ranking-each-team-infos-name {
         flex: 0 0 70%;
+        text-transform: uppercase;
       }
     }
-    .ranking-each-team-pts {
+    .ranking-each-team-number {
       flex: 0 0 12%;
       text-align: center;
-    }
-    .ranking-each-team-diff {
-      flex: 0 0 12%;
-      text-align: center;
-    }
-    .ranking-each-team-bp {
-      flex: 0 0 12%;
-      text-align: center;
-    }
-    .ranking-each-team-bc {
-      flex: 0 0 12%;
-      text-align: center;
+      &-rank {
+        color: $fire;
+      }
     }
   }
 }
