@@ -1,0 +1,9 @@
+meta_product_name: "EI Meet"
+meta_title: "EI Meet - Just make your game !"
+meta_description: "EI Meet - Just make your game !"
+meta_image: "banner-eimeet.png"                       # should exist in `app/assets/images/`
+
+
+
+
+favicon_link_tag: "<link rel='shortcut icon' type='images' href='iemeet.ico' >"

@@ -20,7 +20,9 @@ def content_not_found
   render file: "#{Rails.root}/public/404", layout: true, status: :not_found
 end
 
-
+def default_url_options
+  { host: ENV["HOST"] || "localhost:3000" }
+end
 
   private
 

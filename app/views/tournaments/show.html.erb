@@ -1,3 +1,8 @@
+
+<% content_for :meta_title, "#{@offer.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @offer.description %>
+<% content_for :meta_image, cloudinary_url(@offer.photo.path) %>
+
 <div class="banner-show-tournament" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
 
 url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-size: cover;">
