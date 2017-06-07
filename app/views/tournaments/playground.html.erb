@@ -1,5 +1,6 @@
 <!-- ___________________________________POOL____________________________________________________________-->
 <% if @tournament.step == "group" %>
+
   <h1>RANKING</h1>
   <% @players.each do |pool_sort| %>
   <h2>Pool <%= pool_sort.first.scores.first.game.name %></h2>
@@ -35,7 +36,7 @@
         <div class="row">
             <% group.each do |game| %>
           <div class="col-xs-6 col-sm-6 col-md-5">
-              <%= form_for game.scores.first do |f| %>
+              <%= form_for game.scores.first, remote: true  do |f| %>
                 <%= game.scores.first.player.user.username %>
                 <%= f.text_field :goals %>
                 <%= f.submit %>
@@ -45,7 +46,7 @@
             VS
           </div>
           <div class="col-xs-6 col-sm-6 col-md-5">
-            <%= form_for game.scores.last do |f| %>
+            <%= form_for game.scores.last, remote: true do |f| %>
               <%= f.submit %>
               <%= f.text_field :goals %>
               <%= game.scores.last.player.user.username %>
