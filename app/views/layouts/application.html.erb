@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>EI Meet</title>
-    <link rel="shortcut icon" type="images" href="iemeet.ico" >
+    <title><%= meta_title %></title>
+    <%= favicon_link_tag 'iemeet.ico' %>
 <!--     <link rel="icon" href="http://www.mydomain.info/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="http://www.mydomain.info/favicon.ico" type="image/x-icon" /> -->
+    <meta name="description" content="<%= meta_description %>">
+
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:description" content="<%= meta_description %>" />
+    <meta property="og:site_name" content="<%= meta_title %>" />
+
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:title" content="<%= meta_title %>">
+    <meta name="twitter:description" content="<%= meta_description %>">
+    <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:image:src" content="<%= meta_image %>">
+
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta property="og:title" content="EI Meet - Just make your game !">
-    <meta property="og:image" content="banner-eimeet.png">
-    <meta property="og:description" content="EI Meet is a platform regrouping many fans of FIFA game, and which helps them to organize and join FIFA tournaments offline, in bars precisely selected.">
-    <meta property="og:site_name" content="EI Meet"/>
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
   <body>

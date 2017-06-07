@@ -1,0 +1,5 @@
+meta_product_name: "EI Meet"
+meta_title: "EI Meet - Just make your game !"
+meta_description: "EI Meet - Just make your game !"
+meta_image: "banner-eimeet.png"                       # should exist in `app/assets/images/`
+twitter_account: "@Benoitpaternot"   # required for Twitter Cards
