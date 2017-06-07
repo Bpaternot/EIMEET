@@ -129,12 +129,10 @@
   }
 }
 
-#create-btn {
+.create-btn {
   color: $yankees;
   cursor: auto;
-  &:hover {
-    color: $yankees;
-  }
+  text-decoration: none;
   &:focus {
     text-decoration: none;
   }
