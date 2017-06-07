@@ -1,6 +1,49 @@
 <% @players.each do |pool_sort| %>
-<h2>Pool <%= pool_sort.first.scores.first.game.name %></h2>
-  <% pool_sort.each_with_index do |player, index| %>
-    <%= index + 1 %> /// <%= player.user.username %> : Pts: <%= player.points %> | Diff: <%= player.diff %> | BP <%= player.bp %> | BC <%= player.bc %><br/>
-  <% end %>
+<div class="wrapper-to-toggle-ranking" data-pool="<%= pool_sort.first.scores.first.game.name %>">
+  <div class="ranking">
+    <div class="ranking-header">
+      <div class="ranking-header-team"></div>
+      <div class="ranking-header-rank">RANK</div>
+      <div class="ranking-header-pts">PTS</div>
+      <div class="ranking-header-diff">GD</div>
+      <div class="ranking-header-bp">GF</div>
+      <div class="ranking-header-bc">GA</div>
+    </div>
+    <% pool_sort.each_with_index do |player, index| %>
+    <div class="ranking-each-team">
+      <div class="ranking-each-team-infos">
+        <div class="ranking-each-team-infos-avatar">
+          <% if player.user.facebook_picture_url %>
+          <% avatar_url = player.user.facebook_picture_url %>
+          <%= image_tag avatar_url, class: "avatar-small" %>
+          <% elsif player.club? %>
+          <%= image_tag "#{player.club}.png", class: "team-photo" %>
+          <% elsif %>
+          <% avatar_url = "http://res.cloudinary.com/dutc7zz18/image/upload/v1496741104/avatar-fake_yuue1t.png" %>
+          <%= image_tag avatar_url, class: "avatar" %>
+          <% end %>
+        </div>
+        <div class="ranking-each-team-infos-name">
+          <%= player.user.first_name %>
+        </div>
+      </div>
+      <div class="ranking-each-team-number ranking-each-team-number-rank">
+        <%= index + 1 %>
+      </div>
+      <div class="ranking-each-team-number">
+        <%= player.points %>
+      </div>
+      <div class="ranking-each-team-number">
+        <%= player.diff %>
+      </div>
+      <div class="ranking-each-team-number">
+        <%= player.bp %>
+      </div>
+      <div class="ranking-each-team-number">
+        <%= player.bc %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
 <% end %>

@@ -1,0 +1,28 @@
+<% if @tournament.tournament_type == "large" %>
+    <h1>Groups</h1>
+    <% @group_games_pool.each do |group| %>
+      <h2 class="pool-title" data-pool="<%= group.first.name %>">Pool <%= group.first.name %></h2>
+    <% end %>
+    <h1>Rounds</h1>
+    <h2 class="pool-title">Round 16</h2>
+    <h2 class="pool-title">Quarter final</h2>
+    <h2 class="pool-title">Semi final</h2>
+    <h2 class="pool-title">Final</h2>
+  <% elsif @tournament.tournament_type == "medium"  %>
+    <h1>Groups</h1>
+    <% @group_games_pool.each do |group| %>
+      <h2 class="pool-title" data-pool="<%= group.first.name %>">Pool <%= group.first.name %></h2>
+    <% end %>
+    <h1>Rounds</h1>
+    <h2 class="pool-title">Quarter final</h2>
+    <h2 class="pool-title">Semi final</h2>
+    <h2 class="pool-title">Final</h2>
+  <% elsif @tournament.tournament_type == "small" %>
+    <h1>Groups</h1>
+    <% @group_games_pool.each do |group| %>
+      <h2 class="pool-title" data-pool="<%= group.first.name %>">Pool <%= group.first.name %></h2>
+    <% end %>
+    <h1>Rounds</h1>
+    <h2 class="pool-title">Semi final</h2>
+    <h2 class="pool-title">Final</h2>
+<% end %>
