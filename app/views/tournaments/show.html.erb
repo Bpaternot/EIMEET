@@ -92,26 +92,9 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
     </div>
     <div class="col-xs-12 col-xs-12-tournament col-sm-12 col-md-3">
       <!-- Tournament full / User is not a player -->
-      <% if @remaining == 0 && Player.where(tournament: @tournament, user: current_user).exists? == false %>
-        <div class="module-right-full-tournament">
-          <div class="module-right-full-tournament-message">
-            <p>The tournament is full</p>
-          </div>
-        </div>
-      <!-- Tournament full / User is a player -->
-      <% elsif @remaining == 0 && Player.where(tournament: @tournament, user: current_user).exists? %>
-        <div class="module-right-full-tournament-start">
-          <div class="module-right-full-tournament-start-message">
-            <%= form_for @tournament do |f| %>
-              <%= f.hidden_field :step, value: "group" %>
-              <%= f.submit "START TOURNAMENT", class: "btn btn-primary button-start-tournament" %>
-            <% end %>
-          </div>
-        </div>
-      <!-- Tournament not full / User is a player / Still need material -->
-      <% elsif @remaining != 0 && Player.where(tournament: @tournament, user: current_user).exists? %>
+      <% if Player.where(tournament: @tournament, user: current_user).exists? && (@remaining_console_ps4 != 0 || @remaining_controllers != 0 || @remaining_fifa_game != 0) %>
         <div class="module-right-not-full-tournament-miss-material">
-          <h3>Material already registered</h3>
+          <h3>Material still needed</h3>
           <div class="module-right-not-full-tournament-miss-material-list-material">
           <div class="module-right-not-full-tournament-miss-material-list-material-console">
             <%= @remaining_console_ps4 %>&nbsp;&nbsp;<%= image_tag "ps4.png", class: "icon" %>
@@ -127,6 +110,26 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
             <%= render 'form_update' %>
           </div>
         </div>
+      <% end %>
+
+      <% if @remaining == 0 && Player.where(tournament: @tournament, user: current_user).exists? == false %>
+        <div class="module-right-full-tournament">
+          <div class="module-right-full-tournament-message">
+            <p>The tournament is full</p>
+          </div>
+        </div>
+      <!-- Tournament full / User is admin -->
+      <% elsif @remaining == 0 && Player.where(tournament: @tournament, user: current_user).exists? && @remaining_total == 0 %>
+        <div class="module-right-full-tournament-start">
+          <div class="module-right-full-tournament-start-message">
+            <%= form_for @tournament do |f| %>
+              <%= f.hidden_field :step, value: "group" %>
+              <%= f.submit "SHOW THE TOURNAMENT", class: "btn btn-primary button-start-tournament" %>
+            <% end %>
+          </div>
+        </div>
+      <!-- Tournament not full / User is a player / Still need material -->
+
       <!-- Tournament not full / User is not a player -->
       <% elsif @remaining != 0 && Player.where(tournament: @tournament, user: current_user).exists? == false %>
       <h1 style="color: #A92222;">Want to join?</h1>
@@ -136,14 +139,16 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
           </div>
         </div>
       <% end %>
-      <div class="wrapper-for-sharing">
-        <div>
-          <h2>Challenge your friends</h2>
+      <% if @remaining != 0 %>
+        <div class="wrapper-for-sharing">
+          <div>
+            <h2>Challenge your friends</h2>
+          </div>
+          <div class="facebook-sharing-button">
+            <div class="fb-share-button" data-href="<%= tournament_path(@tournament) %>" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"></a></div>
+          </div>
         </div>
-        <div class="facebook-sharing-button">
-          <div class="fb-share-button" data-href="<%= tournament_path(@tournament) %>" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"></a></div>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>

@@ -15,6 +15,23 @@
   }
 }
 
+.module-right-full-tournament-player {
+  border-radius: 2px;
+  margin: 10px auto;
+  border: 1px solid $green;
+  width: 100%;
+  min-height: 200px;
+  background-color: $green;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  &-message {
+    color: $snow;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+}
+
 .module-right-full-tournament-start {
   border-radius: 2px;
   margin: 10px auto;
