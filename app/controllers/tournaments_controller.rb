@@ -106,8 +106,7 @@ class TournamentsController < ApplicationController
     if @tournament.save
       if @tournament.step == "group" && @tournament.games == []
         generate_pools(@tournament, @list_all_players)
-      # elsif @tournament.step == "group"
-      #   ranking_pool
+        redirect_to tournament_playground_path(@tournament)
       elsif @tournament.step == "round16" && @tournament.games.where(step: "round16").order(:name) == []
         ranking_pool
         @winners_pool = classify_pool(@list_all_players)
@@ -344,10 +343,10 @@ class TournamentsController < ApplicationController
   def generate_pools(tournament, list_all_players)
     generate_pool_games(list_all_players[0], tournament, "A")
     generate_pool_games(list_all_players[1], tournament, "B")
-    if @tournament.tournament_type == "medium" || @tournament.tournament_type == "large"
+    if tournament.tournament_type == "medium" || tournament.tournament_type == "large"
       generate_pool_games(list_all_players[2], tournament, "C")
       generate_pool_games(list_all_players[3], tournament, "D")
-      if @tournament.tournament_type == "large"
+      if tournament.tournament_type == "large"
         generate_pool_games(list_all_players[4], tournament, "E")
         generate_pool_games(list_all_players[5], tournament, "F")
         generate_pool_games(list_all_players[6], tournament, "G")
@@ -486,10 +485,10 @@ class TournamentsController < ApplicationController
     end
 
     def generate_quarter(tournament, list_players)
-        generate_game(tournament, list_players[0], list_players[3], "Q1", "quarter" )
-        generate_game(tournament, list_players[1], list_players[2], "Q2", "quarter" )
-        generate_game(tournament, list_players[4], list_players[7], "Q3", "quarter" )
-        generate_game(tournament, list_players[5], list_players[6], "Q4", "quarter" )
+        generate_game(tournament, list_players[0][0], list_players[1][1], "Q1", "quarter" )
+        generate_game(tournament, list_players[0][1], list_players[1][0], "Q2", "quarter" )
+        generate_game(tournament, list_players[2][0], list_players[3][1], "Q3", "quarter" )
+        generate_game(tournament, list_players[2][1], list_players[3][0], "Q4", "quarter" )
     end
 
 
@@ -497,9 +496,9 @@ class TournamentsController < ApplicationController
       if tournament.tournament_type == "small"
         generate_game(tournament, list_players[0][0], list_players[1][1], "S1", "semi" )
         generate_game(tournament, list_players[0][1], list_players[1][0], "S2", "semi" )
-      # else
-      #   generate_game(tournament, list_players[0], list_players[3], "S1", "semi" )
-      #   generate_game(tournament, list_players[1], list_players[2], "S2", "semi" )
+      else
+        generate_game(tournament, list_players[0], list_players[3], "S1", "semi" )
+        generate_game(tournament, list_players[1], list_players[2], "S2", "semi" )
       end
     end
 
