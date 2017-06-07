@@ -2,32 +2,30 @@
 
 <!-- ___________________________________POOL____________________________________________________________-->
 
-<h1>Groups</h1>
 <% if @tournament.step == "group" %>
+  <h1>Groups</h1>
   <% @group_games_pool.each do |group| %>
     <h2>Pool <%= group.first.name %></h2>
   <% end %>
   <% end %>
 
-<h1>Rounds</h1>
+  <h1>Rounds</h1>
 
-<!-- bouton qui permet de passer au round16 (si tournois large), au quarter (si tournois medium), et au semi (si tournois small) -->
-<% if @tournament.tournament_type == "large" %>
-<h2>Round 16</h2>
-<h2>Quarter final</h2>
-<h2>Semi final</h2>
-<h2>Final</h2>
-<% elsif @tournament.tournament_type == "medium"  %>
-<h2>Quarter final</h2>
-<h2>Semi final</h2>
-<h2>Final</h2>
-<% elsif @tournament.tournament_type == "small" %>
-<h2>Semi final</h2>
-<h2>Final</h2>
-<% end %>
+    <!-- bouton qui permet de passer au round16 (si tournois large), au quarter (si tournois medium), et au semi (si tournois small) -->
+  <% if @tournament.tournament_type == "large" %>
+    <h2>Round 16</h2>
+    <h2>Quarter final</h2>
+    <h2>Semi final</h2>
+    <h2>Final</h2>
+  <% elsif @tournament.tournament_type == "medium"  %>
+    <h2>Quarter final</h2>
+    <h2>Semi final</h2>
+    <h2>Final</h2>
+  <% elsif @tournament.tournament_type == "small" %>
+    <h2>Semi final</h2>
+    <h2>Final</h2>
+  <% end %>
 
-
-<% if @tournament.step == "group" %>
   <h1>POOL MATCHS</h1>
   <div class="container">
     <% @group_games_pool.each do |group| %>
@@ -37,7 +35,7 @@
             <% group.each do |game| %>
           <div class="col-xs-6 col-sm-6 col-md-5">
 
-            <%= form_for game.scores.first do |f| %>
+            <%= form_for game.scores.first, remote: true do |f| %>
             <div class="card-team-left">
                 <div class="card-team-left-image">
                   <% if game.scores.first.player.user.facebook_picture_url %>
@@ -72,7 +70,7 @@
 
           <div class="col-xs-6 col-sm-6 col-md-5">
 
- <%= form_for game.scores.last do |f| %>
+            <%= form_for game.scores.last, remote: true  do |f| %>
               <div class="card-team-right">
                 <div class="card-team-right-update-score">
                   <%= f.button "", {class: "card-team-right-score-validate"} do %>
@@ -96,14 +94,12 @@
                     <%= image_tag avatar_url, class: "avatar" %>
                   <% end %>
                 </div>
-            </div>
+              </div>
             <% end %>
-
           </div>
-
-          <% end %>
-        </div>
-          <% end %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 
 
@@ -161,8 +157,12 @@
 
 
 
+
 <!-- bouton qui permet de passer au round16 (si tournois large), au quarter (si tournois medium), et au semi (si tournois small) -->
 
+  <div class="ranking-all" >
+    <%= render "ranking_all" %>
+  </div>
 
 
 
