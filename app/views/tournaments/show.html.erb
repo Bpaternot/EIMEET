@@ -1,6 +1,6 @@
 
 <% content_for :meta_title, "#{@tournament.user.first_name.capitalize}' tournament with #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_description, "Join the tournament organized by #{@tournament.user.first_name}, on #{@tournament.date} at #{@tournament.bar.name}! Hurry up, only #{@remaining} spots left ! " %>
+<% content_for :meta_description, "Join the tournament organized by #{@tournament.user.first_name}, on #{@tournament.date.strftime("%A %d %B")} at #{@tournament.bar.name}! Hurry up, only #{@remaining} spots left ! " %>
 
 
 <div class="banner-show-tournament" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
@@ -14,7 +14,7 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
       </div>
       <div class="banner-show-tournament-bar-block-infos-loc">
         <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;<%= @tournament.bar.address %></p>
-        <p><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<%= @tournament.date %></p>
+        <p><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<%= @tournament.date.strftime("%A %d %B") %></p>
       </div>
       <div class="banner-show-tournament-bar-block-infos-offers">
         <i class="fa fa-eur" aria-hidden="true"></i>
@@ -39,7 +39,7 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
 
 <div class="container container-tournament-show">
   <div class="container-for-title">
-    <h1 class="margin-top-title-tournament">Tournament of <%= @tournament.date %></h1>
+    <h1 class="margin-top-title-tournament">Tournament of <%= @tournament.date.strftime("%A %d %B") %></h1>
     <h2 class="margin-bottom-title-username">Organized by <span class="username-tournament"><%= @tournament.user.first_name %>&nbsp;<%= @tournament.user.last_name %></span></h2>
   </div>
  <!-- http://www.eimeet.fr/tournaments/#{@tournament.id} -->
