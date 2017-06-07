@@ -8,4 +8,8 @@ class GamePolicy < ApplicationPolicy
   def create?
     true
   end
+
+   def update_scores?
+    true
+  end
 end
