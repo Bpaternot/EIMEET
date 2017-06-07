@@ -133,7 +133,7 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
               <%= f.submit "SHOW THE TOURNAMENT", class: "btn btn-primary button-start-tournament" %>
             <% end %>
             <% else %>
-              <p>Your tournament is ready !</br> <%= @tournament.date.strftime("%A %y %B") %></p>
+              <p>Your tournament is ready !</br> <%= @tournament.date.strftime("%A %d %B") %></p>
             <% end %>
           </div>
         </div>
