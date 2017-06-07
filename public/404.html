@@ -18,11 +18,6 @@
     margin: 4em auto 0;
   }
 
-#image{
-  background-image: url("/assets/fail.gif");
-  background-size: cover;
-}
-
 
   .rails-default-error-page div.dialog > div {
     border: 1px solid #CCC;
@@ -96,15 +91,19 @@ a {
   text-decoration: none;
 }
 
+body{
+  background-image: url("/assets/fail.gif");
+  background-size: cover;
+}
   </style>
 </head>
 
-<body class="rails-default-error-page" id="image">
+<body class="rails-default-error-page">
   <!-- This file lives in public/404.html -->
   <div class="texte">
     <p>Sorry... Goal not found !</p>
 
-    <a href="#" class="btn-treehouse">Back home</a>
+    <a href="/" class="btn-treehouse">Back home</a>
   </div>
 </body>
 </html>
