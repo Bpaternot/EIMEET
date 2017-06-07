@@ -9,6 +9,8 @@
   <% end %>
 
 <h1>Rounds</h1>
+
+<!-- bouton qui permet de passer au round16 (si tournois large), au quarter (si tournois medium), et au semi (si tournois small) -->
 <% if @tournament.tournament_type == "large" %>
 <h2>Round 16</h2>
 <h2>Quarter final</h2>
@@ -208,6 +210,11 @@
 
     <% if @tournament.tournament_type == "large" %>
       <%= render 'tournaments/round16_results'  %>
+    <% end %>
+
+    <%= form_for @tournament do |f| %>
+      <%= f.hidden_field :step, value: "semi" %>
+      <%= f.submit "Next step" %>
     <% end %>
 
     <h1>QUARTER MATCHS</h1>
