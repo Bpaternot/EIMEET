@@ -1,13 +1,13 @@
 $(document).ready(function(){
-  $(".fa-bars").click(function(){
+  $(".fa-bars-navbar").click(function(){
     $(this).toggleClass("hidden");
-    $(".fa-times").toggleClass("hidden");
+    $(".fa-times-navbar").toggleClass("hidden");
     $(".full-screen-menu").toggleClass("hidden");
   });
 
-  $(".fa-times").click(function(){
+  $(".fa-times-navbar").click(function(){
     $(this).toggleClass("hidden");
-    $(".fa-bars").toggleClass("hidden");
+    $(".fa-bars-navbar").toggleClass("hidden");
     $(".full-screen-menu").toggleClass("hidden");
   });
 

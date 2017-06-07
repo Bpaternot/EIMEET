@@ -10,10 +10,29 @@ class PlayersController < ApplicationController
   def create
     @player = Player.new()
     @tournament = Tournament.find(params[:tournament_id])
-    @player.ps4 = params[:player][:ps4]
-    @player.controller_ps4 = params[:player][:controller_ps4]
-    @player.fifa_game_ps4 = params[:player][:fifa_game_ps4]
-    @player.club = params[:player][:club]
+    if params[:player][:ps4].empty?
+      @player.ps4 = false
+    else
+      @player.ps4 = params[:player][:ps4]
+    end
+    if params[:player][:controller_ps4].empty?
+      @player.controller_ps4 = 0
+    else
+      @player.controller_ps4 = params[:player][:controller_ps4]
+    end
+    if params[:player][:fifa_game_ps4].empty?
+      @player.fifa_game_ps4 = 0
+    else
+      @player.fifa_game_ps4 = params[:player][:fifa_game_ps4]
+    end
+
+    if params[:player][:club] == 'Choose your team'
+      @player.club = nil
+    else
+      @player.club = params[:player][:club]
+    end
+
+
     @player.tournament = @tournament
     @player.user = current_user
     @player.admin = false
@@ -21,7 +40,7 @@ class PlayersController < ApplicationController
     if @player.save
       redirect_to tournament_path(@tournament), notice: "You are now registered for the tournament!"
     else
-      redirect_to tournament_path(@tournament, modal: true)
+      redirect_to tournament_path(@tournament, modal: true), alert: "No registred, please choose a team !"
     end
   end
 

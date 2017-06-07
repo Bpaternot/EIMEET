@@ -1,0 +1,10 @@
+$(document).ready(function(){
+  $(".banner-show-tournament-bar-block-infos-offers").click(function(){
+    $(".banner-show-tournament-bar-block").toggleClass("hidden");
+    $(".banner-show-tournament-bar-offers").toggleClass("hidden");
+  });
+  $(".cross-for-offers").click(function(){
+    $(".banner-show-tournament-bar-block").toggleClass("hidden");
+    $(".banner-show-tournament-bar-offers").toggleClass("hidden");
+  });
+});

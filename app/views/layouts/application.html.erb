@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TODO</title>
+    <title>EI Meet</title>
+    <link rel="shortcut icon" type="images" href="iemeet.ico" >
+<!--     <link rel="icon" href="http://www.mydomain.info/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="http://www.mydomain.info/favicon.ico" type="image/x-icon" /> -->
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta property="og:title" content="EI Meet - Just make your game !">
+    <meta property="og:image" content="banner-eimeet.png">
+    <meta property="og:description" content="EI Meet is a platform regrouping many fans of FIFA game, and which helps them to organize and join FIFA tournaments offline, in bars precisely selected.">
+    <meta property="og:site_name" content="EI Meet"/>
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
   <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.9&appId=417795015258863";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>

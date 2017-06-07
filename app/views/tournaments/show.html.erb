@@ -1,6 +1,7 @@
 <div class="banner-show-tournament" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
 
-url('<%= cl_image_path @tournament.bar.photo %>'); background-size: cover;">
+url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-size: cover;">
+  <!-- Offers no open -->
   <div class="banner-show-tournament-bar-block">
     <div class="banner-show-tournament-bar-block-infos">
       <div class="banner-show-tournament-bar-block-infos-name">
@@ -18,6 +19,13 @@ url('<%= cl_image_path @tournament.bar.photo %>'); background-size: cover;">
       <div id="map" style="width: 100%; height: 100%"></div>
     </div>
   </div>
+
+  <!-- Offers open -->
+  <div class="banner-show-tournament-bar-offers hidden">
+  <p class="">16 beers for 40€ (save 12%)</p>
+  <%= link_to "BUY", "", id: "news", class: "btn btn-primary btn-primary-offers disabled" %>
+  <i class="fa fa-times cross-for-offers" aria-hidden="true"></i>
+  </div>
 </div>
 
 
@@ -25,9 +33,14 @@ url('<%= cl_image_path @tournament.bar.photo %>'); background-size: cover;">
 
 
 <div class="container container-tournament-show">
-  <h1 class="margin-top-title-tournament">Tournament of <%= @tournament.date %></h1>
-  <h2 class="margin-bottom-title-username">Organized by <span class="username-tournament"><%= @tournament.user.username %></span></h2>
-  <div class="row">
+  <div class="container-for-title">
+    <h1 class="margin-top-title-tournament">Tournament of <%= @tournament.date %></h1>
+    <h2 class="margin-bottom-title-username">Organized by <span class="username-tournament"><%= @tournament.user.first_name %>&nbsp;<%= @tournament.user.last_name %></span></h2>
+  </div>
+ <!-- http://www.eimeet.fr/tournaments/#{@tournament.id} -->
+ <!-- http://eimeet.herokuapp.com/tournaments/#{@tournament.id} -->
+
+  <div class="row row-for-fix-module">
     <div class="col-xs-12 col-xs-12-tournament col-sm-12 col-md-9">
       <div class="row">
       <% @tournament.players.each do |player| %>
@@ -37,10 +50,13 @@ url('<%= cl_image_path @tournament.bar.photo %>'); background-size: cover;">
              <% if player.user.facebook_picture_url %>
              <% avatar_url = player.user.facebook_picture_url %>
              <%= image_tag avatar_url, class: "avatar" %>
+             <% else %>
+             <% avatar_url = "http://res.cloudinary.com/dutc7zz18/image/upload/v1496741104/avatar-fake_yuue1t.png" %>
+             <%= image_tag avatar_url, class: "avatar" %>
              <% end %>
            </div>
            <div class="list-players-username">
-             <span class="username-player"><%= player.user.username %></span>
+             <span class="username-player"><%= player.user.first_name.capitalize %></span>
            </div>
            <div class="list-players-material">
             <% if player.ps4 == true %>
@@ -57,23 +73,15 @@ url('<%= cl_image_path @tournament.bar.photo %>'); background-size: cover;">
            <% if policy(player).destroy? %>
            <%= link_to tournament_player_path(@tournament, player),
            method: :delete,
-           data: { confirm: "Are you sure?" } do %>
-           <i class="fa fa-trash-o" aria-hidden="true"></i>
-           <% end %>
-           <% end %>
-           &nbsp;
-           <% if policy(player).update? %>
-           <% if  @remaining_console_ps4 != 0 || @remaining_controllers != 0 || @remaining_fifa_game != 0 %>
-           <i class="fa fa-pencil fa-pencil-active" aria-hidden="true"></i>
-           <% else %>
-           <i class="fa fa-pencil fa-pencil-disabled" aria-hidden="true"></i>
+           data: { confirm: "Do you really want unregister?" } do %>
+           <i class="fa fa-times" aria-hidden="true"></i>
            <% end %>
            <% end %>
          </div>
          <div class="list-players-team">
            <div class="list-players-team-images">
             <% if player.club? %>
-              <%= image_tag player.club %>
+              <%= image_tag "#{player.club}.png", class: "team-photo" %>
             <% end %>
            </div>
          </div>
@@ -96,15 +104,24 @@ url('<%= cl_image_path @tournament.bar.photo %>'); background-size: cover;">
           <div class="module-right-full-tournament-start-message">
             <%= form_for @tournament do |f| %>
               <%= f.hidden_field :step, value: "group" %>
-              <%= f.submit "START TOURNAMENT" %>
+              <%= f.submit "START TOURNAMENT", class: "btn btn-primary button-start-tournament" %>
             <% end %>
           </div>
         </div>
       <!-- Tournament not full / User is a player / Still need material -->
       <% elsif @remaining != 0 && Player.where(tournament: @tournament, user: current_user).exists? %>
         <div class="module-right-not-full-tournament-miss-material">
+          <h3>Material already registered</h3>
           <div class="module-right-not-full-tournament-miss-material-list-material">
-            <%= @remaining_console_ps4 %> <%= image_tag "console2.png", class: "icon" %>&nbsp;&nbsp;<%= @remaining_controllers %> <%= image_tag "manette.png", class: "icon"%>&nbsp;&nbsp;<%= @remaining_fifa_game %> <%= image_tag "fifa.png", class: "icon" %>
+          <div class="module-right-not-full-tournament-miss-material-list-material-console">
+            <%= @remaining_console_ps4 %>&nbsp;&nbsp;<%= image_tag "ps4.png", class: "icon" %>
+          </div>
+          <div class="module-right-not-full-tournament-miss-material-list-material-shifters">
+            <%= @remaining_controllers %>&nbsp;&nbsp;<%= image_tag "manette.png", class: "icon"%>
+          </div>
+          <div class="module-right-not-full-tournament-miss-material-list-material-fifa">
+            <%= @remaining_fifa_game %>&nbsp;&nbsp;<%= image_tag "fifa.png", class: "icon" %>
+          </div>
           </div>
           <div class="module-right-not-full-tournament-miss-material-form-update">
             <%= render 'form_update' %>
@@ -112,40 +129,58 @@ url('<%= cl_image_path @tournament.bar.photo %>'); background-size: cover;">
         </div>
       <!-- Tournament not full / User is not a player -->
       <% elsif @remaining != 0 && Player.where(tournament: @tournament, user: current_user).exists? == false %>
+      <h1 style="color: #A92222;">Want to join?</h1>
         <div class="module-right-not-full-tournament-join">
           <div class="module-right-not-full-tournament-join-form">
             <%= render 'form_join' %>
           </div>
         </div>
       <% end %>
+      <div class="wrapper-for-sharing">
+        <div>
+          <h2>Challenge your friends</h2>
+        </div>
+        <div class="facebook-sharing-button">
+          <div class="fb-share-button" data-href="<%= tournament_path(@tournament) %>" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"></a></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 
-  <!-- TCHAT TOURNAMENT -->
-  </br>
-  <% if Player.where(tournament: @tournament, user: current_user).exists? %>
-    <div id="reviews">
-        <h3>Let's chat with other players</h3>
-        <div class="message-box">
-          <% @tournament.reviews.each do |review| %>
+<% if Player.where(tournament: @tournament, user: current_user).exists? %>
+<div class="container container-tournament-show">
+    <h2 class="margin-for-h2">Let's chat with other players</h2>
+    <div class="wrapper-for-reviews">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <div id="reviews">
+          <div class="message-box">
+            <% @tournament.reviews.each do |review| %>
             <%= render 'reviews/show', review: review %>
-          <% end %>
+            <% end %>
+          </div>
         </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-box-chat">
+          <%= render 'reviews/form', tournament: @tournament, review: @review %>
+        </div>
+      </div>
     </div>
-    <%= render 'reviews/form', tournament: @tournament, review: @review %>
-  <% end %>
+  </div>
+</div>
+<% end %>
 
 
-  <!-- DESTROY THE TOURNAMENT -->
-  <% if policy(@tournament).destroy? %>
-    <%= link_to "Delete the tournament", tournament_path(@tournament),
+ <!--  <!-- DESTROY THE TOURNAMENT -->
+<!--   <#% if policy(@tournament).destroy? %>
+    <%#= link_to "Delete the tournament", tournament_path(@tournament),
         method: :delete,
         data: { confirm: "Are you sure?" } %>
 
-  <% end %>
-
+  <#% end %> -->
 
 
 
