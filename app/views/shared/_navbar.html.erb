@@ -10,6 +10,7 @@
     <!-- Different navigation if login or not -->
 
     <%= link_to t(".sign_in", default: "Join"), tournaments_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
     <%= link_to t(".sign_in", default: "Create"), "#", class: "navbar-wagon-item navbar-wagon-link disabled", id:'create-btn' %>
 
     <% if user_signed_in? %>
@@ -50,11 +51,11 @@
         <%= link_to t(".sign_in", default: "Join"), tournaments_path, class: "navbar-wagon-item navbar-wagon-link-mobile" %>
       </div>
       <div class="links-item">
-        <%= link_to t(".sign_in", default: "Create"), bars_path, class: "navbar-wagon-item navbar-wagon-link-mobile" %>
+        <%= link_to t(".sign_in", default: "Create"), "#", class: "navbar-wagon-item navbar-wagon-link-mobile" %>
       </div>
       <% if user_signed_in? %>
       <div class="links-item">
-        <%= link_to t(".sign_in", default: "Tournaments"), bars_path, class: "navbar-wagon-item navbar-wagon-link-mobile" %>
+        <%= link_to t(".sign_in", default: "Tournaments"), "#", class: "navbar-wagon-item navbar-wagon-link-mobile" %>
       </div>
       <div class="links-item">
         <hr style="border: none; height: 2px; width: 200px;, text-align: center; color: #FAFAFA; background: #FAFAFA;"/>

@@ -33,6 +33,7 @@
   }
 }
 
+
 .module-right-not-full-tournament-miss-material {
   border-radius: 2px;
   margin: 10px auto;
@@ -71,8 +72,10 @@
   width: 100%;
   min-height: 200px;
   background-color: $snow;
+  h3 {
+    font-size: floor(($base-size * 1.5)) !important;
+  }
   &-form {
-
   }
 }
 
@@ -92,5 +95,27 @@
 }
 
 
+.player_fifa_game_ps4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .collection_radio_buttons {
+    flex: 0 0 31%;
+  }
+}
+
+.player_controller_ps4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.player_ps4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  .collection_radio_buttons {
+    flex: 0 0 48%;
 
 
+  }
+}

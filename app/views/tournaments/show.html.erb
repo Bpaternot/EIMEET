@@ -1,6 +1,6 @@
 <div class="banner-show-tournament" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
 
-url('<%= cl_image_path @tournament.bar.photo %>'); background-size: cover;">
+url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-size: cover;">
   <!-- Offers no open -->
   <div class="banner-show-tournament-bar-block">
     <div class="banner-show-tournament-bar-block-infos">
@@ -35,7 +35,7 @@ url('<%= cl_image_path @tournament.bar.photo %>'); background-size: cover;">
 <div class="container container-tournament-show">
   <div class="container-for-title">
     <h1 class="margin-top-title-tournament">Tournament of <%= @tournament.date %></h1>
-    <h2 class="margin-bottom-title-username">Organized by <span class="username-tournament"><%= @tournament.user.username %></span></h2>
+    <h2 class="margin-bottom-title-username">Organized by <span class="username-tournament"><%= @tournament.user.first_name %>&nbsp;<%= @tournament.user.last_name %></span></h2>
   </div>
  <!-- http://www.eimeet.fr/tournaments/#{@tournament.id} -->
  <!-- http://eimeet.herokuapp.com/tournaments/#{@tournament.id} -->
@@ -56,7 +56,7 @@ url('<%= cl_image_path @tournament.bar.photo %>'); background-size: cover;">
              <% end %>
            </div>
            <div class="list-players-username">
-             <span class="username-player"><%= player.user.username %></span>
+             <span class="username-player"><%= player.user.first_name.capitalize %></span>
            </div>
            <div class="list-players-material">
             <% if player.ps4 == true %>
@@ -126,6 +126,7 @@ url('<%= cl_image_path @tournament.bar.photo %>'); background-size: cover;">
         </div>
       <!-- Tournament not full / User is not a player -->
       <% elsif @remaining != 0 && Player.where(tournament: @tournament, user: current_user).exists? == false %>
+      <h1 style="color: #A92222;">Want to join?</h1>
         <div class="module-right-not-full-tournament-join">
           <div class="module-right-not-full-tournament-join-form">
             <%= render 'form_join' %>
@@ -133,6 +134,9 @@ url('<%= cl_image_path @tournament.bar.photo %>'); background-size: cover;">
         </div>
       <% end %>
       <div class="wrapper-for-sharing">
+        <div>
+          <h2>Challenge your friends</h2>
+        </div>
         <div class="facebook-sharing-button">
           <div class="fb-share-button" data-href="<%= tournament_path(@tournament) %>" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"></a></div>
         </div>

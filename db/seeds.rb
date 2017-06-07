@@ -561,7 +561,7 @@ tournament14 = Tournament.create!(step: "group", date: DateTime.new(2017,6,19), 
 
 
 
-# Players
+# Players - for tournaments
 
 # # tournament id=1 : 16 players / status: pending
 Player.create(user_id: 5, admin: true, tournament: tournament1, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 1, club: "Liverpool")
