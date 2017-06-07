@@ -461,9 +461,9 @@ bar6 = Bar.create(address: "17 rue de Rivoli 75001 Paris", name: "Au bernacle", 
 bar7 = Bar.create(address: "53 avenue Henri Martin 75016 Paris", name: "L'idiot", tv_number: 2, tournament_size: 8, phone_number: "01.23.54.93.82", description: "Bar jovial tenu par des joyeux lurons")
 bar8 = Bar.create(address: "45 rue Levy 75017 Paris", name: "La grande carotte", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.11", description: "Idéal aussi si vous avez un petit creux")
 
-bar9 = Bar.create(address: "67 rue Myrha 75018 Paris", name: "Chez Olive", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.82", description: "Bar chaleureux et amical tenu par deux anciens fêtards")
-bar10 = Bar.create(address: "34 boulveard Rochechouart 75018 Paris", name: "A l'archer", tv_number: 8, tournament_size: 16, phone_number: "01.23.34.93.12", description: "Endroit calme et sympa dans un lieu atypique")
-bar11 = Bar.create(address: "45 rue des Martyr 75018 Paris", name: "Le grand vaillant", tv_number: 2, tournament_size: 8, phone_number: "01.23.54.93.82", description: "Bar jovial tenu par des joyeux lurons")
+bar9 = Bar.create(address: "67 rue Myrha 75018 Paris", name: "Chez Olive", tv_number: 8, tournament_size: 32, phone_number: "01.23.54.93.82", description: "Bar chaleureux et amical tenu par deux anciens fêtards")
+bar10 = Bar.create(address: "34 boulveard Rochechouart 75018 Paris", name: "A l'archer", tv_number: 8, tournament_size: 32, phone_number: "01.23.34.93.12", description: "Endroit calme et sympa dans un lieu atypique")
+bar11 = Bar.create(address: "45 rue des Martyr 75018 Paris", name: "Le grand vaillant", tv_number: 8, tournament_size: 32, phone_number: "01.23.54.93.82", description: "Bar jovial tenu par des joyeux lurons")
 bar12 = Bar.create(address: "56 rue Oberkampf 75011 Paris", name: "La truffe bleue", tv_number: 2, tournament_size: 8, phone_number: "01.23.54.93.11", description: "Idéal aussi si vous avez un petit creux")
 
 bar13 = Bar.create(address: "34 rue Erlanger 75016 Paris", name: "Le Wagon", tv_number: 4, tournament_size: 16, phone_number: "01.23.54.93.82", description: "Bar chaleureux et amical tenu par deux anciens fêtards")
@@ -541,7 +541,7 @@ Availability.create(start_day: DateTime.new(2017,6,3), end_day: DateTime.new(201
 
 tournament1 = Tournament.create!(step: "group", date: DateTime.new(2017,6,15), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar: bar1, user_id: 5)
 tournament2 = Tournament.create!(step: "group", date: DateTime.new(2017,6,10), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar: bar6, user_id: 22)
-tournament3 = Tournament.create!(step: "group", date: DateTime.new(2017,6,9), number_players: 32, status: "pending", number_consoles: 8, number_controllers: 16, number_games: 8, tournament_type: "large", bar: bar22, user_id: 14)
+tournament3 = Tournament.create!(step: "group", date: DateTime.new(2017,6,9), number_players: 32, status: "pending", number_consoles: 8, number_controllers: 16, number_games: 8, tournament_type: "large", bar: bar9, user_id: 14)
 tournament4 = Tournament.create!(step: "group", date: DateTime.new(2017,6,13), number_players: 8, status: "ready", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar3, user_id: 4)
 
 # # Tournaments replicated
@@ -550,12 +550,12 @@ tournament6 = Tournament.create!(step: "group", date: DateTime.new(2017,6,13), n
 tournament7 = Tournament.create!(step: "group", date: DateTime.new(2017,6,15), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar: bar14, user_id: 4)
 tournament8 = Tournament.create!(step: "group", date: DateTime.new(2017,6,11), number_players: 8, status: "ready", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar12, user_id: 7)
 
-tournament9 = Tournament.create!(step: "group", date: DateTime.new(2017,6,10), number_players: 32, status: "pending", number_consoles: 8, number_controllers: 16, number_games: 8, tournament_type: "large", bar: bar17, user_id: 28)
+tournament9 = Tournament.create!(step: "group", date: DateTime.new(2017,6,10), number_players: 32, status: "pending", number_consoles: 8, number_controllers: 16, number_games: 8, tournament_type: "large", bar: bar10, user_id: 28)
 tournament10 = Tournament.create!(step: "group", date: DateTime.new(2017,6,21), number_players: 8, status: "pending", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar23, user_id: 27)
 tournament11 = Tournament.create!(step: "group", date: DateTime.new(2017,6,16), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar: bar16, user_id: 7)
 tournament12 = Tournament.create!(step: "group", date: DateTime.new(2017,6,17), number_players: 8, status: "pending", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar15, user_id: 10)
 tournament13 = Tournament.create!(step: "group", date: DateTime.new(2017,6,20), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar: bar26, user_id: 15)
-tournament14 = Tournament.create!(step: "group", date: DateTime.new(2017,6,19), number_players: 32, status: "pending", number_consoles: 8, number_controllers: 16, number_games: 8, tournament_type: "large", bar: bar15, user_id: 8)
+tournament14 = Tournament.create!(step: "group", date: DateTime.new(2017,6,19), number_players: 32, status: "pending", number_consoles: 8, number_controllers: 16, number_games: 8, tournament_type: "large", bar: bar11, user_id: 8)
 
 
 
