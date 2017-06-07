@@ -1,7 +1,7 @@
 
-<% content_for :meta_title, "#{@offer.name} is on #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_description, @offer.description %>
-<% content_for :meta_image, cloudinary_url(@offer.photo.path) %>
+<% content_for :meta_title, "#{@tournament.user.username} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "Join the tournament organized by #{@tournament.user.username}, organzed the #{@tournament.date}! Quick, at the #{@tournament.bar.name} #{@remaining} spots left ! youhouu!" %>
+
 
 <div class="banner-show-tournament" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
 
@@ -146,7 +146,7 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
           <h2>Challenge your friends</h2>
         </div>
         <div class="facebook-sharing-button">
-          <div class="fb-share-button" data-href="<%= tournament_path(@tournament) %>" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"></a></div>
+          <div class="fb-share-button" data-href="<%= tournament_url(@tournament) %>" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"></a></div>
         </div>
       </div>
     </div>

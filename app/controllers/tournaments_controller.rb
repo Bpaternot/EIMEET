@@ -1,6 +1,6 @@
 class TournamentsController < ApplicationController
   before_action :set_tournament, only: [ :show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!, only: [ :index ]
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
     policy_scope(Tournament)
@@ -71,7 +71,7 @@ class TournamentsController < ApplicationController
     @remaining_controllers = remaining_controllers(@tournament)
     @remaining_fifa_game = remaining_fifa_game(@tournament)
     @current_player = Player.where(tournament: @tournament, user: current_user).first
-    if current_user.token != nil
+    if current_user && current_user.token != nil
       @graph = Koala::Facebook::API.new(current_user.token)
       profile = @graph.get_object("me")
       @friends = @graph.get_connections("me", "friends")
