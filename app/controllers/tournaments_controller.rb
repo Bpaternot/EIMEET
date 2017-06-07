@@ -180,7 +180,7 @@ class TournamentsController < ApplicationController
     elsif @tournament.step == "semi"
       @winners_semi = classify_after_pool(@group_games_semi)
     else
-    @winner = classify_after_pool(@group_games_final)[0]
+      @winner = classify_after_pool(@group_games_final)[0]
     end
 
   end
