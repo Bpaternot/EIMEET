@@ -1,6 +1,6 @@
 
-<% content_for :meta_title, "#{@tournament.user.username} is on #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_description, "Join the tournament organized by #{@tournament.user.username}, organzed the #{@tournament.date}! Quick, at the #{@tournament.bar.name} #{@remaining} spots left ! youhouu!" %>
+<% content_for :meta_title, "#{@tournament.user.first_name.capitalize}' tournament with #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "Join the tournament organized by #{@tournament.user.first_name}, on #{@tournament.date} at #{@tournament.bar.name}! Hurry up, only #{@remaining} spots left ! " %>
 
 
 <div class="banner-show-tournament" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
