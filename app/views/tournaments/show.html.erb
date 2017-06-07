@@ -102,7 +102,10 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
       <% elsif @remaining == 0 && Player.where(tournament: @tournament, user: current_user).exists? %>
         <div class="module-right-full-tournament-start">
           <div class="module-right-full-tournament-start-message">
-            <%= link_to "START TOURNAMENT", tournament_playground_path(@tournament), class: "btn btn-primary button-start-tournament" %>
+            <%= form_for @tournament do |f| %>
+              <%= f.hidden_field :step, value: "group" %>
+              <%= f.submit "START TOURNAMENT", class: "btn btn-primary button-start-tournament" %>
+            <% end %>
           </div>
         </div>
       <!-- Tournament not full / User is a player / Still need material -->
@@ -144,6 +147,7 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
     </div>
   </div>
 </div>
+
 
 <% if Player.where(tournament: @tournament, user: current_user).exists? %>
 <div class="container container-tournament-show">

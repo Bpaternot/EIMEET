@@ -1,0 +1,21 @@
+<h1>ROUND16 MATCHS RESULTS</h1>
+<div class="container">
+  <% @group_games_round16.each_with_index do |game, index| %>
+    <h2>Match <%= index + 1 %></h2>
+    <div class="row">
+      <% group.each do |game| %>
+      <div class="col-xs-6 col-sm-6 col-md-5">
+        <%= game.scores.first.player.user.username %>
+        <%=  game.scores.first.goals %>
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-2">
+      VS
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-5">
+        <%= game.scores.last.goals %>
+        <%= game.scores.last.player.user.username %>
+      </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
