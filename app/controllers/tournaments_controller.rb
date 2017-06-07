@@ -71,6 +71,7 @@ class TournamentsController < ApplicationController
     @remaining_console_ps4 = remaining_consoles(@tournament)
     @remaining_controllers = remaining_controllers(@tournament)
     @remaining_fifa_game = remaining_fifa_game(@tournament)
+    @remaining_total = @remaining_console_ps4 + @remaining_controllers + @remaining_fifa_game
     @current_player = Player.where(tournament: @tournament, user: current_user).first
     if current_user && current_user.token != nil
       @graph = Koala::Facebook::API.new(current_user.token)
