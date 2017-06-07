@@ -1,4 +1,6 @@
 class ScoresController < ApplicationController
+  include PoolRanking
+
   def new
   end
 
@@ -11,7 +13,20 @@ class ScoresController < ApplicationController
     authorize(@score)
     @score.update(score_params)
 
-    redirect_to tournament_playground_path(@score.game.tournament)
+    @tournament = @score.game.tournament
+    @list_all_players = generate_list_all_players(@tournament)
+
+    if @tournament.step == "group"
+      ranking_pool(@tournament)
+      @players = classify(@list_all_players)
+      @players.map! { |pool| pool.map! { |player| player.reload } }
+    end
+
+
+    respond_to do |format|
+      format.html { redirect_to tournament_playground_path(@score.game.tournament) }
+      format.js
+    end
   end
 
   def score_params

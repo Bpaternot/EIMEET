@@ -1,0 +1,227 @@
+// Cards of match
+
+.card-team-left {
+  width: 200px;
+  margin-bottom: 20px;
+  padding: 3px 3px;
+  border-radius: 2px;
+  background-color: $snow;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+    .card-team-left-image {
+      flex: 0 0 20%;
+      img {
+        width: 30px;
+      }
+    }
+    .card-team-left-name {
+      flex: 0 0 40%;
+      color: $yankees;
+      font-weight: 600;
+    }
+    .card-team-left-score {
+      flex: 0 0 20%;
+      width: 100%;
+      height: 100%;
+        input {
+          border-radius: 2px;
+          font-weight: 600;
+          padding: 4px 0px;
+          width: 100% !important;
+          height: 100% !important;
+          text-align: center;
+          border: none !important;
+          border-color: $snow;
+        }
+    }
+  .card-team-left-update-score {
+    flex: 0 0 20%;
+    button {
+      border-radius: 2px;
+      width: 90% !important;
+      height: 100% !important;
+      background-color: $fire !important;
+      border: none !important;
+      color: $snow !important;
+      &:hover {
+        background-color: $yankees !important;
+      }
+    }
+  }
+}
+
+.card-team-right {
+  width: 200px;
+  margin-bottom: 20px;
+  padding: 3px 3px;
+  border-radius: 2px;
+  background-color: $snow;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+    .card-team-right-image {
+      flex: 0 0 20%;
+      img {
+        width: 30px;
+      }
+    }
+    .card-team-right-name {
+      flex: 0 0 40%;
+      text-align: right;
+      color: $yankees;
+      font-weight: 600;
+    }
+    .card-team-right-score {
+      flex: 0 0 20%;
+      width: 100%;
+      height: 100%;
+        input {
+          border-radius: 2px;
+          font-weight: 600;
+          padding: 4px 0px;
+          width: 100% !important;
+          height: 100% !important;
+          text-align: center;
+          border: none !important;
+          border-color: $snow;
+        }
+    }
+  .card-team-right-update-score {
+    flex: 0 0 20%;
+    button {
+      border-radius: 2px;
+      width: 90% !important;
+      height: 100% !important;
+      background-color: $fire !important;
+      border: none !important;
+      color: $snow !important;
+      &:hover {
+        background-color: $yankees !important;
+      }
+    }
+  }
+}
+
+// Rankings
+
+.ranking {
+  width: 400px;
+  .ranking-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 30px;
+    .ranking-header-rank {
+      flex: 0 0 12%;
+      text-align: center;
+    }
+    .ranking-header-team {
+      flex: 0 0 40%;
+      text-align: center;
+    }
+    .ranking-header-pts {
+      flex: 0 0 12%;
+      text-align: center;
+    }
+    .ranking-header-diff {
+      flex: 0 0 12%;
+      text-align: center;
+    }
+    .ranking-header-bp {
+      flex: 0 0 12%;
+      text-align: center;
+    }
+    .ranking-header-bc {
+      flex: 0 0 12%;
+      text-align: center;
+    }
+  }
+  .ranking-each-team {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 30px;
+    .ranking-each-team-rank {
+      flex: 0 0 12%;
+      text-align: center;
+    }
+    .ranking-each-team-infos {
+      flex: 0 0 40%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .ranking-each-team-infos-avatar {
+        flex: 0 0 30%;
+        img {
+        width: 30px;
+        }
+      }
+      .ranking-each-team-infos-name {
+        flex: 0 0 70%;
+      }
+    }
+    .ranking-each-team-pts {
+      flex: 0 0 12%;
+      text-align: center;
+    }
+    .ranking-each-team-diff {
+      flex: 0 0 12%;
+      text-align: center;
+    }
+    .ranking-each-team-bp {
+      flex: 0 0 12%;
+      text-align: center;
+    }
+    .ranking-each-team-bc {
+      flex: 0 0 12%;
+      text-align: center;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
