@@ -548,7 +548,7 @@ tournament4 = Tournament.create!(step: "group", date: DateTime.new(2017,6,13), n
 tournament5 = Tournament.create!(step: "group", date: DateTime.new(2017,6,12), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar: bar20, user_id: 12)
 tournament6 = Tournament.create!(step: "group", date: DateTime.new(2017,6,13), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar: bar5, user_id: 15)
 tournament7 = Tournament.create!(step: "group", date: DateTime.new(2017,6,15), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar: bar14, user_id: 4)
-tournament8 = Tournament.create!(step: "group", date: DateTime.new(2017,6,11), number_players: 8, status: "ready", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar12, user_id: 7)
+tournament8 = Tournament.create!(step: "group", date: DateTime.new(2017,6,9), number_players: 8, status: "ready", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar12, user_id: 7)
 
 tournament9 = Tournament.create!(step: "group", date: DateTime.new(2017,6,10), number_players: 32, status: "pending", number_consoles: 8, number_controllers: 16, number_games: 8, tournament_type: "large", bar: bar10, user_id: 28)
 tournament10 = Tournament.create!(step: "group", date: DateTime.new(2017,6,21), number_players: 8, status: "pending", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar23, user_id: 27)
