@@ -366,17 +366,22 @@ class TournamentsController < ApplicationController
           if game.name != "final"
             winner_game.position = game.name
           else
+            raise
             winner_game.position = "W"
+            winner_game.user.won_tournaments += 1
+            winner_game.user.save
           end
         else
           winner_game = game.scores.last.player
           if game.name != "final"
             winner_game.position = game.name
           else
+            raise
             winner_game.position = "W"
+            winner_game.user.won_tournaments += 1
+            winner_game.user.save
           end
         end
-        winner_game.save!
         list << winner_game
       end
       return list
