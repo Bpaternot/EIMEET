@@ -551,7 +551,7 @@ ids.each_with_index do |id, index|
   bar.save!
 end
 
-# Availabilities
+# Availabilities -
 
 Availability.create(start_day: DateTime.new(2017,6,22), end_day: DateTime.new(2017,6,25), bar: bar1)
 Availability.create(start_day: DateTime.new(2017,6,1), end_day: DateTime.new(2017,6,30), bar: bar2)
