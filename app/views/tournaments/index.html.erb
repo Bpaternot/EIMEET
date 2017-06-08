@@ -10,10 +10,10 @@
         <div class="col-xs-12 col-sm-6 col-md-6">
           <div class="card-tournament" id="tournament-<%= tournament.bar.id %>-details">
             <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<%= cl_image_path tournament.bar.photo %>');">
-              <% avatar_url = tournament.user.facebook_picture_url || "http://placehold.it/30x30" %>
+              <% avatar_url = tournament.user.facebook_picture_url || tournament.user.link %>
               <%= image_tag avatar_url, class: "avatar card-image-avatar" %>
               <div class="card-bar">
-                <h2>Organized by <span class="username-card"><%= tournament.user.username %></span></h2>
+                <h2>Organized by <span class="username-card"><%= tournament.user.first_name %></span></h2>
                 <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;<%= tournament.bar.name %></p>
               </div>
             </div>
