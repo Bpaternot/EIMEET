@@ -1,2 +1,9 @@
-<h3><%= review.player.user.username %></h3>
+<% if review.player.user.facebook_picture_url %>
+  <% avatar_url = review.player.user.facebook_picture_url %>
+  <%= image_tag avatar_url, class: "avatar" %>
+  <% else %>
+  <% avatar_url = "http://res.cloudinary.com/dutc7zz18/image/upload/v1496741104/avatar-fake_yuue1t.png" %>
+  <%= image_tag avatar_url, class: "avatar" %>
+<% end %>
+  <h3 style="display: inline"><%= review.player.user.first_name.capitalize %></h3></br>
 <p><%= review.content %></p>
