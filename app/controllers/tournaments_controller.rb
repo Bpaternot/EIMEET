@@ -67,6 +67,8 @@ class TournamentsController < ApplicationController
       marker.lng tournament.bar.longitude
       # marker.infowindow render_to_string(partial: "/tournaments/map_box", locals: { tournament: tournament })
     end
+
+
     @remaining = @tournament.number_players - @tournament.players.count
     @remaining_console_ps4 = remaining_consoles(@tournament)
     @remaining_controllers = remaining_controllers(@tournament)
@@ -77,6 +79,9 @@ class TournamentsController < ApplicationController
       @graph = Koala::Facebook::API.new(current_user.token)
       profile = @graph.get_object("me")
       @friends = @graph.get_connections("me", "friends")
+    end
+    if @tournament.date == Date.today && @remaining == 0 && @remaining_total == 0
+      @tournament.status = "ready"
     end
     @review = Review.new()
   end
