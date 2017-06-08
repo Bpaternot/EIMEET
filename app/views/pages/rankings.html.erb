@@ -5,6 +5,8 @@
         <div class="rankings-header-rank">
           RANK
         </div>
+         <div class="avatar">
+        </div>
         <div class="username">
           NAME
         </div>
@@ -27,8 +29,11 @@
               <div class="rankings-header-rank">
                 <%= index + 1 %>
               </div>
+              <div class='avatar'>
+                <%= image_tag "#{user.link}.jpeg", class: "avatar" %>
+              </div>
               <div class="ranking-username">
-                <%= user.username %>
+                <%= user.first_name %>
               </div>
               <div class="ranking-total-goals">
                 <%= user.total_goals %>
