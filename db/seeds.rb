@@ -27,7 +27,6 @@ user.username = "cylou"
 user.total_goals = 45
 user.total_against_goals = 18
 user.won_tournaments = 1
-user.players.count = 3
 user.save!
 
 user = User.new
@@ -40,7 +39,6 @@ user.username = "valoch"
 user.total_goals = 35
 user.total_against_goals = 25
 user.won_tournaments = 0
-user.players.count = 2
 user.save!
 
 user = User.new
@@ -53,7 +51,6 @@ user.username = "benito"
 user.total_goals = 30
 user.total_against_goals = 10
 user.won_tournaments = 0
-user.players.count = 2
 user.save!
 
 user = User.new
@@ -66,7 +63,6 @@ user.username = "nono"
 user.total_goals = 20
 user.total_against_goals = 30
 user.won_tournaments = 0
-user.players.count = 2
 user.save!
 
 user = User.new
@@ -79,7 +75,6 @@ user.username = "jeanno"
 user.total_goals = 10
 user.total_against_goals = 15
 user.won_tournaments = 0
-user.players.count = 1
 user.save!
 
 user = User.new
@@ -92,7 +87,6 @@ user.username = "jujulien"
 user.total_goals = 35
 user.total_against_goals = 11
 user.won_tournaments = 1
-user.players.count = 2
 user.save!
 
 user = User.new
@@ -105,7 +99,6 @@ user.username = "marco"
 user.total_goals = 25
 user.total_against_goals = 25
 user.won_tournaments = 0
-user.players.count = 3
 user.save!
 
 user = User.new
@@ -118,7 +111,6 @@ user.username = "franckycbon"
 user.total_goals = 2
 user.total_against_goals = 15
 user.won_tournaments = 0
-user.players.count = 1
 user.save!
 
 user = User.new
@@ -131,7 +123,6 @@ user.username = "jacobin"
 user.total_goals = 27
 user.total_against_goals = 15
 user.won_tournaments = 0
-user.players.count = 2
 user.save!
 
 user = User.new
@@ -144,7 +135,6 @@ user.username = "momo"
 user.total_goals = 39
 user.total_against_goals = 10
 user.won_tournaments = 1
-user.players.count = 2
 user.save!
 
 user = User.new
@@ -157,7 +147,6 @@ user.username = "alex1"
 user.total_goals = 8
 user.total_against_goals = 10
 user.won_tournaments = 0
-user.players.count = 1
 user.save!
 
 user = User.new
@@ -170,7 +159,6 @@ user.username = "clairon"
 user.total_goals = 14
 user.total_against_goals = 10
 user.won_tournaments = 0
-user.players.count = 1
 user.save!
 
 user = User.new
@@ -183,7 +171,6 @@ user.username = "clarachou"
 user.total_goals = 15
 user.total_against_goals = 10
 user.won_tournaments = 0
-user.players.count = 1
 user.save!
 
 user = User.new
@@ -196,7 +183,6 @@ user.username = "eleo"
 user.total_goals = 12
 user.total_against_goals = 35
 user.won_tournaments = 0
-user.players.count = 2
 user.save!
 
 user = User.new
@@ -209,7 +195,6 @@ user.username = "alex2"
 user.total_goals = 15
 user.total_against_goals = 10
 user.won_tournaments = 0
-user.players.count = 1
 user.save!
 
 user = User.new
@@ -222,7 +207,6 @@ user.username = "matmat"
 user.total_goals = 16
 user.total_against_goals = 10
 user.won_tournaments = 0
-user.players.count = 1
 user.save!
 
 user = User.new
@@ -235,7 +219,6 @@ user.username = "germanou"
 user.total_goals = 6
 user.total_against_goals = 10
 user.won_tournaments = 0
-user.players.count = 1
 user.save!
 
 user = User.new
@@ -248,7 +231,6 @@ user.username = "jujuliette"
 user.total_goals = 11
 user.total_against_goals = 10
 user.won_tournaments = 0
-user.players.count = 1
 user.save!
 
 user = User.new
@@ -261,7 +243,6 @@ user.username = "tomitom"
 user.total_goals = 13
 user.total_against_goals = 10
 user.won_tournaments = 0
-user.players.count = 1
 user.save!
 
 user = User.new
@@ -274,7 +255,6 @@ user.username = "clementin"
 user.total_goals = 10
 user.total_against_goals = 8
 user.won_tournaments = 0
-user.players.count = 1
 user.save!
 
 user = User.new
@@ -287,7 +267,6 @@ user.username = "fudo"
 user.total_goals = 2
 user.total_against_goals = 10
 user.won_tournaments = 0
-user.players.count = 1
 user.save!
 
 user = User.new
@@ -300,7 +279,6 @@ user.username = "tomtomgo"
 user.total_goals = 5
 user.total_against_goals = 15
 user.won_tournaments = 0
-user.players.count = 1
 user.save!
 
 user = User.new
@@ -313,7 +291,6 @@ user.username = "sysyl"
 user.total_goals = 8
 user.total_against_goals = 15
 user.won_tournaments = 0
-user.players.count =
 user.save!
 
 user = User.new
@@ -326,7 +303,6 @@ user.username = "axelred"
 user.total_goals = 13
 user.total_against_goals = 15
 user.won_tournaments = 0
-user.players.count =
 user.save!
 
 user = User.new
@@ -339,7 +315,6 @@ user.username = "nonodu92"
 user.total_goals = 11
 user.total_against_goals = 15
 user.won_tournaments = 0
-user.players.count =
 user.save!
 
 user = User.new
@@ -352,7 +327,6 @@ user.username = "victorhugo"
 user.total_goals = 7
 user.total_against_goals = 15
 user.won_tournaments = 0
-user.players.count =
 user.save!
 
 user = User.new
@@ -365,7 +339,6 @@ user.username = "lacdecome"
 user.total_goals = 13
 user.total_against_goals = 15
 user.won_tournaments = 0
-user.players.count =
 user.save!
 
 user = User.new
@@ -378,7 +351,6 @@ user.username = "alexiadujardin"
 user.total_goals = 11
 user.total_against_goals = 15
 user.won_tournaments = 0
-user.players.count = 2
 user.save!
 
 user = User.new
@@ -391,7 +363,6 @@ user.username = "simonette"
 user.total_goals = 17
 user.total_against_goals = 15
 user.won_tournaments = 0
-user.players.count = 2
 user.save!
 
 user = User.new
@@ -404,7 +375,6 @@ user.username = "jesus"
 user.total_goals = 14
 user.total_against_goals = 13
 user.won_tournaments = 0
-user.players.count = 2
 user.save!
 
 user = User.new
@@ -417,7 +387,6 @@ user.username = "lionelmathis"
 user.total_goals = 11
 user.total_against_goals = 9
 user.won_tournaments = 0
-user.players.count = 1
 user.save!
 
 user = User.new
@@ -430,7 +399,6 @@ user.username = "samsoung"
 user.total_goals = 20
 user.total_against_goals = 15
 user.won_tournaments = 0
-user.players.count = 2
 user.save!
 
 user = User.new
@@ -443,7 +411,6 @@ user.username = "mariusfildentaire"
 user.total_goals = 14
 user.total_against_goals = 15
 user.won_tournaments = 0
-user.players.count = 2
 user.save!
 
 user = User.new
@@ -456,7 +423,6 @@ user.username = "yannicknoah"
 user.total_goals = 6
 user.total_against_goals = 15
 user.won_tournaments = 0
-user.players.count = 1
 user.save!
 
 user = User.new
@@ -469,7 +435,6 @@ user.username = "maxenscornet"
 user.total_goals = 9
 user.total_against_goals = 15
 user.won_tournaments = 0
-user.players.count = 2
 user.save!
 
 user = User.new
@@ -482,7 +447,6 @@ user.username = "romano"
 user.total_goals = 2
 user.total_against_goals = 35
 user.won_tournaments = 0
-user.players.count = 3
 user.save!
 
 user = User.new
@@ -495,7 +459,6 @@ user.username = "borisbreakdance"
 user.total_goals = 1
 user.total_against_goals = 40
 user.won_tournaments = 0
-user.players.count = 3
 user.save!
 
 user = User.new
@@ -508,7 +471,6 @@ user.username = "hugopasvictor"
 user.total_goals = 9
 user.total_against_goals = 10
 user.won_tournaments = 0
-user.players.count = 1
 user.save!
 
 user = User.new
@@ -521,7 +483,6 @@ user.username = "leomessi"
 user.total_goals = 20
 user.total_against_goals = 10
 user.won_tournaments = 0
-user.players.count = 2
 user.save!
 
 user = User.new
@@ -534,7 +495,6 @@ user.username = "nathanfake"
 user.total_goals = 7
 user.total_against_goals = 10
 user.won_tournaments = 0
-user.players.count = 2
 user.save!
 
 user = User.new
@@ -547,7 +507,6 @@ user.username = "jeangabin"
 user.total_goals = 23
 user.total_against_goals = 10
 user.won_tournaments = 0
-user.players.count = 3
 user.save!
 
 user = User.new
@@ -560,7 +519,6 @@ user.username = "pauldu17"
 user.total_goals = 9
 user.total_against_goals = 10
 user.won_tournaments = 0
-user.players.count = 1
 user.save!
 
 user = User.new
@@ -573,7 +531,6 @@ user.username = "quentinlephalique"
 user.total_goals = 9
 user.total_against_goals = 10
 user.won_tournaments = 0
-user.players.count = 2
 user.save!
 
 user = User.new
@@ -586,7 +543,6 @@ user.username = "matheodimeco"
 user.total_goals = 11
 user.total_against_goals = 10
 user.won_tournaments = 0
-user.players.count = 2
 user.save!
 
 user = User.new
@@ -599,7 +555,6 @@ user.username = "evanmcgregor"
 user.total_goals = 14
 user.total_against_goals = 10
 user.won_tournaments = 0
-user.players.count = 2
 user.save!
 
 user = User.new
@@ -612,7 +567,6 @@ user.username = "florianphilippot"
 user.total_goals = 15
 user.total_against_goals = 13
 user.won_tournaments = 0
-user.players.count = 2
 user.save!
 
 user = User.new
@@ -625,7 +579,6 @@ user.username = "corentindugenou"
 user.total_goals = 6
 user.total_against_goals = 10
 user.won_tournaments = 0
-user.players.count = 1
 user.save!
 
 user = User.new
@@ -638,7 +591,6 @@ user.username = "killianmbape"
 user.total_goals = 12
 user.total_against_goals = 12
 user.won_tournaments = 0
-user.players.count = 2
 user.save!
 
 # Bar creation:
@@ -731,10 +683,10 @@ Availability.create(start_day: DateTime.new(2017,6,3), end_day: DateTime.new(201
 
 # Tournaments
 
-tournament1 = Tournament.create!(step: "group", date: DateTime.new(2017,6,15), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar: bar1, user_id: 5)
+tournament1 = Tournament.create!(step: "group", date: DateTime.new(2017,6,15), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar: bar3, user_id: 5)
 tournament2 = Tournament.create!(step: "group", date: DateTime.new(2017,6,10), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar: bar6, user_id: 22)
-tournament3 = Tournament.create!(step: "group", date: DateTime.new(2017,6,9), number_players: 32, status: "pending", number_consoles: 8, number_controllers: 16, number_games: 8, tournament_type: "large", bar: bar9, user_id: 14)
-tournament4 = Tournament.create!(step: "group", date: DateTime.new(2017,6,7), number_players: 8, status: "ready", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar3, user_id: 4)
+tournament3 = Tournament.create!(step: "group", date: DateTime.new(2017,6,12), number_players: 32, status: "pending", number_consoles: 8, number_controllers: 16, number_games: 8, tournament_type: "large", bar: bar9, user_id: 14)
+tournament4 = Tournament.create!(step: "group", date: DateTime.new(2017,6,8), number_players: 8, status: "ready", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar1, user_id: 3)
 
 # # Tournaments replicated
 tournament5 = Tournament.create!(step: "group", date: DateTime.new(2017,6,12), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar: bar20, user_id: 12)
@@ -742,7 +694,7 @@ tournament6 = Tournament.create!(step: "group", date: DateTime.new(2017,6,13), n
 tournament7 = Tournament.create!(step: "group", date: DateTime.new(2017,6,15), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar: bar14, user_id: 4)
 tournament8 = Tournament.create!(step: "group", date: DateTime.new(2017,6,9), number_players: 8, status: "ready", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar12, user_id: 7)
 
-tournament9 = Tournament.create!(step: "group", date: DateTime.new(2017,6,7), number_players: 32, status: "pending", number_consoles: 8, number_controllers: 16, number_games: 8, tournament_type: "large", bar: bar10, user_id: 28)
+tournament9 = Tournament.create!(step: "group", date: DateTime.new(2017,6,15), number_players: 32, status: "pending", number_consoles: 8, number_controllers: 16, number_games: 8, tournament_type: "large", bar: bar10, user_id: 28)
 tournament10 = Tournament.create!(step: "group", date: DateTime.new(2017,6,21), number_players: 8, status: "pending", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar23, user_id: 27)
 tournament11 = Tournament.create!(step: "group", date: DateTime.new(2017,6,16), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar: bar16, user_id: 7)
 tournament12 = Tournament.create!(step: "group", date: DateTime.new(2017,6,18), number_players: 8, status: "pending", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar15, user_id: 10)
@@ -806,7 +758,7 @@ Player.create(user_id: 23, admin: false, tournament: tournament4, ps4: false, xb
 Player.create(user_id: 5, admin: false, tournament: tournament4, ps4: true, xbox: false, controller_ps4: 1, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Chelsea")
 Player.create(user_id: 6, admin: false, tournament: tournament4, ps4: false, xbox: false, controller_ps4: 1, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Nice")
 Player.create(user_id: 7, admin: false, tournament: tournament4, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Nancy")
-Player.create(user_id: 16, admin: false, tournament: tournament4, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Paris-SG")
+# Player.create(user_id: 16, admin: false, tournament: tournament4, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Paris-SG")
 ##  Tournament id= 5
 Player.create(user_id: 12, admin: true, tournament: tournament5, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "ManchesterUnited")
 Player.create(user_id: 21, admin: false, tournament: tournament5, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 1, club: "Monaco")
@@ -870,25 +822,25 @@ Player.create(user_id: 23, admin: false, tournament: tournament9, ps4: false, xb
 Player.create(user_id: 22, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "Swansea")
 Player.create(user_id: 21, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Toulouse")
 Player.create(user_id: 20, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "ManchesterUnited")
-Player.create(user_id: 19, admin: false, tournament: tournament9, ps4: true, xbox: false, controller_ps4: 2, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Chelsea")
+Player.create(user_id: 19, admin: false, tournament: tournament9, ps4: true, xbox: false, controller_ps4: 2, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "Chelsea")
 Player.create(user_id: 18, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 2, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Nice")
 Player.create(user_id: 17, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Nancy")
 Player.create(user_id: 16, admin: false, tournament: tournament9, ps4: true, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Paris-SG")
 Player.create(user_id: 15, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Monaco")
-Player.create(user_id: 14, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "Swansea")
-Player.create(user_id: 13, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Toulouse")
+Player.create(user_id: 14, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 2, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "Swansea")
+Player.create(user_id: 13, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 2, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Toulouse")
 Player.create(user_id: 12, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "ManchesterUnited")
 Player.create(user_id: 11, admin: false, tournament: tournament9, ps4: true, xbox: false, controller_ps4: 2, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Chelsea")
 Player.create(user_id: 10, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 2, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Nice")
 Player.create(user_id: 9, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Nancy")
 Player.create(user_id: 8, admin: false, tournament: tournament9, ps4: true, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Paris-SG")
-Player.create(user_id: 32, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "Swansea")
+Player.create(user_id: 32, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Swansea")
 Player.create(user_id: 2, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Toulouse")
-Player.create(user_id: 3, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "ManchesterUnited")
-Player.create(user_id: 4, admin: false, tournament: tournament9, ps4: true, xbox: false, controller_ps4: 2, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Chelsea")
-Player.create(user_id: 5, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 2, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Nice")
-Player.create(user_id: 6, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Nancy")
-Player.create(user_id: 7, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Paris-SG")
+# Player.create(user_id: 3, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "ManchesterUnited")
+# Player.create(user_id: 4, admin: false, tournament: tournament9, ps4: true, xbox: false, controller_ps4: 2, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Chelsea")
+# Player.create(user_id: 5, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 2, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Nice")
+# Player.create(user_id: 6, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Nancy")
+# Player.create(user_id: 7, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Paris-SG")
 ##  Tournament id= 10
 Player.create(user_id: 27, admin: true, tournament: tournament10, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "ManchesterUnited")
 Player.create(user_id: 21, admin: false, tournament: tournament10, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 1, club: "Monaco")
