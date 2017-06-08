@@ -5,7 +5,8 @@
   <div class="ranking-header-pts">USERNAME</div>
   <div class="ranking-header-diff">TOTAL GOALS</div>
   <div class="ranking-header-diff">TOTAL AGAINST GOALS</div>
-  <div class="ranking-header-bp">NUMBER OF TOURNAMENTS PLAYED</div>
+  <div class="ranking-header-bp">TOURNAMENTS WON</div>
+  <div class="ranking-header-bp">TOURNAMENTS PLAYED</div>
 
     <% @users.each_with_index  do |user, index| %>
       <%= index + 1 %> )
@@ -13,7 +14,7 @@
       <%= user.total_goals %> |
       <%= user.total_against_goals %> |
       <%= user.won_tournaments %> |
-      <%= user.players.count %> <br>
+     <br>
     <% end %>
   </div>
 </div>
