@@ -82,6 +82,7 @@ class TournamentsController < ApplicationController
     end
     if @remaining == 0 && @remaining_total == 0
       @tournament.status = "ready"
+      @tournament.save!
     end
     @review = Review.new()
   end
