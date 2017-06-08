@@ -9,6 +9,12 @@ class PagesController < ApplicationController
       user.rankings
     end
     # @users = User.all.sort_by { |user| user.total_goals }
-    @users = User.order(total_goals: :desc)
+    if params[:sort_by] == "total-against-goals"
+       @users = User.order(total_against_goals: :desc)
+    elsif params[:sort_by] == "won-tournaments"
+      @users = User.order(won_tournaments: :desc)
+    else
+      @users = User.order(total_goals: :desc)
+    end
   end
 end

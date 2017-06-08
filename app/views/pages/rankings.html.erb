@@ -12,12 +12,21 @@
         </div>
         <div class="total-goals">
           GOALS
+          <%= link_to rankings_path do %>
+            <i class="fa fa-sort-desc" aria-hidden="true"></i>
+          <% end %>
         </div>
         <div class="total-against-goals">
           AGAINST GOALS
+          <%= link_to rankings_path(sort_by: "total-against-goals") do %>
+            <i class="fa fa-sort-desc" aria-hidden="true"></i>
+          <% end %>
         </div>
         <div class="won-tournaments">
           WON TOURNAMENTS
+          <%= link_to rankings_path(sort_by: "won-tournaments") do %>
+            <i class="fa fa-sort-desc" aria-hidden="true"></i>
+          <% end %>
         </div>
       </div>
     </div>
