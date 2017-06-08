@@ -115,7 +115,6 @@ class TournamentsController < ApplicationController
         generate_pools(@tournament, @list_all_players)
         redirect_to tournament_playground_path(@tournament)
       elsif @tournament.step == "round16" && @tournament.games.where(step: "round16").order(:name) == []
-        raise
         ranking_pool(@tournament)
         @winners_pool = classify_pool(@list_all_players)
         generate_round16(@tournament, @winners_pool)
