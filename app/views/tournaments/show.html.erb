@@ -136,7 +136,7 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
 
         <div class="module-right-full-tournament-start">
           <div class="module-right-full-tournament-start-message">
-            <% if @tournament.status == "ready" %>
+            <% if @tournament.status == "ready" || @tournament.status == "past" %>
             <%= form_for @tournament do |f| %>
               <%= f.hidden_field :step, value: "group" %>
               <%= f.submit "SHOW THE TOURNAMENT", class: "btn btn-primary button-start-tournament" %>
