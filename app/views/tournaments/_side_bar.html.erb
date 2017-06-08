@@ -7,27 +7,27 @@
         <h2 class="pool-title" data-pool="<%= group.first.name %>">POOL <%= group.first.name %></h2>
       <% end %>
       <h1>ROUNDS</h1>
-      <h2 class="rounds-title" data-pool="round16">ROUND 16</h2>
-      <h2 class="rounds-title" data-pool="quarter">QUARTER FINALS</h2>
-      <h2 class="rounds-title" data-pool="semi">SEMI FINALS</h2>
-      <h2 class="rounds-title" data-pool="final">FINAL</h2>
+      <h2 class="pool-title" data-pool="round16">ROUND 16</h2>
+      <h2 class="pool-title" data-pool="quarter">QUARTER FINALS</h2>
+      <h2 class="pool-title" data-pool="semi">SEMI FINALS</h2>
+      <h2 class="pool-title" data-pool="final">FINAL</h2>
     <% elsif @tournament.tournament_type == "medium"  %>
       <h1>GROUPS</h1>
       <% @group_games_pool.each do |group| %>
         <h2 class="pool-title" data-pool="<%= group.first.name %>">POOL <%= group.first.name %></h2>
       <% end %>
       <h1>ROUNDS</h1>
-      <h2 class="rounds-title" data-pool="quarter">QUARTER FINALS</h2>
-      <h2 class="rounds-title" data-pool="semi">SEMI FINALS</h2>
-      <h2 class="rounds-title" data-pool="final">FINAL</h2>
+      <h2 class="pool-title" data-pool="quarter">QUARTER FINALS</h2>
+      <h2 class="pool-title" data-pool="semi">SEMI FINALS</h2>
+      <h2 class="pool-title" data-pool="final">FINAL</h2>
     <% elsif @tournament.tournament_type == "small" %>
       <h1>GROUPS</h1>
       <% @group_games_pool.each do |group| %>
         <h2 class="pool-title" data-pool="<%= group.first.name %>">POOL <%= group.first.name %></h2>
       <% end %>
       <h1>ROUNDS</h1>
-      <h2 class="rounds-title" data-pool="semi">SEMI FINALS</h2>
-      <h2 class="rounds-title" data-pool="final">FINAL</h2>
+      <h2 class="pool-title" data-pool="semi">SEMI FINALS</h2>
+      <h2 class="pool-title" data-pool="final">FINAL</h2>
   <% end %>
 
 <!-- ROUND 16 -->
@@ -40,26 +40,26 @@
       <% end %>
       <h1>ROUNDS</h1>
       <h2 class="pool-title" data-pool="round16">ROUND 16</h2>
-      <h2 class="rounds-title" data-pool="quarter">QUARTER FINALS</h2>
-      <h2 class="rounds-title" data-pool="semi">SEMI FINALS</h2>
-      <h2 class="rounds-title" data-pool="final">FINAL</h2>
+      <h2 class="pool-title" data-pool="quarter">QUARTER FINALS</h2>
+      <h2 class="pool-title" data-pool="semi">SEMI FINALS</h2>
+      <h2 class="pool-title" data-pool="final">FINAL</h2>
     <% elsif @tournament.tournament_type == "medium"  %>
       <h1>GROUPS</h1>
       <% @group_games_pool.each do |group| %>
         <h2 class="pool-title" data-pool="<%= group.first.name %>">POOL <%= group.first.name %></h2>
       <% end %>
       <h1>ROUNDS</h1>
-      <h2 class="rounds-title" data-pool="quarter">QUARTER FINALS</h2>
-      <h2 class="rounds-title" data-pool="semi">SEMI FINALS</h2>
-      <h2 class="rounds-title" data-pool="final">FINAL</h2>
+      <h2 class="pool-title" data-pool="quarter">QUARTER FINALS</h2>
+      <h2 class="pool-title" data-pool="semi">SEMI FINALS</h2>
+      <h2 class="pool-title" data-pool="final">FINAL</h2>
     <% elsif @tournament.tournament_type == "small" %>
       <h1>GROUPS</h1>
       <% @group_games_pool.each do |group| %>
         <h2 class="pool-title" data-pool="<%= group.first.name %>">POOL <%= group.first.name %></h2>
       <% end %>
       <h1>ROUNDS</h1>
-      <h2 class="rounds-title" data-pool="semi">SEMI FINALS</h2>
-      <h2 class="rounds-title" data-pool="final">FINAL</h2>
+      <h2 class="pool-title" data-pool="semi">SEMI FINALS</h2>
+      <h2 class="pool-title" data-pool="final">FINAL</h2>
   <% end %>
 
 <!-- QUARTERS -->
@@ -73,8 +73,8 @@
       <h1>ROUNDS</h1>
       <h2 class="pool-title" data-pool="round16">ROUND 16</h2>
       <h2 class="pool-title" data-pool="quarter">QUARTER FINALS</h2>
-      <h2 class="rounds-title" data-pool="semi">SEMI FINALS</h2>
-      <h2 class="rounds-title" data-pool="final">FINAL</h2>
+      <h2 class="pool-title" data-pool="semi">SEMI FINALS</h2>
+      <h2 class="pool-title" data-pool="final">FINAL</h2>
     <% elsif @tournament.tournament_type == "medium"  %>
       <h1>GROUPS</h1>
       <% @group_games_pool.each do |group| %>
@@ -82,16 +82,16 @@
       <% end %>
       <h1>ROUNDS</h1>
       <h2 class="pool-title" data-pool="quarter">QUARTER FINALS</h2>
-      <h2 class="rounds-title" data-pool="semi">SEMI FINALS</h2>
-      <h2 class="rounds-title" data-pool="final">FINAL</h2>
+      <h2 class="pool-title" data-pool="semi">SEMI FINALS</h2>
+      <h2 class="pool-title" data-pool="final">FINAL</h2>
     <% elsif @tournament.tournament_type == "small" %>
       <h1>GROUPS</h1>
       <% @group_games_pool.each do |group| %>
         <h2 class="pool-title" data-pool="<%= group.first.name %>">POOL <%= group.first.name %></h2>
       <% end %>
       <h1>ROUNDS</h1>
-      <h2 class="rounds-title" data-pool="semi">SEMI FINALS</h2>
-      <h2 class="rounds-title" data-pool="final">FINAL</h2>
+      <h2 class="pool-title" data-pool="semi">SEMI FINALS</h2>
+      <h2 class="pool-title" data-pool="final">FINAL</h2>
   <% end %>
 
 <!-- SEMI -->
@@ -106,7 +106,7 @@
       <h2 class="pool-title" data-pool="round16">ROUND 16</h2>
       <h2 class="pool-title" data-pool="quarter">QUARTER FINALS</h2>
       <h2 class="pool-title" data-pool="semi">SEMI FINALS</h2>
-      <h2 class="rounds-title" data-pool="final">FINAL</h2>
+      <h2 class="pool-title" data-pool="final">FINAL</h2>
     <% elsif @tournament.tournament_type == "medium"  %>
       <h1>GROUPS</h1>
       <% @group_games_pool.each do |group| %>
@@ -115,7 +115,7 @@
       <h1>ROUNDS</h1>
       <h2 class="pool-title" data-pool="quarter">QUARTER FINALS</h2>
       <h2 class="pool-title" data-pool="semi">SEMI FINALS</h2>
-      <h2 class="rounds-title" data-pool="final">FINAL</h2>
+      <h2 class="pool-title" data-pool="final">FINAL</h2>
     <% elsif @tournament.tournament_type == "small" %>
       <h1>GROUPS</h1>
       <% @group_games_pool.each do |group| %>
@@ -123,7 +123,7 @@
       <% end %>
       <h1>ROUNDS</h1>
       <h2 class="pool-title" data-pool="semi">SEMI FINALS</h2>
-      <h2 class="rounds-title" data-pool="final">FINAL</h2>
+      <h2 class="pool-title" data-pool="final">FINAL</h2>
   <% end %>
 
 <!-- FINAL -->
