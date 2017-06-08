@@ -149,6 +149,10 @@ class TournamentsController < ApplicationController
         @winners_semi = classify_after_pool(@group_games_semi)
         generate_final(@tournament, @winners_semi)
         redirect_to tournament_playground_path(@tournament)
+      elsif @tournament.status == "past"
+        @group_games_final = @tournament.games.where(step: "final").order(:name)
+        @winner = classify_after_pool(@group_games_final)[0]
+        redirect_to tournament_playground_path(@tournament)
       else
         redirect_to tournament_playground_path(@tournament)
       end
@@ -364,6 +368,7 @@ class TournamentsController < ApplicationController
     end
 
     def classify_after_pool(group_games)
+
       list = []
       group_games.each do |game|
         if game.scores.first.goals > game.scores.last.goals
@@ -371,8 +376,8 @@ class TournamentsController < ApplicationController
           if game.name != "final"
             winner_game.position = game.name
           else
-            raise
             winner_game.position = "W"
+            winner_game.save
             @tournament.status = "past"
             @tournament.save
             winner_game.user.won_tournaments += 1
@@ -383,7 +388,6 @@ class TournamentsController < ApplicationController
           if game.name != "final"
             winner_game.position = game.name
           else
-            raise
             winner_game.position = "W"
             @tournament.status = "past"
             @tournament.save
