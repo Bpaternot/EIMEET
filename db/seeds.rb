@@ -24,7 +24,10 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "Cylou"
 user.username = "cylou"
-user.total_goals = 19
+user.total_goals = 45
+user.total_against_goals = 18
+user.won_tournaments = 1
+user.players.count = 3
 user.save!
 
 user = User.new
@@ -34,7 +37,10 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "Valoch"
 user.username = "valoch"
-user.total_goals = 14
+user.total_goals = 35
+user.total_against_goals = 25
+user.won_tournaments = 0
+user.players.count = 2
 user.save!
 
 user = User.new
@@ -44,7 +50,10 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "Benito"
 user.username = "benito"
-user.total_goals = 8
+user.total_goals = 30
+user.total_against_goals = 10
+user.won_tournaments = 0
+user.players.count = 2
 user.save!
 
 user = User.new
@@ -54,7 +63,10 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "Arno"
 user.username = "nono"
-user.total_goals = 11
+user.total_goals = 20
+user.total_against_goals = 30
+user.won_tournaments = 0
+user.players.count = 2
 user.save!
 
 user = User.new
@@ -64,7 +76,10 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "Jean"
 user.username = "jeanno"
-user.total_goals = 13
+user.total_goals = 10
+user.total_against_goals = 15
+user.won_tournaments = 0
+user.players.count = 1
 user.save!
 
 user = User.new
@@ -74,7 +89,10 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "Julien"
 user.username = "jujulien"
-user.total_goals = 5
+user.total_goals = 35
+user.total_against_goals = 11
+user.won_tournaments = 1
+user.players.count = 2
 user.save!
 
 user = User.new
@@ -84,7 +102,10 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "marc"
 user.username = "marco"
-user.total_goals = 14
+user.total_goals = 25
+user.total_against_goals = 25
+user.won_tournaments = 0
+user.players.count = 3
 user.save!
 
 user = User.new
@@ -94,7 +115,10 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "franck"
 user.username = "franckycbon"
-user.total_goals = 11
+user.total_goals = 2
+user.total_against_goals = 15
+user.won_tournaments = 0
+user.players.count = 1
 user.save!
 
 user = User.new
@@ -104,7 +128,10 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "jacob"
 user.username = "jacobin"
-user.total_goals = 9
+user.total_goals = 27
+user.total_against_goals = 15
+user.won_tournaments = 0
+user.players.count = 2
 user.save!
 
 user = User.new
@@ -114,7 +141,10 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "mohamed"
 user.username = "momo"
-user.total_goals = 13
+user.total_goals = 39
+user.total_against_goals = 10
+user.won_tournaments = 1
+user.players.count = 2
 user.save!
 
 user = User.new
@@ -125,6 +155,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "alexandre"
 user.username = "alex1"
 user.total_goals = 8
+user.total_against_goals = 10
+user.won_tournaments = 0
+user.players.count = 1
 user.save!
 
 user = User.new
@@ -135,6 +168,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "claire"
 user.username = "clairon"
 user.total_goals = 14
+user.total_against_goals = 10
+user.won_tournaments = 0
+user.players.count = 1
 user.save!
 
 user = User.new
@@ -145,6 +181,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "clara"
 user.username = "clarachou"
 user.total_goals = 15
+user.total_against_goals = 10
+user.won_tournaments = 0
+user.players.count = 1
 user.save!
 
 user = User.new
@@ -154,7 +193,10 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "eleonore"
 user.username = "eleo"
-user.total_goals = 11
+user.total_goals = 12
+user.total_against_goals = 35
+user.won_tournaments = 0
+user.players.count = 2
 user.save!
 
 user = User.new
@@ -165,6 +207,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "alexis"
 user.username = "alex2"
 user.total_goals = 15
+user.total_against_goals = 10
+user.won_tournaments = 0
+user.players.count = 1
 user.save!
 
 user = User.new
@@ -175,6 +220,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "mathieu"
 user.username = "matmat"
 user.total_goals = 16
+user.total_against_goals = 10
+user.won_tournaments = 0
+user.players.count = 1
 user.save!
 
 user = User.new
@@ -185,6 +233,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "germain"
 user.username = "germanou"
 user.total_goals = 6
+user.total_against_goals = 10
+user.won_tournaments = 0
+user.players.count = 1
 user.save!
 
 user = User.new
@@ -195,6 +246,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "juliette"
 user.username = "jujuliette"
 user.total_goals = 11
+user.total_against_goals = 10
+user.won_tournaments = 0
+user.players.count = 1
 user.save!
 
 user = User.new
@@ -205,6 +259,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "tatiana"
 user.username = "tomitom"
 user.total_goals = 13
+user.total_against_goals = 10
+user.won_tournaments = 0
+user.players.count = 1
 user.save!
 
 user = User.new
@@ -215,6 +272,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "clement"
 user.username = "clementin"
 user.total_goals = 10
+user.total_against_goals = 8
+user.won_tournaments = 0
+user.players.count = 1
 user.save!
 
 user = User.new
@@ -225,6 +285,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "greg"
 user.username = "fudo"
 user.total_goals = 2
+user.total_against_goals = 10
+user.won_tournaments = 0
+user.players.count = 1
 user.save!
 
 user = User.new
@@ -235,6 +298,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "thomas"
 user.username = "tomtomgo"
 user.total_goals = 5
+user.total_against_goals = 15
+user.won_tournaments = 0
+user.players.count = 1
 user.save!
 
 user = User.new
@@ -245,6 +311,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "sylvain"
 user.username = "sysyl"
 user.total_goals = 8
+user.total_against_goals = 15
+user.won_tournaments = 0
+user.players.count =
 user.save!
 
 user = User.new
@@ -255,6 +324,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "axel"
 user.username = "axelred"
 user.total_goals = 13
+user.total_against_goals = 15
+user.won_tournaments = 0
+user.players.count =
 user.save!
 
 user = User.new
@@ -265,6 +337,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "nolan"
 user.username = "nonodu92"
 user.total_goals = 11
+user.total_against_goals = 15
+user.won_tournaments = 0
+user.players.count =
 user.save!
 
 user = User.new
@@ -275,6 +350,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "victor"
 user.username = "victorhugo"
 user.total_goals = 7
+user.total_against_goals = 15
+user.won_tournaments = 0
+user.players.count =
 user.save!
 
 user = User.new
@@ -285,6 +363,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "come"
 user.username = "lacdecome"
 user.total_goals = 13
+user.total_against_goals = 15
+user.won_tournaments = 0
+user.players.count =
 user.save!
 
 user = User.new
@@ -295,6 +376,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "alexia"
 user.username = "alexiadujardin"
 user.total_goals = 11
+user.total_against_goals = 15
+user.won_tournaments = 0
+user.players.count = 2
 user.save!
 
 user = User.new
@@ -305,6 +389,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "simon"
 user.username = "simonette"
 user.total_goals = 17
+user.total_against_goals = 15
+user.won_tournaments = 0
+user.players.count = 2
 user.save!
 
 user = User.new
@@ -315,6 +402,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "jesus"
 user.username = "jesus"
 user.total_goals = 14
+user.total_against_goals = 13
+user.won_tournaments = 0
+user.players.count = 2
 user.save!
 
 user = User.new
@@ -325,6 +415,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "mathis"
 user.username = "lionelmathis"
 user.total_goals = 11
+user.total_against_goals = 9
+user.won_tournaments = 0
+user.players.count = 1
 user.save!
 
 user = User.new
@@ -334,7 +427,10 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "samuel"
 user.username = "samsoung"
-user.total_goals = 12
+user.total_goals = 20
+user.total_against_goals = 15
+user.won_tournaments = 0
+user.players.count = 2
 user.save!
 
 user = User.new
@@ -345,6 +441,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "marius"
 user.username = "mariusfildentaire"
 user.total_goals = 14
+user.total_against_goals = 15
+user.won_tournaments = 0
+user.players.count = 2
 user.save!
 
 user = User.new
@@ -355,6 +454,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "noah"
 user.username = "yannicknoah"
 user.total_goals = 6
+user.total_against_goals = 15
+user.won_tournaments = 0
+user.players.count = 1
 user.save!
 
 user = User.new
@@ -365,6 +467,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "maxens"
 user.username = "maxenscornet"
 user.total_goals = 9
+user.total_against_goals = 15
+user.won_tournaments = 0
+user.players.count = 2
 user.save!
 
 user = User.new
@@ -374,7 +479,10 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "romain"
 user.username = "romano"
-user.total_goals = 3
+user.total_goals = 2
+user.total_against_goals = 35
+user.won_tournaments = 0
+user.players.count = 3
 user.save!
 
 user = User.new
@@ -385,6 +493,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "boris"
 user.username = "borisbreakdance"
 user.total_goals = 1
+user.total_against_goals = 40
+user.won_tournaments = 0
+user.players.count = 3
 user.save!
 
 user = User.new
@@ -395,6 +506,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "hugo"
 user.username = "hugopasvictor"
 user.total_goals = 9
+user.total_against_goals = 10
+user.won_tournaments = 0
+user.players.count = 1
 user.save!
 
 user = User.new
@@ -404,7 +518,10 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "leo"
 user.username = "leomessi"
-user.total_goals = 0
+user.total_goals = 20
+user.total_against_goals = 10
+user.won_tournaments = 0
+user.players.count = 2
 user.save!
 
 user = User.new
@@ -415,6 +532,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "nathan"
 user.username = "nathanfake"
 user.total_goals = 7
+user.total_against_goals = 10
+user.won_tournaments = 0
+user.players.count = 2
 user.save!
 
 user = User.new
@@ -424,7 +544,10 @@ user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
 user.first_name = "gabin"
 user.username = "jeangabin"
-user.total_goals = 13
+user.total_goals = 23
+user.total_against_goals = 10
+user.won_tournaments = 0
+user.players.count = 3
 user.save!
 
 user = User.new
@@ -435,6 +558,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "paul"
 user.username = "pauldu17"
 user.total_goals = 9
+user.total_against_goals = 10
+user.won_tournaments = 0
+user.players.count = 1
 user.save!
 
 user = User.new
@@ -445,6 +571,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "quentin"
 user.username = "quentinlephalique"
 user.total_goals = 9
+user.total_against_goals = 10
+user.won_tournaments = 0
+user.players.count = 2
 user.save!
 
 user = User.new
@@ -455,6 +584,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "matheo"
 user.username = "matheodimeco"
 user.total_goals = 11
+user.total_against_goals = 10
+user.won_tournaments = 0
+user.players.count = 2
 user.save!
 
 user = User.new
@@ -465,6 +597,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "evan"
 user.username = "evanmcgregor"
 user.total_goals = 14
+user.total_against_goals = 10
+user.won_tournaments = 0
+user.players.count = 2
 user.save!
 
 user = User.new
@@ -475,6 +610,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "florian"
 user.username = "florianphilippot"
 user.total_goals = 15
+user.total_against_goals = 13
+user.won_tournaments = 0
+user.players.count = 2
 user.save!
 
 user = User.new
@@ -485,6 +623,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "corentin"
 user.username = "corentindugenou"
 user.total_goals = 6
+user.total_against_goals = 10
+user.won_tournaments = 0
+user.players.count = 1
 user.save!
 
 user = User.new
@@ -495,6 +636,9 @@ user.password_confirmation = 'valid_password'
 user.first_name = "killian"
 user.username = "killianmbape"
 user.total_goals = 12
+user.total_against_goals = 12
+user.won_tournaments = 0
+user.players.count = 2
 user.save!
 
 # Bar creation:
