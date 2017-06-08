@@ -38,8 +38,10 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
 
 
 <div class="container container-tournament-show">
+
+
   <div class="container-for-title">
-    <h1 class="margin-top-title-tournament"><%= @tournament.number_players %> players - <%= @tournament.date.strftime("%A %d %B") %></h1>
+    <h1 class="margin-top-title-tournament">Tournament of <span class="infos-tournament-in-banner"><%= @tournament.number_players %></span> players on <span class="infos-tournament-in-banner"><%= @tournament.date.strftime("%A %d %B") %></span></h1>
     <h2 class="margin-bottom-title-username">Organized by <span class="username-tournament"><%= @tournament.user.first_name %>&nbsp;<%= @tournament.user.last_name %></span></h2>
   </div>
   <!-- http://www.eimeet.fr/tournaments/#{@tournament.id} -->
@@ -76,6 +78,7 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
               <% end %>
             </div>
             <div class="list-players-actions">
+            <% if @tournament.status == 'pending' %>
               <% if policy(player).destroy? %>
               <%= link_to tournament_player_path(@tournament, player),
               method: :delete,
@@ -83,6 +86,7 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
               <i class="fa fa-times" aria-hidden="true"></i>
               <% end %>
               <% end %>
+            <% end %>
             </div>
             <div class="list-players-team">
               <div class="list-players-team-images">
@@ -93,27 +97,8 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
             </div>
           </div>
 
-          <% if @tournament.status == 'pending' %>
-            <div class="list-players-actions">
-             <% if policy(player).destroy? %>
-             <%= link_to tournament_player_path(@tournament, player),
-             method: :delete,
-             data: { confirm: "Do you really want unregister?" } do %>
-             <i class="fa fa-times" aria-hidden="true"></i>
-             <% end %>
-             <% end %>
-           </div>
-          <% end %>
-         <div class="list-players-team">
-           <div class="list-players-team-images">
-            <% if player.club? %>
-              <%= image_tag "#{player.club}.png", class: "team-photo" %>
-            <% end %>
-           </div>
-         </div>
+
        </div>
-        
-        </div>
         <% end %>
       </div>
     </div>
@@ -163,7 +148,29 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
         </div>
 
       <!-- Tournament not full / User is not again a player / Still need material -->
-      <% if @remaining_total != 0 && Player.where(tournament: @tournament, user: current_user).exists? == false %>
+      <% if @remaining_total != 0 && Player.where(tournament: @tournament, user: current_user).exists? == true %>
+        <div class="module-right-not-full-tournament-miss-material">
+          <h3>Material still needed</h3>
+          <div class="module-right-not-full-tournament-miss-material-list-material">
+          <div class="module-right-not-full-tournament-miss-material-list-material-console">
+            <%= @remaining_console_ps4 %>&nbsp;&nbsp;<%= image_tag "ps4.png", class: "icon" %>
+          </div>
+          <div class="module-right-not-full-tournament-miss-material-list-material-shifters">
+            <%= @remaining_controllers %>&nbsp;&nbsp;<%= image_tag "manette.png", class: "icon"%>
+          </div>
+          <div class="module-right-not-full-tournament-miss-material-list-material-fifa">
+            <%= @remaining_fifa_game %>&nbsp;&nbsp;<%= image_tag "fifa.png", class: "icon" %>
+          </div>
+            <div class="module-right-not-full-tournament-miss-material-form-update">
+              <%= render 'form_update' %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+
+      <!-- Tournament not full / User is not a player -->
+      <% elsif @remaining != 0 && Player.where(tournament: @tournament, user: current_user).exists? == false %>
         <div class="module-right-not-full-tournament-miss-material">
           <h3>Material still needed</h3>
           <div class="module-right-not-full-tournament-miss-material-list-material">
@@ -177,18 +184,10 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
             <%= @remaining_fifa_game %>&nbsp;&nbsp;<%= image_tag "fifa.png", class: "icon" %>
           </div>
           </div>
+          <div class="module-right-not-full-tournament-miss-material-form-update">
+            <%= render 'form_join' %>
+          </div>
         </div>
-      <% end %>
-
-
-      <!-- Tournament not full / User is not a player -->
-      <% elsif @remaining != 0 && Player.where(tournament: @tournament, user: current_user).exists? == false %>
-      <h1 style="color: #A92222;">Want to join?</h1>
-      <div class="module-right-not-full-tournament-join">
-        <div class="module-right-not-full-tournament-join-form">
-          <%= render 'form_join' %>
-        </div>
-      </div>
       <% end %>
 
       <% if @remaining != 0 %>
