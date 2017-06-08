@@ -71,7 +71,7 @@
  -->            <%= form_tag "", method: :get, class: "form-inline" do %>
             <div class="hidden-xs col-sm-6 col-md-6 no-padding-left">
               <div class="address">
-                <%= text_field_tag :tournament_address, params[:tournament_address], class: "form-control form-control-filter" %>
+                <%= text_field_tag :tournament_address, params[:tournament_address], :placeholder => 'Address...', class: "form-control form-control-filter" %>
               </div>
               <div class="input-group date">
                 <%= text_field_tag :date, params[:date], class: "form-control form-control-filter-date" %>
