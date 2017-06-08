@@ -34,8 +34,12 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
 </div>
 
 
-<%= render partial: "shared/progress-bar-show", locals: { tournament: @tournament, remaining: @remaining } %>
 
+<% if user_signed_in? && @tournament.players.where(user_id: current_user.id).exists? %>
+  <%= render partial: "shared/progress-bar-show-in", locals: { tournament: @tournament, remaining: @remaining } %>
+<% else %>
+  <%= render partial: "shared/progress-bar-show", locals: { tournament: @tournament, remaining: @remaining } %>
+<% end %>
 
 <div class="container container-tournament-show">
 

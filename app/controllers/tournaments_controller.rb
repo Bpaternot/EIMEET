@@ -80,7 +80,7 @@ class TournamentsController < ApplicationController
       profile = @graph.get_object("me")
       @friends = @graph.get_connections("me", "friends")
     end
-    if @tournament.date == Date.today && @remaining == 0 && @remaining_total == 0
+    if @remaining == 0 && @remaining_total == 0
       @tournament.status = "ready"
     end
     @review = Review.new()
