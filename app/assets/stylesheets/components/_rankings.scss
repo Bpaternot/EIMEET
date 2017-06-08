@@ -1,0 +1,36 @@
+.rankings {
+  padding: 15px 15px;
+  background-color: $snow;
+  border-radius: 2px;
+  .rankings-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    font-weight: 600;
+    .rankings-header-rank {
+      flex: 0 0 12%;
+      text-align: center;
+      color: $fire;
+    }
+    .ranking-username {
+      text-align: center;
+      flex: 0 0 12%;
+    }
+
+    .ranking-total-goals {
+      text-align: center;
+      flex: 0 0 12%;
+    }
+
+    .ranking-total-against-goals {
+      text-align: center;
+      flex: 0 0 12%;
+    }
+
+    .ranking-won-tournaments {
+      text-align: center;
+      flex: 0 0 12%;
+    }
+  }
+}

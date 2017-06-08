@@ -65,6 +65,7 @@ class User < ApplicationRecord
 
   def rankings
     self.total_against_goals = 0
+    self.total_goals = 0
     if self.players != []
       self.players.each do |player|
         if player.scores.first != nil
