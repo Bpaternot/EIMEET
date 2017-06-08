@@ -63,8 +63,8 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
               <% avatar_url = player.user.facebook_picture_url %>
               <%= image_tag avatar_url, class: "avatar" %>
               <% else %>
-              <% avatar_url = "http://res.cloudinary.com/dutc7zz18/image/upload/v1496741104/avatar-fake_yuue1t.png" %>
-              <%= image_tag avatar_url, class: "avatar" %>
+              <% avatar_url = player.user.first_name %>
+              <%= image_tag "#{player.user.first_name}.jpeg", class: "avatar" %>
               <% end %>
             </div>
             <div class="list-players-username">
