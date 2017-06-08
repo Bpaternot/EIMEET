@@ -18,7 +18,8 @@
       <% if @tournament.tournament_type == "large" %>
         <%= render 'tournaments/round16_results'  %>
       <% end %>
-      <%= render 'quarter_ongoing' %>
+      <%= render 'tournaments/quarter_ongoing' %>
+
 
     <!-- SEMI -->
     <% elsif @tournament.step == "semi" %>
@@ -30,6 +31,7 @@
         <%= render 'tournaments/quarter_results'  %>
       <% end %>
       <%= render 'semi_ongoing' %>
+
 
     <!-- FINAL -->
     <% elsif @tournament.step == "final" && @tournament.status == "ready" %>

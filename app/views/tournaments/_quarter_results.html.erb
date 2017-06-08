@@ -1,106 +1,155 @@
 <div class="col-xs-12 col-sm-12 col-md-10 col-md-10-playground">
-  <div class="banner-for-toggle-group" data-pool="quarter">
-    <div class="banner-for-groups">
-      <h2>QUARTERS</h2>
+  <div class="banner-of-91">
+    <div class="banner-for-toggle-group" data-pool="quarter">
+      <div class="banner-for-groups">
+        <h2>QUARTER</h2>
+      </div>
     </div>
-  </div>
-  <div class="row row-playground">
-    <div class="col-xs-12 col-sm-12 col-md-6 col-md-12-playground">
-      <div class="wrapper-to-toggle-calendar" data-pool="quarter">
-        <div class="row">
-          <% @group_games_quarter.each do |game| %>
-          <div class="col-xs-6 col-sm-6 col-md-5">
-            <%= form_for game.scores.first, remote: true do |f| %>
-            <div class="card-team-left">
-              <div class="card-team-left-image">
-                <% if game.scores.first.player.user.facebook_picture_url %>
-                  <% avatar_url = game.scores.first.player.user.facebook_picture_url %>
-                  <%= image_tag avatar_url, class: "avatar-small" %>
-                <% elsif game.scores.first.player.club? %>
-                  <%= image_tag "#{game.scores.first.player.club}.png", class: "team-photo" %>
-                <% elsif %>
-                  <% avatar_url = "http://res.cloudinary.com/dutc7zz18/image/upload/v1496741104/avatar-fake_yuue1t.png" %>
-                  <%= image_tag avatar_url, class: "avatar" %>
-                <% end %>
+    <div class="row row-playground">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-md-12-playground">
+        <div class="wrapper-to-toggle-calendar" data-pool="quarter">
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">
+              <% size = @group_games_quarter.size / 2 %>
+              <% @group_games_quarter[0...size].each do |game| %>
+              <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-5">
+                  <%= form_for game.scores.first, remote: true do |f| %>
+                     <div class="card-team-left">
+                <div class="card-team-left-image">
+                  <% if game.scores.first.player.user.facebook_picture_url %>
+                    <% avatar_url = game.scores.first.player.user.facebook_picture_url %>
+                    <%= image_tag avatar_url, class: "avatar-small" %>
+                  <% elsif game.scores.first.player.club? %>
+                    <%= image_tag "#{game.scores.first.player.club}.png", class: "team-photo" %>
+                  <% elsif %>
+                    <% avatar_url = "http://res.cloudinary.com/dutc7zz18/image/upload/v1496741104/avatar-fake_yuue1t.png" %>
+                    <%= image_tag avatar_url, class: "avatar" %>
+                  <% end %>
+                </div>
+                <div class="card-team-left-name">
+                  <%= game.scores.first.player.user.first_name.capitalize %>
+                </div>
+                <div class="card-team-left-score-def">
+                  <%=  game.scores.first.goals %>
+                </div>
+                <!-- <div class="card-team-left-update-score">
+                  <#%= f.button class: "card-team-left-score-validate" do %>
+                  <i class="fa fa-check fa-check-playground button-non-active-for-scores" aria-hidden="true"></i>
+                  <#% end %>
+                </div>
+                <div class="card-team-left-score">
+                  <#%= f.text_field :goals, class: "card-team-left-score-input" %>
+                </div> -->
               </div>
-              <div class="card-team-left-name">
-                <%= game.scores.first.player.user.first_name.capitalize %>
+                  <% end %>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-5 col-md-offset-1">
+                  <%= form_for game.scores.last, remote: true do |f| %>
+                  <div class="card-team-right">
+                <div class="card-team-right-score-def">
+                  <%=  game.scores.last.goals %>
+                </div>
+                <!-- <div class="card-team-right-score">
+                  <#%= f.text_field :goals, class: "card-team-right-score-input" %>
+                </div>
+                <div class="card-team-right-update-score">
+                  <#%= f.button class: "card-team-right-score-validate" do %>
+                  <i class="fa fa-check fa-check-playground button-non-active-for-scores" aria-hidden="true"></i>
+                  <#% end %>
+                </div> -->
+                <div class="card-team-right-name">
+                  <%= game.scores.last.player.user.first_name.capitalize %>&nbsp;&nbsp;
+                </div>
+                <div class="card-team-right-image">
+                  <% if game.scores.last.player.user.facebook_picture_url %>
+                    <% avatar_url = game.scores.last.player.user.facebook_picture_url %>
+                    <%= image_tag avatar_url, class: "avatar-small" %>
+                  <% elsif game.scores.last.player.club? %>
+                    <%= image_tag "#{game.scores.last.player.club}.png", class: "team-photo" %>
+                  <% elsif %>
+                    <% avatar_url = "http://res.cloudinary.com/dutc7zz18/image/upload/v1496741104/avatar-fake_yuue1t.png" %>
+                    <%= image_tag avatar_url, class: "avatar" %>
+                  <% end %>
+                </div>
               </div>
-              <div class="card-team-left-score-def">
-                <%=  game.scores.first.goals %>
+                  <% end %>
+                </div>
               </div>
-              <!-- <div class="card-team-left-update-score">
-                <#%= f.button class: "card-team-left-score-validate" do %>
-                <i class="fa fa-check fa-check-playground button-non-active-for-scores" aria-hidden="true"></i>
-                <#% end %>
-              </div>
-              <div class="card-team-left-score">
-                <#%= f.text_field :goals, class: "card-team-left-score-input" %>
-              </div> -->
+              <% end %>
             </div>
-            <% end %>
-          </div>
-          <div class="col-xs-6 col-sm-6 col-md-5 col-md-offset-1">
-            <%= form_for game.scores.last, remote: true do |f| %>
-            <div class="card-team-right">
-              <div class="card-team-right-score-def">
-                <%=  game.scores.last.goals %>
+            <div class="col-xs-6 col-sm-6 col-md-6">
+              <% @group_games_quarter[size...@group_games_quarter.size].each do |game| %>
+              <div class="row">
+
+                <div class="col-xs-6 col-sm-6 col-md-5">
+                  <%= form_for game.scores.first, remote: true do |f| %>
+                  <div class="card-team-left">
+                    <div class="card-team-left-image">
+                      <% if game.scores.first.player.user.facebook_picture_url %>
+                      <% avatar_url = game.scores.first.player.user.facebook_picture_url %>
+                      <%= image_tag avatar_url, class: "avatar-small" %>
+                      <% elsif game.scores.first.player.club? %>
+                      <%= image_tag "#{game.scores.first.player.club}.png", class: "team-photo" %>
+                      <% elsif %>
+                      <% avatar_url = "http://res.cloudinary.com/dutc7zz18/image/upload/v1496741104/avatar-fake_yuue1t.png" %>
+                      <%= image_tag avatar_url, class: "avatar" %>
+                      <% end %>
+                    </div>
+                    <div class="card-team-left-name">
+                      <%= game.scores.first.player.user.first_name.capitalize %>
+                    </div>
+                    <div class="card-team-left-score-def">
+                      <%=  game.scores.first.goals %>
+                    </div>
+                <!-- <div class="card-team-left-update-score">
+                  <#%= f.button class: "card-team-left-score-validate" do %>
+                  <i class="fa fa-check fa-check-playground button-non-active-for-scores" aria-hidden="true"></i>
+                  <#% end %>
+                </div>
+                <div class="card-team-left-score">
+                  <#%= f.text_field :goals, class: "card-team-left-score-input" %>
+                </div> -->
+                  </div>
+                  <% end %>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-5 col-md-offset-1">
+                  <%= form_for game.scores.last, remote: true do |f| %>
+                  <div class="card-team-right">
+                    <div class="card-team-right-score-def">
+                  <%=  game.scores.last.goals %>
+                    </div>
+                <!-- <div class="card-team-right-score">
+                  <#%= f.text_field :goals, class: "card-team-right-score-input" %>
+                </div>
+                <div class="card-team-right-update-score">
+                  <#%= f.button class: "card-team-right-score-validate" do %>
+                  <i class="fa fa-check fa-check-playground button-non-active-for-scores" aria-hidden="true"></i>
+                  <#% end %>
+                </div> -->
+                    <div class="card-team-right-name">
+                      <%= game.scores.last.player.user.first_name.capitalize %>&nbsp;&nbsp;
+                    </div>
+                    <div class="card-team-right-image">
+                      <% if game.scores.last.player.user.facebook_picture_url %>
+                      <% avatar_url = game.scores.last.player.user.facebook_picture_url %>
+                      <%= image_tag avatar_url, class: "avatar-small" %>
+                      <% elsif game.scores.last.player.club? %>
+                      <%= image_tag "#{game.scores.last.player.club}.png", class: "team-photo" %>
+                      <% elsif %>
+                      <% avatar_url = "http://res.cloudinary.com/dutc7zz18/image/upload/v1496741104/avatar-fake_yuue1t.png" %>
+                      <%= image_tag avatar_url, class: "avatar" %>
+                      <% end %>
+                    </div>
+                  </div>
+                  <% end %>
+                </div>
               </div>
-              <!-- <div class="card-team-right-score">
-                <#%= f.text_field :goals, class: "card-team-right-score-input" %>
-              </div>
-              <div class="card-team-right-update-score">
-                <#%= f.button class: "card-team-right-score-validate" do %>
-                <i class="fa fa-check fa-check-playground button-non-active-for-scores" aria-hidden="true"></i>
-                <#% end %>
-              </div> -->
-              <div class="card-team-right-name">
-                <%= game.scores.last.player.user.first_name.capitalize %>&nbsp;&nbsp;
-              </div>
-              <div class="card-team-right-image">
-                <% if game.scores.last.player.user.facebook_picture_url %>
-                  <% avatar_url = game.scores.last.player.user.facebook_picture_url %>
-                  <%= image_tag avatar_url, class: "avatar-small" %>
-                <% elsif game.scores.last.player.club? %>
-                  <%= image_tag "#{game.scores.last.player.club}.png", class: "team-photo" %>
-                <% elsif %>
-                  <% avatar_url = "http://res.cloudinary.com/dutc7zz18/image/upload/v1496741104/avatar-fake_yuue1t.png" %>
-                  <%= image_tag avatar_url, class: "avatar" %>
-                <% end %>
-              </div>
+              <% end %>
             </div>
-            <% end %>
           </div>
-          <% end %>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
