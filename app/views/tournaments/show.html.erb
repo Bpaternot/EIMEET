@@ -63,7 +63,6 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
               <% avatar_url = player.user.facebook_picture_url %>
               <%= image_tag avatar_url, class: "avatar" %>
               <% else %>
-              <% avatar_url = player.user.first_name %>
               <%= image_tag "#{player.user.link}.jpeg", class: "avatar" %>
               <% end %>
             </div>
