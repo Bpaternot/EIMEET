@@ -2,6 +2,7 @@
 <select name="league" id="league" class="form-control">
   <option value="LIGUE1">ligue 1</option>
   <option value="PREMIERELEAGUE">Premiere League</option>
+  <option value="LIGA">Liga</option>
 </select>
 
 <select name="LIGUE1" id="0" class="clubs form-control">
@@ -14,6 +15,13 @@
 
 <select name="PREMIERELEAGUE" id="1" class="hidden clubs form-control">
 <% ["Choose your team", "Arsenal", "Bournemouth", "Burnley", "Chelsea", "CrystalPalace", "Everton", "Hull", "Leicester", "Liverpool", "ManchesterCity", "ManchesterUnited", "Middlesbrough", "Southampton", "Stoke", "Sunderland", "Swansea", "Tottenham", "Watford", "WestBromwichAlbion", "WestHam"].each do |club| %>
+<option value="<%= club %>"><%= club %></option>
+<% end %>
+</select>
+
+
+<select name="Liga" id="2" class="hidden clubs form-control">
+<% ["Choose your team", "Alavés", "AthleticBilbao", "AtléticodeMadrid", "BetisSéville", "CeltaVigo", "DeportivoLaCorogne", "Eibar", "EspanyolBarcelone", "FCBarcelone", "GranadaCF", "LasPalmas", "Leganés", "Malaga", "Osasuna", "RealMadrid", "RealSociedad", "SportingGijon", "SévilleFC", "ValenceCF"].each do |club| %>
 <option value="<%= club %>"><%= club %></option>
 <% end %>
 </select>
@@ -40,7 +48,6 @@
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
     $(document).ready(function() {
-      console.log("coucou")
       $('#league').change(function(){
       var team = $('#league').val();
       console.log(team)
@@ -48,9 +55,16 @@
       if (team == 'LIGUE1') {
         $('#1').addClass( "hidden" )
         $('#0').removeClass( "hidden" )
+        $('#2').addClass( "hidden" )
       } else if (team == 'PREMIERELEAGUE') {
       $('#0').addClass( "hidden" )
       $('#1').removeClass( "hidden" )
+      $('#2').addClass( "hidden" )
+
+      } else if (team == 'LIGA') {
+      $('#0').addClass( "hidden" )
+      $('#1').addClass( "hidden" )
+      $('#2').removeClass( "hidden" )
 
       }
       });
@@ -63,6 +77,11 @@
     });
     $('#1').change(function(){
       var team = $('#1').val();
+      $('#club_choice').val(team);
+      console.log(team)
+    });
+    $('#2').change(function(){
+      var team = $('#2').val();
       $('#club_choice').val(team);
       console.log(team)
     });

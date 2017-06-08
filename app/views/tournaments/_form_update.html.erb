@@ -2,14 +2,20 @@
 <select name="league" id="league_update" class="form-control">
   <option value="LIGUE1">ligue 1</option>
   <option value="PREMIERELEAGUE">Premiere League</option>
+  <option value="LIGA">Liga</option>
 </select>
 
-<select name="LIGUE1" id="0_update" id="club1" class="clubs form-control">
+<select name="LIGUE1" id="0_update" class="clubs form-control">
 <% ["Choose your team", "Angers", "Bastia", "Bordeaux", "Caen", "Dijon", "Guingamp", "Lille", "Lorient", "Lyon", "Marseille", "Metz", "Monaco", "Montpellier", "Nancy", "Nantes", "Nice", "Paris-SG", "Rennes", "Saint-Etienne", "Toulouse"].each do |club| %>
 <option value="<%= club %>"><%= club %></option>
 <% end %>
 </select>
 
+<select name="LIGA" id="2_update" class="hidden clubs form-control">
+<% ["Choose your team", "Alavés", "AthleticBilbao", "AtléticodeMadrid", "BetisSéville", "CeltaVigo", "DeportivoLaCorogne", "Eibar", "EspanyolBarcelone", "FCBarcelone", "GranadaCF", "LasPalmas", "Leganés", "Malaga", "Osasuna", "RealMadrid", "RealSociedad", "SportingGijon", "SévilleFC", "ValenceCF"].each do |club| %>
+<option value="<%= club %>"><%= club %></option>
+<% end %>
+</select>
 
 <select name="PREMIERELEAGUE" id="1_update" class="hidden clubs form-control">
 <% ["Choose your team", "Arsenal", "Bournemouth", "Burnley", "Chelsea", "CrystalPalace", "Everton", "Hull", "Leicester", "Liverpool", "ManchesterCity", "ManchesterUnited", "Middlesbrough", "Southampton", "Stoke", "Sunderland", "Swansea", "Tottenham", "Watford", "WestBromwichAlbion", "WestHam"].each do |club| %>
@@ -42,9 +48,16 @@
       if (team == 'LIGUE1') {
         $('#1_update').addClass( "hidden" )
         $('#0_update').removeClass( "hidden" )
+        $('#2_update').addClass( "hidden" )
       } else if (team == 'PREMIERELEAGUE') {
       $('#0_update').addClass( "hidden" )
       $('#1_update').removeClass( "hidden" )
+      $('#2_update').addClass( "hidden" )
+
+      } else if (team == 'LIGA') {
+      $('#0_update').addClass( "hidden" )
+      $('#1_update').addClass( "hidden" )
+      $('#2_update').removeClass( "hidden" )
 
       }
       });
@@ -56,6 +69,10 @@
     });
     $('#1_update').change(function(){
       var team = $('#1_update').val();
+      $('#club_choice_update').val(team);
+    });
+    $('#2_update').change(function(){
+      var team = $('#2_update').val();
       $('#club_choice_update').val(team);
     });
 
