@@ -19,7 +19,7 @@ $(function() {
       $(".pool-title").removeClass("active");
       $(this).addClass("active");
       $(".wrapper-to-toggle-ranking, .wrapper-to-toggle-calendar, .banner-for-toggle-group").hide();
-      $(".wrapper-to-toggle-ranking[data-pool=" + pool + "], .wrapper-to-toggle-calendar[data-pool=" + pool + "], .banner-for-toggle-group[data-pool=" + pool + "]").show();
+      $(".wrapper-to-toggle-ranking[data-pool=" + pool + "] .wrapper-to-toggle-calendar[data-pool=" + pool + "] .banner-for-toggle-group[data-pool=" + pool + "]").show();
     });
 
     $(".fa-check-playground").on("click", function(e) {
@@ -30,6 +30,6 @@ $(function() {
     var currentSelection = $(".container-playground").data("current-selection");
     if (currentSelection === "group") {
       currentSelection = "A";
-    }
-    $(".pool-title[data-pool=[" + currentSelection + "]").click();
+    };
+    $(".pool-title[data-pool=" + currentSelection + "]").click();
   });

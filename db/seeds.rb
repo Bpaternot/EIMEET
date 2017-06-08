@@ -686,7 +686,7 @@ Availability.create(start_day: DateTime.new(2017,6,3), end_day: DateTime.new(201
 tournament1 = Tournament.create!(step: "group", date: DateTime.new(2017,6,15), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar: bar3, user_id: 5)
 tournament2 = Tournament.create!(step: "group", date: DateTime.new(2017,6,10), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar: bar6, user_id: 22)
 tournament3 = Tournament.create!(step: "group", date: DateTime.new(2017,6,12), number_players: 32, status: "pending", number_consoles: 8, number_controllers: 16, number_games: 8, tournament_type: "large", bar: bar9, user_id: 14)
-tournament4 = Tournament.create!(step: "group", date: DateTime.new(2017,6,8), number_players: 8, status: "ready", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar1, user_id: 3)
+tournament4 = Tournament.create!(step: "group", date: DateTime.new(2017,6,8), number_players: 8, status: "pending", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar1, user_id: 3)
 
 # # Tournaments replicated
 tournament5 = Tournament.create!(step: "group", date: DateTime.new(2017,6,12), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar: bar20, user_id: 12)
