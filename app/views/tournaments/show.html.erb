@@ -6,31 +6,31 @@
 <div class="banner-show-tournament" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
 
 url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-size: cover;">
-  <!-- Offers no open -->
-  <div class="banner-show-tournament-bar-block">
-    <div class="banner-show-tournament-bar-block-infos">
-      <div class="banner-show-tournament-bar-block-infos-name">
-        <h2><%= @tournament.bar.name %></h2>
-      </div>
-      <div class="banner-show-tournament-bar-block-infos-loc">
-        <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;<%= @tournament.bar.address %></p>
-        <p><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<%= @tournament.date.strftime("%A %d %B") %></p>
-      </div>
-      <div class="banner-show-tournament-bar-block-infos-offers">
-        <i class="fa fa-eur" aria-hidden="true"></i>
-      </div>
+<!-- Offers no open -->
+<div class="banner-show-tournament-bar-block">
+  <div class="banner-show-tournament-bar-block-infos">
+    <div class="banner-show-tournament-bar-block-infos-name">
+      <h2><%= @tournament.bar.name %></h2>
     </div>
-    <div class="banner-show-tournament-bar-block-map">
-      <div id="map" style="width: 100%; height: 100%"></div>
+    <div class="banner-show-tournament-bar-block-infos-loc">
+      <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;<%= @tournament.bar.address %></p>
+      <p><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<%= @tournament.date.strftime("%A %d %B") %></p>
+    </div>
+    <div class="banner-show-tournament-bar-block-infos-offers">
+      <i class="fa fa-eur" aria-hidden="true"></i>
     </div>
   </div>
+  <div class="banner-show-tournament-bar-block-map">
+    <div id="map" style="width: 100%; height: 100%"></div>
+  </div>
+</div>
 
-  <!-- Offers open -->
-  <div class="banner-show-tournament-bar-offers hidden">
+<!-- Offers open -->
+<div class="banner-show-tournament-bar-offers hidden">
   <p class="">16 beers for 40€ (save 12%)</p>
   <%= link_to "BUY", "", id: "news", class: "btn btn-primary btn-primary-offers disabled" %>
   <i class="fa fa-times cross-for-offers" aria-hidden="true"></i>
-  </div>
+</div>
 </div>
 
 
@@ -42,38 +42,57 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
     <h1 class="margin-top-title-tournament"><%= @tournament.number_players %> players - <%= @tournament.date.strftime("%A %d %B") %></h1>
     <h2 class="margin-bottom-title-username">Organized by <span class="username-tournament"><%= @tournament.user.first_name %>&nbsp;<%= @tournament.user.last_name %></span></h2>
   </div>
- <!-- http://www.eimeet.fr/tournaments/#{@tournament.id} -->
- <!-- http://eimeet.herokuapp.com/tournaments/#{@tournament.id} -->
+  <!-- http://www.eimeet.fr/tournaments/#{@tournament.id} -->
+  <!-- http://eimeet.herokuapp.com/tournaments/#{@tournament.id} -->
 
   <div class="row row-for-fix-module">
+
     <div class="col-xs-12 col-xs-12-tournament col-sm-12 col-md-9">
       <div class="row">
-      <% @tournament.players.each do |player| %>
+        <% @tournament.players.each do |player| %>
         <div class="col-xs-12 col-sm-6 col-md-6">
           <div class="list-players">
             <div class="list-players-avatar">
-             <% if player.user.facebook_picture_url %>
-             <% avatar_url = player.user.facebook_picture_url %>
-             <%= image_tag avatar_url, class: "avatar" %>
-             <% else %>
-             <% avatar_url = "http://res.cloudinary.com/dutc7zz18/image/upload/v1496741104/avatar-fake_yuue1t.png" %>
-             <%= image_tag avatar_url, class: "avatar" %>
-             <% end %>
-           </div>
-           <div class="list-players-username">
-             <span class="username-player"><%= player.user.first_name.capitalize %></span>
-           </div>
-           <div class="list-players-material">
-            <% if player.ps4 == true %>
-            <span class="color-fire">1 x</span> <%= image_tag "ps4.png", class: "icon"%>
-            <% end %>
-            <% if player.controller_ps4 > 0 %>
-            <span class="color-fire"><%= player.controller_ps4 %> x</span> <%= image_tag "manette.png", class: "icon" %>
-            <% end %>
-            <% if player.fifa_game_ps4 > 0 %>
-            <span class="color-fire"><%= player.fifa_game_ps4 %> x</span> <%= image_tag "fifa.png", class: "icon" %>
-            <% end %>
+              <% if player.user.facebook_picture_url %>
+              <% avatar_url = player.user.facebook_picture_url %>
+              <%= image_tag avatar_url, class: "avatar" %>
+              <% else %>
+              <% avatar_url = "http://res.cloudinary.com/dutc7zz18/image/upload/v1496741104/avatar-fake_yuue1t.png" %>
+              <%= image_tag avatar_url, class: "avatar" %>
+              <% end %>
+            </div>
+            <div class="list-players-username">
+              <span class="username-player"><%= player.user.first_name.capitalize %></span>
+            </div>
+            <div class="list-players-material">
+              <% if player.ps4 == true %>
+              <span class="color-fire">1 x</span> <%= image_tag "ps4.png", class: "icon"%>
+              <% end %>
+              <% if player.controller_ps4 > 0 %>
+              <span class="color-fire"><%= player.controller_ps4 %> x</span> <%= image_tag "manette.png", class: "icon" %>
+              <% end %>
+              <% if player.fifa_game_ps4 > 0 %>
+              <span class="color-fire"><%= player.fifa_game_ps4 %> x</span> <%= image_tag "fifa.png", class: "icon" %>
+              <% end %>
+            </div>
+            <div class="list-players-actions">
+              <% if policy(player).destroy? %>
+              <%= link_to tournament_player_path(@tournament, player),
+              method: :delete,
+              data: { confirm: "Do you really want unregister?" } do %>
+              <i class="fa fa-times" aria-hidden="true"></i>
+              <% end %>
+              <% end %>
+            </div>
+            <div class="list-players-team">
+              <div class="list-players-team-images">
+                <% if player.club? %>
+                <%= image_tag "#{player.club}.png", class: "team-photo" %>
+                <% end %>
+              </div>
+            </div>
           </div>
+
           <% if @tournament.status == 'pending' %>
             <div class="list-players-actions">
              <% if policy(player).destroy? %>
@@ -93,16 +112,18 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
            </div>
          </div>
        </div>
+        
         </div>
         <% end %>
       </div>
     </div>
+
     <div class="col-xs-12 col-xs-12-tournament col-sm-12 col-md-3">
       <!-- Tournament full / User is not a player -->
       <% if Player.where(tournament: @tournament, user: current_user).exists? && (@remaining_console_ps4 != 0 || @remaining_controllers != 0 || @remaining_fifa_game != 0) %>
-        <div class="module-right-not-full-tournament-miss-material">
-          <h3>Material still needed</h3>
-          <div class="module-right-not-full-tournament-miss-material-list-material">
+      <div class="module-right-not-full-tournament-miss-material">
+        <h3>Material still needed</h3>
+        <div class="module-right-not-full-tournament-miss-material-list-material">
           <div class="module-right-not-full-tournament-miss-material-list-material-console">
             <%= @remaining_console_ps4 %>&nbsp;&nbsp;<%= image_tag "ps4.png", class: "icon" %>
           </div>
@@ -112,21 +133,22 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
           <div class="module-right-not-full-tournament-miss-material-list-material-fifa">
             <%= @remaining_fifa_game %>&nbsp;&nbsp;<%= image_tag "fifa.png", class: "icon" %>
           </div>
-          </div>
-          <div class="module-right-not-full-tournament-miss-material-form-update">
-            <%= render 'form_update' %>
-          </div>
         </div>
+        <div class="module-right-not-full-tournament-miss-material-form-update">
+          <%= render 'form_update' %>
+        </div>
+      </div>
       <% end %>
 
       <% if @remaining == 0 && Player.where(tournament: @tournament, user: current_user).exists? == false %>
-        <div class="module-right-full-tournament">
-          <div class="module-right-full-tournament-message">
-            <p>The tournament is full</p>
-          </div>
+      <div class="module-right-full-tournament">
+        <div class="module-right-full-tournament-message">
+          <p>The tournament is full</p>
         </div>
+      </div>
       <!-- Tournament full / User is admin -->
       <% elsif @remaining == 0 && Player.where(tournament: @tournament, user: current_user).exists? && @remaining_total == 0 %>
+
         <div class="module-right-full-tournament-start">
           <div class="module-right-full-tournament-start-message">
             <% if @tournament.status == "ready" %>
@@ -158,14 +180,15 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
         </div>
       <% end %>
 
+
       <!-- Tournament not full / User is not a player -->
       <% elsif @remaining != 0 && Player.where(tournament: @tournament, user: current_user).exists? == false %>
       <h1 style="color: #A92222;">Want to join?</h1>
-        <div class="module-right-not-full-tournament-join">
-          <div class="module-right-not-full-tournament-join-form">
-            <%= render 'form_join' %>
-          </div>
+      <div class="module-right-not-full-tournament-join">
+        <div class="module-right-not-full-tournament-join-form">
+          <%= render 'form_join' %>
         </div>
+      </div>
       <% end %>
 
       <% if @remaining != 0 %>
@@ -178,40 +201,42 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
         </div>
       </div>
       <% end %>
+    </div>
+
   </div>
 </div>
 
 
-<% if Player.where(tournament: @tournament, user: current_user).exists? %>
-<div class="container container-tournament-show">
+  <% if Player.where(tournament: @tournament, user: current_user).exists? %>
+  <div class="container">
     <h2 class="margin-for-h2">Let's chat with other players</h2>
     <div class="wrapper-for-reviews">
-    <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-12">
-        <div id="reviews">
-          <div class="message-box">
-            <% @tournament.reviews.each do |review| %>
-            <%= render 'reviews/show', review: review %>
-            <% end %>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <div id="reviews">
+            <div class="message-box">
+              <% @tournament.reviews.each do |review| %>
+              <%= render 'reviews/show', review: review %>
+              <% end %>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-box-chat">
-          <%= render 'reviews/form', tournament: @tournament, review: @review %>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <div class="form-box-chat">
+            <%= render 'reviews/form', tournament: @tournament, review: @review %>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<% end %>
+  <% end %>
 
 
- <!--  <!-- DESTROY THE TOURNAMENT -->
-<!--   <#% if policy(@tournament).destroy? %>
-    <%#= link_to "Delete the tournament", tournament_path(@tournament),
-        method: :delete,
-        data: { confirm: "Are you sure?" } %>
+  <!--  <!-- DESTROY THE TOURNAMENT -->
+  <!--   <#% if policy(@tournament).destroy? %>
+  <%#= link_to "Delete the tournament", tournament_path(@tournament),
+  method: :delete,
+  data: { confirm: "Are you sure?" } %>
 
   <#% end %> -->
 
@@ -239,186 +264,186 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
 
 
 
-<% content_for(:after_js) do %>
-<script>
-  $(document).ready(function() {
-    var styles = [{
+  <% content_for(:after_js) do %>
+  <script>
+    $(document).ready(function() {
+      var styles = [{
         "featureType": "water",
         "elementType": "geometry",
         "stylers": [
-            {
-                "color": "#404E5C"
-            },
-            {
-                "lightness": 17
-            }
+        {
+          "color": "#404E5C"
+        },
+        {
+          "lightness": 17
+        }
         ]
-    },
-    {
+      },
+      {
         "featureType": "landscape",
         "elementType": "geometry",
         "stylers": [
-            {
-                "color": "#f5f5f5"
-            },
-            {
-                "lightness": 20
-            }
+        {
+          "color": "#f5f5f5"
+        },
+        {
+          "lightness": 20
+        }
         ]
-    },
-    {
+      },
+      {
         "featureType": "road.highway",
         "elementType": "geometry.fill",
         "stylers": [
-            {
-                "color": "#ffffff"
-            },
-            {
-                "lightness": 17
-            }
+        {
+          "color": "#ffffff"
+        },
+        {
+          "lightness": 17
+        }
         ]
-    },
-    {
+      },
+      {
         "featureType": "road.highway",
         "elementType": "geometry.stroke",
         "stylers": [
-            {
-                "color": "#A92222"
-            },
-            {
-                "lightness": 29
-            },
-            {
-                "weight": 0.2
-            }
+        {
+          "color": "#A92222"
+        },
+        {
+          "lightness": 29
+        },
+        {
+          "weight": 0.2
+        }
         ]
-    },
-    {
+      },
+      {
         "featureType": "road.arterial",
         "elementType": "geometry",
         "stylers": [
-            {
-                "color": "#ffffff"
-            },
-            {
-                "lightness": 18
-            }
+        {
+          "color": "#ffffff"
+        },
+        {
+          "lightness": 18
+        }
         ]
-    },
-    {
+      },
+      {
         "featureType": "road.local",
         "elementType": "geometry",
         "stylers": [
-            {
-                "color": "#ffffff"
-            },
-            {
-                "lightness": 16
-            }
+        {
+          "color": "#ffffff"
+        },
+        {
+          "lightness": 16
+        }
         ]
-    },
-    {
+      },
+      {
         "featureType": "poi",
         "elementType": "geometry",
         "stylers": [
-            {
-                "color": "#f5f5f5"
-            },
-            {
-                "lightness": 21
-            }
+        {
+          "color": "#f5f5f5"
+        },
+        {
+          "lightness": 21
+        }
         ]
-    },
-    {
+      },
+      {
         "featureType": "poi.park",
         "elementType": "geometry",
         "stylers": [
-            {
-                "color": "#dedede"
-            },
-            {
-                "lightness": 21
-            }
+        {
+          "color": "#dedede"
+        },
+        {
+          "lightness": 21
+        }
         ]
-    },
-    {
+      },
+      {
         "elementType": "labels.text.stroke",
         "stylers": [
-            {
-                "visibility": "on"
-            },
-            {
-                "color": "#ffffff"
-            },
-            {
-                "lightness": 16
-            }
+        {
+          "visibility": "on"
+        },
+        {
+          "color": "#ffffff"
+        },
+        {
+          "lightness": 16
+        }
         ]
-    },
-    {
+      },
+      {
         "elementType": "labels.text.fill",
         "stylers": [
-            {
-                "saturation": 36
-            },
-            {
-                "color": "#A92222"
-            },
-            {
-                "lightness": 40
-            }
+        {
+          "saturation": 36
+        },
+        {
+          "color": "#A92222"
+        },
+        {
+          "lightness": 40
+        }
         ]
-    },
-    {
+      },
+      {
         "elementType": "labels.icon",
         "stylers": [
-            {
-                "visibility": "off"
-            }
+        {
+          "visibility": "off"
+        }
         ]
-    },
-    {
+      },
+      {
         "featureType": "transit",
         "elementType": "geometry",
         "stylers": [
-            {
-                "color": "#f2f2f2"
-            },
-            {
-                "lightness": 19
-            }
+        {
+          "color": "#f2f2f2"
+        },
+        {
+          "lightness": 19
+        }
         ]
-    },
-    {
+      },
+      {
         "featureType": "administrative",
         "elementType": "geometry.fill",
         "stylers": [
-            {
-                "color": "#fefefe"
-            },
-            {
-                "lightness": 20
-            }
+        {
+          "color": "#fefefe"
+        },
+        {
+          "lightness": 20
+        }
         ]
-    },
-    {
+      },
+      {
         "featureType": "administrative",
         "elementType": "geometry.stroke",
         "stylers": [
-            {
-                "color": "#fefefe"
-            },
-            {
-                "lightness": 17
-            },
-            {
-                "weight": 1.2
-            }
+        {
+          "color": "#fefefe"
+        },
+        {
+          "lightness": 17
+        },
+        {
+          "weight": 1.2
+        }
         ]
-    }]
-    var handler = Gmaps.build('Google');
-    handler.buildMap({
-      provider: {
+      }]
+      var handler = Gmaps.build('Google');
+      handler.buildMap({
+        provider: {
           styles: styles,
           scrollwheel: false,
           navigationControl: false,
@@ -426,16 +451,16 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
           scaleControl: false,
           draggable: false,
         },
-      internal: { id: 'map' } }, function() {
-      markers = handler.addMarkers(<%= raw @hash.to_json %>);
-      handler.bounds.extendWith(markers);
-      handler.fitMapToBounds();
-      if (markers.length == 0) {
-        handler.getMap().setZoom(2);
-      } else if (markers.length == 1) {
-        handler.getMap().setZoom(14);
-      }
+        internal: { id: 'map' } }, function() {
+          markers = handler.addMarkers(<%= raw @hash.to_json %>);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+          if (markers.length == 0) {
+            handler.getMap().setZoom(2);
+          } else if (markers.length == 1) {
+            handler.getMap().setZoom(14);
+          }
+        });
     });
-  });
-</script>
-<% end %>
+  </script>
+  <% end %>
