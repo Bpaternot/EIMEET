@@ -368,6 +368,8 @@ class TournamentsController < ApplicationController
           else
             raise
             winner_game.position = "W"
+            @tournament.status = "past"
+            @tournament.save
             winner_game.user.won_tournaments += 1
             winner_game.user.save
           end
@@ -378,6 +380,8 @@ class TournamentsController < ApplicationController
           else
             raise
             winner_game.position = "W"
+            @tournament.status = "past"
+            @tournament.save
             winner_game.user.won_tournaments += 1
             winner_game.user.save
           end
