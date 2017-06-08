@@ -1,4 +1,4 @@
-<div class="container container-playground">
+<div class="container container-playground" data-current-selection="<%= @tournament.step %>">
   <div class="row row-playground">
     <div class="col-xs-12 col-sm-12 col-md-2 col-md-2-playground">
       <%= render "side_bar" %>
@@ -32,7 +32,7 @@
       <%= render 'semi_ongoing' %>
 
     <!-- FINAL -->
-    <% elsif @tournament.step == "final" %>
+    <% elsif @tournament.step == "final" && @tournament.status == "ready" %>
       <%= render 'pool_results'  %>
       <% if @tournament.tournament_type == "large" %>
         <%= render 'tournaments/round16_results'  %>
@@ -42,6 +42,20 @@
       <% end %>
       <%= render 'semi_results' %>
       <%= render 'final_ongoing' %>
+
+    <!-- PAST -->
+    <% elsif @tournament.status == "past" %>
+      <%= render 'pool_results'  %>
+      <% if @tournament.tournament_type == "large" %>
+        <%= render 'tournaments/round16_results'  %>
+      <% end %>
+      <% if @tournament.tournament_type == "large" || @tournament.tournament_type == "medium" %>
+        <%= render 'tournaments/quarter_results'  %>
+      <% end %>
+      <%= render 'semi_results' %>
+      <%= render 'final_results' %>
     <% end %>
   </div>
 </div>
+
+

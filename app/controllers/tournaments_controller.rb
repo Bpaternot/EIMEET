@@ -366,6 +366,8 @@ class TournamentsController < ApplicationController
             winner_game.position = game.name
           else
             winner_game.position = "W"
+            @tournament.status = "past"
+            @tournament.save
           end
         else
           winner_game = game.scores.last.player
@@ -373,6 +375,8 @@ class TournamentsController < ApplicationController
             winner_game.position = game.name
           else
             winner_game.position = "W"
+            @tournament.status = "past"
+            @tournament.save
           end
         end
         winner_game.save!
