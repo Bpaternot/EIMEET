@@ -2,6 +2,27 @@
 <% content_for :meta_title, "#{@tournament.user.first_name.capitalize}' tournament with #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, "Join the tournament organized by #{@tournament.user.first_name}, on #{@tournament.date.strftime("%A %d %B")} at #{@tournament.bar.name}! Hurry up, only #{@remaining} spots left ! " %>
 
+<!-- FACEBOOK SDK ON SHOW VIEW -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '456880867990110',
+      xfbml      : true,
+      version    : 'v2.9'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
 
 <div class="banner-show-tournament" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
 
@@ -198,6 +219,7 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
         </div>
         <div class="facebook-sharing-button">
           <div class="fb-share-button" data-href="<%= tournament_url(@tournament) %>" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"></a></div>
+          <div id="shareBtn" class="btn btn-primary" aria-hidden="true">Share it !!</div>
         </div>
       </div>
       <% end %>
@@ -460,5 +482,13 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
           }
         });
     });
+    document.getElementById('shareBtn').onclick = function() {
+      FB.ui({
+        method: 'share',
+        display: 'popup',
+        href: window.location.href,
+      }, function(response){});
+    }
+
   </script>
   <% end %>
