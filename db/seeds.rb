@@ -18,11 +18,11 @@ User.destroy_all
 # Users
 
 user = User.new
-user.email = 'cylou@example.com'
+user.email = 'Achille@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "Cylou"
+user.first_name = "AchilleM"
 user.username = "cylou"
 user.total_goals = 45
 user.total_against_goals = 18
@@ -30,11 +30,11 @@ user.won_tournaments = 1
 user.save!
 
 user = User.new
-user.email = 'valoch@example.com'
+user.email = 'Alban@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "Valoch"
+user.first_name = "AlbanP"
 user.username = "valoch"
 user.total_goals = 35
 user.total_against_goals = 25
@@ -42,11 +42,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'benito@example.com'
+user.email = 'Alexandre@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "Benito"
+user.first_name = "AlexandreD"
 user.username = "benito"
 user.total_goals = 30
 user.total_against_goals = 10
@@ -54,11 +54,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'arno@example.com'
+user.email = 'AlexandreG@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "Arno"
+user.first_name = "AlexandreG"
 user.username = "nono"
 user.total_goals = 20
 user.total_against_goals = 30
@@ -66,11 +66,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'jean@example.com'
+user.email = 'Alexis@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "Jean"
+user.first_name = "AlexisG"
 user.username = "jeanno"
 user.total_goals = 10
 user.total_against_goals = 15
@@ -78,11 +78,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'julien@example.com'
+user.email = 'Aurore@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "Julien"
+user.first_name = "AuroreC"
 user.username = "jujulien"
 user.total_goals = 35
 user.total_against_goals = 11
@@ -90,11 +90,11 @@ user.won_tournaments = 1
 user.save!
 
 user = User.new
-user.email = 'marc@example.com'
+user.email = 'Benjamin@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "marc"
+user.first_name = "BenjaminP"
 user.username = "marco"
 user.total_goals = 25
 user.total_against_goals = 25
@@ -102,11 +102,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'franck@example.com'
+user.email = 'Boris@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "franck"
+user.first_name = "BorisP"
 user.username = "franckycbon"
 user.total_goals = 2
 user.total_against_goals = 15
@@ -114,11 +114,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'jacob@example.com'
+user.email = 'Bruno@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "jacob"
+user.first_name = "BrunoL"
 user.username = "jacobin"
 user.total_goals = 27
 user.total_against_goals = 15
@@ -126,11 +126,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'mohamed@example.com'
+user.email = 'Cecile@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "mohamed"
+user.first_name = "Cecile"
 user.username = "momo"
 user.total_goals = 39
 user.total_against_goals = 10
@@ -138,11 +138,11 @@ user.won_tournaments = 1
 user.save!
 
 user = User.new
-user.email = 'alexandre@example.com'
+user.email = 'Cedric@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "alexandre"
+user.first_name = "Cedric"
 user.username = "alex1"
 user.total_goals = 8
 user.total_against_goals = 10
@@ -150,11 +150,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'claire@example.com'
+user.email = 'Charles@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "claire"
+user.first_name = "CharlesB"
 user.username = "clairon"
 user.total_goals = 14
 user.total_against_goals = 10
@@ -162,11 +162,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'clara@example.com'
+user.email = 'CharlesM@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "clara"
+user.first_name = "CharlesM"
 user.username = "clarachou"
 user.total_goals = 15
 user.total_against_goals = 10
@@ -174,11 +174,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'eleonore@example.com'
+user.email = 'Christophe@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "eleonore"
+user.first_name = "ChristopheP"
 user.username = "eleo"
 user.total_goals = 12
 user.total_against_goals = 35
@@ -186,11 +186,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'alexis@example.com'
+user.email = 'Claire@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "alexis"
+user.first_name = "ClaireS"
 user.username = "alex2"
 user.total_goals = 15
 user.total_against_goals = 10
@@ -198,49 +198,13 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'mathieu@example.com'
+user.email = 'Clara@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "mathieu"
+user.first_name = "ClaraE"
 user.username = "matmat"
 user.total_goals = 16
-user.total_against_goals = 10
-user.won_tournaments = 0
-user.save!
-
-user = User.new
-user.email = 'germain@example.com'
-user.password = 'valid_password'
-user.password_confirmation = 'valid_password'
-# user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "germain"
-user.username = "germanou"
-user.total_goals = 6
-user.total_against_goals = 10
-user.won_tournaments = 0
-user.save!
-
-user = User.new
-user.email = 'juliette@example.com'
-user.password = 'valid_password'
-user.password_confirmation = 'valid_password'
-# user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "juliette"
-user.username = "jujuliette"
-user.total_goals = 11
-user.total_against_goals = 10
-user.won_tournaments = 0
-user.save!
-
-user = User.new
-user.email = 'tom@example.com'
-user.password = 'valid_password'
-user.password_confirmation = 'valid_password'
-# user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "tatiana"
-user.username = "tomitom"
-user.total_goals = 13
 user.total_against_goals = 10
 user.won_tournaments = 0
 user.save!
@@ -250,7 +214,43 @@ user.email = 'clement@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "clement"
+user.first_name = "ClementP"
+user.username = "germanou"
+user.total_goals = 6
+user.total_against_goals = 10
+user.won_tournaments = 0
+user.save!
+
+user = User.new
+user.email = 'Cyrielle@example.com'
+user.password = 'valid_password'
+user.password_confirmation = 'valid_password'
+# user.encrypted_password = '#$taawktljasktlw4aaglj'
+user.first_name = "CyrielleF"
+user.username = "jujuliette"
+user.total_goals = 11
+user.total_against_goals = 10
+user.won_tournaments = 0
+user.save!
+
+user = User.new
+user.email = 'Damien@example.com'
+user.password = 'valid_password'
+user.password_confirmation = 'valid_password'
+# user.encrypted_password = '#$taawktljasktlw4aaglj'
+user.first_name = "DamienL"
+user.username = "tomitom"
+user.total_goals = 13
+user.total_against_goals = 10
+user.won_tournaments = 0
+user.save!
+
+user = User.new
+user.email = 'Edouard@example.com'
+user.password = 'valid_password'
+user.password_confirmation = 'valid_password'
+# user.encrypted_password = '#$taawktljasktlw4aaglj'
+user.first_name = "EdouardF"
 user.username = "clementin"
 user.total_goals = 10
 user.total_against_goals = 8
@@ -258,11 +258,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'greg@example.com'
+user.email = 'Edward@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "greg"
+user.first_name = "EdwardS"
 user.username = "fudo"
 user.total_goals = 2
 user.total_against_goals = 10
@@ -270,11 +270,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'thomas@example.com'
+user.email = 'Eleonore@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "thomas"
+user.first_name = "EleonoreD"
 user.username = "tomtomgo"
 user.total_goals = 5
 user.total_against_goals = 15
@@ -282,11 +282,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'sylvain@example.com'
+user.email = 'Fiona@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "sylvain"
+user.first_name = "FionaP"
 user.username = "sysyl"
 user.total_goals = 8
 user.total_against_goals = 15
@@ -294,11 +294,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'axel@example.com'
+user.email = 'Gabriel@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "axel"
+user.first_name = "GabrielP"
 user.username = "axelred"
 user.total_goals = 13
 user.total_against_goals = 15
@@ -306,11 +306,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'nolan@example.com'
+user.email = 'Gabrieldz@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "nolan"
+user.first_name = "GabrielD"
 user.username = "nonodu92"
 user.total_goals = 11
 user.total_against_goals = 15
@@ -318,11 +318,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'victor@example.com'
+user.email = 'Kara@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "victor"
+user.first_name = "KaraD"
 user.username = "victorhugo"
 user.total_goals = 7
 user.total_against_goals = 15
@@ -330,11 +330,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'come@example.com'
+user.email = 'MathieuC@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "come"
+user.first_name = "MathieuC"
 user.username = "lacdecome"
 user.total_goals = 13
 user.total_against_goals = 15
@@ -342,11 +342,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'alexia@example.com'
+user.email = 'Kheira@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "alexia"
+user.first_name = "KheiraB"
 user.username = "alexiadujardin"
 user.total_goals = 11
 user.total_against_goals = 15
@@ -354,11 +354,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'simon@example.com'
+user.email = 'Maurice@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "simon"
+user.first_name = "MauriceC"
 user.username = "simonette"
 user.total_goals = 17
 user.total_against_goals = 15
@@ -366,11 +366,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'jesus@example.com'
+user.email = 'Nicolas@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "jesus"
+user.first_name = "NicolasB"
 user.username = "jesus"
 user.total_goals = 14
 user.total_against_goals = 13
@@ -378,11 +378,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'mathis@example.com'
+user.email = 'Julie@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "mathis"
+user.first_name = "JulieP"
 user.username = "lionelmathis"
 user.total_goals = 11
 user.total_against_goals = 9
@@ -390,11 +390,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'samuel@example.com'
+user.email = 'Kevin@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "samuel"
+user.first_name = "Kevin"
 user.username = "samsoung"
 user.total_goals = 20
 user.total_against_goals = 15
@@ -402,11 +402,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'marius@example.com'
+user.email = 'Romain@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "marius"
+user.first_name = "RomainP"
 user.username = "mariusfildentaire"
 user.total_goals = 14
 user.total_against_goals = 15
@@ -414,11 +414,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'noah@example.com'
+user.email = 'Tatiana@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "noah"
+user.first_name = "TatianaP"
 user.username = "yannicknoah"
 user.total_goals = 6
 user.total_against_goals = 15
@@ -426,11 +426,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'maxens@example.com'
+user.email = 'Xavier@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "maxens"
+user.first_name = "XavierM"
 user.username = "maxenscornet"
 user.total_goals = 9
 user.total_against_goals = 15
@@ -438,11 +438,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'romain@example.com'
+user.email = 'Sebastien@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "romain"
+user.first_name = "SebastienS"
 user.username = "romano"
 user.total_goals = 2
 user.total_against_goals = 35
@@ -450,11 +450,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'boris@example.com'
+user.email = 'Patrick@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "boris"
+user.first_name = "PatrickB"
 user.username = "borisbreakdance"
 user.total_goals = 1
 user.total_against_goals = 40
@@ -462,11 +462,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'hugo@example.com'
+user.email = 'Philippe@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "hugo"
+user.first_name = "PhilippeC"
 user.username = "hugopasvictor"
 user.total_goals = 9
 user.total_against_goals = 10
@@ -474,11 +474,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'leo@example.com'
+user.email = 'Pierre-Yves@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "leo"
+user.first_name = "Pierre-Yves"
 user.username = "leomessi"
 user.total_goals = 20
 user.total_against_goals = 10
@@ -486,11 +486,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'nathan@example.com'
+user.email = 'Jules@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "nathan"
+user.first_name = "JulesC"
 user.username = "nathanfake"
 user.total_goals = 7
 user.total_against_goals = 10
@@ -498,11 +498,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'gabin@example.com'
+user.email = 'Keven@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "gabin"
+user.first_name = "KevenB"
 user.username = "jeangabin"
 user.total_goals = 23
 user.total_against_goals = 10
@@ -510,11 +510,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'paul@example.com'
+user.email = 'Germain@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "paul"
+user.first_name = "Germain"
 user.username = "pauldu17"
 user.total_goals = 9
 user.total_against_goals = 10
@@ -522,11 +522,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'quentin@example.com'
+user.email = 'Florestan@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "quentin"
+user.first_name = "FlorestanL"
 user.username = "quentinlephalique"
 user.total_goals = 9
 user.total_against_goals = 10
@@ -534,11 +534,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'matheo@example.com'
+user.email = 'MathieuJ@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "matheo"
+user.first_name = "MathieuJ"
 user.username = "matheodimeco"
 user.total_goals = 11
 user.total_against_goals = 10
@@ -546,11 +546,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'evan@example.com'
+user.email = 'Nikolay@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "evan"
+user.first_name = "NikolayM"
 user.username = "evanmcgregor"
 user.total_goals = 14
 user.total_against_goals = 10
@@ -558,11 +558,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'florian@example.com'
+user.email = 'Rafaël@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "florian"
+user.first_name = "RafaëlB"
 user.username = "florianphilippot"
 user.total_goals = 15
 user.total_against_goals = 13
@@ -570,11 +570,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'corentin@example.com'
+user.email = 'Robin@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "corentin"
+user.first_name = "RobinB"
 user.username = "corentindugenou"
 user.total_goals = 6
 user.total_against_goals = 10
@@ -582,11 +582,11 @@ user.won_tournaments = 0
 user.save!
 
 user = User.new
-user.email = 'killian@example.com'
+user.email = 'Vincent@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "killian"
+user.first_name = "VincentP"
 user.username = "killianmbape"
 user.total_goals = 12
 user.total_against_goals = 12
