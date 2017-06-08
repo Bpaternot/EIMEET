@@ -127,14 +127,14 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
       <% elsif @remaining == 0 && Player.where(tournament: @tournament, user: current_user).exists? && @remaining_total == 0 %>
         <div class="module-right-full-tournament-start">
           <div class="module-right-full-tournament-start-message">
-            <% if @tournament.date == Date.today %>
+            <%# if @tournament.date == Date.today %>
             <%= form_for @tournament do |f| %>
               <%= f.hidden_field :step, value: "group" %>
               <%= f.submit "SHOW THE TOURNAMENT", class: "btn btn-primary button-start-tournament" %>
             <% end %>
-            <% else %>
-              <p>Your tournament is ready !</br> <%= @tournament.date.strftime("%A %d %B") %></p>
-            <% end %>
+            <%# else %>
+
+            <%# end %>
           </div>
         </div>
       <!-- Tournament not full / User is a player / Still need material -->

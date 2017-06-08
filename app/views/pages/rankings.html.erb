@@ -1,13 +1,20 @@
 <div class="fake-height"></div>
 <div class="container">
   <div class="row">
-    <div>
+  <div class="ranking-header-rank">RANK</div>
+  <div class="ranking-header-pts">USERNAME</div>
+  <div class="ranking-header-diff">TOTAL GOALS</div>
+  <div class="ranking-header-diff">TOTAL AGAINST GOALS</div>
+  <div class="ranking-header-bp">NUMBER OF TOURNAMENTS PLAYED</div>
+
     <% @users.each_with_index  do |user, index| %>
-      <%= index + 1 %> |
-      <%= user.username %>
-      <%= user.total_goals %>
+      <%= index + 1 %> )
+      <%= user.username %> |
+      <%= user.total_goals %> |
+      <%= user.total_against_goals %> |
+      <%= user.won_tournaments %> |
       <%= user.players.count %> <br>
     <% end %>
-    </div>
   </div>
 </div>
+
