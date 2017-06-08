@@ -64,7 +64,7 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
               <%= image_tag avatar_url, class: "avatar" %>
               <% else %>
               <% avatar_url = player.user.first_name %>
-              <%= image_tag "#{player.user.first_name}.jpeg", class: "avatar" %>
+              <%= image_tag "#{player.user.link}.jpeg", class: "avatar" %>
               <% end %>
             </div>
             <div class="list-players-username">
