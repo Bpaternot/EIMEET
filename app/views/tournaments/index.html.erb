@@ -32,7 +32,23 @@
                 <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;<%= tournament.bar.name %></p>
               </div>
             </div>
+
+
+
+
+
+          <% if user_signed_in? && tournament.players.where(user_id: current_user.id).exists? %>
+            <%= render "shared/progress-bar-in", tournament: tournament %>
+          <% else %>
             <%= render "shared/progress-bar", tournament: tournament %>
+          <% end %>
+
+
+
+
+
+
+
             <div class="card-info">
               <div class="card-info-date">
                 <p><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp;<%= tournament.date.strftime("%A %d %B") %></p>
