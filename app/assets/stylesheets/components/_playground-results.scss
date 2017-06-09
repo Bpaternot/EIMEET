@@ -1,0 +1,153 @@
+// Cards of match
+
+.results-card-team-left {
+  width: 250px;
+  margin-bottom: 20px;
+  padding: 15px 15px;
+  border-radius: 2px;
+  background-color: $snow;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .results-card-team-left-image {
+    flex: 0 0 20%;
+    postion: relative;
+    .results-card-team-left-image-of-team {
+    }
+    img {
+      width: 30px;
+    }
+  }
+  .results-card-team-left-name {
+    flex: 0 0 40%;
+    color: $yankees;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .results-card-team-left-score {
+    flex: 0 0 20%;
+    width: 100%;
+    height: 100%;
+    input {
+      background-color: $snow;
+      border-radius: 2px;
+      font-weight: 600;
+      padding: 4px 0px;
+      color: $fire;
+      width: 100% !important;
+      height: 100% !important;
+      text-align: center;
+      border: none !important;
+      border-color: $snow;
+    }
+  }
+  .results-card-team-left-update-score {
+    flex: 0 0 20%;
+    button {
+      font-size: 14px;
+      border-radius: 2px;
+      width: 90% !important;
+      height: 100% !important;
+      background-color: $snow !important;
+      border: none !important;
+      // i {
+      //   color: $orange !important;
+      //   &:hover {
+      //     color: $green !important;
+      //     background-color: $snow !important;
+      //   }
+      //   &:visited {
+      //     color: $green !important;
+      //   }
+      // }
+    }
+  }
+}
+
+.results-card-team-right {
+  width: 250px;
+  margin-bottom: 20px;
+  padding: 15px 15px;
+  border-radius: 2px;
+  background-color: $snow;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+    .results-card-team-right-image {
+      flex: 0 0 20%;
+      position: relative;
+      .results-card-team-right-image-of-team {
+      }
+      img {
+        width: 30px;
+        margin-left: 15px;
+      }
+    }
+    .results-card-team-right-name {
+      flex: 0 0 40%;
+      text-align: right;
+      color: $yankees;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .results-card-team-right-score {
+      flex: 0 0 20%;
+      width: 100%;
+      height: 100%;
+        input {
+          color: $fire;
+          background-color: $snow;
+          border-radius: 2px;
+          font-weight: 600;
+          padding: 4px 0px;
+          width: 100% !important;
+          height: 100% !important;
+          text-align: center;
+          border: none !important;
+          border-color: $snow;
+        }
+    }
+  .results-card-team-right-update-score {
+    flex: 0 0 20%;
+    button {
+      font-size: 14px;
+      border-radius: 2px;
+      width: 90% !important;
+      height: 100% !important;
+      background-color: $snow !important;
+      border: none !important;
+      // i {
+      //   color: $orange !important;
+      //   &:hover {
+      //     color: $green !important;
+      //     background-color: $snow !important;
+      //   }
+      //   &:visited {
+      //     color: $green !important;
+      //   }
+      // }
+    }
+  }
+}
+
+.results-card-team-left-score-def {
+  color: $green;
+  font-weight: 600;
+}
+
+.results-card-team-right-score-def {
+  color: $green;
+  font-weight: 600;
+}
+
+.results-card-team-right-name {
+  text-align: right;
+}
+
+.results-card-team-left-name {
+  text-align: left;
+}
+
+.image-gif {
+  width: 200px;
+}
