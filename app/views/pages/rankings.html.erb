@@ -39,7 +39,12 @@
                 <%= index + 1 %>
               </div>
               <div class='avatar'>
+                <% if user.facebook_picture_url %>
+                <% avatar_url = user.facebook_picture_url %>
+                <%= image_tag avatar_url, class: "avatar" %>
+                <% else %>
                 <%= image_tag "#{user.link}.jpeg", class: "avatar" %>
+                <% end %>
               </div>
               <div class="ranking-username">
                 <%= user.first_name %>
