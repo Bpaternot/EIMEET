@@ -22,10 +22,10 @@ user.email = 'Achille@example.com'
 user.password = 'valid_password'
 user.password_confirmation = 'valid_password'
 # user.encrypted_password = '#$taawktljasktlw4aaglj'
-user.first_name = "Achille"
-user.link = "AchilleM"
+user.first_name = "Cyrielle"
+user.link = "CyrielleB"
 user.username = "cylou"
-user.total_goals = 45
+user.total_goals = 120
 user.total_against_goals = 18
 user.won_tournaments = 1
 user.save!
