@@ -1,5 +1,41 @@
 module PoolRanking
 
+  def update_ranking(game)
+    game.players.each do |player|
+      player.points = 0
+      player.bp = 0
+      player.bc = 0
+      player.diff = 0
+
+      pools = tournament.games.find_by(step: "group").order(:name).each_slice(6).to_a
+      participated_games = pool.select do |game|
+        game.players.include? player
+      end
+      participated_games.each do |game|
+        score_me = game.scores.where(player: player).first
+        score_other = game.scores.where.not(player: player).first
+        my_goals = score_me.goals unless score_me.goals.nil?
+        other_goals = score_other.goals unless score_other.goals.nil?
+
+        unless my_goals.nil?
+          has_won = my_goals > other_goals
+          has_equality = my_goals == other_goals
+          if has_won
+            player.points += 3
+          elsif has_equality
+            player.points += 1
+          else
+            player.points += 0
+          end
+          player.bp += my_goals
+          player.bc += other_goals
+          player.diff += my_goals - other_goals
+        end
+      end
+      player.save!
+    end
+  end
+
   def ranking_pool(tournament)
     pools = tournament.games.where(step: "group").order(:name).each_slice(6).to_a
     pools.each do |pool|
@@ -20,21 +56,23 @@ module PoolRanking
         participated_games.each do |game|
           score_me = game.scores.where(player: player).first
           score_other = game.scores.where.not(player: player).first
-          my_goals = score_me.goals || 0
-          other_goals = score_other.goals || 0
+          my_goals = score_me.goals unless score_me.goals.nil?
+          other_goals = score_other.goals unless score_other.goals.nil?
 
-          has_won = my_goals > other_goals
-          has_equality = my_goals == other_goals
-          if has_won
-            player.points += 3
-          elsif has_equality
-            player.points += 1
-          else
-            player.points += 0
+          unless my_goals.nil?
+            has_won = my_goals > other_goals
+            has_equality = my_goals == other_goals
+            if has_won
+              player.points += 3
+            elsif has_equality
+              player.points += 1
+            else
+              player.points += 0
+            end
+            player.bp += my_goals
+            player.bc += other_goals
+            player.diff += my_goals - other_goals
           end
-          player.bp += my_goals
-          player.bc += other_goals
-          player.diff += my_goals - other_goals
         end
         player.save!
       end
