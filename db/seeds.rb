@@ -734,7 +734,7 @@ Availability.create(start_day: DateTime.new(2017,6,3), end_day: DateTime.new(201
 tournament1 = Tournament.create!(step: "group", date: DateTime.new(2017,6,15), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar: bar3, user_id: 5)
 tournament2 = Tournament.create!(step: "group", date: DateTime.new(2017,6,10), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar: bar6, user_id: 22)
 tournament3 = Tournament.create!(step: "group", date: DateTime.new(2017,6,12), number_players: 32, status: "pending", number_consoles: 8, number_controllers: 16, number_games: 8, tournament_type: "large", bar: bar9, user_id: 14)
-tournament4 = Tournament.create!(step: "group", date: DateTime.new(2017,6,9), number_players: 8, status: "pending", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar1, user_id: 3)
+tournament4 = Tournament.create!(step: "group", date: DateTime.new(2017,6,9), number_players: 8, status: "pending", number_consoles: 2, number_controllers: 4, number_games: 2, tournament_type: "small", bar: bar1, user_id: 20)
 
 # # Tournaments replicated
 tournament5 = Tournament.create!(step: "group", date: DateTime.new(2017,6,12), number_players: 16, status: "pending", number_consoles: 4, number_controllers: 8, number_games: 4, tournament_type: "medium", bar: bar20, user_id: 12)
@@ -881,14 +881,14 @@ Player.create(user_id: 12, admin: false, tournament: tournament9, ps4: false, xb
 Player.create(user_id: 11, admin: false, tournament: tournament9, ps4: true, xbox: false, controller_ps4: 2, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Chelsea")
 Player.create(user_id: 10, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 2, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Nice")
 Player.create(user_id: 9, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Nancy")
-Player.create(user_id: 8, admin: false, tournament: tournament9, ps4: true, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Paris-SG")
+Player.create(user_id: 8, admin: false, tournament: tournament9, ps4: true, xbox: false, controller_ps4: 2, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Paris-SG")
 Player.create(user_id: 32, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Swansea")
 Player.create(user_id: 2, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Toulouse")
 Player.create(user_id: 3, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "ManchesterUnited")
-Player.create(user_id: 4, admin: false, tournament: tournament9, ps4: true, xbox: false, controller_ps4: 2, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Chelsea")
-Player.create(user_id: 5, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 2, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Nice")
-Player.create(user_id: 6, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Nancy")
-Player.create(user_id: 7, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Paris-SG")
+# Player.create(user_id: 4, admin: false, tournament: tournament9, ps4: true, xbox: false, controller_ps4: 2, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Chelsea")
+# Player.create(user_id: 5, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 2, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Nice")
+# Player.create(user_id: 6, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Nancy")
+# Player.create(user_id: 7, admin: false, tournament: tournament9, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 0, club: "Paris-SG")
 ##  Tournament id= 10
 Player.create(user_id: 27, admin: true, tournament: tournament10, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 1, fifa_game_xbox: 0, club: "ManchesterUnited")
 Player.create(user_id: 21, admin: false, tournament: tournament10, ps4: false, xbox: false, controller_ps4: 0, controller_xbox: 0, fifa_game_ps4: 0, fifa_game_xbox: 1, club: "Monaco")
