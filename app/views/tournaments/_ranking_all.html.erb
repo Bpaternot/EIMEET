@@ -17,7 +17,7 @@
           <% avatar_url = player.user.facebook_picture_url %>
           <%= image_tag avatar_url, class: "avatar-small" %>
           <% elsif player.club? %>
-          <%= image_tag "#{player.club}.png", class: "team-photo" %>
+          <%= image_tag "#{player.user.link}.jpeg", class: "avatar-small" %>
           <% elsif %>
           <% avatar_url = "http://res.cloudinary.com/dutc7zz18/image/upload/v1496741104/avatar-fake_yuue1t.png" %>
           <%= image_tag avatar_url, class: "avatar" %>

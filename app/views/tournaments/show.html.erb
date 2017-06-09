@@ -122,7 +122,29 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
           </div>
        </div>
         <% end %>
+
       </div>
+          <% if Player.where(tournament: @tournament, user: current_user).exists? %>
+    <h2 class="margin-for-h2">Let's chat with other players</h2>
+    <div class="wrapper-for-reviews">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <div id="reviews">
+            <div class="message-box">
+              <% @tournament.reviews.each do |review| %>
+              <%= render 'reviews/show', review: review %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <div class="form-box-chat">
+            <%= render 'reviews/form', tournament: @tournament, review: @review %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
     </div>
 
     <div class="col-xs-12 col-xs-12-tournament col-sm-12 col-md-3">
@@ -226,29 +248,7 @@ url('<%= cl_image_path @tournament.bar.photo, gravity: :south%>'); background-si
 </div>
 
 
-  <% if Player.where(tournament: @tournament, user: current_user).exists? %>
-  <div class="container">
-    <h2 class="margin-for-h2">Let's chat with other players</h2>
-    <div class="wrapper-for-reviews">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-          <div id="reviews">
-            <div class="message-box">
-              <% @tournament.reviews.each do |review| %>
-              <%= render 'reviews/show', review: review %>
-              <% end %>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-          <div class="form-box-chat">
-            <%= render 'reviews/form', tournament: @tournament, review: @review %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <% end %>
+
 
 
   <!--  <!-- DESTROY THE TOURNAMENT -->
