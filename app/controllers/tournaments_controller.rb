@@ -366,6 +366,7 @@ class TournamentsController < ApplicationController
     def classify_after_pool(group_games)
       list = []
       group_games.each do |game|
+        unless game.scores.first.goals.nil? || game.scores.last.goals.nil?
         if game.scores.first.goals > game.scores.last.goals
           winner_game = game.scores.first.player
           if game.name != "final"
@@ -389,6 +390,7 @@ class TournamentsController < ApplicationController
             winner_game.user.save
           end
         end
+      end
         list << winner_game
       end
       return list
