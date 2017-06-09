@@ -56,7 +56,7 @@
                 <%= user.total_against_goals %>
               </div>
               <div class="ranking-won-tournaments">
-                <%= user.won_tournaments %>
+                <%= user.won_tournaments || 0 %>
               </div>
              </div>
           <% end %>
