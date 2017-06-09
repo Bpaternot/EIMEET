@@ -5,25 +5,27 @@
         <div class="rankings-header-rank">
           RANK
         </div>
-         <div class="avatar">
+        <div class="info-player">
+          <div class="avatar">
+          PLAYERS
+          </div>
+          <div class="ranking-username">
+          </div>
         </div>
-        <div class="username">
-          NAME
-        </div>
-        <div class="total-goals">
-          GOALS
+        <div class="ranking-total-goals">
+          GOALS&nbsp;
           <%= link_to rankings_path do %>
             <i class="fa fa-sort-desc" aria-hidden="true"></i>
           <% end %>
         </div>
-        <div class="total-against-goals">
-          AGAINST GOALS
+        <div class="ranking-total-against-goals">
+          AGAINST GOALS&nbsp;
           <%= link_to rankings_path(sort_by: "total-against-goals") do %>
             <i class="fa fa-sort-desc" aria-hidden="true"></i>
           <% end %>
         </div>
-        <div class="won-tournaments">
-          WON TOURNAMENTS
+        <div class="ranking-won-tournaments">
+          WON TOURNAMENTS&nbsp;
           <%= link_to rankings_path(sort_by: "won-tournaments") do %>
             <i class="fa fa-sort-desc" aria-hidden="true"></i>
           <% end %>
@@ -38,16 +40,18 @@
               <div class="rankings-header-rank">
                 <%= index + 1 %>
               </div>
-              <div class='avatar'>
-                <% if user.facebook_picture_url %>
-                <% avatar_url = user.facebook_picture_url %>
-                <%= image_tag avatar_url, class: "avatar" %>
-                <% else %>
-                <%= image_tag "#{user.link}.jpeg", class: "avatar" %>
-                <% end %>
-              </div>
-              <div class="ranking-username">
-                <%= user.first_name %>
+              <div class="info-player">
+                <div class='avatar'>
+                  <% if user.facebook_picture_url %>
+                  <% avatar_url = user.facebook_picture_url %>
+                  <%= image_tag avatar_url, class: "avatar" %>
+                  <% else %>
+                  <%= image_tag "#{user.link}.jpeg", class: "avatar" %>
+                  <% end %>
+                </div>
+                <div class="ranking-username">
+                  <%= user.first_name %>
+                </div>
               </div>
               <div class="ranking-total-goals">
                 <%= user.total_goals %>

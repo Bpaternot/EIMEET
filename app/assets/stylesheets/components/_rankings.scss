@@ -8,29 +8,40 @@
     justify-content: space-between;
     height: 40px;
     font-weight: 600;
+    .info-player {
+      flex: 0 0 20%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      .avatar {
+        text-align: left;
+        flex: 0 0 12%;
+      }
+      .ranking-username {
+        text-align: left;
+        flex: 0 0 30%;
+        margin-left: 20px;
+      }
+    }
     .rankings-header-rank {
-      flex: 0 0 12%;
+      flex: 0 0 20%;
       text-align: center;
       color: $fire;
-    }
-    .ranking-username {
-      text-align: center;
-      flex: 0 0 12%;
     }
 
     .ranking-total-goals {
       text-align: center;
-      flex: 0 0 12%;
+      flex: 0 0 20%;
     }
 
     .ranking-total-against-goals {
       text-align: center;
-      flex: 0 0 12%;
+      flex: 0 0 20%;
     }
 
     .ranking-won-tournaments {
       text-align: center;
-      flex: 0 0 12%;
+      flex: 0 0 20%;
     }
   }
 }

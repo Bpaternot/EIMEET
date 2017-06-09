@@ -38,7 +38,7 @@ user.password_confirmation = 'valid_password'
 user.first_name = "Alban"
 user.link = "AlbanP"
 user.username = "valoch"
-user.total_goals = 35
+user.total_goals = 65
 user.total_against_goals = 25
 user.won_tournaments = 0
 user.save!
@@ -51,7 +51,7 @@ user.password_confirmation = 'valid_password'
 user.first_name = "Alexandre"
 user.link = "AlexandreD"
 user.username = "benito"
-user.total_goals = 30
+user.total_goals = 60
 user.total_against_goals = 10
 user.won_tournaments = 0
 user.save!
@@ -64,7 +64,7 @@ user.password_confirmation = 'valid_password'
 user.first_name = "Alexandre"
 user.link = "AlexandreG"
 user.username = "nono"
-user.total_goals = 20
+user.total_goals = 60
 user.total_against_goals = 30
 user.won_tournaments = 0
 user.save!
@@ -77,7 +77,7 @@ user.password_confirmation = 'valid_password'
 user.first_name = "Alexis"
 user.link = "AlexisG"
 user.username = "jeanno"
-user.total_goals = 10
+user.total_goals = 60
 user.total_against_goals = 15
 user.won_tournaments = 0
 user.save!
@@ -90,7 +90,7 @@ user.password_confirmation = 'valid_password'
 user.first_name = "Aurore"
 user.link = "AuroreC"
 user.username = "jujulien"
-user.total_goals = 35
+user.total_goals = 65
 user.total_against_goals = 11
 user.won_tournaments = 1
 user.save!
@@ -103,7 +103,7 @@ user.password_confirmation = 'valid_password'
 user.first_name = "Benjamin"
 user.link = "BenjaminP"
 user.username = "marco"
-user.total_goals = 25
+user.total_goals = 65
 user.total_against_goals = 25
 user.won_tournaments = 0
 user.save!
@@ -116,7 +116,7 @@ user.password_confirmation = 'valid_password'
 user.first_name = "Boris"
 user.link = "BorisP"
 user.username = "franckycbon"
-user.total_goals = 2
+user.total_goals = 6
 user.total_against_goals = 15
 user.won_tournaments = 0
 user.save!
@@ -129,7 +129,7 @@ user.password_confirmation = 'valid_password'
 user.first_name = "Bruno"
 user.link = "BrunoL"
 user.username = "jacobin"
-user.total_goals = 27
+user.total_goals = 67
 user.total_against_goals = 15
 user.won_tournaments = 0
 user.save!
@@ -142,7 +142,7 @@ user.password_confirmation = 'valid_password'
 user.first_name = "Cecile"
 user.link = "Cecile"
 user.username = "momo"
-user.total_goals = 39
+user.total_goals = 69
 user.total_against_goals = 10
 user.won_tournaments = 1
 user.save!
@@ -155,7 +155,7 @@ user.password_confirmation = 'valid_password'
 user.first_name = "Cedric"
 user.link = "Cedric"
 user.username = "alex1"
-user.total_goals = 8
+user.total_goals = 6
 user.total_against_goals = 10
 user.won_tournaments = 0
 user.save!
@@ -168,7 +168,7 @@ user.password_confirmation = 'valid_password'
 user.first_name = "Charles"
 user.link = "CharlesB"
 user.username = "clairon"
-user.total_goals = 14
+user.total_goals = 64
 user.total_against_goals = 10
 user.won_tournaments = 0
 user.save!
@@ -181,7 +181,7 @@ user.password_confirmation = 'valid_password'
 user.first_name = "Charles"
 user.link = "CharlesM"
 user.username = "clarachou"
-user.total_goals = 15
+user.total_goals = 65
 user.total_against_goals = 10
 user.won_tournaments = 0
 user.save!
@@ -194,7 +194,7 @@ user.password_confirmation = 'valid_password'
 user.first_name = "Christophe"
 user.link = "ChristopheP"
 user.username = "eleo"
-user.total_goals = 12
+user.total_goals = 62
 user.total_against_goals = 35
 user.won_tournaments = 0
 user.save!
@@ -207,7 +207,7 @@ user.password_confirmation = 'valid_password'
 user.first_name = "Claire"
 user.link = "ClaireS"
 user.username = "alex2"
-user.total_goals = 15
+user.total_goals = 65
 user.total_against_goals = 10
 user.won_tournaments = 0
 user.save!
@@ -220,7 +220,7 @@ user.password_confirmation = 'valid_password'
 user.first_name = "Clara"
 user.link = "ClaraE"
 user.username = "matmat"
-user.total_goals = 16
+user.total_goals = 66
 user.total_against_goals = 10
 user.won_tournaments = 0
 user.save!
@@ -311,7 +311,7 @@ user.password_confirmation = 'valid_password'
 user.first_name = "Fiona"
 user.link = "FionaP"
 user.username = "sysyl"
-user.total_goals = 8
+user.total_goals = 5
 user.total_against_goals = 15
 user.won_tournaments = 0
 user.save!
@@ -324,7 +324,7 @@ user.password_confirmation = 'valid_password'
 user.first_name = "Gabriel"
 user.link = "GabrielP"
 user.username = "axelred"
-user.total_goals = 13
+user.total_goals = 53
 user.total_against_goals = 15
 user.won_tournaments = 0
 user.save!
@@ -337,7 +337,7 @@ user.password_confirmation = 'valid_password'
 user.first_name = "Gabriel"
 user.link = "GabrielD"
 user.username = "nonodu92"
-user.total_goals = 11
+user.total_goals = 51
 user.total_against_goals = 15
 user.won_tournaments = 0
 user.save!
@@ -350,7 +350,7 @@ user.password_confirmation = 'valid_password'
 user.first_name = "Kara"
 user.link = "KaraD"
 user.username = "victorhugo"
-user.total_goals = 7
+user.total_goals = 5
 user.total_against_goals = 15
 user.won_tournaments = 0
 user.save!
@@ -363,7 +363,7 @@ user.password_confirmation = 'valid_password'
 user.first_name = "Mathieu"
 user.link = "MathieuC"
 user.username = "lacdecome"
-user.total_goals = 13
+user.total_goals = 53
 user.total_against_goals = 15
 user.won_tournaments = 0
 user.save!
@@ -376,7 +376,7 @@ user.password_confirmation = 'valid_password'
 user.first_name = "Kheira"
 user.link = "KheiraB"
 user.username = "alexiadujardin"
-user.total_goals = 11
+user.total_goals = 51
 user.total_against_goals = 15
 user.won_tournaments = 0
 user.save!
@@ -389,7 +389,7 @@ user.password_confirmation = 'valid_password'
 user.first_name = "Maurice"
 user.link = "MauriceC"
 user.username = "simonette"
-user.total_goals = 17
+user.total_goals = 57
 user.total_against_goals = 15
 user.won_tournaments = 0
 user.save!
@@ -402,7 +402,7 @@ user.password_confirmation = 'valid_password'
 user.first_name = "Nicolas"
 user.link = "NicolasB"
 user.username = "jesus"
-user.total_goals = 14
+user.total_goals = 54
 user.total_against_goals = 13
 user.won_tournaments = 0
 user.save!
@@ -415,7 +415,7 @@ user.password_confirmation = 'valid_password'
 user.first_name = "Julie"
 user.link = "JulieP"
 user.username = "lionelmathis"
-user.total_goals = 11
+user.total_goals = 51
 user.total_against_goals = 9
 user.won_tournaments = 0
 user.save!
