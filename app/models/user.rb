@@ -70,6 +70,7 @@ class User < ApplicationRecord
       self.players.each do |player|
         if player.scores.first != nil
           Game.all.each do |game|
+            unless self.total_goals.nil? || self.total_against_goals.nil? || game.scores.last.goals.nil? || game.scores.first.goals.nil?
             if game.scores.first.player == player
               self.total_goals += game.scores.first.goals
               self.total_against_goals += game.scores.last.goals
@@ -78,6 +79,7 @@ class User < ApplicationRecord
               self.total_against_goals += game.scores.first.goals
             end
             self.save
+          end
           end
         end
       end
