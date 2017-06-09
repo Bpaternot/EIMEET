@@ -21,11 +21,14 @@
                       <% avatar_url = game.scores.first.player.user.facebook_picture_url %>
                       <%= image_tag avatar_url, class: "avatar-small" %>
                       <% elsif game.scores.first.player.club? %>
-                      <%= image_tag "#{game.scores.first.player.club}.png", class: "team-photo" %>
+                      <%= image_tag "#{game.scores.first.player.user.link}.jpeg", class: "avatar-small" %>
                       <% elsif %>
                       <% avatar_url = "http://res.cloudinary.com/dutc7zz18/image/upload/v1496741104/avatar-fake_yuue1t.png" %>
                       <%= image_tag avatar_url, class: "avatar" %>
                       <% end %>
+                      <div class="card-team-left-image-of-team">
+                        <%= image_tag "#{game.scores.first.player.club}.png", class: "team-photo-for-avatar" %>
+                      </div>
                     </div>
                     <div class="card-team-left-name">
                       <%= game.scores.first.player.user.first_name.capitalize %>
@@ -60,11 +63,14 @@
                       <% avatar_url = game.scores.last.player.user.facebook_picture_url %>
                       <%= image_tag avatar_url, class: "avatar-small" %>
                       <% elsif game.scores.last.player.club? %>
-                      <%= image_tag "#{game.scores.last.player.club}.png", class: "team-photo" %>
+                      <%= image_tag "#{game.scores.last.player.user.link}.jpeg", class: "avatar-small" %>
                       <% elsif %>
                       <% avatar_url = "http://res.cloudinary.com/dutc7zz18/image/upload/v1496741104/avatar-fake_yuue1t.png" %>
                       <%= image_tag avatar_url, class: "avatar" %>
                       <% end %>
+                      <div class="card-team-right-image-of-team">
+                        <%= image_tag "#{game.scores.last.player.club}.png", class: "team-photo-for-avatar" %>
+                      </div>
                     </div>
                   </div>
                   <% end %>
@@ -84,11 +90,14 @@
                       <% avatar_url = game.scores.first.player.user.facebook_picture_url %>
                       <%= image_tag avatar_url, class: "avatar-small" %>
                       <% elsif game.scores.first.player.club? %>
-                      <%= image_tag "#{game.scores.first.player.club}.png", class: "team-photo" %>
+                      <%= image_tag "#{game.scores.first.player.user.link}.jpeg", class: "avatar-small" %>
                       <% elsif %>
                       <% avatar_url = "http://res.cloudinary.com/dutc7zz18/image/upload/v1496741104/avatar-fake_yuue1t.png" %>
                       <%= image_tag avatar_url, class: "avatar" %>
                       <% end %>
+                      <div class="card-team-left-image-of-team">
+                        <%= image_tag "#{game.scores.first.player.club}.png", class: "team-photo-for-avatar" %>
+                      </div>
                     </div>
                     <div class="card-team-left-name">
                       <%= game.scores.first.player.user.first_name.capitalize %>
@@ -123,11 +132,14 @@
                       <% avatar_url = game.scores.last.player.user.facebook_picture_url %>
                       <%= image_tag avatar_url, class: "avatar-small" %>
                       <% elsif game.scores.last.player.club? %>
-                      <%= image_tag "#{game.scores.last.player.club}.png", class: "team-photo" %>
+                      <%= image_tag "#{game.scores.last.player.user.link}.jpeg", class: "avatar-small" %>
                       <% elsif %>
                       <% avatar_url = "http://res.cloudinary.com/dutc7zz18/image/upload/v1496741104/avatar-fake_yuue1t.png" %>
                       <%= image_tag avatar_url, class: "avatar" %>
                       <% end %>
+                      <div class="card-team-right-image-of-team">
+                        <%= image_tag "#{game.scores.last.player.club}.png", class: "team-photo-for-avatar" %>
+                      </div>
                     </div>
                   </div>
                   <% end %>
