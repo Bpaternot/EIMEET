@@ -13,8 +13,8 @@
       <div class="wrapper-to-toggle-calendar" data-pool="<%= group.first.name %>">
         <div class="row">
           <% group.each do |game| %>
-          <div class="col-xs-6 col-sm-6 col-md-5">
-            <%= form_for game.scores.first, remote: true do |f| %>
+            <%= form_for game, url: update_scores_game_path(game), remote: true do |f| %>
+          <div class="col-xs-5 col-sm-5 col-md-5">
             <div class="card-team-left">
               <div class="card-team-left-image">
                 <% if game.scores.first.player.user.facebook_picture_url %>
@@ -30,27 +30,26 @@
               <div class="card-team-left-name">
                 <%= game.scores.first.player.user.first_name.capitalize %>
               </div>
-              <div class="card-team-left-update-score">
-                <%= f.button class: "card-team-left-score-validate" do %>
-                  <i class="fa fa-check fa-check-playground button-non-active-for-scores" aria-hidden="true"></i>
-                <% end %>
-              </div>
               <div class="card-team-left-score">
-                <%= f.text_field :goals, class: "card-team-left-score-input" %>
+                 <%= text_field_tag "score_1[goals]", game.scores.first.goals, class: "card-team-left-score-input" %>
+                 <%= hidden_field_tag "score_1[id]", game.scores.first.id  %>
               </div>
             </div>
-            <% end %>
           </div>
-          <div class="col-xs-6 col-sm-6 col-md-5 col-md-offset-1">
-            <%= form_for game.scores.last, remote: true do |f| %>
+          <div class="col-xs-2">
+            <div class="card-team-left-update-score">
+              <%= f.button class: "card-team-left-score-validate" do %>
+                <i class="fa fa-check fa-check-playground button-non-active-for-scores" aria-hidden="true"></i>
+              <% end %>
+            </div>
+          </div>
+          <div class="col-xs-5 col-sm-5 col-md-5">
             <div class="card-team-right">
               <div class="card-team-right-score">
-                <%= f.text_field :goals, class: "card-team-right-score-input" %>
+                <%= text_field_tag "score_2[goals]", game.scores.last.goals, class: "card-team-right-score-input" %>
+                <%= hidden_field_tag "score_2[id]", game.scores.last.id  %>
               </div>
               <div class="card-team-right-update-score">
-                <%= f.button class: "card-team-right-score-validate" do %>
-                  <i class="fa fa-check fa-check-playground button-non-active-for-scores" aria-hidden="true"></i>
-                <% end %>
               </div>
               <div class="card-team-right-name">
                 <%= game.scores.last.player.user.first_name.capitalize %>&nbsp;&nbsp;
@@ -67,8 +66,8 @@
                 <% end %>
               </div>
             </div>
-            <% end %>
           </div>
+          <% end %>
           <% end %>
         </div>
       </div>

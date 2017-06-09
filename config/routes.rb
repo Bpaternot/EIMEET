@@ -16,4 +16,10 @@ Rails.application.routes.draw do
   resources :scores, only: :update
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get "rankings", to: "pages#rankings"
+
+  resources :games, only: [] do
+    member do
+      patch :update_scores
+    end
+  end
 end

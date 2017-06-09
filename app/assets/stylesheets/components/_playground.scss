@@ -123,6 +123,16 @@
   }
 }
 
+// NE PAS IMBRIQUER DS card-team-left
+.card-team-left-update-score {
+  padding: 15px 0;
+  text-align: center;
+}
+.card-team-left-score-validate {
+  border: none;
+  background-color: transparent;
+}
+
 .button-non-active-for-scores {
   color: $orange !important;
   &:hover {
