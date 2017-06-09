@@ -3,7 +3,7 @@
   <% @group_games_pool.each do |group| %>
   <div class="banner-for-toggle-group" data-pool="<%= group.first.name %>">
     <div class="banner-for-groups">
-      <h2>POOL <%= group.first.name %></h2>
+      <h2>GROUP <%= group.first.name %></h2>
     </div>
   </div>
   <% end %>
@@ -90,12 +90,12 @@
             <% if @tournament.tournament_type == "large" %>
                 <%= form_for @tournament do |f| %>
                   <%= f.hidden_field :step, value: "round16" %>
-                  <%= f.submit "GO TO ROUND 16", class: "btn btn-primary button-to-next-step" %>
+                  <%= f.submit "GO TO ROUND OF 16", class: "btn btn-primary button-to-next-step" %>
                 <% end %>
               <% elsif @tournament.tournament_type == "medium"  %>
                   <%= form_for @tournament do |f| %>
                   <%= f.hidden_field :step, value: "quarter" %>
-                  <%= f.submit "GO TO QUARTERS", class: "btn btn-primary button-to-next-step" %>
+                  <%= f.submit "GO TO QUARTER-FINALS", class: "btn btn-primary button-to-next-step" %>
                 <% end %>
               <% elsif @tournament.tournament_type == "small" %>
                 <%= form_for @tournament do |f| %>
