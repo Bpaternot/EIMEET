@@ -27,7 +27,7 @@ user.link = "CyrielleB"
 user.username = "cylou"
 user.total_goals = 120
 user.total_against_goals = 18
-user.won_tournaments = 1
+user.won_tournaments = 4
 user.save!
 
 user = User.new
@@ -131,7 +131,7 @@ user.link = "BrunoL"
 user.username = "jacobin"
 user.total_goals = 67
 user.total_against_goals = 15
-user.won_tournaments = 0
+user.won_tournaments = 2
 user.save!
 
 user = User.new
@@ -144,7 +144,7 @@ user.link = "Cecile"
 user.username = "momo"
 user.total_goals = 69
 user.total_against_goals = 10
-user.won_tournaments = 1
+user.won_tournaments = 2
 user.save!
 
 user = User.new
