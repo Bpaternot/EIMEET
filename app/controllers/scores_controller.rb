@@ -18,6 +18,7 @@ class ScoresController < ApplicationController
 
     if @tournament.step == "group"
       ranking_pool(@tournament)
+      # update_ranking(@score.game)
       @players = classify(@list_all_players)
       @players.map! { |pool| pool.map! { |player| player.reload } }
     end

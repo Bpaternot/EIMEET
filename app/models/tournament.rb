@@ -22,4 +22,3 @@ class Tournament < ApplicationRecord
   # validates :number_games, inclusion: { in: NUMBER_GAMES }
 end
 
-
